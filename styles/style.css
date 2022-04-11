@@ -1,21 +1,44 @@
 *{
     margin:0;
+   
     padding:0;
     /* background: red; */
 }
 
 .gridBody{
+
     display: grid;
 
     grid-template-columns: 1fr 1fr 1fr ;
-
-    grid-template-areas: 
+    
+    grid-template-areas:
     "search title login"
     "cuprins cuprins cuprins"
     "main main main"
     "footer footer footer"
     ;
+    
 }
 .search{
-    grid-area:
+    grid-area: search;
+    justify-self :center;
+    align-self: center;
+    background: red;
+}
+.title{
+    grid-area: title;
+}
+.login{
+    grid-area:login;
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+}
+.content{
+    grid-area: cuprins;
+}
+.Main{
+    grid-area:main;
+}
+.footer{
+    grid-area: footer;
 }
