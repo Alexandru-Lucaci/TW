@@ -9,24 +9,27 @@
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns:1.5em 240px 1fr 1fr 1fr 0.5fr 1.5em;
     
     grid-template-areas:
-    "search title login"
-    "cuprins cuprins cuprins"
-    "main main main"
-    "footer footer footer"
+    ". title title title title login ."
+    ". search cuprins cuprins cuprins cuprins ."
+    ". main main main main main ."
+    ". footer footer footer footer footer. "
     ;
-    
+     gap: 50px; 
 }
 .search{
     grid-area: search;
     justify-self :center;
-    align-self: center;
-    background: red;
+    align-self:end;
+    /* background: red; */
 }
 .title{
     grid-area: title;
+    background: gray;
+    color: white;
+    padding: 2em;
 }
 .login{
     grid-area:login;
