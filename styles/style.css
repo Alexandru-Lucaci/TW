@@ -4,7 +4,9 @@
     padding:0;
     /* background: red; */
 }
-
+*,*::befor,*::after{
+    box-sizing: border-box;
+}
 .gridBody{
 
     display: grid;
@@ -12,7 +14,8 @@
     grid-template-columns:1.5em 240px 1fr 1fr 1fr 0.5fr 1.5em;
     
     grid-template-areas:
-    ". title title title title login ."
+    "title title title title title title title"
+    ". login login login login login ."
     ". search cuprins cuprins cuprins cuprins ."
     ". main main main main main ."
     ". footer footer footer footer footer. "
@@ -27,9 +30,10 @@
 }
 .title{
     grid-area: title;
-    background: gray;
-    color: white;
-    padding: 2em;
+    /* background: gray;
+    color: white;*/
+    /* padding: 2em; */
+     
 }
 .login{
     grid-area:login;
@@ -45,3 +49,29 @@
 .footer{
     grid-area: footer;
 }
+.limba{
+    display:grid;
+    grid-template: 1fr 1fr;
+    
+}
+.title{
+    /* background: black; */
+    /* font-size: 2em; */
+    /* color: yellow; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-self: center; */
+    /* background-image: ulr("pictures\randomBackgroundImage.jpg"); */
+}
+/* .wrapper{
+	max-width: 53.33rem;
+	margin: 0 auto;
+	position: relative;
+	z-index: 10;
+	transform: translateY(-50%);
+	top:50%;
+	text-align: center;
+}
+.wrapper.large-wrap{max-width: 100%;} */
+
+
