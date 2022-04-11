@@ -1,0 +1,16 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.gridBody{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+
+body{
+    backgroun:#32ff7e;
+}
+
