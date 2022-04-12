@@ -16,16 +16,19 @@
     grid-template-areas:
     "title title title title title title title"
     ". login login login login login ."
-    ". search cuprins cuprins cuprins cuprins ."
+    "search search search cuprins cuprins cuprins cuprins"
     ". main main main main main ."
     ". footer footer footer footer footer. "
     ;
-     gap: 50px; 
+     /* gap: 50px;  */
 }
 .search{
     grid-area: search;
     justify-self :center;
     align-self:center;
+    padding: 0 20px;
+    background-color: #1d1f1d;
+    
     /* background: red; */
 }
 .title{
@@ -42,6 +45,13 @@
 }
 .content{
     grid-area: cuprins;
+    padding: 0 20px;
+    background-color: #1d1f1d;
+    height: 100px;
+     display: flex;
+    justify-content: space-between; 
+    /* display: grid; */
+    
 }
 .Main{
     grid-area:main;
@@ -53,6 +63,11 @@
     display:grid;
     grid-template: 1fr 1fr;
 
+}
+.navBarr{
+
+    justify-self: right;
+    align-self: right;
 }
 .title{
     /* background: black; */

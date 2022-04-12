@@ -12,6 +12,7 @@
     <meta name="author" content="Lucaci Alexandru-Constantin" />
     <title>Menagerie on Web</title>
     <link rel="icon" href="icons\zooIcon2.svg" />
+    <link rel="stylesheet" href="styles\styleNav.css" />
     <link rel="stylesheet" href="styles\languageSelector.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles\styleHeader.css" />
@@ -21,87 +22,106 @@
   <body>
     <!-- <img src="icons\searchBar.svg" alt="Search bar" /> -->
     <div class="gridBody">
-      <div class="search">
-        <div class="searchBar">
-          <input
-            class="search-txt"
-            type="texr"
-            name=""
-            placeholder="Type to search"
-          />
-
-          <a class="search-bth" href="#"></a>
-          <img
-            src="icons\searchBar.svg"
-            alt="SearchBarBtn"
-            width="25"
-            height="25"
-          />
+    <div class="title">
+      <div class="header">
+        <div class="sides">
+          <!-- <img src="pictures\logoBlack.jpg" alt="Managerie on Web" /> -->
+          <a href="#" class="logo">Managerie on Web</a>
         </div>
-      </div>
-      <div class="title">
-        <!-- <section data-description="bold/cursive">
-          <div class="wrapper">
-            <h1 class="beta uppercase montserrat regular line-after-heading">
-              This shouldn't be so difficult
-            </h1>
-            <p class="delta cardo regular italic">
-              Wow, what a fine cofee flavor
-            </p>
-          </div>
-        </section> -->
-
-        <div class="header">
-          <div class="sides">
-            <!-- <img src="pictures\logoBlack.jpg" alt="Managerie on Web" /> -->
-            <a href="#" class="logo">Managerie on Web</a>
-          </div>
-          <div class="sides">
-            <!-- <a href="#" class="menu"> </a> -->
-            <div class="login">
-              <div class="limba">
-                <!-- language -->
-                <div class="lang-menu">
-                  <div class="selected-lang">Română</div>
-                  <ul>
-                    <li>
-                      <a href="#" class="romanaLanguage">Română</a>
-                    </li>
-                    <li>
-                      <a href="#" class="englishLanguage"><del>English</del></a>
-                    </li>
-                    <li>
-                      <a href="#" class="frenchLanguage"><del>French</del></a>
-                    </li>
-                  </ul>
-                </div>
+        <div class="sides">
+          <!-- <a href="#" class="menu"> </a> -->
+          <div class="login">
+            <div class="limba">
+              <!-- language -->
+              <div class="lang-menu">
+                <div class="selected-lang">Română</div>
+                <ul>
+                  <li>
+                    <a href="#" class="romanaLanguage">Română</a>
+                  </li>
+                  <li>
+                    <a href="#" class="englishLanguage"><del>English</del></a>
+                  </li>
+                  <li>
+                    <a href="#" class="frenchLanguage"><del>French</del></a>
+                  </li>
+                </ul>
               </div>
-              <!-- <div class="conectare">login</div> -->
             </div>
+            <!-- <div class="conectare">login</div> -->
           </div>
+        </div>
 
-          <div class="info">
-            <h4>
-              <a href="https://profs.info.uaic.ro/~vcosmin/proiectetw">About</a>
-            </h4>
-            <h1>MeoW (Menagerie on Web)</h1>
-            <div class="meta">
-              <a href="https://twitter.com/nodws" target="_b" class="author"></a
-              ><br />
-              By
-              <a
-                href="https://profs.info.uaic.ro/~orar/participanti/orar_I2B2.html"
-                target="_b"
-                >Ivan Remus and Lucaci Alexandru
-              </a>
-              on April 2022
-            </div>
+        <div class="info">
+          <h4>
+            <a href="https://profs.info.uaic.ro/~vcosmin/proiectetw">About</a>
+          </h4>
+          <h1>MeoW (Menagerie on Web)</h1>
+          <div class="meta">
+            <a href="https://twitter.com/nodws" target="_b" class="author"></a
+            ><br />
+            By
+            <a
+              href="https://profs.info.uaic.ro/~orar/participanti/orar_I2B2.html"
+              target="_b"
+              >Ivan Remus and Lucaci Alexandru
+            </a>
+            on April 2022
           </div>
         </div>
       </div>
-      <div class="content">content</div>
+    </div>
+    <div class="search">
+        <div class="searchBar">
+            <input
+                class="search-txt"
+                type="texr"
+                name=""
+                placeholder="Type to search"
+            />
+            <a class="search-bth" href="#"></a>
+            <img
+                src="icons\searchBar.svg"
+                alt="SearchBarBtn"
+                width="25"
+                height="25"
+            />
+        </div>
+    </div>
+    <div class="content">
+        <div class="navBarr">
+          <nav>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Products</a></li>
+              <li><a href="">About</a></li>
+              <li id="login"><a href="/login">Login</a></li>
+              <li id="signup"><a href="/signup">Signup</a></li>
+            </ul>
+          </nav>
+          <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/products">Products</a></li>
+              <li><a href="/about">About</a></li>
+              <li id="login"><a href="/login">Login</a></li>
+              <li id="signup"><a href="/signup">Signup</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <script>
+          function toggleMobileMenu(menu) {
+            menu.classList.toggle("open");
+          }
+        </script>
+    </div>
       <div class="Main">main</div>
       <div class="footer">footer</div>
+    </div>
     </div>
   </body>
 </html>
