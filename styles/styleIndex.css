@@ -1,0 +1,143 @@
+* {box-sizing:border-box}
+
+.slideshow-container{
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlide{
+    display: none;
+}
+
+.mySlide img{
+    width: 100%;
+}
+
+.slideshow-previous-button , .slideshow-next-button{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.slideshow-next-button{
+    right:0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+.slideshow-previous-button:hover , .slideshow-next-button:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slideshow-number-text {
+    color:#f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.slideshow-dots-container{
+    text-align: center;
+}
+
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover{
+    background-color: #717171;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.navigation-container{
+    width: 100%;
+    position:relative;
+    margin:auto;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.navigation-container nav{
+    background-color: rgb(20, 218, 175);
+    border-radius: 5;
+    border: 1px solid rgb(7, 67, 136);
+}
+
+.navigation-container nav a{
+    margin:4%;
+    border: 2px solid rgb(64, 21, 121);
+}
+
+.welcome-container{
+    width: 80%;
+    position: relative;
+    margin: auto;
+    background-image: linear-gradient(to bottom,rgb(241, 148, 148),rgb(223, 183, 7));
+    border-radius: 50px;
+    border:2px groove rgb(240, 211, 83);
+}
+
+.welcome-title{
+    font-size: 5em;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-seri;
+    text-align: center;
+}
+
+.welcome-text{
+    padding:20px;
+    background-color: cadetblue;
+    color:aliceblue;
+    text-align: justify;
+}
+
+.info-container{
+    width:100%;
+    position:relative;
+    margin:auto;
+    padding:1%;
+}
+
+.info-title{
+    width:100%;
+    background-color: chartreuse;
+    color:azure;
+    font-size: 5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align:center;
+}
+
+.info-text{
+    padding:20px;
+    background-color: cadetblue;
+    color:aliceblue;
+    text-align: justify;
+}

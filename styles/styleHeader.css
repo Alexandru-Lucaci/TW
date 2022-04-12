@@ -36,8 +36,8 @@
       -webkit-transform: translateZ(0) scale(1.0, 1.0);
       transform: translateZ(0);
       
-    background:#1B2030 url(https://unsplash.it/1999/999?image=1063) top center no-repeat;
-    /* background-image: ulr("pictures/randomBackgroundImage.jpg"); */
+    background:#1B2030 url(https://media.gettyimages.com/photos/zoo-picture-id173681964?s=2048x2048) top center no-repeat;
+    /* background-image : url(pictures\logoBlack.jpg); */
     background-size:cover;
     background-attachment:fixed;
     animation: grow 60s  linear 10ms infinite;
@@ -47,11 +47,12 @@
   .header a{
     color:#eee
   }
-  .menu{
+
+  .limba{
     display:block;
-    width:30px;
-    height:30px;
-    border:2px solid #fff;
+    width:100px;
+    height:100px;
+    /* border:2px solid #fff; */
     border-radius:3px;
     position:absolute;
     /* position:fixed; */
@@ -60,12 +61,12 @@
     text-decoration:none
     
   }
-  .menu:after{
+  .limba:after{
     content:"";
     display:block;
-    width:20px;
+    /* width:20px;
     height:3px;
-    background:#fff;
+    background:#fff; */
     position:absolute;
     margin:0 auto;
     top:5px;
@@ -73,6 +74,7 @@
     right:0;
     box-shadow:0 8px, 0 16px
   }
+
   .logo{
     border:2px solid #fff;
     border-radius:3px;
