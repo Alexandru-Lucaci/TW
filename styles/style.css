@@ -25,7 +25,7 @@
 .search{
     grid-area: search;
     justify-self :center;
-    align-self:end;
+    align-self:center;
     /* background: red; */
 }
 .title{
@@ -52,7 +52,7 @@
 .limba{
     display:grid;
     grid-template: 1fr 1fr;
-    
+
 }
 .title{
     /* background: black; */
