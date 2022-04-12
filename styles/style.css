@@ -11,12 +11,12 @@
 
     display: grid;
 
-    grid-template-columns:1.5em 240px 1fr 1fr 1fr 0.5fr 1.5em;
+    grid-template-columns:1.5em 280px 1fr 1fr 1fr 0.5fr 1.5em;
     
     grid-template-areas:
     "title title title title title title title"
     ". login login login login login ."
-    "search search search cuprins cuprins cuprins cuprins"
+    "search search cuprins cuprins cuprins cuprins cuprins"
     ". main main main main main ."
     ". footer footer footer footer footer. "
     ;
@@ -48,9 +48,13 @@
     padding: 0 20px;
     background-color: #1d1f1d;
     height: 100px;
-     display: flex;
-    justify-content: space-between; 
+
+    /* display: flex;
+    justify-content: space-between;  */
     /* display: grid; */
+    
+}
+.navBarr{
     
 }
 .Main{
