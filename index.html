@@ -12,12 +12,15 @@
     <meta name="author" content="Lucaci Alexandru-Constantin" />
     <title>Menagerie on Web</title>
     <link rel="icon" href="icons\zooIcon2.svg" />
-    <link rel="stylesheet" href="styles\styleNav.css" />
+  
     <link rel="stylesheet" href="styles\languageSelector.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles\styleHeader.css" />
     <link rel="stylesheet" href="styles\style.css" />
     <link rel="stylesheet" href="styles\styleSearch.css" />
+    <!-- <link rel="stylesheet" href="styles\styleNav.css" /> -->
+    <link rel="stylesheet" href="styles\styleNavBar.css" />
+    
   </head>
   <body>
     <!-- <img src="icons\searchBar.svg" alt="Search bar" /> -->
@@ -71,26 +74,9 @@
         </div>
       </div>
     </div>
-    <div class="search">
-        <div class="searchBar">
-            <input
-                class="search-txt"
-                type="texr"
-                name=""
-                placeholder="Type to search"
-            />
-            <a class="search-bth" href="#"></a>
-            <img
-                src="icons\searchBar.svg"
-                alt="SearchBarBtn"
-                width="25"
-                height="25"
-            />
-        </div>
-    </div>
+
     <div class="content">
-        <div class="navBarr">
-          <nav>
+          <!-- <nav>
             <ul>
               <li><a href="">Home</a></li>
               <li><a href="">Products</a></li>
@@ -111,13 +97,53 @@
               <li id="signup"><a href="/signup">Signup</a></li>
             </ul>
           </div>
-        </div>
+
 
         <script>
           function toggleMobileMenu(menu) {
             menu.classList.toggle("open");
           }
-        </script>
+        </script> -->
+
+
+        
+        <div class="nav-containter">
+            <nav class="navbar">
+                <div class="search">
+                    <div class="searchBar">
+                        <input
+                            class="search-txt"
+                            type="texr"
+                            name=""
+                            placeholder="Type to search"
+                        />
+                        <a class="search-bth" href="#"></a>
+                        <img
+                            src="icons\searchBar.svg"
+                            alt="SearchBarBtn"
+                            width="25"
+                            height="25"
+                        />
+                    </div>
+                </div>
+                <div class="menu-togle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="" class="nav-links">Home</a></li>
+                    <li><a href="" class="nav-links">Animals</a></li>
+                    <li><a href="" class="nav-links">Prevent extinction</a></li>
+                    <li><a href="" class="nav-links">How to help</a></li>
+                    <li><a href="" class="nav-links">Contact us</a></li>
+                    <li><a href="" class="nav-links nav-lins-btn">Login</a></li>
+                </ul>
+
+
+            </nav>
+        </div>
     </div>
       <div class="Main">main</div>
       <div class="footer">footer</div>

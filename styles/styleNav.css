@@ -5,7 +5,8 @@ body {
     font-family: "Poppins", sans-serif;
   }
    */
-  .content a {
+   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+.content a {
     text-decoration: none;
   }
   
@@ -27,7 +28,7 @@ body {
     color: #09c372;
   }
   
- .content div nav ul {
+ .content nav ul {
     list-style: none;
     height: 100%;
     display: flex;
@@ -35,16 +36,16 @@ body {
     justify-content: space-around;
   }
   
-  .content div nav ul a {
+  .content nav ul a {
     color: white;
   }
   
-  .content div nav ul li {
+  .content nav ul li {
     padding: 5px;
     margin-left: 10px;
   }
   
-  .content div nav ul li:hover {
+  .content nav ul li:hover {
     transform: scale(1.1);
     transition: 0.3s;
   }
@@ -119,7 +120,7 @@ body {
     margin-bottom: 10px;
   }
   
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1200px) {
     .content nav {
       display: none;
     }

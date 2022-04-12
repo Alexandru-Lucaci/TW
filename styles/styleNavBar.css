@@ -1,0 +1,42 @@
+.nav-container{
+    width: 100%;
+    background-color: #212329;
+}
+.content{
+    background-color: #212329;
+}
+.navbar{
+
+    display:grid;
+    grid-template-columns: 280px auto 1fr;
+    align-items:center;
+    height: 20px;
+    width: 90%;
+    max-width: 1720px;
+    margin:0 auto;
+}
+
+.search{
+    color:white;
+    justify-self: start;
+    margin-left: 20px;
+}
+
+.nav-menu{
+    display:grid;
+    grid-template-columns: repeat(6,auto);
+    list-style: none;
+    text-align: center;
+    /* width: 0%; */
+    justify-self: end;
+}
+
+.nav-links{
+    color:white;
+    text-decoration: none;
+    
+}
+.nav-links:hover{
+    color:coral;
+    transition: all 0.2s ease-out;
+}
