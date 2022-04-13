@@ -38,13 +38,13 @@
       -webkit-transform: translateZ(0) scale(1.0, 1.0);
       transform: translateZ(0);
       
-    background:#1B2030 url(../images/zoo.jpg) top center no-repeat;
+    background:#1B2030 url(../images/zoo.jpg) center center no-repeat;
     /* background-image : url(pictures\logoBlack.jpg); */
     background-size:cover;
     background-attachment:fixed;
     animation: grow 60s  linear 10ms infinite;
     transition:all 0.2s ease-in-out;
-    z-index:-2
+    z-index:-2;
   }
   .header a{
     color:#eee
@@ -95,6 +95,9 @@
   .info{
     width:100%;
     padding:15% 10% 0 10%;
+    /* align-self: top;
+     */
+     /* justify-self: center; */
     text-align:center;
     text-shadow:0 2px 3px rgba(0,0,0,0.2)
   }
@@ -109,7 +112,10 @@
     margin-bottom:3px
   }
   .info h4, .meta{
-    font-size:0.7em
+    font-size:1.4em
+  }
+  .info h1{
+    font-size: 3em;
   }
   .meta{
     font-style:italic;
