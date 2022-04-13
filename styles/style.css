@@ -24,15 +24,18 @@
      /* gap: 50px;  */
 }
 
+/*
 .search{
-    /* grid-area: search;
+     grid-area: search;
     justify-self :center;
     align-self:center;
     padding: 0 20px;
-    background-color: #1d1f1d; */
+    background-color: #1d1f1d; 
     
-    /* background: red; */
+     background: red; 
 }
+*/
+
 .title{
     grid-area: title;
     /* background: gray;
@@ -76,6 +79,8 @@
     justify-self: right;
     align-self: right;
 }
+
+/*
 .title{
     /* background: black; */
     /* font-size: 2em; */
@@ -84,7 +89,7 @@
     /* justify-content: center; */
     /* align-self: center; */
     /* background-image: ulr("pictures\randomBackgroundImage.jpg"); */
-}
+/*}
 /* .wrapper{
 	max-width: 53.33rem;
 	margin: 0 auto;

@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Menagerie on WEB" />
-    <meta
-      name="keywords"
-      content="Menagerie on Web, MeoW, ZOO, zoo, TW proiect, 2B2 "
-    />
-    <meta name="author" content="Ivan Remus" />
-    <meta name="author" content="Lucaci Alexandru-Constantin" />
-    <title>Menagerie on Web</title>
-    <link rel="icon" href="pictures\logoBlack.jpg" />
-  
-    <link rel="stylesheet" href="styles\languageSelector.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles\styleHeader.css" />
-    <link rel="stylesheet" href="styles\style.css" />
-    <link rel="stylesheet" href="styles\styleSearch.css" />
-    <!-- <link rel="stylesheet" href="styles\styleNav.css" /> -->
-    <link rel="stylesheet" href="styles\styleNavBar.css" />
-    
-    
-  </head>
-  <body>
-    <!-- <img src="icons\searchBar.svg" alt="Search bar" /> -->
-    <div class="gridBody">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Menagerie on WEB" />
+  <meta name="keywords" content="Menagerie on Web, MeoW, ZOO, zoo, TW proiect, 2B2 " />
+  <meta name="author" content="Ivan Remus" />
+  <meta name="author" content="Lucaci Alexandru-Constantin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Menagerie on Web</title>
+
+  <link rel="icon" href="pictures\logoBlack.jpg" />
+  <link rel="stylesheet" href="styles\languageSelector.css" />
+  <link rel="stylesheet" href="styles\styleHeader.css" />
+  <link rel="stylesheet" href="styles\style.css" />
+  <link rel="stylesheet" href="styles\styleSearch.css" />
+  <link rel="stylesheet" href="styles\styleIndex.css" />
+  <!-- <link rel="stylesheet" href="styles\styleNav.css" /> -->
+  <link rel="stylesheet" href="styles\styleNavBar.css" />
+  <link rel="stylesheet" href="styles\styleMainPage.css" />
+</head>
+
+<body>
+  <!-- <img src="icons\searchBar.svg" alt="Search bar" /> -->
+  <div class="gridBody">
     <div class="title">
       <div class="header">
         <div class="sides">
@@ -62,13 +62,10 @@
           </h4>
           <h1>MeoW (Menagerie on Web)</h1>
           <div class="meta">
-            <a href="https:facebook.com" target="_b" class="author"></a
-            ><br />
+            <a href="https:facebook.com" target="_b" class="author"></a><br />
             By
-            <a
-              href="https://profs.info.uaic.ro/~orar/participanti/orar_I2B2.html"
-              target="_b"
-              >Ivan Remus and Lucaci Alexandru
+            <a href="https://profs.info.uaic.ro/~orar/participanti/orar_I2B2.html" target="_b">Ivan Remus and Lucaci
+              Alexandru
             </a>
             on April 2022
           </div>
@@ -77,82 +74,132 @@
     </div>
 
     <div class="content">
-          <!-- <nav>
-            <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">Products</a></li>
-              <li><a href="">About</a></li>
-              <li id="login"><a href="/login">Login</a></li>
-              <li id="signup"><a href="/signup">Signup</a></li>
-            </ul>
-          </nav>
-          <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-            <ul class="mobile-menu">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/about">About</a></li>
-              <li id="login"><a href="/login">Login</a></li>
-              <li id="signup"><a href="/signup">Signup</a></li>
-            </ul>
+      <!-- <nav>
+                  <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li id="login"><a href="/login">Login</a></li>
+                    <li id="signup"><a href="/signup">Signup</a></li>
+                  </ul>
+                </nav>
+                <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+                  <ul class="mobile-menu">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li id="login"><a href="/login">Login</a></li>
+                    <li id="signup"><a href="/signup">Signup</a></li>
+                  </ul>
+                </div>
+      
+      
+              <script>
+                function toggleMobileMenu(menu) {
+                  menu.classList.toggle("open");
+                }
+              </script> -->
+
+
+
+      <div class="nav-containter">
+        <nav class="navbar">
+          <div class="search">
+            <div class="searchBar">
+              <input class="search-txt" type="texr" name="" placeholder="Type to search" />
+              <a class="search-bth" href="#"></a>
+              <img src="icons\searchBar.svg" alt="SearchBarBtn" width="25" height="25" />
+            </div>
           </div>
+          <div class="menu-togle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+          </div>
+          <ul class="nav-menu">
+            <li><a href="" class="nav-links">Home</a></li>
+            <li><a href="" class="nav-links">Animals</a></li>
+            <li><a href="" class="nav-links">Prevent</a></li>
+            <li><a href="" class="nav-links">Help</a></li>
+            <li><a href="" class="nav-links nav-links-btn">Contact</a></li>
+            <li><a href="" class="nav-links nav-links-btn">Login</a></li>
+            <!-- <li><a href="" class="nav-links ">Login</a></li> -->
+          </ul>
 
 
-        <script>
-          function toggleMobileMenu(menu) {
-            menu.classList.toggle("open");
-          }
-        </script> -->
 
+        </nav>
 
-        
-        <div class="nav-containter">
-            <nav class="navbar">
-                <div class="search">
-                    <div class="searchBar">
-                        <input
-                            class="search-txt"
-                            type="texr"
-                            name=""
-                            placeholder="Type to search"
-                        />
-                        <a class="search-bth" href="#"></a>
-                        <img
-                            src="icons\searchBar.svg"
-                            alt="SearchBarBtn"
-                            width="25"
-                            height="25"
-                        />
-                    </div>
-                </div>
-                <div class="menu-togle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+      </div>
+    </div>
+    <div class="Main">
+      <div class="slideshow-container">
+              
+        <div class="mySlide fade">
+            <div class="slideshow-number-text">1 / 3</div>
+            <img src="images\img1.jpg" alt="lion image">
+        </div>
 
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="" class="nav-links">Home</a></li>
-                    <li><a href="" class="nav-links">Animals</a></li>
-                    <li><a href="" class="nav-links">Prevent</a></li>
-                    <li><a href="" class="nav-links">Help</a></li>
-                    <li><a href="" class="nav-links nav-links-btn">Contact</a></li>
-                    <li><a href="" class="nav-links nav-links-btn">Login</a></li>
-                    <!-- <li><a href="" class="nav-links ">Login</a></li> -->
-                </ul>
-                
+        <div class="mySlide fade">
+            <div class="slideshow-number-text">2 / 3</div>
+            <img src="images\img2.jpg" alt="girrafe image">
+        </div>
 
+        <div class="mySlide fade">
+            <div class="slideshow-number-text">3 / 3</div>
+            <img src="images\img3.jpg" alt="tiger image">
+        </div>
 
-            </nav>
+        <a class="slideshow-previous-button" onclick="changeSlides(-1)">&#10094;</a>
+        <a class="slideshow-next-button" onclick="changeSlides(1)">&#10095;</a>
 
+      </div>
+    <br>
+
+    <div class="slideshow-dots-container">
+        <span class="dot" onclick="setCurrentSlides(1)"></span>
+        <span class="dot" onclick="setCurrentSlides(2)"></span>
+        <span class="dot" onclick="setCurrentSlides(3)"></span>
+    </div>
+    <br>
+
+    <div class="welcome-container">
+        <div class="welcome-title">
+            <p>Welcome to the jungle!</p>
+        </div>
+        <div class="welcome-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus libero id ante pulvinar, in vestibulum nibh egestas. Etiam euismod neque massa, eu tempor est dignissim ut. Aenean eu metus scelerisque, vulputate mi vel, venenatis quam. In in vulputate nisl, tempor lobortis dolor. Donec elit erat, lobortis id egestas eget, semper eu nisi. Phasellus hendrerit nunc nulla, sit amet pulvinar ligula varius eget. Pellentesque accumsan augue erat.</p>
         </div>
     </div>
-      <div class="Main">main</div>
-      <div class="footer">footer</div>
+
+    <div class="info-container">
+        <div class="info-title">
+            <p>Discover the animal kingdom!</p>
+        </div>
+        <div class="info-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus libero id ante pulvinar, in vestibulum nibh egestas. Etiam euismod neque massa, eu tempor est dignissim ut. Aenean eu metus scelerisque, vulputate mi vel, venenatis quam. In in vulputate nisl, tempor lobortis dolor. Donec elit erat, lobortis id egestas eget, semper eu nisi. Phasellus hendrerit nunc nulla, sit amet pulvinar ligula varius eget. Pellentesque accumsan augue erat.</p>
+            <p>Donec quis massa interdum, commodo lectus non, feugiat sapien. Curabitur consectetur velit ac lacus efficitur, quis auctor velit accumsan. Praesent et accumsan mauris. Suspendisse lobortis nisi nec urna ultricies, ut eleifend mi laoreet. In semper sem id ex placerat, sit amet viverra tellus consectetur. Proin quis aliquet dui. Donec placerat mi sit amet velit venenatis dapibus. Morbi fringilla non augue ac convallis. Nunc tristique auctor orci sit amet vestibulum.</p>
+
+            <p>Nam non lobortis massa, eu iaculis purus. Morbi aliquet mauris velit, a molestie ipsum venenatis ut. Praesent convallis sollicitudin sem. Phasellus eget nisl at quam vestibulum mattis sed sit amet arcu. Morbi dui ante, consectetur et tortor a, ornare fringilla purus. Quisque facilisis ex sit amet felis convallis porttitor. Cras ornare magna nulla, vitae porta erat varius at. Nulla facilisi. Nam gravida molestie arcu non suscipit. Suspendisse sem dolor, consequat et sollicitudin quis, fringilla pretium ipsum. Integer faucibus maximus dolor ut eleifend.</p>
+
+            <p>Maecenas viverra sem vitae dignissim tempus. Pellentesque quis augue in nisl bibendum pharetra sed vel risus. Nullam sed finibus risus, vel consequat velit. Nullam rutrum nunc ante, vel lobortis erat laoreet ut. Quisque vel pharetra eros, non consectetur tortor. Etiam tincidunt bibendum congue. Duis placerat maximus venenatis. Mauris rhoncus sed massa ac commodo. In mi velit, rutrum ac lectus a, blandit auctor enim. Phasellus rhoncus nisi sapien, condimentum cursus turpis porta sit amet.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida sed erat sed ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt consectetur eros. Nam sed interdum arcu. Phasellus aliquet augue eget ex tincidunt, non gravida nulla porttitor. Aliquam egestas et erat at sagittis. Donec eu lacus vel ligula dapibus luctus in in risus. Aliquam lacinia sollicitudin tellus quis placerat. Suspendisse imperdiet eget sem vitae bibendum. Donec a faucibus eros, vitae placerat augue. Aenean ut felis at lacus placerat vestibulum. Aenean rutrum dolor at risus accumsan, ut volutpat quam ullamcorper. Vivamus ornare turpis vel gravida ullamcorper.</p>
+        </div>
     </div>
+
     </div>
-    <script src="javaScript\navBar.js"></script>
-  </body>
+    <div class="footer">footer</div>
+  </div>
+
+
+
+  <script src="javaScript\navBar.js"></script>
+  <script src="javaScript\MainPageSlideshow.js"></script>
+</body>
+
 </html>
