@@ -26,7 +26,7 @@
 .nav-menu{
     display:grid;
     /* margin:0; */
-    grid-template-columns: repeat(5,auto);
+    grid-template-columns: repeat(6,auto);
     
     list-style: none;
     text-align: center;
@@ -71,7 +71,7 @@
 }
 
 
-@media only screen and (max-width: 1000px)
+@media only screen and (max-width: 1200px)
 {
     .nav-container{
         position: relative;
@@ -84,7 +84,7 @@
         position:absolute;
         width:100%;
        /* to do  */
-        top: 50%;
+        top: 70%;
      
         left:-100%;
         opacity:0;
@@ -180,9 +180,9 @@
         opacity:0;
     }
     #mobile-menu.is-active .bar:nth-child(1){
-        transform: translateY(12px) rotate(45deg);
+        transform: translateY(13px) rotate(45deg);
     }
     #mobile-menu.is-active .bar:nth-child(3){
-        transform:translateY(-12px) rotate(-45deg);
+        transform:translateY(-13px) rotate(-45deg);
     }
 }
