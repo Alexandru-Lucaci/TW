@@ -27,10 +27,11 @@
     display:grid;
     grid-template-columns: repeat(5,auto);
     list-style: none;
-    text-align: center;
-    width: 70%; 
+    text-align: right;
+    
+    width: 80%; 
     justify-self: end;
-    /* gap:10px; */
+    gap:1em; 
 }
 
 .nav-links{
@@ -140,10 +141,7 @@
         top:55%;
         right:10%;
         transform:translate(5%,20%); */
-        
-
-
-
+    
         display:grid;
         grid-template-columns: auto;
         /* background:rgb(198, 24, 79); */
@@ -151,13 +149,9 @@
         width:100%;
         position:absolute;
         margin-left: 20px;
-        
-        left:25%;
+        left:30%;
     }
 
-
-
-    
     .menu-togle .bar{
         display:block;
         cursor: pointer;
