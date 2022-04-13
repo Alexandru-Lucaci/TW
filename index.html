@@ -137,12 +137,23 @@
                     <li><a href="" class="nav-links">Animals</a></li>
                     <li><a href="" class="nav-links">Prevent extinction</a></li>
                     <li><a href="" class="nav-links">How to help</a></li>
-                    <li><a href="" class="nav-links">Contact us</a></li>
-                    <li><a href="" class="nav-links nav-lins-btn">Login</a></li>
+                    <li><a href="" class="nav-links nav-links-btn">Contact us</a></li>
+                    <!-- <li><a href="" class="nav-links ">Login</a></li> -->
                 </ul>
+                
 
 
             </nav>
+            <script>
+                const menu = document.querySelector('#mobile-menu');
+                const menuLinks=documents.querySelector('.nav-menu');
+
+                menu.addEventListener('click', function(){
+                    menu.classList.toggle('is-active');
+                    manuLinks.classList.toggle('active');
+                })
+
+            </script>
         </div>
     </div>
       <div class="Main">main</div>
