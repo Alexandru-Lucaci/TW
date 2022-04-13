@@ -1,0 +1,34 @@
+*{
+    margin:0;
+   
+    padding:0;
+    /* background: red; */
+}
+*,*::befor,*::after{
+    box-sizing: border-box;
+}
+.gridBody{
+
+    display: grid;
+
+    grid-template-columns:1.5em 280px 1fr 1fr 1.5em;
+    
+    grid-template-areas:
+    "cuprins cuprins cuprins cuprins cuprins"
+
+    ;
+     /* gap: 50px;  */
+}
+.content{
+    grid-area:cuprins;
+        
+}
+.navbar{
+    height: 80px;
+}
+.searchBar{
+    height: 30px;
+    /* justify-self: right; */
+   left: 10%;
+}
+
