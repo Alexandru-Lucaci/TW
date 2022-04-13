@@ -17,11 +17,13 @@
     "title title title title title title title"
     ". login login login login login ."
     "cuprins cuprins cuprins cuprins cuprins cuprins cuprins"
+    
     ". main main main main main ."
     ". footer footer footer footer footer. "
     ;
      /* gap: 50px;  */
 }
+
 .search{
     /* grid-area: search;
     justify-self :center;
