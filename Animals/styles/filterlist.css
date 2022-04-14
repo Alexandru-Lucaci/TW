@@ -27,3 +27,23 @@ ul{
     color:coral;
     
 }
+
+.toggler::before{
+    content:"\25b6";
+    display: inline-block;
+    margin-right: 0.2rem;
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+.toggler.active::before{
+    transform:rotate(90deg);
+}
+
+.toggler-target{
+    display: none;
+}
+
+.toggler-target.active{
+    display:block;
+}
