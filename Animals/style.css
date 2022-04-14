@@ -15,7 +15,8 @@
     
     grid-template-areas:
     "cuprins cuprins cuprins cuprins cuprins"
-
+    ". continut continut continut  ."
+    "footer footer footer footer footer "
     ;
      /* gap: 50px;  */
 }
@@ -31,8 +32,68 @@
     /* justify-self: right; */
    left: 15%;
 }
+.main{
+    grid-area: continut;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    /* height: 80%; */
+    grid-template-areas: 
+    "search items"
+    ;
+}
+.filterBar{
+ grid-area: search;
+ /* height: 80%; */
+ /* height: 80%; */
+ background : red;
+ /* justify-self: center;
+ align-self: center; */
+
+}
+.itemsContent{
+    grid-area:items;
+    background: yellow;
+    /* align-items: center; */
+
+    
+}
+.footer{
+    grid-area:footer;
+    background: blue;
+}
+
 
 @media only screen and (max-width: 1200px){
+
+    .gridBody{
+
+        display: grid;
+    
+        grid-template-columns:1.5em 280px 1fr 1fr 1.5em;
+        
+        grid-template-areas:
+        "cuprins cuprins cuprins cuprins cuprins"
+        "continut continut continut continut continut"
+        "footer footer footer footer footer "
+        ;
+         /* gap: 50px;  */
+    }
+    @media only screen and (max-width: 850px){
+        .main{
+            grid-area: continut;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            /* grid-template-rows: auto; */
+            /* height: 80%; */
+            grid-template-areas: 
+            "search search"
+            "items items"
+            ;
+            width:100%;
+        }
+    }
+
     .nav-menu{
         display:grid;
         grid-template-columns: auto;
