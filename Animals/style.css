@@ -24,6 +24,11 @@
     grid-area:cuprins;
         
 }
+
+
+
+
+
 .navbar{
     height: 80px;
 }
@@ -65,7 +70,23 @@
 .butt{
     display:none;
 }
+.categorieFiltru{
+    background-color: #212329;
+    /* text-shadow: #212329; */
+    color: grey;
+    /* padding: 2px;*/
+    box-shadow: 0 5px 25px 2px 
+               rgba(0,0,0,.33);
+    border-radius: 6px;
 
+}
+.filtre{
+    display: block;
+}
+.toggler{
+    box-shadow: 0 0 25px 10px 
+    rgba(0,0,0,.33);
+}
 @media only screen and (max-width: 1200px){
 
     .gridBody{
@@ -80,6 +101,10 @@
         "footer footer footer footer footer "
         ;
          /* gap: 50px;  */
+        
+    }
+    #myDIV{
+        display: block;
     }
     @media only screen and (max-width: 850px){
         .main{
@@ -94,6 +119,60 @@
             ;
             width:100%;
         }
+        .filtre{
+            display: block;
+        }
+        .butt{
+            background: #212329;
+            display: block;
+            color:coral;
+            /* justify-self: center;
+            align-items: center; */
+            
+        }
+        .filtbutt{
+            display: block;
+            width: 100%;
+            color:#212329;
+            border-radius: 10px;
+        }
+  
+        .filtbutt{
+          background-color: #222;
+          border-radius: 4px;
+          border-style: none;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1.5;
+          margin: 0;
+          max-width: none;
+          min-height: 44px;
+          min-width: 10px;
+          outline: none;
+          overflow: hidden;
+          padding: 9px 20px 8px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 100%;
+        }
+        
+        .filtbutt:hover,
+        .filtbutt:focus {
+          opacity: .75;
+        }
+
+
+
+
     }
 
     .nav-menu{
