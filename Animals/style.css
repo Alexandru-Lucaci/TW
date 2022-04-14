@@ -60,9 +60,11 @@
 }
 .footer{
     grid-area:footer;
-    background: blue;
+    background: red;
 }
-
+.butt{
+    display:none;
+}
 
 @media only screen and (max-width: 1200px){
 
@@ -83,7 +85,7 @@
         .main{
             grid-area: continut;
             display: grid;
-            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             /* grid-template-rows: auto; */
             /* height: 80%; */
             grid-template-areas: 
