@@ -84,7 +84,7 @@
         position:absolute;
         width:100%;
        /* to do  */
-        top: 80px;
+        top: 0;
      
         left:-100%;
         opacity:0;
@@ -172,7 +172,6 @@
     .menu-togle .bar{
         display:block;
         cursor: pointer;
-        
     }
     .menu-togle:hover{
         cursor: pointer;
