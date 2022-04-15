@@ -1,3 +1,5 @@
+
+
 function functionButt()
 {
     var x= document.getElementById("myDIV");
@@ -6,6 +8,8 @@ function functionButt()
         x.style.display="block";
     } else{ x.style.display="none";}
 }
+
+
 
 const todos= document.querySelectorAll(".todo");
 
