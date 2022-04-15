@@ -87,8 +87,32 @@
     box-shadow: 0 0 25px 10px 
     rgba(0,0,0,.33);
 }
+.itemsContent{
+    display:grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-areas: 
+    ". content ."
+    ;
+
+
+}
+.card{
+    grid-area: content;
+}
 @media only screen and (max-width: 1200px){
 
+    .itemsContent{
+        display:grid;
+        grid-template-columns: 0.2fr 6fr 0.2fr;
+        grid-template-areas: 
+        ". content ."
+        ;
+    
+    
+    }
+    .card{
+        grid-area: content;
+    }
     .gridBody{
 
         display: grid;
