@@ -131,6 +131,7 @@
         display: block;
     }
     @media only screen and (max-width: 850px){
+
         .main{
             grid-area: continut;
             display: grid;
@@ -221,5 +222,17 @@
         
         left:15%;
 
+    }
+        .itemsContent{
+        display:grid;
+        grid-template-columns: 0.5em 6fr 0.5em;
+        grid-template-areas: 
+        ". content ."
+        ;
+    
+    
+    }
+    .card{
+        grid-area: content;
     }
 }
