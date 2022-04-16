@@ -1,5 +1,32 @@
+.body{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "nav"
+    "image"
+    "form"
+    "footer"
+    ;
+}
 
+.content{
+    grid-area: nav;
+    height:80px;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+}
 
+.contact-image-container{
+    grid-area:image;
+}
+
+.contact-form-container{
+    grid-area:form;
+}
+.contact-information-grid{
+    grid-area:footer;
+}
 .contact-image-container {
     display: grid;
     justify-content: center;
@@ -7,6 +34,11 @@
 
 .contact-image-container>img{
     width: 100%;
+}
+.searchBar{
+    height: 30px;
+    /* justify-self: right; */
+   left: 15%;
 }
 
 .contact-form-container{
@@ -59,4 +91,34 @@ textarea {
     height: 15em;
     margin-top: 1em;
     padding: 1em;
+}
+
+@media screen and (max-width: 850px){
+    .search{
+        /* background: red; */
+        display:grid;
+        grid-template-columns: auto;
+        background:rgb(198, 24, 79);
+        margin:0;
+        width:100%;
+        position:absolute;
+        margin-left: 20px;
+        
+        left:15%;
+
+    }
+    .nav-menu{
+        display:grid;
+        grid-template-columns: auto;
+        background:rgb(198, 24, 79);
+        margin:0;
+        position:absolute;
+        width:100%;
+       /* to do  */
+        top: 80px;
+     
+        left:-100%;
+        opacity:0;
+        transition: all 0.5s ease;
+    }
 }

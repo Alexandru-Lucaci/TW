@@ -1,126 +1,164 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Menagerie on WEB contact information" />
+    <meta name="author" content="Ivan Remus" />
+    <meta name="author" content="Lucaci Alexandru-Constantin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Menagerie on WEB contact information" />
-        <meta name="author" content="Ivan Remus" />
-        <meta name="author" content="Lucaci Alexandru-Constantin" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
 
-        <title>Contact Us</title>
+    <link rel="icon" href="images/logoBlack.jpg" />
+    <link rel="stylesheet" href="styles\styleSearch.css" />
+    <link rel="stylesheet" href="styles\styleNavBar.css" />
+    <link rel="stylesheet" href="styles\styleFooter.css" />
+    <link rel="stylesheet" href="styles\styleContactPage.css" />
+  </head>
 
-        <link rel="icon" href="images/logoBlack.jpg" />
-        <link rel="stylesheet" href="styles\styleSearch.css" />
-        <link rel="stylesheet" href="styles\styleNavBar.css" />
-        <link rel="stylesheet" href="styles\styleFooter.css" />
-        <link rel="stylesheet" href="styles\styleContactPage.css" />
-
-    </head>
-
-    <body>
-
-        <div class="content">
-            <div class="nav-containter">
-              <nav class="navbar">
-                <div class="search">
-                  <div class="searchBar">
-                    <input class="search-txt" type="texr" name="" placeholder="Type to search" />
-                    <a class="search-bth" href="#"></a>
-                    <img src="icons\searchBar.svg" alt="SearchBarBtn" width="25" height="25" />
-                  </div>
-                </div>
-                <div class="menu-togle" id="mobile-menu">
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-      
-                </div>
-                <ul class="nav-menu">
-                  <li><a href="index.html" class="nav-links">Home</a></li>
-                  <li><a href="Animals\index.html" class="nav-links">Animals</a></li>
-                  <li><a href="about.html" class="nav-links">About</a></li>
-                  <li><a href="help.html" class="nav-links">Help</a></li>
-                  <li><a href="contact.html" class="nav-links nav-links-btn">Contact</a></li>
-                  <li><a href="" class="nav-links nav-links-btn">Login</a></li>
-                  <!-- <li><a href="" class="nav-links ">Login</a></li> -->
-                </ul>
-              </nav>
+  <body>
+    <div class="content">
+      <div class="nav-containter">
+        <nav class="navbar">
+          <div class="search">
+            <div class="searchBar">
+              <input
+                class="search-txt"
+                type="texr"
+                name=""
+                placeholder="Type to search"
+              />
+              <a class="search-bth" href="#"></a>
+              <img
+                src="icons\searchBar.svg"
+                alt="SearchBarBtn"
+                width="25"
+                height="25"
+              />
             </div>
+          </div>
+          <div class="menu-togle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-links">Home</a></li>
+            <li><a href="Animals\index.html" class="nav-links">Animals</a></li>
+            <li><a href="about.html" class="nav-links">About</a></li>
+            <li><a href="help.html" class="nav-links">Help</a></li>
+            <li>
+              <a href="contact.html" class="nav-links nav-links-btn">Contact</a>
+            </li>
+            <li><a href="" class="nav-links nav-links-btn">Login</a></li>
+            <!-- <li><a href="" class="nav-links ">Login</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- <br> -->
+
+    <div class="contact-image-container">
+      <img src="images\contactUs.jpg" alt="contact us image" />
+    </div>
+
+    <!-- <br /> -->
+
+    <div class="contact-form-container">
+      <div class="contact-title">
+        <p>Contact us</p>
+      </div>
+
+      <form class="contact-form-grid">
+        <label for="fname">First name</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Your name..."
+        />
+
+        <label for="lname">Last name</label>
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Your last name..."
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="emailaddress"
+          placeholder="Your email address..."
+        />
+
+        <label for="phone">First name</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phonenumber"
+          placeholder="Your phone number..."
+          pattern="[0-9]{10}"
+        />
+
+        <label for="subject">Subject</label>
+        <textarea
+          id="subject"
+          name="subject"
+          placeholder="Write something"
+        ></textarea>
+
+        <input type="submit" value="Send" />
+      </form>
+    </div>
+
+    <!-- <br /> -->
+
+    <div class="contact-information-grid">
+      <div class="contact-title">
+        <p>Contact info</p>
+      </div>
+
+      <div class="contact-details-grid">
+        <div class="contact-detail">
+          <p>
+            <strong>Address</strong> : Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nesciunt, saepe.
+          </p>
         </div>
 
-        <br>
-
-        <div class="contact-image-container">
-            <img src="images\contactUs.jpg" alt="contact us image">
+        <div class="contact-detail">
+          <p>
+            <strong>Administrator</strong> : Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Rem, veniam.
+          </p>
         </div>
 
-        <br>
-
-        <div class="contact-form-container">
-            <div class="contact-title">
-                <p>Contact us</p>
-            </div>
-
-            <form class="contact-form-grid">
-                <label for="fname">First name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name...">
-
-                <label for="lname">Last name</label>
-                <input type="text" id="lname" name="lastname" placeholder="Your last name...">
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="emailaddress" placeholder="Your email address...">
-
-                <label for="phone">First name</label>
-                <input type="tel" id="phone" name="phonenumber" placeholder="Your phone number..." pattern="[0-9]{10}">
-
-                <label for="subject">Subject</label>
-                <textarea id="subject" name="subject" placeholder="Write something"></textarea>
-
-                <input type="submit" value="Send">
-            </form>
-
+        <div class="contact-detail">
+          <p>
+            <strong>Phone number</strong> : Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Commodi, unde.
+          </p>
         </div>
 
-        <br>
-
-        <div class="contact-information-grid">
-            <div class="contact-title">
-                <p>Contact info</p>
-            </div>
-
-            <div class="contact-details-grid">
-                <div class="contact-detail">
-                    <p><strong>Address</strong> : Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, saepe.
-                    </p>
-                </div>
-
-                <div class="contact-detail">
-                    <p><strong>Administrator</strong> : Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
-                        veniam.
-                    </p>
-                </div>
-
-                <div class="contact-detail">
-                    <p><strong>Phone number</strong> : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi,
-                        unde.
-                    </p>
-                </div>
-
-                <div class="contact-detail">
-                    <p><strong>Facebook</strong> : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nihil!
-                    </p>
-                </div>
-
-                <div class="contact-detail">
-                    <p><strong>Email</strong> : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis,
-                        voluptatibus!
-                    </p>
-                </div>
-            </div>
+        <div class="contact-detail">
+          <p>
+            <strong>Facebook</strong> : Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Dolorem, nihil!
+          </p>
         </div>
-    </body>
-    <script src="javaScript\navBar.js"></script>
 
+        <div class="contact-detail">
+          <p>
+            <strong>Email</strong> : Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Omnis, voluptatibus!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="javaScript\navBar.js"></script>
 </html>
