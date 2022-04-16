@@ -100,20 +100,20 @@ body{
     line-height: 1.6;
     padding: 0.6em;
 }
-.nav-menu{
+/* .nav-menu{
     display:grid;
     grid-template-columns: auto;
     background:rgb(198, 24, 79);
     margin:0;
     position:absolute;
     width:100%;
-   /* to do  */
+   /* to do  
     top: 80px;
  
     left:-100%;
     opacity:0;
     transition: all 0.5s ease;
-}
+} */
 
 .about-card-container1>img{
     width: 80%;
