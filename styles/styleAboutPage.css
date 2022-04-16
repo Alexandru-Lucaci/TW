@@ -1,0 +1,76 @@
+.about-title > p{
+    text-align: center;
+    font-size: 5em;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 3px double #218AB3;
+}
+
+
+.about-information-grid{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    background-color: rgba(250, 226, 226, 0.89);
+}
+
+.about-info{
+    font-size:1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6em;
+    color:black;
+}
+
+.about-team-grid{
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: rgba(236, 206, 206, 0.89);
+}
+
+.about-cards-grid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.about-card-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(205, 208, 211);
+    padding: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.about-card-title{
+    color: black;
+    font-size: 1.7em;
+    text-align: left;
+}
+
+.about-card-info{
+    background-color: rgb(225, 226, 228);
+    color: black;
+    font-size: 1.4em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    padding: 0.6em;
+}
+
+
+.about-card-container1>img{
+    width: 80%;
+}
+
+@media screen and (max-width: 768px){
+    .about-cards-grid{
+        grid-template-columns: repeat(1 , 1fr);
+    }
+
+    .about-card-grid{
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}
+
+

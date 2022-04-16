@@ -1,0 +1,43 @@
+.contact-title > p{
+    text-align: center;
+    font-size: 5em;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 3px double #218AB3;
+}
+
+.contact-information-grid{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: rgba(250, 161, 161, 0.89);
+}
+
+.contact-details-grid{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: grid;
+    grid-template-columns: repeat(1 ,1fr);
+    row-gap: 2em;
+}
+
+.contact-detail{
+    color: black;
+    text-align: center;
+    font-size: 1.4em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+}
+
+.contact-detail>p{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgba(228, 184, 184, 0.89);
+}
+
+@media screen and (max-width: 728px){
+    .contact-detail>p{
+        margin-left: 4%;
+        margin-right: 4%;
+        background-color: rgba(228, 184, 184, 0.89);
+    }
+}

@@ -1,0 +1,62 @@
+
+
+.contact-image-container {
+    display: grid;
+    justify-content: center;
+}
+
+.contact-image-container>img{
+    width: 100%;
+}
+
+.contact-form-container{
+    display: grid;
+    justify-content: center;
+    background-color: rgba(247, 195, 84, 0.89);
+}
+
+.contact-title{
+    margin-bottom: 2em;
+}
+
+.contact-title > p{
+    text-align: center;
+    font-size: 5em;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 3px double #218AB3;
+}
+
+.contact-form-grid{
+    display: grid;
+    grid-template-columns: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=text],input[type=tel],input[type=email]{
+    width:95%;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+input[type=submit]{
+    cursor: pointer;
+    margin-top: 1em;
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(0, 145, 241);
+    color:white
+}
+
+input[type=submit]:hover{
+    background-color: rgb(12, 97, 153);
+    color:white;
+}
+
+textarea {
+    height: 15em;
+    margin-top: 1em;
+    padding: 1em;
+}
