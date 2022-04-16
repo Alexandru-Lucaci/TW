@@ -7,10 +7,14 @@
 *,*::befor,*::after{
     box-sizing: border-box;
 }
+.nav-container{
+    width: 100%;
+    background-color: white;
+}
 .gridBody{
 
     display: grid;
-
+    background-color: #212329;
     grid-template-columns:1.5em 280px 1fr 1fr 1.5em;
     /* grid-template-rows: auto auto auto auto auto; */
     grid-template-areas:
@@ -37,6 +41,7 @@
 .main{
     grid-area: continut;
     display: grid;
+    background-color: #212329;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto;
     /* height: 80%; */
@@ -82,7 +87,8 @@
     grid-area:items;
     display:grid;
     /* grid-template-rows: auto; */
-    background: yellow;
+    background: #212329;
+    color: rgb(182, 177, 177);
     /* display:grid; */
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: auto;
@@ -107,7 +113,8 @@
     display:grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: min-content ;
- 
+    box-shadow: 0 5px 55px 20px 
+        rgba(0,0,0,.33);
     
     grid-template-areas: 
     "img title"
@@ -141,7 +148,20 @@
 .card-content a{
     color:coral;
 }
-
+/* .nav-menu{
+    display:grid;
+    grid-template-columns: auto;
+    background:rgb(198, 24, 79);
+    margin:0;
+    position:absolute;
+    width:100%;
+   /* to do  
+    top: 80px;
+ 
+    left:-100%;
+    opacity:0;
+    transition: all 0.5s ease;
+} */
 @media only screen and (max-width: 1200px){
 
 
@@ -163,7 +183,8 @@
         grid-area:items;
         display:grid;
         /* grid-template-rows: auto; */
-        background: pink;
+        background-color: #212329;
+        color: rgb(182, 177, 177);
         /* display:grid; */
         grid-template-columns: 1fr 1fr ;
         grid-template-rows: auto;
@@ -185,6 +206,7 @@
     .card{
         /* grid-area: continutulfinal; */
         display:grid;
+        box-shadow: 0 0 1em rgba(0,0,0,0.5);
         grid-template-columns: 1fr 3fr;
         grid-template-rows: min-content ;
         grid-template-areas: 
@@ -203,7 +225,33 @@
         display: block;
     }
    
+    .nav-menu{
+        display:grid;
+        grid-template-columns: auto;
+        background:rgb(198, 24, 79);
+        margin:0;
+        position:absolute;
+        width:100%;
+       /* to do  */
+        top: 80px;
+     
+        left:-100%;
+        opacity:0;
+        transition: all 0.5s ease;
+    }
+    .search{
+        /* background: red; */
+        display:grid;
+        grid-template-columns: auto;
+        background:rgb(198, 24, 79);
+        margin:0;
+        width:100%;
+        position:absolute;
+        margin-left: 20px;
+        
+        left:15%;
 
+    }
     @media only screen and (max-width: 850px){
 
         .main{
@@ -314,7 +362,7 @@
         grid-template-columns: 1fr 3fr;
         grid-template-rows: min-content ;
      
-        
+        color: rgb(182, 177, 177);
         grid-template-areas: 
         "img img"
         "title title"
