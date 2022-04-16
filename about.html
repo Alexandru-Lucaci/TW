@@ -1,99 +1,200 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Menagerie on WEB about us" />
-        <meta name="author" content="Ivan Remus" />
-        <meta name="author" content="Lucaci Alexandru-Constantin" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Menagerie on WEB about us" />
+    <meta name="author" content="Ivan Remus" />
+    <meta name="author" content="Lucaci Alexandru-Constantin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>About Us</title>
+    <title>About Us</title>
 
-        <link rel="icon" href="images/logoBlack.jpg" />
+    <link rel="icon" href="images/logoBlack.jpg" />
 
-        <link rel="stylesheet" href="styles\styleFooter.css" />
-        <link rel="stylesheet" href="styles\styleAboutPage.css" />
-    </head>
+    <link rel="stylesheet" href="styles\styleFooter.css" />
 
-    <body>
+    <link rel="stylesheet" href="styles/styleSearch.css" />
+    <link rel="stylesheet" href="styles/styleNavBar.css" />
+    <link rel="stylesheet" href="styles\styleAboutPage.css" />
+  </head>
 
-        <div class="about-information-grid">
-            <div class="about-title">
-                <p>About us</p>
-            </div>
-            <div class="about-info">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nobis sint perferendis. Labore, asperiores ullam enim deserunt expedita nemo nostrum illo vero quas explicabo officia? Delectus minima asperiores sint facere, ut rem est porro temporibus molestias accusantium beatae impedit inventore numquam veniam distinctio hic error reprehenderit blanditiis optio. Cumque, eligendi?</p>
-            </div>        
-        </div>
-
-        <br>
-
-        <div class="about-team-grid">
-
-            <div class="about-title">
-                <p>Meet the team</p>
-            </div>
-    
-            <div class="about-cards-grid">
-    
-                <div class="about-card-grid">
-                    <div class="about-card-container1">
-                        <img src="images\unknownPerson.jpg" alt="unknown person">
-                        <div class="about-card-title">
-                            <p>Lucaci Alexandru-Constantin</p>
-                            <p>Web developer</p>
-                        </div>
-                    </div>
-    
-                    <div class="about-card-info">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam debitis officia placeat, eos consectetur, voluptatibus voluptate nobis cumque totam dolor ad reiciendis quidem neque sapiente odio sint itaque. Aperiam, inventore.</p>
-                    </div>
-                </div>
-    
-                <div class="about-card-grid">
-                    <div class="about-card-container1">
-                        <img src="images\unknownPerson.jpg" alt="unknown person">
-                        <div class="about-card-title">
-                            <p>Ivan Remus</p>
-                            <p>Web developer</p>
-                        </div>
-                    </div>
-    
-                    <div class="about-card-info">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, laborum libero cumque nostrum blanditiis neque quis, amet odit saepe tenetur magnam iste hic vero quos sed quibusdam eius tempora necessitatibus!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-information-grid">
-            <div class="contact-title">
-                <p>Contact info</p>
-            </div>
+  <body>
+    <div class="content">
+      <!-- <nav>
+                        <ul>
+                          <li><a href="">Home</a></li>
+                          <li><a href="">Products</a></li>
+                          <li><a href="">About</a></li>
+                          <li id="login"><a href="/login">Login</a></li>
+                          <li id="signup"><a href="/signup">Signup</a></li>
+                        </ul>
+                      </nav>
+                      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <ul class="mobile-menu">
+                          <li><a href="/home">Home</a></li>
+                          <li><a href="/products">Products</a></li>
+                          <li><a href="/about">About</a></li>
+                          <li id="login"><a href="/login">Login</a></li>
+                          <li id="signup"><a href="/signup">Signup</a></li>
+                        </ul>
+                      </div>
             
-            <div class="contact-details-grid">
-                <div class="contact-detail">
-                    <p><strong>Address</strong> : Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, saepe.</p>
-                </div>
-                
-                <div  class="contact-detail">
-                    <p><strong>Administrator</strong> : Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, veniam.</p>
-                </div>
-                
-                <div  class="contact-detail">
-                    <p><strong>Phone number</strong> : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, unde.</p>
-                </div>
-    
-                <div  class="contact-detail">
-                    <p><strong>Facebook</strong> : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nihil!</p>
-                </div>
-    
-                <div  class="contact-detail">
-                    <p><strong>Email</strong> : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, voluptatibus!</p>
-                </div>
+            
+                    <script>
+                      function toggleMobileMenu(menu) {
+                        menu.classList.toggle("open");
+                      }
+                    </script> -->
+
+      <div class="nav-containter">
+        <nav class="navbar">
+          <div class="search">
+            <div class="searchBar">
+              <input
+                class="search-txt"
+                type="texr"
+                name=""
+                placeholder="Type to search"
+              />
+              <a class="search-bth" href="#"></a>
+              <img
+                src="icons\searchBar.svg"
+                alt="SearchBarBtn"
+                width="25"
+                height="25"
+              />
             </div>
+          </div>
+          <div class="menu-togle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-links">Home</a></li>
+            <li><a href="Animals\index.html" class="nav-links">Animals</a></li>
+            <li><a href="about.html" class="nav-links">About</a></li>
+            <li><a href="help.html" class="nav-links">Help</a></li>
+            <li>
+              <a href="contact.html" class="nav-links nav-links-btn">Contact</a>
+            </li>
+            <li><a href="" class="nav-links nav-links-btn">Login</a></li>
+
+            <!-- <li><a href="" class="nav-links ">Login</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="about-information-grid">
+      <div class="about-title">
+        <p>About us</p>
+      </div>
+      <div class="about-info">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem nobis sint perferendis. Labore, asperiores ullam enim
+          deserunt expedita nemo nostrum illo vero quas explicabo officia?
+          Delectus minima asperiores sint facere, ut rem est porro temporibus
+          molestias accusantium beatae impedit inventore numquam veniam
+          distinctio hic error reprehenderit blanditiis optio. Cumque, eligendi?
+        </p>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="about-team-grid">
+      <div class="about-title">
+        <p>Meet the team</p>
+      </div>
+
+      <div class="about-cards-grid">
+        <div class="about-card-grid">
+          <div class="about-card-container1">
+            <img src="images\unknownPerson.jpg" alt="unknown person" />
+            <div class="about-card-title">
+              <p>Lucaci Alexandru-Constantin</p>
+              <p>Web developer</p>
+            </div>
+          </div>
+
+          <div class="about-card-info">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam
+              debitis officia placeat, eos consectetur, voluptatibus voluptate
+              nobis cumque totam dolor ad reiciendis quidem neque sapiente odio
+              sint itaque. Aperiam, inventore.
+            </p>
+          </div>
         </div>
 
-    </body>
-    <script src="javaScript/navBar.js"></script>
+        <div class="about-card-grid">
+          <div class="about-card-container1">
+            <img src="images\unknownPerson.jpg" alt="unknown person" />
+            <div class="about-card-title">
+              <p>Ivan Remus</p>
+              <p>Web developer</p>
+            </div>
+          </div>
+
+          <div class="about-card-info">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Voluptatem, laborum libero cumque nostrum blanditiis neque quis,
+              amet odit saepe tenetur magnam iste hic vero quos sed quibusdam
+              eius tempora necessitatibus!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-information-grid">
+      <div class="contact-title">
+        <p>Contact info</p>
+      </div>
+
+      <div class="contact-details-grid">
+        <div class="contact-detail">
+          <p>
+            <strong>Address</strong> : Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nesciunt, saepe.
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <p>
+            <strong>Administrator</strong> : Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Rem, veniam.
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <p>
+            <strong>Phone number</strong> : Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Commodi, unde.
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <p>
+            <strong>Facebook</strong> : Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Dolorem, nihil!
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <p>
+            <strong>Email</strong> : Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Omnis, voluptatibus!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="javaScript/navBar.js"></script>
 </html>

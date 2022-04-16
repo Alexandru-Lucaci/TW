@@ -145,20 +145,20 @@
 .card-content a{
     color:coral;
 }
-/* .nav-menu{
+.nav-menu{
     display:grid;
     grid-template-columns: auto;
     background:rgb(198, 24, 79);
     margin:0;
     position:absolute;
     width:100%;
-   /* to do  
+   /* /* to do   */
     top: 80px;
  
     left:-100%;
     opacity:0;
     transition: all 0.5s ease;
-} */
+}
 @media only screen and (max-width: 1200px){
 
 
