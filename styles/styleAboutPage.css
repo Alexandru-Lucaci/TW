@@ -28,6 +28,7 @@ body{
 .contact-information-grid{
     grid-area:information;
 }
+
 .about-title > p{
     text-align: center;
     font-size: 5em;
@@ -44,7 +45,7 @@ body{
 .searchBar{
     height: 30px;
     /* justify-self: right; */
-   left: 15%;
+    left: 15%;
 }
 
 .about-information-grid{
@@ -52,6 +53,7 @@ body{
     grid-template-columns: 100%;
     justify-content: center;
     background-color: rgba(250, 226, 226, 0.89);
+    row-gap: 3em;
 }
 /* .nav-menu{
     align-self: center;
@@ -67,6 +69,7 @@ body{
     display: grid;
     grid-template-columns: 100%;
     background-color: rgba(236, 206, 206, 0.89);
+    row-gap: 3em;
 }
 
 .about-cards-grid{

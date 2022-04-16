@@ -125,7 +125,7 @@
         /* background-color:rgb(198, 24, 79);*/
         background-color: coral;
         color:white;
-        transition: all 0.4 ease-out;
+        transition: all .4s ease-out;
     }
     .navbar{
         width:100%;
@@ -137,7 +137,7 @@
         background-color: #212329;
         /* width: 100%; */
         color: white;
-        transition: all 0.4s ease-out;
+        transition: all .4s ease-out;
         
     }
     .nav-links-btn:hover{
