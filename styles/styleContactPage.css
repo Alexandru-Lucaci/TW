@@ -13,8 +13,8 @@
     grid-area: nav;
     height:80px;
     display:grid;
-    justify-content: center;
-    align-content: center;
+     justify-content: center;
+    align-content: center; 
 }
 
 .contact-image-container{
@@ -37,9 +37,10 @@
 }
 .searchBar{
    height: 30px;
-    /* justify-self: right; */
+   
    left: 15%;
 }
+
 
 .contact-form-container{
     display: grid;
@@ -64,7 +65,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-input[type=text],input[type=tel],input[type=email]{
+.contact-form-container input[type=text],input[type=tel],input[type=email]{
     width:95%;
     padding: 1em;
     border: 1px solid gray;
@@ -93,9 +94,9 @@ textarea {
     padding: 1em;
 }
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 768px){
     .search{
-        /* background: red; */
+      
         display:grid;
         grid-template-columns: auto;
         background:rgb(198, 24, 79);
@@ -104,7 +105,7 @@ textarea {
         position:absolute;
         margin-left: 20px;
         
-        left:15%;
+        left:10%;
 
     }
     .nav-menu{
@@ -114,7 +115,7 @@ textarea {
         margin:0;
         position:absolute;
         width:100%;
-       /* to do  */
+       
         top: 80px;
      
         left:-100%;
