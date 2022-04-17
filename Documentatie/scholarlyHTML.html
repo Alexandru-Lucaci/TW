@@ -49,7 +49,14 @@
                 <h2>Cuprins</h2>
                 <ol>
                     <li>
-                        <a>Cerinta</a>
+                        <a>Introducere</a>
+                        <ul>
+                            <li><a>1.1 Cerinta si motivatie</a></li>
+                            <li><a>1.2 Convetii</a></li>
+                            <li><a>1.3 Audienta tinta si sugestii de citire</a></li>
+                            <li><a>1.4 Scop</a></li>
+                            <li><a>1.5 Referinte</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a>Descriere</a>
@@ -58,16 +65,12 @@
                             <li><a>2.2 Functionalitatile produsului</a></li>
                             <li><a>2.3 Clasele de utilizatori si caracteristici</a></li>
                             <li><a>2.4 Mediu de operare</a></li>
-                            <li><a>2.5 Constrângeri de proiectare și implementare</a></li>
                         </ul>
                     </li>
                     <li>
                         <a>Cerințe de interfață externă</a>
                         <ul>
-                            <li><a>3.1 Interfata utilizator</a></li>
-                            <li><a>3.2 Interfata hardware</a></li>
-                            <li><a>3.3 Interfata software</a></li>
-                            <li><a></a></li>
+                            <li><a>3.1 Interfete cu utilizatori</a></li>
                         </ul>
                     </li>
                     <li>
@@ -81,17 +84,51 @@
                             <li><a>4.6 Trimiterea unui formular prin intermediul sit-ului</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a>Referinte</a>
-                    </li>
                 </ol>
             </section>
 
             <section>
-                <h2>1. Cerinta</h2>
-                <p>
-                    Sa se implementeze o aplicatie Web menita a gestiona informatiile vizand o gradina zoologica. Se vor facilita redarea si managementul datelor despre animalele gazduite: denumire populara/stiintifica, descriere (de dorit, multilingva), origine, statut (e.g., specie protejata, pe cale de disparitie, daunatoare etc.), caracteristici (de exemplu, dependenta de clima, periculozitate, proprietati speciale), specii inrudite, dusmani naturali, imagini de interes, regim alimentar (vegetarian, carnivor, omnivor), mod de inmultire si altele. Se vor pune la dispozitie mecanisme de cautare/filtrare/prezentare multi-criteriala -- de pilda, afisarea tuturor mamiferelor cu blana de origine europeana ce pot fi dresate sau generarea unei liste de pasari/taratoare capabile sa supravietuiasca in conditii desertice. Datele vor putea fi importate/exportate via fisiere disponibile in formatele JSON si XML.
-                </p>
+                <h2>1. Introducere</h2>
+
+                <section>
+                    <h3>1.1 Cerinta si motivatie</h3>
+                    <p>
+                        Sa se implementeze o aplicatie Web menita a gestiona informatiile vizand o gradina zoologica. Se vor facilita redarea si managementul datelor despre animalele gazduite: denumire populara/stiintifica, descriere (de dorit, multilingva), origine, statut (e.g., specie protejata, pe cale de disparitie, daunatoare etc.), caracteristici (de exemplu, dependenta de clima, periculozitate, proprietati speciale), specii inrudite, dusmani naturali, imagini de interes, regim alimentar (vegetarian, carnivor, omnivor), mod de inmultire si altele. Se vor pune la dispozitie mecanisme de cautare/filtrare/prezentare multi-criteriala -- de pilda, afisarea tuturor mamiferelor cu blana de origine europeana ce pot fi dresate sau generarea unei liste de pasari/taratoare capabile sa supravietuiasca in conditii desertice. Datele vor putea fi importate/exportate via fisiere disponibile in formatele JSON si XML.
+                    </p>
+                    <p>
+                        
+                    </p>
+                </section>
+
+                <section>
+                    <h3>1.2 Convetii</h3>
+                    <p>
+                        Acest document este scris dupa formatul Scholarly HTML cu caractere de tip UTF-8.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>1.3 Audienta tinta si sugestii de citire</h3>
+                    <p>Acest document este destinat pentru dezvoltatori de tehnologii web,testeri si scriitori de documentatii.</p>
+                </section>
+
+                <section>
+                    <h3>1.4 Scop</h3>
+                    <p>Scopul acestui produs este de a face informatiile legate de gradina zoologica sa fie mai usor accesibile pentru publicul larg,si de a oferi mai multa popularitate gradinii zoologice</p>
+                </section>
+
+                <section>
+                    <h3>1.5 Referinte</h3>
+                    <ul>
+                        <li typeof="schema:WebPage" role="doc-biblioentry" resource="" property="schema:citation">
+                            <cite property="schema:name">
+                                <a href=""></a>
+                            </cite>
+                        </li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </section>
             </section>
 
             <section>
@@ -105,9 +142,11 @@
                     <h3>2.2 Functionalitatile produsului</h3>
                     <p>Functionalitatile pe care le ofera sit-ul sunt:</p>
                     <ul>
-                        <li>accesul la informatii despre gradina zoologica cum ar fi preturi,program</li>
+                        <li>accesul la informatii despre gradina zoologica cum ar fi preturi,program in 3 limbi(romana,engleza,franceza)</li>
                         <li>accesul la informatii despre animalele de la gradina zoologica si selectia lor pe baza unor criterii</li>
                         <li>permite crearea unui cont pe acest sit</li>
+                        <li>continutul se redimensioneaza corespunzator in functie de dimensiunea ecranului de pe care este vizualizat sit-ul</li>
+                        <li>trimiterea unui formular prin intermediul sit-ului</li>
                     </ul>
                 </section>
 
@@ -123,11 +162,9 @@
 
                 <section>
                     <h3>2.4 Mediu de operare</h3>
+                    <p>Acest produs poate functiona pe sistemele de operare Windows,Linux si Mac ,dar necesita un program care poate interpreta cod html,css si javascript pentru a putea functiona in mod corespunzator</p>
                 </section>
 
-                <section>
-                    <h3>2.5 Constrângeri de proiectare și implementare</h3>
-                </section>
             </section>
 
             <section>
@@ -202,16 +239,9 @@
                             
                         </p>
                     </section>
-                    
+
                 </section>
 
-                <section>
-                    <h3>3.2 Interfete hardware</h3>
-                </section>
-
-                <section>
-                    <h3>3.3 Interfete software</h3>
-                </section>
             </section>
 
             <section>
