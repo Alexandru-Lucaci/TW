@@ -49,8 +49,12 @@
 }
 
 
-
-
+.container span{
+  color: white;
+}
+.container span a{
+  color: white;
+}
 .footer{
   grid-area:footer;
 }
@@ -137,7 +141,9 @@ span.psw {
   }
 
 }
-
+label{
+  color: white;
+}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
