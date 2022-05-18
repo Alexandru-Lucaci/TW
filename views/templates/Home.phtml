@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <title>My MVC testing space</title>
+    </head>
+    <body>
+        <h1>List of users:</h1>
+        <?php foreach ($this->data as $user): ?>
+            <br>
+                <p>Username=<?=$user["USERNAME"]?></p>
+                <p>Password=<?=$user["PASSWORD"]?></p>
+            <br>
+        <?php endforeach; ?>
+    </body>
+</html>
