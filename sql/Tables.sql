@@ -1,4 +1,21 @@
+-- Fiind conectat la sysdba 
+
+
+
+
 drop table utilizatori;
+/
+drop table animale;
+/
+drop table imagini;
+/
+drop table descrieri;
+/
+drop table salvari;
+/
+drop table asocieri_imagini;
+/
+drop table asocieri_descrieri;
 /
 create table utilizatori(id number(38,0),
 nume_utilizator varchar2(20),
@@ -9,8 +26,7 @@ creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 /
-drop table salvari;
-/
+
 create table salvari(
 id_utilizator number(38,0),
 id_animal number(38,0),
@@ -18,8 +34,7 @@ creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 /
-drop table animale;
-/
+
 create table animale(
 id number(38,0),
 denumite_populara varchar2(50),
@@ -42,8 +57,7 @@ creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 
-drop table asocieri_imagini;
-/
+
 create table asocieri_imagini(
 id_imagine number(38,0),
 id_animal number(38,0),
@@ -51,16 +65,14 @@ creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 /
-drop table imagini;
-/
+
 create table imagini(
 id number(38,0),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 /
-drop table descrieri;
-/
+
 create table descrieri(
 id number(38,0),
 descriere varchar2(4000),
@@ -68,12 +80,13 @@ creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 /
-drop table asocieri_descrieri;
-/
+
 create table asocieri_descrieri(
 id_descriere number(38,0),
 id_animal number(38,0),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
+/
+
 
