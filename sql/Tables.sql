@@ -2,7 +2,7 @@
 CREATE USER TW_BD_ORACLE IDENTIFIED BY TW_BD_ORACLE DEFAULT TABLESPACE USERS TEMPORARY TABLESPACE TEMP;
  
  /
- ALTER USER TW_BD_ORACLE QUOTA 10240M ON USERS;
+ ALTER USER TW_BD_ORACLE QUOTA 100240M ON USERS;
 
 /
 GRANT CONNECT TO TW_BD_ORACLE;
@@ -121,6 +121,23 @@ creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 /
+
+drop table statistici_animale;
+/
+create table statistici_animale(
+id_animal number(38,0),
+nr_accesari integer default 0,
+nr_salvari integer default 0,
+nr_descarcari integer default 0
+);
+
+/
+drop table statistici_clase_animale;
+/
+create table statistici_clase_animale(
+clasa varchar2(20),
+nr_accesari integer default 0
+);
 
 --------------------------------------Insert utilizator
 CREATE OR REPLACE PROCEDURE adaugUtilizator( p_nume_utilizator in varchar2, p_parola in varchar2, p_email in varchar2, p_telefon in varchar2) AS
