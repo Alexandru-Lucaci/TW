@@ -9,7 +9,6 @@ creat_la date default sysdate,
 actualizat_la date default sysdate
 );
 /
-
 drop table salvari;
 /
 create table salvari(
@@ -18,7 +17,7 @@ id_animal number(38,0),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
-
+/
 drop table animale;
 /
 create table animale(
@@ -51,8 +50,15 @@ id_animal number(38,0),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
-
-
+/
+drop table imagini;
+/
+create table imagini(
+id number(38,0),
+creat_la date default sysdate,
+actualizat_la date default sysdate
+);
+/
 drop table descrieri;
 /
 create table descrieri(
@@ -61,7 +67,7 @@ descriere varchar2(4000),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
-
+/
 drop table asocieri_descrieri;
 /
 create table asocieri_descrieri(
@@ -70,10 +76,4 @@ id_animal number(38,0),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
-
-
-
-select table_name from user_tables;
-
-drop table testing;
 
