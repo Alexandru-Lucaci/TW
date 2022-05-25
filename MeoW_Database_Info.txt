@@ -44,26 +44,22 @@ Animals(Ce mult e aici....coloanele vor fi scrise in engleza ,cum si codul php e
 
 Pentru un animal vom salva informatiile:
 
--denumire populara
--denumire stintifica
+-denumire populara varchar2(50)
+-denumire stintifica varchar2(100)
 
--etimologie(de ce se cheama asa ...)
+-etimologie(de ce se cheama asa ...) varchar2(5000)
 
--descriere in limba RO
--descriere in limba EN
--poate inca o descriere in alta limba :)
+-origine varchar2(20)
+-clasa de animale varchar2(20)
 
--origine
--ceva mai bun decat regn de adaugat
-
--statut (specie protejata, pe cale de disparitie, daunatoare etc.)
+-specie invaziva?
 -stare de conservare
 
 -regim alimentar (vegetarian, carnivor, omnivor)
 -dieta
 
 -mod de inmultire(asexual,bisexual,etc)
--reproducere
+-reproducere(info despre modul de reproducere al acestora)
 
 -dezvolate
 
@@ -100,6 +96,22 @@ Tabela Images
 -image
 -created_at
 -updated_at
+
+
+Tabel Descrieri
+-description_id
+-animal_id
+-created_at
+-updated_at
+
+Moduri in care putem folosii PLSQL:
+
+-functii si proceduri pentru implementarea cautarii dupa camp si dupa selectia unor criterii
+-functii pentru logare si inregistrare
+-exportare fisiere XML/JSON
+-importarea fisierelor
+-salvarea pentru un user a acelor informatii despre animale
+
 
 
 
