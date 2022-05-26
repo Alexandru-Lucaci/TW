@@ -78,7 +78,7 @@ clasa varchar2(20),
 invaziva varchar2(20),
 stare_de_conservare varchar2(40),
 regim_alimentar varchar2(15),
-dieta varchar2(200),
+dieta varchar2(1300),
 mod_de_inmultire varchar2(30),
 reproducere varchar2(4000),
 dezvoltare varchar2(4000),
@@ -89,7 +89,7 @@ dusmani_naturali varchar2(1000),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
-
+/
 
 create table asocieri_imagini(
 id_imagine number(38,0),
@@ -148,7 +148,13 @@ begin
 
 end;
 /
-
+insert into utilizatori(id) values(0);
+INSERT INTO utilizatori(id, nume_utilizator, parola, email,telefon,creat_la, actualizat_la)
+values( (Select max(id) from utilizatori)+1, 'alexNou', 'parolaBuna', 'lucacialexandru18@gmail.com', '0745881174', sysdate, sysdate);
+/
+INSERT INTO utilizatori(id, nume_utilizator, parola, email,telefon,creat_la, actualizat_la)
+values( (Select max(id) from utilizatori)+1, 'HiImAlex', 'parolaBuna', 'lucacialexandru18@gmail.com', '0745881174', sysdate, sysdate);
+/
 adaugUtilizator('numeInteligent', 'parolaInteligenta', 'nume@yahoo.com', '0032123141231');
 /
 set serveroutput on;
@@ -257,16 +263,43 @@ adaugUtilizator('clifford.rodriguez','c0bte28p','cara.durgan@hotmail.com','029-7
 
 end;
 /
-INSERT INTO utilizatori(id, nume_utilizator, parola, email,telefon,creat_la, actualizat_la)
-values( (Select max(id) from utilizatori)+1, 'alexNou', 'parolaBuna', 'lucacialexandru18@gmail.com', '0745881174', sysdate, sysdate);
+
+
+insert into animale(id) values (0);
+
+CREATE OR REPLACE PROCEDURE adaugAnimal( p_den_pop in varchar2, p_den_sting in varchar2, p_mini_desc in varchar2, p_etimologie in varchar2, p_origine in varchar2, p_clasa in varchar2,p_invaziva in varchar2, p_str_conservare in varchar2,p_regim_alimentar in varchar2, p_dieta in varchar2, p_mod_inm in varchar2, p_reproducere in varchar2, p_dezvoltare in varchar2,p_viata in varchar2, p_mortalitate varchar2, p_istorie in varchar2,p_dusmani in varchar2 ) AS
+begin
+    INSERT INTO animale
+    values( (Select max(id) from animale)+1, p_den_pop, p_den_sting , p_mini_desc,p_etimologie,p_origine,p_clasa,p_invaziva,p_str_conservare,p_regim_alimentar,p_dieta,p_mod_inm,p_reproducere, p_dezvoltare,p_viata,p_mortalitate,p_istorie,p_dusmani,sysdate, sysdate);
+end;
 /
-INSERT INTO utilizatori(id, nume_utilizator, parola, email,telefon,creat_la, actualizat_la)
-values( (Select max(id) from utilizatori)+1, 'HiImAlex', 'parolaBuna', 'lucacialexandru18@gmail.com', '0745881174', sysdate, sysdate);
-/
+
 
 
 
 
 Select * from utilizatori;
 /
+
+
+
+
+
+--begin
+--adaugAnimal('Tigru','Panthera tigris',
+--'Tigrul este o specie de mamifere carnivore din familia felidelor, fiind una dintre cele patru specii ale genului Panthera. Este cel mai mare reprezentant al subfamiliei Pantherinae ?i unul dintre cei mai mari rãpitori tere?tri.',
+--'Din francezã tigre, care provine din latin tigris . De origine iraniana.',
+--'Asia',
+--'mamifer',
+--'Da',
+--'protejata',
+--'carnivor', 'Dieta tigrului consta din diverse specii de ungulate mari. In cazuri rare, tigrii ataca tapiriile malayene, elefantii indieni si rinocerii tineri indieni. Tigrii ataca in mod regulat si mananca ursi bruni, ursi negri asiatici si ursi lenesi (Melursus ursinu).','asexualã',
+--'
+--
+--
+--);
+
+
+--end;
+
 
