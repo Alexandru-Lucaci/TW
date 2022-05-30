@@ -149,6 +149,9 @@ end;
 
 
 --pentru schimbare valoare camp
+
+select * from utilizatori where nume_utilizator='tre';
+
 select name,line,text from user_source where lower(name)='schimbare_camp_utilizator' order by line asc;
 declare
     v_nume_utilizator varchar2(100):='paul';

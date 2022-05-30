@@ -63,35 +63,52 @@ end;
 
 ----------------posibil cu mult mai usor in php-------------------
 
-create or replace procedure extragere_cuvinte(p_cuvinte varchar2)
+--presupunem ca primim un sir de cuvinte cel putin 2,separate prin virgule
+--primul cuvant reprezinta valoarea campului si restul valorile posibile ale acelui camp
+--presupunem ca avem doar egalitati cu tipuri varchar2
+--returneaza un sir care are nume_camp=cuvant_1 or ... or nume_camp=cuvant_n
+create or replace function extragere_cuvinte(p_cuvinte varchar2)
+return varchar2
 as
     v_nr_cuvinte integer;
     
-    TYPE lista_cuvinte IS TABLE OF varchar2(100);    
-    cuvinte lista_cuvinte := lista_cuvinte();
+    v_valoare_camp varchar2(100);
+    v_nume_camp varchar2(100);
     
-    v_cuvant varchar2(100);
+    v_rezultat varchar2(1000):='';
 begin
+    --calculeaza numar de cuvinte si ,daca sunt mai putin de 2,iesi
     select regexp_count(p_cuvinte,',')+1 into v_nr_cuvinte from dual;
+    if(v_nr_cuvinte<2)then
+        return null;
+    end if;
     
-    for v_pozitie in 1..v_nr_cuvinte loop
-        select regexp_substr(p_cuvinte,'[^,]+',1,v_pozitie) into v_cuvant from dual;
+    --asigneaza valoarea corespunzatoare pentru v_nume_camp
+    select regexp_substr(p_cuvinte,'[^,]+',1,1) into v_nume_camp from dual;
+    
+    for v_pozitie in 2..v_nr_cuvinte loop
+        --extragere valoare camp
+        select regexp_substr(p_cuvinte,'[^,]+',1,v_pozitie) into v_valoare_camp from dual;
         
-        cuvinte.extend;
-        cuvinte(v_pozitie):=v_cuvant;
+        --concatenare
+        if(v_pozitie!=2)then
+            v_rezultat:=v_rezultat||' or ';
+        end if;
+        
+        v_rezultat:=v_rezultat||'lower(trim('||v_nume_camp||'))'||' = lower('||chr(39)||v_valoare_camp||chr(39)||')';
     end loop;
     
-        
-    for v_pozitie in 1..v_nr_cuvinte loop
-        dbms_output.put_line(cuvinte(v_pozitie));
-    end loop;   
-    
+    return v_rezultat;    
 end;
 
+---functie cautare multi-criteriala
+
+set serveroutput on;
+
 declare
-    v_cuvinte varchar2(100):='remus,alo,hey'; 
+    v_cuvinte varchar2(100):='remus,alo,hey,wut'; 
 begin
-    extragere_cuvinte(v_cuvinte);
+    dbms_output.put_line(extragere_cuvinte(v_cuvinte));
 end;
 
 create or replace procedure cautare_dupa_criterii(p_clasa varchar2)
