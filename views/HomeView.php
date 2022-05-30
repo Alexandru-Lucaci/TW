@@ -6,9 +6,7 @@ class HomeView extends View{
         parent::__construct("views/templates/Home.phtml");
     }
 
-    function show($usersInfo){
-
-        $this->data = $usersInfo;
+    function show(){
 
         return $this->output();
     }
