@@ -60,11 +60,50 @@ begin
     act_statistici_descarcari(v_id_utilizator,v_id_animal);    
 end;
 
-create or replace procedure cautare_dupa_criterii(p_clasa varchar2,p_originne varchar2,p_stare_de_conservare varchar2,p_regim_alimentar varchar2,p_mod_de_inmultire varchar2)
+
+----------------posibil cu mult mai usor in php-------------------
+
+create or replace procedure extragere_cuvinte(p_cuvinte varchar2)
 as
+    v_nr_cuvinte integer;
+    
+    TYPE lista_cuvinte IS TABLE OF varchar2(100);    
+    cuvinte lista_cuvinte := lista_cuvinte();
+    
+    v_cuvant varchar2(100);
 begin
+    select regexp_count(p_cuvinte,',')+1 into v_nr_cuvinte from dual;
+    
+    for v_pozitie in 1..v_nr_cuvinte loop
+        select regexp_substr(p_cuvinte,'[^,]+',1,v_pozitie) into v_cuvant from dual;
+        
+        cuvinte.extend;
+        cuvinte(v_pozitie):=v_cuvant;
+    end loop;
+    
+        
+    for v_pozitie in 1..v_nr_cuvinte loop
+        dbms_output.put_line(cuvinte(v_pozitie));
+    end loop;   
     
 end;
+
+declare
+    v_cuvinte varchar2(100):='remus,alo,hey'; 
+begin
+    extragere_cuvinte(v_cuvinte);
+end;
+
+create or replace procedure cautare_dupa_criterii(p_clasa varchar2)
+as
+    v_nr_cuvinte integer ;
+    
+begin
+    select regexp_count(p_clase,',')+1 into v_nr_cuvinte; 
+    
+end;
+
+
 
 --test
 declare

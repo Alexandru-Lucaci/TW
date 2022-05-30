@@ -41,3 +41,27 @@ begin
     --actualizare numarul de accesari ai clasei din care face parte animalul
     act_statistici_clase_animale(p_id_animal);
 end;
+
+create or replace procedure act_statistici_accesari_animal(p_nume_animal varchar2)
+as
+    v_id_animal animale.id%type;
+begin
+    begin
+        select id into v_id_animal from animale where lower(trim(p_nume_animal))=lower(trim(denumire_populara));
+    exception
+        when no_data_found then
+        return;
+    end;
+    
+    update animale set nr_accesari=nr_accesari+1 where id=v_id_animal;
+end;
+
+---test
+
+declare
+    v_nume_animal varchar2(100):='tigru';
+begin
+    act_statistici_accesari_animal(v_nume_animal);
+end;
+
+select nr_accesari from animale;
