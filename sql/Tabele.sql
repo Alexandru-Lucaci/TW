@@ -141,6 +141,8 @@ foreign key(id_animal) references animale(id)
 create table statistici_clase_animale(
 clasa varchar2(20),
 nr_accesari integer default 0,
+creat_la date default sysdate,
+actualizat_la date default sysdate,
 primary key(clasa)
 );
 

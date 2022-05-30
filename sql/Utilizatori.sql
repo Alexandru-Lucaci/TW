@@ -2,7 +2,7 @@ create or replace procedure inregistrare(p_nume_utilizator varchar2,p_parola var
 as
     v_nr integer;
     
-    v_id utilizatori.id%type;
+    v_id utilizatori.id%type;d
 begin
     --alternativ,facem insert direct si daca apare exceptia DUP_VAL_ON_INDEX atunci sa spun ca numele e luat
     

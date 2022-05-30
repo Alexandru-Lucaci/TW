@@ -9,3 +9,7 @@
 30-MAY-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=104 , nume_utilizator=paul , parola=paul , email= , telefon=
 30-MAY-22 : Un utilizator cu atributele id=104 , nume_utilizator=paul , parola=paul , email= , telefon= a fost sters
 30-MAY-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=104 , nume_utilizator=paul , parola=paul , email= , telefon=
+30-MAY-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=0
+30-MAY-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=0
+30-MAY-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=0
+30-MAY-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=0
