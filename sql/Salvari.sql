@@ -67,7 +67,10 @@ end;
 --primul cuvant reprezinta valoarea campului si restul valorile posibile ale acelui camp
 --presupunem ca avem doar egalitati cu tipuri varchar2
 --returneaza un sir care are nume_camp=cuvant_1 or ... or nume_camp=cuvant_n
-create or replace function extragere_cuvinte(p_cuvinte varchar2)
+
+drop function extragere_cuvinte;
+
+create or replace function extragere_expresie(p_cuvinte varchar2)
 return varchar2
 as
     v_nr_cuvinte integer;
@@ -102,27 +105,112 @@ begin
 end;
 
 ---functie cautare multi-criteriala
+--primeste un sir care are informatii despre valorile si numele criteriului
+--daca sunt mai multe criterii,aceste informatii sunt separate folosind #
+--# va fi un character de marcaj pentru unde se separa criteriile
+create or replace procedure cautare_multicriteriala(p_sir varchar2)
+as
+    v_sql varchar2(2000):='select denumire_populara,origine,clasa from animale where ';
+    
+    v_nr_criterii integer;
+    
+    v_cuvinte varchar2(200);
+    
+    v_expresie varchar2(500);
+    
+    v_id_cursor integer;
+    v_ok integer;
+    
+    v_denumire_populara varchar2(50);
+    v_clasa varchar2(20);
+    v_origine varchar2(20);
+begin
+    --obtinere numar de criterii
+    select regexp_count(p_sir,'#')+1 into v_nr_criterii from dual;
+    
+    --scriere expresie pentru clauza where in functie de criterile din sir
+    for v_pozitie in 1..v_nr_criterii loop
+        
+        if(v_pozitie!=1)then
+            v_sql:=v_sql||' and ';
+        end if;
+        
+        v_sql:=v_sql||'( ';
+        
+        --obtine valorile si numele campului pentru un criteriu
+        select regexp_substr(p_sir,'[^#]+',1,v_pozitie) into v_cuvinte from dual;
+        
+        --obtine acestea intr-o expresie logica
+        v_expresie:=extragere_expresie(v_cuvinte);
+        
+        --adaugare la cod sql
+        v_sql:=v_sql||v_expresie;
+        
+        v_sql:=v_sql||' )';
+        
+    end loop;
+    
+    --folosim dbms_sql pentru a face selectia multicriteriala
+    
+    v_id_cursor:=dbms_sql.open_cursor;
+    dbms_sql.parse(v_id_cursor,v_sql,dbms_sql.native);
+    dbms_sql.define_column(v_id_cursor,1,v_denumire_populara,100);
+    dbms_sql.define_column(v_id_cursor,2,v_origine,20);
+    dbms_sql.define_column(v_id_cursor,3,v_clasa,20);
+    v_ok:=dbms_sql.execute(v_id_cursor);
+    
+    loop
+        if(dbms_sql.fetch_rows(v_id_cursor)>0)then
+            dbms_sql.column_value(v_id_cursor,1,v_denumire_populara);
+            dbms_sql.column_value(v_id_cursor,2,v_origine);
+            dbms_sql.column_value(v_id_cursor,3,v_clasa);
+            dbms_output.put_line(v_denumire_populara||' cu origine '||v_origine||', clasa '||v_clasa);
+        else
+            exit;
+        end if;
+    end loop;
+    
+end;
+--populare animale cu niste date de test
+
+delete from animale where id=0;
+
+delete from animale;
+
+describe animale;
+
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(1,'tigru','tigris','a','asia','mamifere');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(2,'leu','leus','a','asia','mamifere');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(3,'bivol','bivolis bivo','a','europe','mamifere');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(4,'squirrel','a','a','europe','mamifere');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(5,'broasca','a','a','america','amfibieni');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(6,'vaduva neagra','a','a','australia','arahnide');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(7,'huntsman','a','a','australia','arahnide');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(8,'musca','musca','a','europe','insecte');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(9,'soparla','a','a','asia','reptile');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(10,'tantar','a','a','asia','insecte');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(11,'albine','a','a','europe','insecte');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(12,'elefant','a','a','africa','manifer');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(13,'bufnita','a','a','europa','pasari');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(14,'gondor','a','a','africa','pasari');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(15,'peste-balon','a','a','australia','pesti');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(16,'ton','tigris','a','america','pesti');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(17,'polichet','tigris','a','asia','polichete');
+
+--test
+
+select * from animale;
+
+declare
+    v_sir varchar2(1000):='denumire_stintifica,a#origine,europa';
+begin
+    cautare_multicriteriala(v_sir);
+end;
+
+update animale set origine='europa' where origine='europe';
 
 set serveroutput on;
 
-declare
-    v_cuvinte varchar2(100):='remus,alo,hey,wut'; 
-begin
-    dbms_output.put_line(extragere_cuvinte(v_cuvinte));
-end;
-
-create or replace procedure cautare_dupa_criterii(p_clasa varchar2)
-as
-    v_nr_cuvinte integer ;
-    
-begin
-    select regexp_count(p_clase,',')+1 into v_nr_cuvinte; 
-    
-end;
-
-
-
---test
 declare
     v_nume_utilizator varchar2(100):='remus';
     v_nume_animal varchar2(100):='tigru';

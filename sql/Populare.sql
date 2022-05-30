@@ -190,5 +190,4 @@ begin
     adaugare_animal(denumire_populara,denumire_stintifica,mini_descriere,etimologie,origine,clasa,invaziva,stare_de_conservare,regim_alimentar,dieta,mod_de_inmultire,reproducere,dezvoltare,viata,mortalitate,istorie,dusmani_naturali);
 end;
 
-
 ------testing
