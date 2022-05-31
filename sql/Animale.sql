@@ -3,3 +3,5 @@
 --testing
 
 select * from animale;
+
+describe animale;

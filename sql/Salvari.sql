@@ -106,11 +106,13 @@ end;
 
 ---functie cautare multi-criteriala
 --primeste un sir care are informatii despre valorile si numele criteriului
---daca sunt mai multe criterii,aceste informatii sunt separate folosind #
---# va fi un character de marcaj pentru unde se separa criteriile
-create or replace procedure cautare_multicriteriala(p_sir varchar2)
+--format p_sir : criteriu1,valoare1,valoare2,...#crieteriu2,valoare1,valoare2,...
+--p_rezultat este un sir de caractere care va contine informatiile despre animalele care indeplinesc criteriile
+--format p_rezultat : denumire_populara=valoare,denumire_stintifica=valoare,mini_descriere=valoare#...
+--v_raspuns va fi OK daca a fost gasit macar un rezultat, 'Empty' daca nu exista rezultate si altfel mesaje de eroare specifice
+create or replace procedure cautare_multicriteriala(p_sir varchar2,p_rezultat IN OUT varchar2,p_raspuns IN OUT varchar2)
 as
-    v_sql varchar2(2000):='select denumire_populara,origine,clasa from animale where ';
+    v_sql varchar2(2000):='select denumire_populara,denumire_stintifica,mini_descriere from animale where ';
     
     v_nr_criterii integer;
     
@@ -122,9 +124,19 @@ as
     v_ok integer;
     
     v_denumire_populara varchar2(50);
-    v_clasa varchar2(20);
-    v_origine varchar2(20);
+    v_denumire_stintifica varchar2(100);
+    v_mini_descriere varchar2(500);
+    
+    v_nr_animale integer := 0;
+    
+    --setari pentru rezultat
+    v_separator_linii character := '#';
+    v_separator_valori character := ',';
 begin
+    
+    p_raspuns:='OK';
+    p_rezultat:='';
+    
     --obtinere numar de criterii
     select regexp_count(p_sir,'#')+1 into v_nr_criterii from dual;
     
@@ -154,23 +166,37 @@ begin
     
     v_id_cursor:=dbms_sql.open_cursor;
     dbms_sql.parse(v_id_cursor,v_sql,dbms_sql.native);
-    dbms_sql.define_column(v_id_cursor,1,v_denumire_populara,100);
-    dbms_sql.define_column(v_id_cursor,2,v_origine,20);
-    dbms_sql.define_column(v_id_cursor,3,v_clasa,20);
+    dbms_sql.define_column(v_id_cursor,1,v_denumire_populara,50);
+    dbms_sql.define_column(v_id_cursor,2,v_denumire_stintifica,100);
+    dbms_sql.define_column(v_id_cursor,3,v_mini_descriere,500);
     v_ok:=dbms_sql.execute(v_id_cursor);
     
     loop
         if(dbms_sql.fetch_rows(v_id_cursor)>0)then
+            v_nr_animale:=v_nr_animale+1;
+            if(v_nr_animale!=1)then
+                p_rezultat:=p_rezultat||v_separator_linii;
+            end if;
+            
+            --concatenare valori pentru linie
             dbms_sql.column_value(v_id_cursor,1,v_denumire_populara);
-            dbms_sql.column_value(v_id_cursor,2,v_origine);
-            dbms_sql.column_value(v_id_cursor,3,v_clasa);
-            dbms_output.put_line(v_denumire_populara||' cu origine '||v_origine||', clasa '||v_clasa);
+            dbms_sql.column_value(v_id_cursor,2,v_denumire_stintifica);
+            dbms_sql.column_value(v_id_cursor,3,v_mini_descriere);
+            p_rezultat:=p_rezultat||'denumire_populara='||v_denumire_populara||v_separator_valori||'denumire_stintifica='||v_denumire_stintifica||v_separator_valori||'mini_descriere='||v_mini_descriere;
+            --dbms_output.put_line(v_denumire_populara||' cu origine '||v_origine||', clasa '||v_clasa);
         else
             exit;
         end if;
     end loop;
     
+    if(v_nr_animale=0)then
+        p_raspuns:='Empty';
+    end if;
+    
 end;
+
+select line,text from user_source where lower(trim(name))='cautare_multicriteriala';
+
 --populare animale cu niste date de test
 
 delete from animale where id=0;
@@ -201,10 +227,15 @@ insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,orig
 
 select * from animale;
 
+set serveroutput on;
+
 declare
-    v_sir varchar2(1000):='denumire_stintifica,a#origine,europa';
+    v_sir varchar2(1000):='origine,asia';
+    v_rezultat varchar2(2000);
+    v_raspuns varchar2(4000);
 begin
-    cautare_multicriteriala(v_sir);
+    cautare_multicriteriala(v_sir,v_rezultat,v_raspuns);
+    dbms_output.put_line(v_rezultat);
 end;
 
 update animale set origine='europa' where origine='europe';
