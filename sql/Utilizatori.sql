@@ -2,7 +2,7 @@ create or replace procedure inregistrare(p_nume_utilizator varchar2,p_parola var
 as
     v_nr integer;
     
-    v_id utilizatori.id%type;d
+    v_id utilizatori.id%type;
 begin
     --alternativ,facem insert direct si daca apare exceptia DUP_VAL_ON_INDEX atunci sa spun ca numele e luat
     
@@ -10,7 +10,7 @@ begin
     select count(*) into v_nr from utilizatori where trim(p_nume_utilizator)=trim(nume_utilizator);
     
     if(v_nr!=0) then
-        p_raspuns:='Numele de utilizator nu este disponibil';
+        p_raspuns:='Username is not available(taken)';
         return ;
     end if;
     
@@ -33,15 +33,16 @@ begin
         select parola into v_parola from utilizatori where trim(p_nume_utilizator)=trim(nume_utilizator);
     exception
         when no_data_found then
-        p_raspuns:='Nu exista un utilizator cu acest nume';
+        p_raspuns:='The username '||chr(39)||p_nume_utilizator||chr(39)||' does not exist';
         return;
     end;
     
     if(v_parola!=p_parola_trimisa) then
-        p_raspuns:='Parola incorecta';
+        p_raspuns:='Wrong password';
+        return;
     end if;
     
-    return 'OK';
+    p_raspuns:='OK';
 end;
 
 create or replace procedure sterge_utilizator(p_nume_utilizator varchar2,p_raspuns OUT varchar2)
@@ -50,7 +51,7 @@ begin
     delete from utilizatori where trim(nume_utilizator)=trim(p_nume_utilizator);
     
     if(SQL%ROWCOUNT=0) then
-        p_raspuns:='Nu exista un utilizator cu acest nume';
+        p_raspuns:='The user with the username '||chr(39)||p_nume_utilizator||chr(39)||' does not exist';
         return;
     end if;
     
@@ -76,29 +77,29 @@ begin
     select count(*) into v_nr from utilizatori where trim(p_nume_utilizator)=trim(nume_utilizator);
     
     if(v_nr=0)then
-        p_raspuns:='Nu exista un utilizator cu acest nume';
+        p_raspuns:='The username '||chr(39)||p_nume_utilizator||chr(39)||' does not exist';
         return;
     end if;
 
     if(p_nume_camp is null)then
-        p_raspuns:='Numele campului modificat este null';
+        p_raspuns:='The name of the field to be modified is null';
         return;
     end if;
     
     v_nume_camp:=lower(trim(p_nume_camp));
     
     if(v_nume_camp!='nume_utilizator' and v_nume_camp!='parola' and v_nume_camp!='email' and v_nume_camp!='telefon') then
-        p_raspuns:='Numele campului nu este recunoscut';
+        p_raspuns:='The name of the field is not valid.Consider choosing between:nume_utilizator,parola,email,telefon';
         return;
     end if;
     
     if(p_valoare_camp is null)then
-        p_raspuns:='Valoarea campului este nula';
+        p_raspuns:='The field value is null';
         return;
     end if;
     
     if(length(p_valoare_camp)=0)then
-        p_raspuns:='Valoarea campului este goala';
+        p_raspuns:='The field value is empty';
         return;
     end if;
     
@@ -107,7 +108,7 @@ begin
         select count(*) into v_nr from utilizatori where trim(p_valoare_camp)=trim(nume_utilizator);
     
         if(v_nr!=0)then
-            p_raspuns:='Numele de utilizator introdus nu mai este disponibil';
+            p_raspuns:='The username '||chr(39)||p_nume_utilizator||chr(39)||'is not available(taken)';
             return;
         end if;
     end if;
@@ -149,6 +150,11 @@ end;
 
 
 --pentru schimbare valoare camp
+
+delete from utilizatori;
+select * from utilizatori;
+
+select * from animale;
 
 select * from utilizatori where nume_utilizator='tre';
 

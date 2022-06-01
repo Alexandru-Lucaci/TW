@@ -1,4 +1,10 @@
 <?PHP
+
+    session_start();
+    if(!isset($_SESSION['loggedIn'])){
+        $_SESSION['loggedIn']=0;
+    }
+
     define ('DS', DIRECTORY_SEPARATOR);
     define ('HOME', dirname(__FILE__));
 

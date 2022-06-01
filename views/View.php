@@ -23,6 +23,8 @@
                 throw new Exception("Template " . $this->template . " doesn't exist.");
             }
 
+            $data=$this->data;
+
             ob_start();
             include($this->template);
             $output = ob_get_contents();

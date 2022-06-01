@@ -17,3 +17,120 @@
 30-MAY-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=105 , nume_utilizator=ana , parola=ana , email= , telefon=
 30-MAY-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=106 , nume_utilizator=tre , parola=tre , email=aala , telefon=
 30-MAY-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=0
+01-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=107 , nume_utilizator=are , parola=are , email= , telefon=
+01-JUN-22 : Un utilizator cu atributele id=82 , nume_utilizator=daryl.wolff , parola=ouxsbfmgggwda , email=roslyn.stanton@gmail.com , telefon=825.172.3674 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=83 , nume_utilizator=wilson.kuvalis , parola=i8dz544wsr74hv , email=kasie.gleason@yahoo.com , telefon=(163) 963-5982 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=84 , nume_utilizator=vern.deckow , parola=pviarc8p1 , email=kirstin.lang@yahoo.com , telefon=857-268-7236 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=85 , nume_utilizator=kelsey.kilback , parola=duyjn2391v , email=wilhelmina.schroeder@gmail.com , telefon=1-226-189-5923 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=86 , nume_utilizator=emmitt.lind , parola=rdprrppfgkr1wu , email=cherish.kreiger@hotmail.com , telefon=440-289-4088 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=87 , nume_utilizator=merle.collins , parola=fq6j638lffbdlw , email=antony.wiza@hotmail.com , telefon=1-344-267-5097 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=88 , nume_utilizator=hoyt.pacocha , parola=cn6yiovua , email=shayne.carter@hotmail.com , telefon=408.485.9696 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=89 , nume_utilizator=rickey.heller , parola=nxqerkuw4x , email=wendolyn.dare@yahoo.com , telefon=858-892-8745 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=90 , nume_utilizator=carlos.kertzmann , parola=f7pul5bgwh , email=thalia.rogahn@yahoo.com , telefon=020-594-2875 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=91 , nume_utilizator=ginette.fadel , parola=5d61ctwahh20 , email=grant.thompson@hotmail.com , telefon=(485) 404-5837 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=92 , nume_utilizator=marcos.thompson , parola=kltarnrpwrm , email=angelo.stokes@gmail.com , telefon=646.490.0842 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=93 , nume_utilizator=jeromy.bogan , parola=s594r7l1joyd , email=shila.murazik@hotmail.com , telefon=1-545-023-3471 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=94 , nume_utilizator=jamel.connelly , parola=jxqe0qk0aov2lh , email=breann.nikolaus@yahoo.com , telefon=809-711-9844 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=95 , nume_utilizator=diego.smitham , parola=jtik26quux2 , email=deangelo.hamill@yahoo.com , telefon=784.053.1711 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=96 , nume_utilizator=blake.okuneva , parola=zapqfgesasypf8 , email=anton.ebert@gmail.com , telefon=903.582.2689 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=97 , nume_utilizator=michal.feeney , parola=ys8rgo2t9z , email=britt.schneider@hotmail.com , telefon=1-521-845-1012 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=98 , nume_utilizator=geri.schroeder , parola=24sov5bsr1l82v , email=celeste.weimann@gmail.com , telefon=1-767-512-9689 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=99 , nume_utilizator=erlinda.schaefer , parola=qeg78yt3092b8 , email=kaye.dietrich@yahoo.com , telefon=(109) 612-0056 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=100 , nume_utilizator=usha.wilkinson , parola=0m93smlkg9zd46h , email=jerrold.ratke@yahoo.com , telefon=(053) 532-3876 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=101 , nume_utilizator=clifford.rodriguez , parola=c0bte28p , email=cara.durgan@hotmail.com , telefon=029-746-8377 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=1 , nume_utilizator=remus , parola=remuss , email=ivan.remus@gmail.com , telefon=23 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=2 , nume_utilizator=daniel , parola=0z49367c0e2b , email=federico.blanda@hotmail.com , telefon=144-837-5361 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=3 , nume_utilizator=thad.breitenberg , parola=0f5nsmqwmkxy , email=nila.beer@hotmail.com , telefon=(968) 276-8241 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=4 , nume_utilizator=blaine.abshire , parola=kz7hh2ic2tudy , email=sha.schneider@gmail.com , telefon=517.539.4145 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=5 , nume_utilizator=barry.parker , parola=jaog5ikitcmf4 , email=cecile.mraz@gmail.com , telefon=1-068-634-2333 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=6 , nume_utilizator=travis.predovic , parola=2xmo8x4ikh4mbp2 , email=bradley.dooley@gmail.com , telefon=(303) 596-3324 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=7 , nume_utilizator=lawana.gerhold , parola=aokfgl8ocuouk , email=jamie.fay@yahoo.com , telefon=1-424-334-2772 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=8 , nume_utilizator=leigh.dare , parola=q10znrpvf8u78 , email=philip.heathcote@yahoo.com , telefon=(037) 600-7433 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=9 , nume_utilizator=desirae.cronin , parola=7ika75r43c , email=jacinto.hodkiewicz@hotmail.com , telefon=231-257-0983 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=10 , nume_utilizator=dewitt.baumbach , parola=t669glcc , email=larae.kozey@hotmail.com , telefon=1-522-623-9240 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=11 , nume_utilizator=barbera.weissnat , parola=quihgv09 , email=yajaira.smitham@gmail.com , telefon=1-322-575-3697 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=12 , nume_utilizator=aleshia.medhurst , parola=t25ddzhimtcld , email=clay.bechtelar@yahoo.com , telefon=346.507.4546 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=13 , nume_utilizator=reuben.kuhn , parola=xtyrbsihpaq , email=wilson.keeling@yahoo.com , telefon=540-792-1806 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=14 , nume_utilizator=simona.deckow , parola=itxnkf08sr , email=elfriede.schoen@gmail.com , telefon=180.996.9382 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=15 , nume_utilizator=tera.balistreri , parola=zx9t66x6n9l4 , email=sharleen.gibson@hotmail.com , telefon=1-260-260-4974 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=16 , nume_utilizator=teddy.ziemann , parola=lj6syi0yapc , email=clay.bernier@yahoo.com , telefon=818.905.0968 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=17 , nume_utilizator=theola.luettgen , parola=g6d1ezuo , email=dana.armstrong@hotmail.com , telefon=108-631-5308 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=18 , nume_utilizator=rigoberto.powlowski , parola=sh113udy , email=rheba.steuber@gmail.com , telefon=242-032-2741 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=19 , nume_utilizator=keisha.quitzon , parola=jchfdxw3xq4ny , email=genaro.hansen@hotmail.com , telefon=522-263-5813 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=20 , nume_utilizator=henry.kilback , parola=wnmibygkrphvy , email=nell.sipes@gmail.com , telefon=031.820.2656 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=21 , nume_utilizator=babette.bruen , parola=erv7skda , email=taneka.steuber@yahoo.com , telefon=(127) 187-2125 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=22 , nume_utilizator=edwin.gutkowski , parola=c3cazcihpkbgj , email=jeanine.wehner@yahoo.com , telefon=097.593.3674 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=23 , nume_utilizator=columbus.erdman , parola=ajg4di63tzb , email=greg.ward@hotmail.com , telefon=994-295-1332 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=24 , nume_utilizator=theodore.crist , parola=gzkg7p9l3r , email=jack.bayer@hotmail.com , telefon=983.631.1173 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=25 , nume_utilizator=berna.weimann , parola=mmj7t4rlf2sb , email=beatrice.kilback@gmail.com , telefon=718.396.3080 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=26 , nume_utilizator=pierre.orn , parola=uyjutsrkot04 , email=odell.beer@hotmail.com , telefon=375.946.8362 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=27 , nume_utilizator=stephen.dare , parola=n8p0c3wrbyrm8 , email=gary.pagac@yahoo.com , telefon=928-498-1752 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=28 , nume_utilizator=retta.connelly , parola=kxfxxkjs09p6wa , email=alec.trantow@hotmail.com , telefon=978.886.4949 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=29 , nume_utilizator=yahaira.welch , parola=1djagn9uan , email=tom.pfannerstill@hotmail.com , telefon=207-318-0588 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=30 , nume_utilizator=dessie.oconner , parola=v62fh42w0nnse , email=kasie.waelchi@yahoo.com , telefon=1-522-626-8799 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=31 , nume_utilizator=francisco.marquardt , parola=i4a051qe0m92c , email=sharell.bayer@hotmail.com , telefon=1-161-990-4786 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=32 , nume_utilizator=juliette.kohler , parola=evbskul48 , email=nellie.bradtke@hotmail.com , telefon=1-053-347-9481 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=33 , nume_utilizator=louie.greenholt , parola=1oiu25hn , email=roosevelt.raynor@gmail.com , telefon=1-860-271-8120 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=34 , nume_utilizator=armida.runolfsson , parola=w4x1vorgp7ik9vt , email=royce.mcdermott@hotmail.com , telefon=939-793-8993 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=35 , nume_utilizator=ela.kuphal , parola=1or19pmtj , email=terri.gutkowski@gmail.com , telefon=092-177-6921 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=36 , nume_utilizator=sydney.champlin , parola=7xhwz3lfm8hjnoo , email=charleen.nitzsche@gmail.com , telefon=190-660-4145 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=37 , nume_utilizator=yuko.mccullough , parola=14k9p4ux66r6m1 , email=terence.ankunding@yahoo.com , telefon=983.352.4492 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=38 , nume_utilizator=kimberely.sawayn , parola=cj8qw99a5js , email=kristal.klein@gmail.com , telefon=991.637.5098 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=39 , nume_utilizator=corinne.lynch , parola=1i3tq29rb , email=santana.romaguera@gmail.com , telefon=(654) 315-2216 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=40 , nume_utilizator=charmain.simonis , parola=52prtemp8fsds , email=ida.collier@yahoo.com , telefon=625-778-2799 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=41 , nume_utilizator=elizabet.dare , parola=p3cw7r0g , email=eun.parker@gmail.com , telefon=(005) 112-6093 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=42 , nume_utilizator=digna.ruecker , parola=yzetsc5p , email=carlos.runolfsdottir@gmail.com , telefon=068-425-8401 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=43 , nume_utilizator=carla.walker , parola=hizwwcts , email=minh.bechtelar@hotmail.com , telefon=028-438-1248 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=44 , nume_utilizator=kermit.towne , parola=r07og4vhu , email=jay.jacobs@yahoo.com , telefon=351.350.9464 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=45 , nume_utilizator=bennett.brekke , parola=7wur9cpwplcwtp , email=carter.hamill@yahoo.com , telefon=745-410-3147 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=46 , nume_utilizator=seth.heidenreich , parola=hb7pgqvqzehg , email=seymour.marquardt@yahoo.com , telefon=945.446.4062 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=47 , nume_utilizator=bell.kling , parola=o1udsvs6yn84mz , email=roderick.harber@yahoo.com , telefon=848.383.4095 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=48 , nume_utilizator=donovan.gulgowski , parola=3a05iik9 , email=martha.johns@gmail.com , telefon=1-584-342-9987 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=49 , nume_utilizator=deloras.wolf , parola=463c39l3 , email=omar.brakus@yahoo.com , telefon=(288) 339-1513 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=50 , nume_utilizator=charlie.sporer , parola=2ps2wdw8ev , email=houston.powlowski@yahoo.com , telefon=818.325.1818 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=51 , nume_utilizator=sina.greenfelder , parola=09d8ijgx0 , email=rory.doyle@hotmail.com , telefon=979-985-9858 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=52 , nume_utilizator=ocie.huels , parola=0hzg50qg , email=star.grant@yahoo.com , telefon=(304) 290-4041 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=53 , nume_utilizator=apolonia.heller , parola=k5u7j8hew3c , email=russ.romaguera@gmail.com , telefon=292.351.6353 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=54 , nume_utilizator=luis.wintheiser , parola=jx7mcfxgnq , email=joseph.hermiston@gmail.com , telefon=334-307-2738 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=55 , nume_utilizator=ninfa.macgyver , parola=d5eqjnj6 , email=shelby.johns@yahoo.com , telefon=975-315-8380 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=56 , nume_utilizator=miles.schmidt , parola=w4k3hn7co , email=reed.hermann@yahoo.com , telefon=769.903.2648 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=57 , nume_utilizator=del.marks , parola=vmavqjaf9 , email=tarah.kuhn@hotmail.com , telefon=(022) 721-5208 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=58 , nume_utilizator=gillian.ortiz , parola=1zbzt4pg6y9df , email=hyun.turcotte@hotmail.com , telefon=1-267-624-4755 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=59 , nume_utilizator=leon.johns , parola=qasi1pbb , email=lynn.wunsch@hotmail.com , telefon=829.624.8262 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=60 , nume_utilizator=kory.denesik , parola=l4hcku0ccjo7k , email=marquetta.hettinger@yahoo.com , telefon=(694) 896-9033 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=61 , nume_utilizator=manuel.murray , parola=9cnf92oxz8zljk9 , email=kelly.hermann@gmail.com , telefon=1-396-479-4496 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=62 , nume_utilizator=sammy.koch , parola=yn3u79va5e , email=luis.collier@yahoo.com , telefon=621.110.6691 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=63 , nume_utilizator=arlen.beahan , parola=ppfc16ilhmr2p5 , email=fernande.grant@gmail.com , telefon=292-004-7039 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=64 , nume_utilizator=rosalyn.leffler , parola=7rc8651e , email=odis.heidenreich@hotmail.com , telefon=(439) 817-8909 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=65 , nume_utilizator=grazyna.feest , parola=lpr93p3t , email=lewis.dach@hotmail.com , telefon=677.646.7480 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=66 , nume_utilizator=ardelle.grady , parola=cxeja8priu0 , email=gaston.satterfield@gmail.com , telefon=246.025.7880 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=67 , nume_utilizator=kai.mills , parola=3cgewbv30 , email=shaun.mitchell@yahoo.com , telefon=741.382.6174 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=68 , nume_utilizator=kerry.cartwright , parola=bloaqkpi , email=omar.hills@hotmail.com , telefon=779.781.9552 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=69 , nume_utilizator=cody.mcdermott , parola=lkw0vhnq , email=laila.zulauf@gmail.com , telefon=1-052-703-2087 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=70 , nume_utilizator=brunilda.zulauf , parola=rdrhi2ti , email=gisele.hilpert@gmail.com , telefon=(202) 188-9290 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=71 , nume_utilizator=noma.rempel , parola=kd0riqdaw5 , email=alanna.heidenreich@gmail.com , telefon=(115) 713-1951 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=72 , nume_utilizator=yuri.weimann , parola=e5znf55vok , email=joelle.rice@gmail.com , telefon=(324) 817-8851 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=73 , nume_utilizator=kaley.nienow , parola=52axhn4r47bko , email=riley.buckridge@hotmail.com , telefon=238-786-7130 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=74 , nume_utilizator=archie.lesch , parola=a70w5j2h7 , email=johnie.jaskolski@yahoo.com , telefon=(739) 315-8894 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=75 , nume_utilizator=joanna.hyatt , parola=26eys91m , email=hayden.corkery@yahoo.com , telefon=872.055.3465 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=76 , nume_utilizator=sam.ernser , parola=16ybmeyr4umd , email=joan.spencer@gmail.com , telefon=399.813.0406 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=77 , nume_utilizator=patricia.kunze , parola=3rtzszpzsmx , email=scottie.kassulke@hotmail.com , telefon=(075) 303-4393 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=78 , nume_utilizator=shakia.block , parola=bemy73rw2 , email=ellis.feest@hotmail.com , telefon=1-616-175-8653 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=79 , nume_utilizator=eboni.medhurst , parola=ex7gr1p91yfawzn , email=lin.maggio@yahoo.com , telefon=607.538.3962 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=80 , nume_utilizator=lyndsay.osinski , parola=b2sovvq400ca , email=alease.jast@yahoo.com , telefon=997.949.8173 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=81 , nume_utilizator=earl.morar , parola=sonat4em , email=maryanne.damore@gmail.com , telefon=256-490-5358 a fost sters
+01-JUN-22 : Un utilizator cu atributele id=105 , nume_utilizator=ana , parola=ana , email= , telefon= a fost sters
+01-JUN-22 : Un utilizator cu atributele id=106 , nume_utilizator=tre , parola=tre , email=aala , telefon= a fost sters
+01-JUN-22 : Un utilizator cu atributele id=107 , nume_utilizator=are , parola=are , email= , telefon= a fost sters
+01-JUN-22 : Un utilizator cu atributele id=102 , nume_utilizator=alex , parola=alex , email= , telefon= a fost sters
+01-JUN-22 : Un utilizator cu atributele id=103 , nume_utilizator=Daniel , parola=daniel , email= , telefon= a fost sters
+01-JUN-22 : Un utilizator cu atributele id=104 , nume_utilizator=paul , parola=paul , email=paul.paul , telefon= a fost sters
+01-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=1 , nume_utilizator=remus , parola=remus , email= , telefon=
+01-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=2 , nume_utilizator=asdasd , parola=asdads , email=asdasd , telefon=asdsad
+01-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=3 , nume_utilizator=alex , parola=alex , email= , telefon=
+01-JUN-22 : Un utilizator cu atributele id=3 , nume_utilizator=alex , parola=alex , email= , telefon= a fost sters
+01-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=3 , nume_utilizator=alex , parola=alex , email= , telefon=
+01-JUN-22 : Utilizatorul cu id 1 si cu numele remus isi modifica numele in sumer
+01-JUN-22 : Utilizatorul cu id 1 si cu numele sumer isi modifica numele in remus
+01-JUN-22 : Utilizatorul cu id 1 si cu numele remus isi modifica numele in sumer
+01-JUN-22 : Utilizatorul cu id 1 si cu numele sumer isi modifica parola din remus in sumer

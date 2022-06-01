@@ -73,33 +73,38 @@
       </div>
     </div>
     <div class="log">
-      <form action="/action_page.php" method="post">
+      <form action="index.php" method="post">
         <div class="imgcontainer">
           <img src="views/images/logoBlack.jpg" alt="Logo" class="avatar" />
         </div>
 
         <div class="container">
-          <label for="uname"><b>Nume de utilizator:</b></label>
-          <input
-            type="text"
-            placeholder="Introdu numele de utilizator"
-            name="uname"
-            required
-          />
+            <input type="hidden" name="load" value="Login/account_command" />
+            
+            <input type="hidden" name="function" value="login" />
+            
+            <label for="username"><b>Nume de utilizator:</b></label>
+            <input
+              type="text"
+              placeholder="Introdu numele de utilizator"
+              name="username"
+              required
+            />
 
-          <label for="psw"><b>Parolă</b></label>
-          <input
-            type="password"
-            placeholder="Introdu parola"
-            name="psw"
-            required
-          />
+            <label for="password"><b>Parolă</b></label>
+            <input
+              type="password"
+              placeholder="Introdu parola"
+              name="password"
+              required
+            />
 
-          <button type="submit">Loghează-te</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember" /> Ține-mă
-            minte
-          </label>
+            <button type="submit">Loghează-te</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" /> Ține-mă
+              minte
+            </label>
+          </form>
         </div>
 
         <div class="container" style="background-color: #212329">
@@ -153,6 +158,41 @@
         </div>
       </div>
     </div>
+
+    <?php
+                
+      echo "<pre>";
+      print_r($_SESSION);
+      echo "</pre>";
+
+      $loggedIn=null;
+      $info=null;
+
+      if(isset($_SESSION['loggedIn'])){
+          $loggedIn=$_SESSION['loggedIn'];
+
+          if($loggedIn==0){
+              $info="Not logged into any account";
+          }
+          else{
+              $info="Logged in.\nUsername:".$_SESSION['username'];
+          }
+
+      }else{
+          $info="Unknown status";
+      }
+      
+      echo "<p>$info</p>";
+    ?>
+
+    <?php
+      echo "<pre>";
+      print_r($data);
+      echo "</pre>";
+    ?>
+    
+    
+
     <script src="views/javascript/navBar.js"></script>
   </body>
 </html>

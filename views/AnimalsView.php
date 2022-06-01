@@ -6,9 +6,9 @@ class AnimalsView extends View{
         parent::__construct("views/templates/Animals.phtml");
     }
 
-    function show($usersInfo=null){
+    function show($content){
 
-        $this->data = $usersInfo;
+        $this->data = $content;
 
         return $this->output();
     }
