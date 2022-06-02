@@ -106,7 +106,37 @@ class AnimalsModel extends Model{
         }
 
         return $result;
-    }    
+    }
+    
+    public function score_search(){
+        $result=null;
+
+        if(isset($_POST["text"])&&!empty($_POST["text"])){
+                $text=htmlentities($_POST['text']);
+
+                $sql="select denumire_populara,denumire_stintifica,mini_descriere,punctaj_animal(?,denumire_populara) as scor
+                from animale
+                where punctaj_animal(?,denumire_populara)>0
+                order by scor desc";
+
+                $statement=Database::getConnection()->prepare($sql);
+
+                $statement->bindParam(1,$text,PDO::PARAM_STR,200);
+                $statement->bindParam(2,$text,PDO::PARAM_STR,200);
+
+                $statement->execute();
+
+                $result=$statement->fetchAll();
+                if(is_null($result)){
+                    $result="No animals found";
+                }                
+        }
+        else{
+            $result="The text given is either null or empty";
+        }
+
+        return $result;
+    }
 }
 
 ?>
