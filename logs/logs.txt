@@ -134,3 +134,23 @@
 01-JUN-22 : Utilizatorul cu id 1 si cu numele sumer isi modifica numele in remus
 01-JUN-22 : Utilizatorul cu id 1 si cu numele remus isi modifica numele in sumer
 01-JUN-22 : Utilizatorul cu id 1 si cu numele sumer isi modifica parola din remus in sumer
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=1
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=2
+05-JUN-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=1
+05-JUN-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=2
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=1
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=2
+05-JUN-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=1
+05-JUN-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=2
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=1
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=2
+05-JUN-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=1
+05-JUN-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=1 avand animalul cu id=2
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=1
+05-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=4 , nume_utilizator=remus , parola=remus , email= , telefon=
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=4 a salvat pentru contul sau animalul cu id=1
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=4 a salvat pentru contul sau animalul cu id=2
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=4 a salvat pentru contul sau animalul cu id=7
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=7
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=10
+05-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=16

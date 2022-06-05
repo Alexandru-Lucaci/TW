@@ -257,6 +257,68 @@ class AnimalsModel extends Model{
             $$response="The file format is either unset or empty,or the animal_names is unset or empty";
         }
     }
+
+    public function save_animals(){
+
+        if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"]))){
+            return "Not logged into an account";
+        }
+
+        if(!(isset($_SESSION["username"])&&!empty($_SESSION["username"]))){
+            return "Username is unset or empty";
+        }
+
+        if(!(isset($_POST["animal_names"])||!empty($_POST["animal_names"]))){
+            return "String for animal names is unset or empty";
+        }
+
+        $username=htmlentities($_SESSION["username"]);
+        $animalNames=htmlentities($_POST["animal_names"]);
+        $separator=',';
+        $response=null;
+
+
+        $sql="call salvare_animale(?,?,?,?)";
+
+        $statement=Database::getConnection()->prepare($sql);
+
+        $statement->bindParam(1,$username,PDO::PARAM_STR,100);
+        $statement->bindParam(2,$animalNames,PDO::PARAM_STR,2000);
+        $statement->bindParam(3,$separator,PDO::PARAM_STR,1);
+        $statement->bindParam(4,$response,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
+
+        $statement->execute();      
+
+        if(is_null($response)){
+            return "Unexpected error occurred after sql statement has run";
+        }
+
+        return $response;
+    }
+
+    public function get_saved_animals(){
+        if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"]))&&$_SESSION["loggedIn"]==1){
+            return "Not logged into an account";
+        }
+
+        if(!(isset($_SESSION["username"])&&!empty($_SESSION["username"]))){
+            return "Username is unset or empty";
+        }
+
+        $username=htmlentities($_SESSION["username"]);
+
+        $sql="select denumire_populara,denumire_stintifica,mini_descriere
+        from animale 
+        join salvari on id_utilizator=obtine_id_utilizator(?) and id=id_animal";
+
+        $statement=Database::getConnection()->prepare($sql);
+
+        $statement->bindParam(1,$username,PDO::PARAM_STR,100);
+
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
 }
 
 ?>

@@ -123,21 +123,46 @@ begin
     p_raspuns:='OK';    
 end;
 
+describe utilizatori;
 
+create or replace function obtine_id_utilizator(p_nume_utilizator varchar2)
+return utilizatori.id%type
+as
+    v_id utilizatori.id%type;
+begin
+    select id into v_id from utilizatori where trim(nume_utilizator)=trim(p_nume_utilizator);
+    return v_id;
+exception
+    when no_data_found then
+    return -1;
+    when too_many_rows then
+    return -1;
+end;
+
+select * from salvari;
 --------------------------for testing
 
-
+describe animale;
+describe salvari;
+describe utilizatori;
 --pentru inregistare
+
+select * from animale;
+
 declare
-    v_nume_utilizator varchar2(100):='paul';
-    v_parola varchar2(100):='paul';
-    v_email varchar2(100):=null;
-    v_telefon varchar2(100):=null; 
-    v_raspuns varchar2(100);
+    v_nume_utilizator varchar2(100):='sumer';
+    v_denumire_populara varchar2(100):='sumer';
+    v_denumire_stintifica varchar2(100):='sumer';
+    v_mini_descriere varchar2(100):='sumer';
 begin
-    inregistrare(v_nume_utilizator,v_parola,v_email,v_telefon,v_raspuns);
-    dbms_output.put_line(v_raspuns);
+    select denumire_populara,denumire_stintifica,mini_descriere into v_denumire_populara,v_denumire_stintifica,v_mini_descriere
+    from animale a
+    join salvari s on id_utilizator=obtine_id_utilizator(v_nume_utilizator) and id=id_animal;
+    
+    dbms_output.put_line(v_denumire_populara||v_denumire_stintifica||v_mini_descriere);
 end;
+
+set serveroutput on;
 
 --pentru stergere
 declare
