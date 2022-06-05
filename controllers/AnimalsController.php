@@ -23,6 +23,40 @@ class AnimalsController extends Controller{
 
         echo $presentation;
     }
+
+    public function reload($content=null){
+        $presentation=$this->view->show($content);
+
+        echo $presentation;
+    }
+
+    public function download(){
+
+        //get array of animals
+        $response=null;
+        $content=null;
+        $fileFormat=null;
+
+        $this->model->download($response,$content,$fileFormat);
+        if($response=="OK"){
+
+            if($fileFormat=="xml"){
+                header('Content-type: text/xml');
+                header('Content-Disposition: attachment; filename="Animals.xml"');
+
+                echo $content;
+            }
+            else if($fileFormat=="json"){
+                header('Content-type: text/json');
+                header('Content-Disposition: attachment; filename="Animals.json"');
+
+                echo $content;
+            }
+        }
+        else{
+            $this->reload($response);
+        }
+    }
 }
 
 ?>

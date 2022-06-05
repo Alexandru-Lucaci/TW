@@ -1,5 +1,7 @@
 --legat de animale
 
+describe animale;
+
 ----------------posibil cu mult mai usor in php-------------------
 
 --functie ajutatoare pentru cautare_multicriteriala
@@ -135,6 +137,8 @@ begin
     end if;
     
 end;
+
+describe animale;
 
 -----------------------------------------
 --returneaza de la linia respectiva valoarea unui camp denumire_populara,denumire_stintifica,origine,clasa,stare_de_conservare,regim_alimentar,mod_de_inmultire
