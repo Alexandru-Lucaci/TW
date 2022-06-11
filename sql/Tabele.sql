@@ -53,7 +53,7 @@ drop table animale;
 /
 create table animale(
 id number(38,0),
-denumite_populara varchar2(50) not null,
+denumire_populara varchar2(50) not null unique,
 denumire_stintifica varchar2(100) not null,
 mini_descriere varchar2(500) not null,
 etimologie varchar2(4000),
@@ -109,6 +109,7 @@ drop table asocieri_descrieri;
 /
 drop table statistici_clase_animale;
 /
+
 
 create table salvari(
 id_utilizator number(38,0) not null,
