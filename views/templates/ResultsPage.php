@@ -44,7 +44,7 @@
 
             //display previous page form
             echo "<form action=\"index.php\" method=\"post\">";
-                echo "<input type=\"hidden\" name=\"load\" value=\"About/update\">";
+                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\">";
                 echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
                 echo "<input type=\"hidden\" name=\"change_value\" value=\"-1\">";
                 echo "<input type=\"submit\" value=\"Previous Page\">";
@@ -55,7 +55,7 @@
 
             //display next page form
             echo "<form action=\"index.php\" method=\"post\">";
-                echo "<input type=\"hidden\" name=\"load\" value=\"About/update\">";
+                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\">";
                 echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
                 echo "<input type=\"hidden\" name=\"change_value\" value=\"1\">";
                 echo "<input type=\"hidden\" name=\"results_per_page\" value=\"$nrAnimalsPerPage\">";
