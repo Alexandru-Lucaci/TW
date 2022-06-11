@@ -81,3 +81,8 @@ end;
 
 select * from statistici_clase_animale;
 delete from statistici_clase_animale;
+
+describe animale;
+
+describe user_tables;
+select * from user_column;

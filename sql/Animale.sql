@@ -140,6 +140,8 @@ end;
 
 describe animale;
 
+select * from animale;
+
 -----------------------------------------
 --returneaza de la linia respectiva valoarea unui camp denumire_populara,denumire_stintifica,origine,clasa,stare_de_conservare,regim_alimentar,mod_de_inmultire
 create or replace function obtine_valoare_camp(p_linie animale%rowtype,p_nume_camp varchar2)
@@ -265,34 +267,78 @@ begin
     return v_punctaj;
 end;
 
-select denumire_populara,origine,clasa,punctaj_animal('tigriasdas leu',denumire_populara) as scor
-from animale
-where punctaj_animal('tigriasdas leu',denumire_populara)>0
-order by scor desc;
+select line,text from user_source where lower(trim(name))='inserare_informatii_animal';
 
-declare
-    v_scor real;
+--inserare informatii animal
+create or replace function exista_animal(p_denumire_animal varchar2)
+return integer
+as
+    v_nr integer;
 begin
-    v_scor:=punctaj_animal('tigru leu urs tigru','leu');
-    dbms_output.put_line('|Scor = '||v_scor||'|');
+    select count(*) into v_nr from animale where lower(denumire_populara)=lower(p_denumire_animal);
+    return v_nr;
 end;
 
-declare
-    v_scor real :=-1;
+create or replace procedure inserare_informatii_animal(
+p_denumire_populara varchar2,
+p_denumire_stintifica varchar2,
+p_mini_descriere varchar2,
+p_etimologie varchar2 default null,
+p_origine varchar2 default null,
+p_clasa varchar2 default null,
+p_invaziva varchar2 default null,
+p_stare_de_conservare varchar2 default null,
+p_regim_alimentar varchar2 default null,
+p_dieta varchar2 default null,
+p_mod_de_inmultire varchar2 default null,
+p_reproducere varchar2 default null,
+p_dezvoltare varchar2 default null,
+p_viata varchar2 default null,
+p_mortalitate varchar2 default null,
+p_istorie varchar2 default null,
+p_dusmani_naturali varchar2 default null,
+p_raspuns in out varchar2
+)
+as
+    v_id animale.id%type;
 begin
-    v_scor:=punctaj_cuvant_camp('tigru','tigru',100);
-    dbms_output.put_line(v_scor);
+    if(exista_animal(p_denumire_populara)=0)then
+        select nvl(max(id),0)+1 into v_id from animale;
+        
+        insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,etimologie,origine,clasa,invaziva,stare_de_conservare,regim_alimentar,dieta,mod_de_inmultire,reproducere,dezvoltare,viata,mortalitate,istorie,dusmani_naturali) values (
+        v_id,
+        p_denumire_populara,
+        p_denumire_stintifica,
+        p_mini_descriere,
+        p_etimologie,
+        p_origine,
+        p_clasa,
+        p_invaziva,
+        p_stare_de_conservare,
+        p_regim_alimentar,
+        p_dieta,
+        p_mod_de_inmultire,
+        p_reproducere,
+        p_dezvoltare,
+        p_viata,
+        p_mortalitate,
+        p_istorie,
+        p_dusmani_naturali);
+        
+        p_raspuns:='OK';
+    else
+        p_raspuns:='The name of the animal'||chr(39)||p_denumire_populara||chr(39)||'is already taken';
+    end if;
 end;
-
-select line,text from user_source where lower(trim(name))='punctaj_animal';
-
-
 
 --populare animale cu niste date de test
+delete from animale where id>17;
+/
+commit;
 
-delete from animale where id=0;
+select * from animale;
 
-delete from animale;
+delete from animale where id<3;
 
 describe animale;
 
@@ -315,6 +361,26 @@ insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,orig
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(17,'polichet','tigris','a','asia','polichete');
 
 --test
+
+select denumire_populara,origine,clasa,punctaj_animal('tigriasdas leu',denumire_populara) as scor
+from animale
+where punctaj_animal('tigriasdas leu',denumire_populara)>0
+order by scor desc;
+
+declare
+    v_scor real;
+begin
+    v_scor:=punctaj_animal('tigru leu urs tigru','leu');
+    dbms_output.put_line('|Scor = '||v_scor||'|');
+end;
+
+declare
+    v_scor real :=-1;
+begin
+    v_scor:=punctaj_cuvant_camp('tigru','tigru',100);
+    dbms_output.put_line(v_scor);
+end;
+
 
 select * from animale;
 
