@@ -125,7 +125,7 @@ begin
             dbms_sql.column_value(v_id_cursor,1,v_denumire_populara);
             dbms_sql.column_value(v_id_cursor,2,v_denumire_stintifica);
             dbms_sql.column_value(v_id_cursor,3,v_mini_descriere);
-            p_rezultat:=p_rezultat||'denumire_populara='||v_denumire_populara||v_separator_valori||'denumire_stintifica='||v_denumire_stintifica||v_separator_valori||'mini_descriere='||v_mini_descriere;
+            p_rezultat:=p_rezultat||'DENUMIRE_POPULARA='||v_denumire_populara||v_separator_valori||'DENUMIRE_STINTIFICA='||v_denumire_stintifica||v_separator_valori||'MINI_DESCRIERE='||v_mini_descriere;
             --dbms_output.put_line(v_denumire_populara||' cu origine '||v_origine||', clasa '||v_clasa);
         else
             exit;
@@ -344,15 +344,15 @@ describe animale;
 
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(1,'tigru','tigris','a','asia','mamifere');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(2,'leu','leus','a','asia','mamifere');
-insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(3,'bivol','bivolis bivo','a','europe','mamifere');
-insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(4,'squirrel','a','a','europe','mamifere');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(3,'bivol','bivolis bivo','a','europa','mamifere');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(4,'squirrel','a','a','europa','mamifere');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(5,'broasca','a','a','america','amfibieni');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(6,'vaduva neagra','a','a','australia','arahnide');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(7,'huntsman','a','a','australia','arahnide');
-insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(8,'musca','musca','a','europe','insecte');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(8,'musca','musca','a','europa','insecte');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(9,'soparla','a','a','asia','reptile');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(10,'tantar','a','a','asia','insecte');
-insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(11,'albine','a','a','europe','insecte');
+insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(11,'albine','a','a','europa','insecte');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(12,'elefant','a','a','africa','manifer');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(13,'bufnita','a','a','europa','pasari');
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(14,'gondor','a','a','africa','pasari');

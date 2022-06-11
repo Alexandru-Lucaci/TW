@@ -2,19 +2,24 @@
     <nav class="navbar">
         <div class="search">
             <div class="searchBar">
-                <input
-                class="search-txt"
-                type="text"
-                name="searchField"
-                placeholder="Type to search"
-                />
-                <a class="search-bth" href="#"></a>
-                <img
-                src="views/icons/searchBar.svg"
-                alt="SearchBarBtn"
-                width="25"
-                height="25"
-                />
+                <form action="index.php" method="post">
+                    <input
+                    class="search-txt"
+                    type="text"
+                    name="text"
+                    placeholder="Type to search"
+                    />
+                    <input type="hidden" name="load" value="Animals/update" />
+                    <input type="hidden" name="function" value="score_search" />
+                    <input type="submit" hidden />
+                    <a class="search-bth" href="#"></a>
+                    <img
+                    src="views/icons/searchBar.svg"
+                    alt="SearchBarBtn"
+                    width="25"
+                    height="25"
+                    />
+                </form>
             </div>
         </div>
         <div class="menu-togle" id="mobile-menu">

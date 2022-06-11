@@ -26,7 +26,7 @@ body{
     border-radius: 40px;
     padding:10px;
 }
-.searchBar:hover>.search-txt{
+.searchBar:hover>form>.search-txt{
 
     width: 280px;
     padding:0 6px;
