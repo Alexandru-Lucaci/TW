@@ -83,51 +83,7 @@
       </div>
 
       <div class="content">
-        <div class="nav-containter">
-          <nav class="navbar">
-            <div class="search">
-              <div class="searchBar">
-                <input
-                  class="search-txt"
-                  type="text"
-                  name="searchField"
-                  placeholder="Type to search"
-                />
-                <a class="search-bth" href="#"></a>
-                <img
-                  src="views/icons/searchBar.svg"
-                  alt="SearchBarBtn"
-                  width="25"
-                  height="25"
-                />
-              </div>
-            </div>
-            <div class="menu-togle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
-              <li><a href="http://localhost/ProjectMeoW/TW/index.php" class="nav-links">Acasa</a></li>
-              <li>
-                <a href="http://localhost/ProjectMeoW/TW/index.php?load=Animals/show" class="nav-links">Animale</a>
-              </li>
-              <li><a href="http://localhost/ProjectMeoW/TW/index.php?load=About/show" class="nav-links">Despre</a></li>
-              <li><a href="http://localhost/ProjectMeoW/TW/index.php?load=Help/show" class="nav-links">Ajutor</a></li>
-              <li>
-                <a href="http://localhost/ProjectMeoW/TW/index.php?load=Contact/show" class="nav-links nav-links-btn"
-                  >Contact</a
-                >
-              </li>
-              <li>
-                <a href="http://localhost/ProjectMeoW/TW/index.php?load=Login/show" class="nav-links nav-links-btn"
-                  >Autentificare</a
-                >
-              </li>
-              <!-- <li><a href="" class="nav-links ">Login</a></li> -->
-            </ul>
-          </nav>
-        </div>
+        <?php include("NavBar.phtml") ?>
       </div>
 
       <div class="Main">
@@ -202,49 +158,9 @@
       </div>
 
       <div class="footer">
-        <div class="contact-information-grid">
-          <div class="contact-title">
-            <p>Informatii contact</p>
-          </div>
-
-          <div class="contact-details-grid">
-            <div class="contact-detail">
-              <p>
-                <strong>Adresa</strong> : Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Nesciunt, saepe.
-              </p>
-            </div>
-
-            <div class="contact-detail">
-              <p>
-                <strong>Administrator</strong> : Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Rem, veniam.
-              </p>
-            </div>
-
-            <div class="contact-detail">
-              <p>
-                <strong>Numar de telefon</strong> : Lorem, ipsum dolor sit amet
-                consectetur adipisicing elit. Commodi, unde.
-              </p>
-            </div>
-
-            <div class="contact-detail">
-              <p>
-                <strong>Facebook</strong> : Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Dolorem, nihil!
-              </p>
-            </div>
-
-            <div class="contact-detail">
-              <p>
-                <strong>Email</strong> : Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Omnis, voluptatibus!
-              </p>
-            </div>
-          </div>
-        </div>
+        <?php include("Footer.html") ?>
       </div>
+
     </div>
 
     <script src="views/javascript/navBar.js"></script>
