@@ -84,6 +84,9 @@
 }
 
 .welcome-grid > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #C3F73A;
     border: 2px double #90c900;
     border-radius: 3em;
@@ -93,12 +96,15 @@
 }
 
 .welcome-grid > div:nth-child(odd){
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #DC965A;
     opacity: 0.9;
     border: 1px groove #fc9842;
     border-radius: 3em;
-    text-align: left;
-    font-size: 4.5em;
+    /* text-align: left; */
+    font-size: 4em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -106,5 +112,11 @@
     .welcome-grid{
         display: grid;
         grid-template-columns: 100%;
+    }
+    .welcome-grid>div{
+        font-size: 1.5em;
+    }
+    .welcome-grid>div:nth-child(odd){
+        font-size: 4em;
     }
 }
