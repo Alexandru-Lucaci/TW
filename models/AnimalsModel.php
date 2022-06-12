@@ -96,40 +96,78 @@ class AnimalsModel extends Model{
         parent::__construct();
     }
 
-            /**
-     * Helper function that takes a string of the format:
-     * key1=value1,key2=value2,..#key1=value1,key2=value2,...
-     * and returns an array of arrays containing the information
+    /**
+     * Save in the session the search results
      */
-    private static function get_array($text,$lineSeparator,$valueSeparator,$equalSeparator){
-        $result=array();
-        
-        $lines=explode($lineSeparator,$text);
-        foreach($lines as $line){
-
-            $associative_array=array();
-
-            $fields=explode($valueSeparator,$line);
-
-            foreach($fields as $field){
-                
-                $set=explode($equalSeparator,$field);
-
-                $key=$set[0];
-                $value=$set[1];
-
-                $associative_array[$key]=$value;
-            }
-
-            array_push($result,$associative_array);
-        }
-
-        return $result;
-    }
-
     private static function set_search_results($results){
         $_SESSION['search_results']=$results;
         $_SESSION['page_number']=1;
+    }
+
+    /**
+     * Save in the session the options chosen for the search
+     * Helps by 'remebering' the users choice
+     */
+    private static function set_form_criterias($criterias){
+        foreach($criterias as $criteria){
+            //unset and save the new criteria values,if they exist in the request
+            unset($_SESSION[$criteria]);
+            if(isset($_POST[$criteria])&&!empty($_POST[$criteria])){
+                $_SESSION[$criteria]=$_POST[$criteria];
+            }
+        }
+    }
+
+    /**
+     * Computes the clauses in sql for the where and oder by
+     */
+    private static function compute_clauses(&$whereClause,$whereColumns,&$orderByClause,$orderByColumn){
+        
+        //compute the where clause,if conditions exist
+        $nrTerms=0;
+        $whereClause='';
+        foreach($whereColumns as $column){
+            if(isset($_POST[$column])&&!empty($_POST[$column])){
+
+                if($nrTerms>0){
+                    $whereClause.=' and ';
+                }
+
+                $whereClause.=' ( ';
+
+                $position=0;
+                $values=$_POST[$column];
+                foreach($values as $value){
+                    if($position!=0){
+                        $whereClause.=' or ';
+                    }
+                    $whereClause.= $column.'=\''.strtolower($value).'\'';
+
+                    $position++;
+                }
+
+                $whereClause.=" ) ";
+
+                $nrTerms++;
+            }
+        }
+
+        //compute the order by clause,if conditions exist
+
+        $orderByClause='';
+        if(isset($_POST[$orderByColumn])&&!empty($_POST[$orderByColumn])){
+
+            $position=0;
+            $values=$_POST[$orderByColumn];
+            foreach($values as $value){
+                if($position!=0){
+                    $orderByClause.=' , ';
+                }
+                $orderByClause.=strtolower($value).' asc ';
+
+                $position++;
+            }
+        }
     }
 
     /**
@@ -137,46 +175,43 @@ class AnimalsModel extends Model{
      * Input string format:criteriu1,valoare1,valoare2,...#crieteriu2,valoare1,valoare2,...
      */
     public function multicriterial_search(){
-        
-        //TODO
-        //2.since such a query might return more than 4000 characters(the limit for varchar2) we should use a large object 
-        //to return the characters(in plsql)
 
-        if(!(isset($_POST['query'])&&!empty($_POST['query']))){
-            return "Value for query is not set or empty";
+        //some constants
+        $orderBy="ordonare";
+        $columns=array("origine","clasa","invaziva","stare_de_conservare","regim_alimentar","mod_de_inmultire");
+
+        //get the where and order by clause conditions
+        $whereClause='';
+        $orderByClause='';
+        $this::compute_clauses($whereClause,$columns,$orderByClause,$orderBy);
+
+        //set the new values for the session
+        array_push($columns,$orderBy);
+        $this::set_form_criterias($columns);
+
+        //construct the sql code
+
+        $sql="select denumire_populara,denumire_stintifica,mini_descriere
+        from animale";
+
+        if(strlen($whereClause)>0){
+            $whereClause=' where '.$whereClause;
+            $sql.=$whereClause;
         }
-        //execute procedure to start search
-        $result='';
 
-        $searchCriterias=htmlentities($_POST['query']);
-        if(strlen($searchCriterias)>4000){
-            return "A search criteria string cannot have more than 4000 characters";
+        if(strlen($orderByClause)>0){
+            $orderByClause=' order by '.$orderByClause;
+            $sql.=$orderByClause;
         }
-
-        $response=null;
-
-        $sql="call cautare_multicriteriala(?,?,?)";
 
         $statement=Database::getConnection()->prepare($sql);
 
-        $statement->bindParam(1,$searchCriterias,PDO::PARAM_STR,1000);
-        $statement->bindParam(2,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,4000);
-        $statement->bindParam(3,$response,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
-
         $statement->execute();
 
-        if(is_null($response)){
-            return "Unexpected  error after sql statement";
-        }
-
-        if($response!="OK"){
-            return $response;
-        }
+        $results=$statement->fetchAll();
 
         //save the results in the $_SESSION variable
-        $this->set_search_results($this::get_array($result,'#',',','='));
-
-        return "OK";
+        $this->set_search_results($results);
     }
 
     public function get_animal_information(){

@@ -31,7 +31,7 @@
 
                 //display
                 echo "<div class=\"card\">";
-                    echo "<img src=\"views/images/empty.jpg\" alt=\"Imagine animal\" class=\"card-img\"/>";
+                    echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Imagine animal\" class=\"card-img\"/>";
                     echo "<h2 class=\"card-title\">$popularName</h2>";
                     //echo "<h2 class=\"card-title\">$scientificName</h2>";
                     echo "<div class=\"card-content\">";
