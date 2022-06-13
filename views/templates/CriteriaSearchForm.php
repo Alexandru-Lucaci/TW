@@ -24,21 +24,37 @@
             }
 
             echo "<br><br>";
-            echo "<label>$displayName</label>";
+
+            echo "<div class=\"categorieFiltru\">";
+            
+            echo "<ul class=\"todos\">";
+
+            echo "<div class=\"toggler\">";
+            echo "<label>$displayName </label>";
+            echo "</div>";
+            echo "<ul class=\"toggler-target active\">";
+            
             foreach($values as $value){
 
                 $displayValue=ucfirst($value);
 
                 echo "<br>";
-
+                
                 echo "<input type=\"checkbox\" name=\"$name",'[]',"\" value=\"$value\"";
                 if(isset($_SESSION[$name])&&!empty($_SESSION[$name])&&in_array($value,$_SESSION[$name])){
                     echo " checked ";
                 }
                 echo "/>";
+
                 
                 echo "<label>$displayValue</label>";
+
+                
             }
+            echo "</ul>";
+            echo "</ul>";
+            echo "</div>";
+            
         }
         echo "<br>";
 
