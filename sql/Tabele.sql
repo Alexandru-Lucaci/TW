@@ -42,11 +42,13 @@ nume_utilizator varchar2(20) unique not null,
 parola varchar2(20) not null,
 email varchar2(40),
 telefon varchar2(50),
+administrator number(1,0),
 creat_la date default sysdate,
 actualizat_la date default sysdate,
 primary key (id)
 );
 /
+--administrator ar avea valoarea 0 daca nu e administrator si diferit de 0 daca este
 
 
 drop table animale;

@@ -1,6 +1,7 @@
 --legat de animale
 
 describe animale;
+describe utilizatori;
 
 ----------------posibil cu mult mai usor in php-------------------
 
@@ -169,6 +170,7 @@ end;
 
 --calculeaza punctajul pe baza unui cuvant,unei valorii si a punctajului total al valorii
 --formula: nr_litere_egale/nr_litere_total*punctaj
+--nr_litere_egale este un numar real,si va poate fi de forma 5.5,cum adaugam un 0.5 daca 2 litere difera,dar sunt aceleasi daca consideram case-insensitive
 create or replace function punctaj_cuvant_camp(p_cuvant varchar2,p_valoare varchar2,p_punctaj_valoare real)
 return real
 as
@@ -179,11 +181,21 @@ as
     
     v_lungime_cuvant integer:=length(p_cuvant);
     v_lungime_valoare integer:=length(p_valoare);
+    
+    v_caracter1 char(1);
+    v_caracter2 char(1);
+    
 begin
     while(v_pozitie<v_lungime_cuvant and v_pozitie<v_lungime_valoare) loop
         
-        if(substr(p_cuvant,v_pozitie,1)=substr(p_valoare,v_pozitie,1)) then
+        v_caracter1:=substr(p_cuvant,v_pozitie,1);
+        v_caracter2:=substr(p_valoare,v_pozitie,1);
+        
+        --adaug +1 daca aceste 2 litere sunt egale(exact acelasi caracter) sau 0.5 daca sunt litere pe cazuri diferite
+        if(v_caracter1=v_caracter2) then
             v_nr_litere_egale:=v_nr_litere_egale+1;
+        elsif(lower(v_caracter1)=lower(v_caracter2)) then
+            v_nr_litere_egale:=v_nr_litere_egale+0.5;
         end if;
         
         v_pozitie:=v_pozitie+1;
@@ -196,6 +208,8 @@ begin
     
     return v_nr_litere_egale*p_punctaj_valoare/v_total;
 end;
+
+select * from animale;
 
 
 --cauta cuvantul primit in urmatoarele campuri:
