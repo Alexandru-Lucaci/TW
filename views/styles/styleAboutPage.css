@@ -1,164 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body{
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-    "nav"
-    "infoGrid"
-    "teamGrid"
-    "information"
-    
-    ;
- 
-}
-.content{
-    grid-area: nav;
-    height:80px;
-    display:grid;
-    justify-content: center;
-    align-content: center;
+  /* background: #81c644; */
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.about-information-grid{
-    grid-area:infoGrid;
+.wrapper{
+  margin-top: 50px;
 }
-.about-team-grid{
-    grid-area:teamGrid;
-}
-.contact-information-grid{
-    grid-area:information;
-}
-
-.about-title > p{
-    text-align: center;
-    font-size: 5em;
-    font-family: 'Courier New', Courier, monospace;
-    border-bottom: 3px double #218AB3;
+img {
+    border-radius: 50%;
+  }
+.wrapper h1{
+  font-family: 'Allura', cursive;
+  font-size: 100px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: coral;
 }
 
-/* .navbar{
-    height: 80px;
-} */
-/* .nav-menu{
-    height:100px;
-} */
-.searchBar{
-    height: 30px;
-    /* justify-self: right; */
-    left: 15%;
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
-.about-information-grid{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: center;
-    background-color: rgba(250, 226, 226, 0.89);
-    row-gap: 3em;
-}
-/* .nav-menu{
-    align-self: center;
-} */
-.about-info{
-    font-size:1.5em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6em;
-    color:black;
+.team .team_member{
+  background: #fff;
+  margin: 5px;
+  
+  margin-bottom: 50px;
+  width: 450px;
+  padding: 20px;
+  line-height: 30px;
+  color: #8e8b8b;  
+  position: relative;
 }
 
-.about-team-grid{
-    display: grid;
-    grid-template-columns: 100%;
-    background-color: rgba(236, 206, 206, 0.89);
-    row-gap: 3em;
+.team .team_member h3{
+  color: #81c644;
+  font-size: 26px;
+  margin-top: 50px;
 }
 
-.about-cards-grid{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
+.team .team_member p.role{
+  color: #ccc;
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
-.about-card-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: rgb(205, 208, 211);
-    padding: 1em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    font-size: 1em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
 }
 
-.about-card-title{
-    color: black;
-    font-size: 1.7em;
-    text-align: left;
+.team .team_member .team_img img{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
 }
-
-.about-card-info{
-    background-color: rgb(225, 226, 228);
-    color: black;
-    font-size: 1.4em;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 1.6;
-    padding: 0.6em;
-}
-/* .nav-menu{
-    display:grid;
-    grid-template-columns: auto;
-    background:rgb(198, 24, 79);
-    margin:0;
-    position:absolute;
-    width:100%;
-   /* to do  
-    top: 80px;
- 
-    left:-100%;
-    opacity:0;
-    transition: all 0.5s ease;
-} */
-
-.about-card-container1>img{
-    width: 80%;
-}
-
-@media screen and (max-width: 850px){
-
-    .search{
-        /* background: red; */
-        display:grid;
-        grid-template-columns: auto;
-        background:rgb(198, 24, 79);
-        margin:0;
-        width:100%;
-        position:absolute;
-        margin-left: 20px;
-        
-        left:15%;
-
-    }
-    
-    .about-cards-grid{
-        grid-template-columns: repeat(1 , 1fr);
-    }
-
-    .about-card-grid{
-        grid-template-columns: repeat(1 , 1fr);
-    }
-    .nav-menu{
-        display:grid;
-        grid-template-columns: auto;
-        background:rgb(198, 24, 79);
-        margin:0;
-        position:absolute;
-        width:100%;
-       /* to do  */
-        top: 80px;
-     
-        left:-100%;
-        opacity:0;
-        transition: all 0.5s ease;
-    }
-}
-
-

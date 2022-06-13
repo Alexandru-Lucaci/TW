@@ -10,12 +10,14 @@
     <title>Contact Us</title>
 
     <link rel="icon" href="views/images/logoBlack.jpg" />
-    <link rel="stylesheet" href="views/styles/styleSearch.css" />
-    <link rel="stylesheet" href="views/styles/styleNavBar.css" />
-    <link rel="stylesheet" href="views/styles/stylelogin.css" />
+   
+    <!-- <link rel="stylesheet" href="views/styles/styleNavBar.css" /> -->
+  
     <link rel="stylesheet" href="views/styles/styleFooter.css" />
     <link rel="stylesheet" href="views/styles/styleContactPage.css" />
     <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
+    <link rel="stylesheet" href="views/styles/styleNavBar.css" />
+    <link rel="stylesheet" href="views/styles/styleSearch.css" />
   </head>
 
   <body>
@@ -25,65 +27,44 @@
 
     <!-- <br> -->
 
-    <div class="contact-image-container">
-      <img src="views/images/contactUs.jpg" alt="contact us image" />
+    <div class="container">
+        <div class="row">
+            <h1>Contact</h1>
+        </div>
+        <div class="row">
+            <h4 style="text-align:center">Ne-am bucura să te auzim!</h4>
+        </div>
+
+            <div class="row input-container">
+                <div class="col-xs-12">
+                  <div class="styled-input wide">
+                    <input type="text" required />
+                    <label>Nume</label> 
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="styled-input">
+                    <input type="text" required />
+                    <label>Email</label> 
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="styled-input" style="float:right;">
+                    <input type="text" required />
+                    <label>Număr de telefon</label> 
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="styled-input wide">
+                    <textarea required></textarea>
+                    <label>Mesaj</label>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="btn-lrg submit-btn">Trimite mesajul</div>
+                </div>
+            </div>
     </div>
-
-    <!-- <br /> -->
-
-    <div class="contact-form-container">
-      <div class="contact-title">
-        <p>Contacteaza-ne</p>
-      </div>
-
-      <form class="contact-form-grid">
-        <label for="fname">Nume</label>
-        <input
-          type="text"
-          id="fname"
-          name="firstname"
-          placeholder="Numele de familie..."
-        />
-
-        <label for="lname">Prenume</label>
-        <input
-          type="text"
-          id="lname"
-          name="lastname"
-          placeholder="Prenumele..."
-        />
-
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="emailaddress"
-          placeholder="Adresa ta de email..."
-        />
-
-        <label for="phone">Numar de telefon</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phonenumber"
-          placeholder="Numarul tau de telefon..."
-          pattern="[0-9]{10}"
-        />
-
-        <label for="subject">Subiect</label>
-        <textarea
-          id="subject"
-          name="subject"
-          placeholder="Scrie ceva..."
-        ></textarea>
-
-        <input type="submit" value="Send" />
-      </form>
-    </div>
-
-    <!-- <br /> -->
-
-    <?php include("Footer.html") ?>   
 
     <script src="views/javascript/navBar.js"></script>
   </body>

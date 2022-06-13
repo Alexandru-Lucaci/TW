@@ -22,9 +22,10 @@ body{
     left:50%; */
     transform: translate(-50%,-50%);
     background: #808e9b;
-    height: 50px;
+    /* height: 50px; */
     border-radius: 40px;
     padding:10px;
+    /* left: 15%; */
 }
 .searchBar:hover>form>.search-txt{
 

@@ -34,7 +34,7 @@
     background-color: rgba(228, 184, 184, 0.89);
 }
 
-@media screen and (max-width: 728px){
+@media screen and (max-width: 1164px){
     .contact-detail>p{
         margin-left: 4%;
         margin-right: 4%;

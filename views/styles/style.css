@@ -15,9 +15,7 @@
     
     grid-template-areas:
     "title title title title title title title"
-    ". login login login login login ."
     "cuprins cuprins cuprins cuprins cuprins cuprins cuprins"
-    
     ". main main main main main ."
     ". footer footer footer footer footer. "
     ;
@@ -37,19 +35,19 @@
 */
 
 .title{
-    grid-area: title;
+    grid-area: cuprins;
     /* background: gray;
     color: white;*/
     /* padding: 2em; */
      
 }
 .login{
-    grid-area:login;
+    /* grid-area:login; */
     display:grid;
     grid-template-rows: 1fr 1fr;
 }
 .content{
-    grid-area: cuprins;
+    grid-area: title;
     /* padding: 0 20px;
     background-color: #1d1f1d;
     /* background: #1d1f1d; 
@@ -61,6 +59,7 @@
     justify-content: space-between;  */
     /* display: grid; */
     /* background :red; */
+    height: 80px;
     
 }
 .Main{

@@ -2,6 +2,7 @@
 
 * {
   font-family: Open Sans;
+  /* background: #212329; */
 }
 
 section {
@@ -176,7 +177,7 @@ section {
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
-@media (max-width: 880px) {
+@media (max-width: 1432px) {
 
 	.footer-distributed{
 		font: bold 14px sans-serif;

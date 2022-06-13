@@ -3,9 +3,7 @@
     grid-template-columns: 1fr;
     grid-template-areas: 
     "nav"
-    "image"
     "form"
-    "footer"
     ;
 }
 
@@ -13,113 +11,144 @@
     grid-area: nav;
     height:80px;
     display:grid;
-     justify-content: center;
-    align-content: center; 
+
 }
 
-.contact-image-container{
-    grid-area:image;
-}
 
-.contact-form-container{
+.container{
     grid-area:form;
 }
 .contact-information-grid{
     grid-area:footer;
 }
-.contact-image-container {
-    display: grid;
-    justify-content: center;
+body {
+    background-color: #212329;
+    /* padding-top: 85px; */
 }
 
-.contact-image-container>img{
-    width: 100%;
-}
-.searchBar{
-   height: 30px;
-   
-   left: 15%;
-}
-
-
-.contact-form-container{
-    display: grid;
-    justify-content: center;
-    background-color: rgba(247, 195, 84, 0.89);
-}
-
-.contact-title{
-    margin-bottom: 2em;
-}
-
-.contact-title > p{
+h1 {
+    font-family: 'Poppins', sans-serif, 'arial';
+    font-weight: 600;
+    font-size: 72px;
+    color: white;
     text-align: center;
-    font-size: 5em;
-    font-family: 'Courier New', Courier, monospace;
-    border-bottom: 3px double #218AB3;
 }
 
-.contact-form-grid{
-    display: grid;
-    grid-template-columns: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+h4 {
+    font-family: 'Roboto', sans-serif, 'arial';
+    font-weight: 400;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1.5;
 }
 
-.contact-form-container input[type=text],input[type=tel],input[type=email]{
-    width:95%;
-    padding: 1em;
-    border: 1px solid gray;
-    border-radius: 5px;
-    margin-top: 1em;
-    margin-bottom: 3em;
+/* ///// inputs /////*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
 }
 
-input[type=submit]{
-    cursor: pointer;
-    margin-top: 1em;
-    font-size: 2em;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(0, 145, 241);
-    color:white
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
 }
 
-input[type=submit]:hover{
-    background-color: rgb(12, 97, 153);
-    color:white;
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
 }
 
 textarea {
-    height: 15em;
-    margin-top: 1em;
-    padding: 1em;
+    width: 100%;
+    min-height: 15em;
 }
 
-@media screen and (max-width: 768px){
-    .search{
-      
-        display:grid;
-        grid-template-columns: auto;
-        background:rgb(198, 24, 79);
-        margin:0;
-        width:100%;
-        position:absolute;
-        margin-left: 20px;
-        
-        left:10%;
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
 
-    }
-    .nav-menu{
-        display:grid;
-        grid-template-columns: auto;
-        background:rgb(198, 24, 79);
-        margin:0;
-        position:absolute;
+.submit-btn {
+    float: right;
+    padding: 7px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    background-color: #4b8cfb;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
+              0 2px 10px 0 rgba(0,0,0,0.07);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+}
+
+@media (max-width: 768px) {
+    .submit-btn {
         width:100%;
-       
-        top: 80px;
-     
-        left:-100%;
-        opacity:0;
-        transition: all 0.5s ease;
+        float: none;
+        text-align:center;
     }
+}
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
 }

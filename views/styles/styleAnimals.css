@@ -58,7 +58,7 @@
 
 .footer{
     grid-area:footer;
-    background: red;
+    /* background: red; */
 }
 .butt{
     display:none;
@@ -227,7 +227,7 @@
         /* background: red; */
         display:grid;
         grid-template-columns: auto;
-        background:rgb(198, 24, 79);
+        /* background:rgb(198, 24, 79); */
         margin:0;
         width:100%;
         position:absolute;
@@ -307,7 +307,7 @@
     .nav-menu{
         display:grid;
         grid-template-columns: auto;
-        background:rgb(198, 24, 79);
+        /* background:rgb(198, 24, 79); */
         margin:0;
         position:absolute;
         width:100%;
@@ -322,7 +322,7 @@
         /* background: red; */
         display:grid;
         grid-template-columns: auto;
-        background:rgb(198, 24, 79);
+        /* background:rgb(198, 24, 79); */
         margin:0;
         width:100%;
         position:absolute;
