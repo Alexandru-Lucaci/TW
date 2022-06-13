@@ -20,13 +20,13 @@
     <!-- <link rel="stylesheet" href="styles/style.css" /> -->
     <link rel="stylesheet" href="views/styles/styleSearch.css" />
     <!-- <link rel="stylesheet" href="styles/styleIndex.css" /> -->
-    <link rel="stylesheet" href="views/styles/styleFooter.css" />
     <!-- <link rel="stylesheet" href="styles\styleNav.css" /> -->
 
     <!-- <link rel="stylesheet" href="styles/styleMainPage.css" /> -->
     <link rel="stylesheet" href="views/styles/styleNavBar.css" />
     <link rel="stylesheet" href="views/styles/stylelogin.css" />
     <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
+   
   </head>
 
   <body>
@@ -34,81 +34,33 @@
       <?php include("NavBar.phtml") ?>
     </div>
     <div class="log">
-      <form action="index.php" method="post">
-        <div class="imgcontainer">
-          <img src="views/images/logoBlack.jpg" alt="Logo" class="avatar" />
-        </div>
-
-        <div class="container">
-            <input type="hidden" name="load" value="Login/account_command" />
-            
-            <input type="hidden" name="function" value="login" />
-            
-            <label for="username"><b>Nume de utilizator:</b></label>
-            <input
-              type="text"
-              placeholder="Introdu numele de utilizator"
-              name="username"
-              required
-            />
-
-            <label for="password"><b>Parolă</b></label>
-            <input
-              type="password"
-              placeholder="Introdu parola"
-              name="password"
-              required
-            />
-
-            <button type="submit">Loghează-te</button>
-            <label>
-              <input type="checkbox" checked="checked" name="remember" /> Ține-mă
-              minte
-            </label>
+      <div class="main">  	
+      <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signup">
+          <form>
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input type="text" name="txt" placeholder="User name" required="">
+            <input type="email" name="email" placeholder="Email" required="">
+            <input type="password" name="pswd" placeholder="Password" required="">
+            <button>Sign up</button>
           </form>
         </div>
 
-        <div class="container" style="background-color: #212329">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Ai uitat <a href="#">parola?</a></span>
+        <div class="login">
+          <form>
+            <label for="chk" aria-hidden="true">Login</label>
+            <input type="email" name="email" placeholder="Email" required="">
+            <input type="password" name="pswd" placeholder="Password" required="">
+            <button>Login</button>
+          </form>
         </div>
-      </form>
-    </div>
+	  </div>
+</div>
     <div class="footer">
       <?php include("Footer.html") ?>
     </div>
 
-    <?php
-                
-      echo "<pre>";
-      print_r($_SESSION);
-      echo "</pre>";
 
-      $loggedIn=null;
-      $info=null;
-
-      if(isset($_SESSION['loggedIn'])){
-          $loggedIn=$_SESSION['loggedIn'];
-
-          if($loggedIn==0){
-              $info="Not logged into any account";
-          }
-          else{
-              $info="Logged in.\nUsername:".$_SESSION['username'];
-          }
-
-      }else{
-          $info="Unknown status";
-      }
-      
-      echo "<p>$info</p>";
-    ?>
-
-    <?php
-      echo "<pre>";
-      print_r($data);
-      echo "</pre>";
-    ?>
     
     
 

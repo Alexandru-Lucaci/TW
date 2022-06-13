@@ -16,7 +16,7 @@ body{
     grid-area:nav;
     height:80px;
     display:grid;
-    justify-content: center;
+    /* justify-content: center; */
     align-content: center;
 }
 .help-containter{
