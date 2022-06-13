@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Import animals info</title>
+    </head>
+    <body>
+        <div>
+            <p>
+                Insereaza informatii despre un animal in baza de date introducand valorile respective pentru fiecare camp.
+                Fiecare camp are o de caractere care poate fi introdusa(maxim 4000).
+            </p>
+            <!--
+            TODO
+            make it so that this form is generated automated based on the function buildInputFields from importUtils....i tried it,but with not success
+            seems if you try to include a.php into b.php and c.php ,and c calls with a form b,the a.php fle is SOMEHOW redeclared...need to learn/understand more to be able to fix
+            -->
+            <form action="index.php" method="post">
+                <input type="hidden" name="load" value="About/update">
+                <input type="hidden" name="function" value="insert_animal_info">
+                <input type="hidden" name="input_option" value="direct">
+
+                <label for="DENUMIRE_POPULARA()">DENUMIRE_POPULARA</label>
+                <input type="text" name="DENUMIRE_POPULARA" maxlength="50" required="">
+                <br>
+                
+                <label for="DENUMIRE_STINTIFICA()">DENUMIRE_STINTIFICA</label>
+                <input type="text" name="DENUMIRE_STINTIFICA" maxlength="100" required="">
+                <br>
+                
+                <label for="MINI_DESCRIERE()">MINI_DESCRIERE</label>
+                <input type="text" name="MINI_DESCRIERE" maxlength="500">
+                <br>
+                
+                <label for="ETIMOLOGIE()">ETIMOLOGIE</label>
+                <input type="text" name="ETIMOLOGIE" maxlength="4000">
+                <br>
+                
+                <label for="ORIGINE()">ORIGINE</label>
+                <input type="text" name="ORIGINE" maxlength="20">
+                <br>
+                
+                <label for="CLASA()">CLASA</label>
+                <input type="text" name="CLASA" maxlength="20">
+                <br>
+                
+                <label for="INVAZIVA()">INVAZIVA</label>
+                <input type="text" name="INVAZIVA" maxlength="20">
+                <br>
+                
+                <label for="STARE_DE_CONSERVARE()">STARE_DE_CONSERVARE</label
+                ><input type="text" name="STARE_DE_CONSERVARE" maxlength="40">
+                <br>
+                
+                <label for="REGIM_ALIMENTAR()">REGIM_ALIMENTAR</label>
+                <input type="text" name="REGIM_ALIMENTAR" maxlength="15">
+                <br>
+                
+                <label for="DIETA()">DIETA</label>
+                <input type="text" name="DIETA" maxlength="1300">
+                <br>
+                
+                <label for="MOD_DE_INMULTIRE()">MOD_DE_INMULTIRE</label>
+                <input type="text" name="MOD_DE_INMULTIRE" maxlength="30">
+                <br>
+                
+                <label for="REPRODUCERE()">REPRODUCERE</label>
+                <input type="text" name="REPRODUCERE" maxlength="4000">
+                <br>
+                
+                <label for="DEZVOLTARE()">DEZVOLTARE</label>
+                <input type="text" name="DEZVOLTARE" maxlength="4000">
+                <br>
+                
+                <label for="VIATA()">VIATA</label>
+                <input type="text" name="VIATA" maxlength="4000">
+                <br>
+                
+                <label for="MORTALITATE()">MORTALITATE</label>
+                <input type="text" name="MORTALITATE" maxlength="4000">
+                <br>
+                
+                <label for="ISTORIE()">ISTORIE</label>
+                <input type="text" name="ISTORIE" maxlength="4000">
+                <br>
+                
+                <label for="DUSMANI_NATURALI()">DUSMANI_NATURALI</label>
+                <input type="text" name="DUSMANI_NATURALI" maxlength="1000">
+                <br>
+                
+                <input type="submit">
+            </form>
+        </div>
+
+        <hr>
+        <hr>
+
+        <div>
+            <p>
+                <!--De exemplificat mai bine restrictii si cum functioneaza importarea(cum ar fi,ce se intampla daca nu are valori pentru campuri obligatorii...) -->
+                Incarca informatii despre animale in baza de date incarcand un fisier XML/JSON.
+                Dimensiunea maxima a unui fisier permisa este de 1GB.
+                Daca exista un camp in fisier care nu corespunde cu numele unei coloane din baza de date,acesta va fi ignorat.
+                Trebuie sa respecte structura urmatoare:
+            </p>
+            <pre>
+                animale{
+                    animal{
+                        nume_camp1=valoare,
+                        nume_camp2=valoare
+                        ...
+                    }
+                    animal{
+                        nume
+                    }
+                }
+            </pre>
+            <form action="index.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="load" value="About/update">
+                <input type="hidden" name="function" value="insert_animal_info">
+                <input type="hidden" name="input_option" value="file">
+                
+                <input type="file" name="file" />
+                
+                <input type="submit">
+            </form>
+        </div>
+    </body>
+</html>
