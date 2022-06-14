@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Account settings</title>
+    </head>
+    <body>
+    
+    <div>
+        <?php 
+            if(isset($data['user_info'])&&!empty($data['user_info'])&&is_array($data['user_info'])){
+                $username=$data['user_info']['NUME_UTILIZATOR'];
+                $password=$data['user_info']['PAROLA'];
+
+                $email=$data['user_info']['EMAIL'];
+                if(is_null($email)||empty($email)){
+                    $email='-';
+                }
+
+                $cellphone=$data['user_info']['TELEFON'];
+                if(is_null($cellphone)||empty($cellphone)){
+                    $cellphone='-';
+                }
+
+                $response=null;
+                if(isset($data['function_response'])&&!empty($data['function_response'])){
+                    $response=$data['function_response'];
+                }
+
+                echo "<p>Nume utilizator:$username</p>";
+                echo "<p>Parola:$password</p>";
+                echo "<p>Email:$email</p>";
+                echo "<p>Telefon:$cellphone</p>";
+                echo "<br>";
+                
+                echo "<p>Schimba numele de utilizator(daca este disponibil) cu numele:</p>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
+                    echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
+                    echo "<input type=\"hidden\" name=\"field_name\" value=\"nume_utilizator\" />";
+
+                    echo "<label>Nume nou:</label>";
+                    echo "<input type=\"text\" name=\"field_value\" />";
+
+                    echo "<input type=\"submit\" value=\"Schimba\" />";
+
+                echo "</form>";
+
+                echo "<p>Schimba parola:</p>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
+                    echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
+                    echo "<input type=\"hidden\" name=\"field_name\" value=\"parola\" />";
+
+                    echo "<label>Parola noua:</label>";
+                    echo "<input type=\"text\" name=\"field_value\" />";
+
+                    echo "<input type=\"submit\" value=\"Schimba\" />";
+
+                echo "</form>";
+
+                echo "<p>Schimba/seteaza un email:</p>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
+                    echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
+                    echo "<input type=\"hidden\" name=\"field_name\" value=\"email\" />";
+
+                    echo "<label>Email:</label>";
+                    echo "<input type=\"text\" name=\"field_value\" />";
+
+                    echo "<input type=\"submit\" value=\"Schimba\" />";
+
+                echo "</form>";
+
+                echo "<p>Schimba/seteaza un numar de telefon:</p>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
+                    echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
+                    echo "<input type=\"hidden\" name=\"field_name\" value=\"telefon\" />";
+
+                    echo "<label>Telefon:</label>";
+                    echo "<input type=\"text\" name=\"field_value\" />";
+
+                    echo "<input type=\"submit\" value=\"Schimba\" />";
+
+                echo "</form>";
+
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
+                    echo "<input type=\"hidden\" name=\"function\" value=\"logout\" />";
+
+                    echo "<input type=\"submit\" value=\"Deconecteaza-te\" />";
+
+                echo "</form>";
+
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
+                    echo "<input type=\"hidden\" name=\"function\" value=\"delete_account\" />";
+
+                    echo "<input type=\"submit\" value=\"Sterge cont\" />";
+
+                echo "</form>";
+                
+                echo "<h4>$response</h4>";
+            }
+            else{
+                echo "<h2>$data</h2>";
+            }
+        ?>
+    </div>
+    
+    </body>
+</html>
