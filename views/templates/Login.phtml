@@ -36,27 +36,41 @@
     </div>
     <div class="log">
       <div class="main">  	
-      <input type="checkbox" id="chk" aria-hidden="true">
+        <input type="checkbox" id="chk" aria-hidden="true">
         <div class="signup">
-          <form>
-            <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="text" name="txt" placeholder="User name" required="">
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
-            <button>Sign up</button>
+          <form action="index.php" method="post">
+            <input type="hidden" name="load" value="Login/update" />
+            <input type="hidden" name="function" value="register" />
+
+            <label for="chk" aria-hidden="true">Inregistrare</label>
+            <input type="text" name="username" placeholder="Nume" required="" />
+            <input type="password" name="password" placeholder="Parola" required="" />
+            <input type="email" name="email" placeholder="Email" />
+            <input type="tel" name="telephone" placeholder="Numar de telefon" />
+            <button>Inregistrare</button>
           </form>
         </div>
 
         <div class="login">
-          <form>
-            <label for="chk" aria-hidden="true">Login</label>
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
-            <button>Login</button>
+          <form action="index.php" method="post">
+            <input type="hidden" name="load" value="Login/update" />
+            <input type="hidden" name="function" value="login" />
+
+            <label for="chk" aria-hidden="true">Autentificare</label>
+            <input type="text" name="username" placeholder="Nume" required="" />
+            <input type="password" name="password" placeholder="Parola" required="">
+            <button>Autentificare</button>
           </form>
         </div>
-	  </div>
-</div>
+	    </div>
+    </div>
+
+    <?php 
+      if(isset($data)&&!empty($data)){
+        echo "<p style=\"color:white\">$data</p>";
+      }
+    ?>
+    
     <div class="footer">
       <?php include("Footer.html") ?>
     </div>

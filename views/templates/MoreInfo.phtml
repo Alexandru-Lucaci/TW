@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mai multe informatii despre animale</title>
+    </head>
+    <body>
+
+        <?php include("NavBar.phtml") ?>
+
+        <h3>Mai multe informatii despre acest animal:</h3>
+
+        <?php
+            $ignoredFields=array('ID','CREAT_LA','ACTUALIZAT_LA');
+            if(isset($data)&&!empty($data)){
+                if(is_array($data)){
+
+                    echo "<div>";
+                        echo "<h4>Imagine animal:</h4>";
+                        echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Empty image\" />";
+                    echo "</div>";
+
+
+                    echo "<div>";
+
+                    foreach($data[0] as $field=>$value){
+                        if(is_null($value)||empty($value)){
+                            $value='-';
+                        }
+                        
+                        if(!in_array($field,$ignoredFields)){
+                            echo "<h4>$field</h4>";
+                            echo "<p>$value</p>";
+                        }
+                    }
+
+                    echo "</div>";
+                }
+                else{
+                    echo $data;
+                }
+            }
+            else{
+                echo "<p>Nimic de aratat</p>";
+            }
+        ?>
+
+        <hr>
+        <hr>
+        
+        <h3>Animalele care nu sunt gasite in baza de date evident nu vor aparea in fisier</h3>
+
+        <div>
+            <p>Descarca informatiile intr-un fisier XML</p>
+            <form action="index.php" method="post">
+                <input type="hidden" name="load" value="MoreInfo/download" />
+                <input type="hidden" name="file_format" value="xml" />
+                
+                <label for="animals_names">Numele animalelor selectate,separete prin virgule</label>
+                <input type="text" name="animals_names">
+
+                <input type="submit">
+            </form>
+        </div>
+
+        <hr>
+        <hr>
+
+        <div>
+            <p>Descarca informatiile intr-un fisier JSON</p>
+            <form action="index.php" method="post">
+                <input type="hidden" name="load" value="MoreInfo/download" />
+                <input type="hidden" name="file_format" value="json" />
+                
+                <label for="animals_names">Numele animalelor selectate,separete prin virgule</label>
+                <input type="text" name="animals_names">
+
+                <input type="submit">
+            </form>
+        </div>
+
+        <?php include("Footer.html"); ?>
+    </body>
+</html>

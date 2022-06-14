@@ -10,7 +10,7 @@ class LoginController extends Controller{
         echo $presentation;
     }
 
-    public function account_command(){
+    public function update(){
         //get data from model
         $content=null;
         if(isset($_POST['function'])&&!empty($_POST['function'])){
