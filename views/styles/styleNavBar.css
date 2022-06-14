@@ -5,6 +5,10 @@
 .content{
     background-color: #212329;
 }
+body{
+
+    overflow-x: hidden;
+}
 .navbar{
 
     display:grid;
