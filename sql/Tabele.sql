@@ -42,7 +42,7 @@ nume_utilizator varchar2(20) unique not null,
 parola varchar2(20) not null,
 email varchar2(40),
 telefon varchar2(50),
-administrator number(1,0),
+administrator number(1,0) default 0,
 creat_la date default sysdate,
 actualizat_la date default sysdate,
 primary key (id)

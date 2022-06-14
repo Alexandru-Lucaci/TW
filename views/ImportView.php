@@ -1,6 +1,6 @@
 <?php
 
-class HomeView extends View{
+class ImportView extends View{
 
     function __construct(){
         parent::__construct("views/templates/Import.phtml");

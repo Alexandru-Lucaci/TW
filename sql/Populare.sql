@@ -11,7 +11,13 @@ end;
 
 declare 
 begin
-adaugare_utilizator('remus','remus',null,null);
+    adaugare_utilizator('remus','remus',null,null);
+    adaugare_utilizator('remusas','xAUx',null,null);
+    adaugare_utilizator('remusasdsd','PxxL',null,null);
+    adaugare_utilizator('remussdsaaaaaa','remus',null,null);
+    adaugare_utilizator('REMUS','paul',null,null);
+end;
+
 adaugare_utilizator('chelsie.schuster','0z49367c0e2b','federico.blanda@hotmail.com','144-837-5361');
 adaugare_utilizator('thad.breitenberg','0f5nsmqwmkxy','nila.beer@hotmail.com','(968) 276-8241');
 adaugare_utilizator('blaine.abshire','kz7hh2ic2tudy','sha.schneider@gmail.com','517.539.4145');
