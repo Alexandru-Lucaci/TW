@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(248, 222, 188);
+    background-color: #212329;
     display:grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -37,22 +37,26 @@ body{
     text-align: center;
     font-size: 3em;
     font-family: 'Courier New', Courier, monospace;
-    border-bottom: 0.1em solid navy;
+    border-bottom: 0.1em solid #05719D;
     border-radius: 1%;
-    background-color: rgb(226, 210, 188);
+    background-color: #FFAC4A;
     padding: 0.05em;
     margin: 10%;
     margin-top: 15%;    
 }
-
+.answer-title{
+    display:grid;
+    justify-self: center;
+    margin: 10px;
+}
 .help-questions-grid{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 2em;
     justify-content: left;
     margin: 10%;
-    background-color: rgb(253, 221, 180);
-    border: 1px solid rgb(255, 212, 156);
+    background-color: #212329;
+    /* border: 1px solid rgb(255, 212, 156); */
 }
 
 .help-questions-title{
@@ -62,7 +66,7 @@ body{
     color:rgb(20, 20, 20);
     background-color: rgb(247, 206, 154);
     border-radius: 50%;
-    border: 2px solid orange;
+    border: 2px solid coral;
 }
 
 .help-question-button{
@@ -70,7 +74,9 @@ body{
     cursor: pointer;
     border: none;
     outline: none;
-    width: 50%;
+    /* width: 50%; */
+    border-radius: 10px;
+    justify-content: center;
     font-size: 2em;
     transition: 0.4s;
     text-align: left;
@@ -106,6 +112,25 @@ body{
         
         left:15%;
 
+    }
+    .help-questions-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 2em;
+        justify-content: left;
+        margin: 10%;
+        background-color: #212329;
+        /* border: 1px solid rgb(255, 212, 156); */
+    }
+    .answer-title{
+
+        margin: 0px;
+    }
+    .help-questions-grid{
+    row-gap: 2em;
+      
+        margin: 0;
+   
     }
     .nav-menu{
         display:grid;
