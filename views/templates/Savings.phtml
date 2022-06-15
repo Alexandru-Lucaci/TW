@@ -5,15 +5,24 @@
     </head>
     <body>
 
-    <?php include("NavBar.phtml"); ?>
+    <?php
 
-    <?php include("AccountNavBar.phtml") ?>;
+        include("NavBar.phtml"); 
+
+        include("AccountNavBar.phtml") 
+    ?>;
     
     <h2>Animale salvate</h2>
 
-    <?php include("SavedAnimalsPage.phtml"); ?>
-    
-    <?php include("Footer.html"); ?>
+    <?php 
+        include("SavedAnimalsPage.phtml");
+
+        if(!is_null($data)&&!empty($data)&&!is_array($data)){
+            echo "<p>Mesaj:$data</p>";
+        }        
+
+        include("Footer.html"); 
+    ?>
 
     </body>
 </html>

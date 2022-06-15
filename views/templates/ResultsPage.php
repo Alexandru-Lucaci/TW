@@ -3,7 +3,7 @@
     echo "<div class=\"rightplace\">";
     //construct the page
     //constants
-    $nrAnimalsPerPage=10;
+    $nrAnimalsPerPage=8;
     if(!isset($_SESSION['search_results'])||empty($_SESSION['search_results'])){
         echo "<p>Nimic de aratat</p>";
     }
@@ -49,16 +49,19 @@
                         echo "</form>";
                     echo "</div>";
 
-                    //button for saving info about an animal to the apporpiate account
-                    echo "<div>";
-                    echo "<form action=\"index.php\" method=\"post\" >";
-                        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
-                        echo "<input type=\"hidden\" name=\"function\" value=\"save_animals\" />";
-                        echo "<input type=\"hidden\" name=\"animal_names\" value=\"$popularName\" />";
+                    if(isset($_SESSION['loggedIn'])&&!empty($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1){
+                        //button for saving info about an animal to the apporpiate account
+                        echo "<div>";
+                        echo "<form action=\"index.php\" method=\"post\" >";
+                            echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
+                            echo "<input type=\"hidden\" name=\"function\" value=\"save_animals\" />";
+                            echo "<input type=\"hidden\" name=\"animal_names\" value=\"$popularName\" />";
 
-                        echo "<input type=\"submit\" value=\"Salveaza\" />";
-                    echo "</form>";
-                echo "</div>";
+                            echo "<input type=\"submit\" value=\"Salveaza\" />";
+                        echo "</form>";
+                        echo "</div>";
+                    }
+
                 echo "</div>";
             }
 

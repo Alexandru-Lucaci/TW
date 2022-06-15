@@ -6,7 +6,9 @@ class SavingsView extends View{
         parent::__construct("views/templates/Savings.phtml");
     }
 
-    function show(){
+    function show($content=null){
+
+        $this->data=$content;
 
         return $this->output();
     }

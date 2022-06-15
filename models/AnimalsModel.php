@@ -579,7 +579,7 @@ class AnimalsModel extends Model{
             $currentPageNr--;
         }
         else if($changeValue==1){
-            if(!(isset($_SESSION["results_per_page"])&&!empty($_SESSION["results_per_page"]))){
+            if(!(isset($_POST["results_per_page"])&&!empty($_POST["results_per_page"]))){
                 return "Nu este setat numarul de rezultate pe pagina";    
             }
 

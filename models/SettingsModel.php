@@ -85,11 +85,19 @@ class SettingsModel extends Model{
         return "OK";
     }
 
+    private function unset_session(){
+        $sessionVariables=array('username','saved_animals','savings_page_number');
+        foreach($sessionVariables as $variable){
+            unset($_SESSION[$variable]);
+        }
+    }
+
     public function logout(){
 
         if(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1){
             $_SESSION['loggedIn']=0;
-            unset($_SESSION['username']);
+            
+            $this->unset_session();
 
             return "OK";
         }
@@ -129,7 +137,7 @@ class SettingsModel extends Model{
         }
 
         $_SESSION['loggedIn']=0;
-        unset($_SESSION['username']);
+        $this->unset_session();
 
         return "OK";
     }

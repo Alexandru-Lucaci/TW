@@ -36,7 +36,7 @@ class SavingsController extends Controller{
         else{
             $content="Unknown method to call";
         }
-
+        
         $presentation=$this->view->show($content);
 
         echo $presentation;
