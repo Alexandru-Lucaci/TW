@@ -36,11 +36,27 @@
             <li>
                 <a href="index.php?load=Contact/show" class="nav-links nav-links-btn">Contact</a>
             </li>
-            <li>
-                <a href="index.php?load=Login/show" class="nav-links nav-links-btn"
-                >Autentificare</a
-                >
-            </li>
+            <?php 
+                if(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1){
+                    $username=$_SESSION['username'];
+
+                    echo "<li><a href=\"index.php?load=Settings/show\" class=\"nav-links\">Nume:$username</a></li>";
+
+                    echo "<li>";
+                        echo "<form action=\"index.php\" method=\"post\">";
+                            echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
+                            echo "<input type=\"hidden\" name=\"function\" value=\"logout\" />";
+
+                            echo "<input type=\"submit\" value=\"Deconecteaza-te\" />";
+
+                        echo "</form>";
+                    echo "</li>";
+                }
+                else{
+                    echo "<li> <a href=\"index.php?load=Login/show\" class=\"nav-links nav-links-btn\">Autentificare</a></li>";
+                }
+            ?>
+            
             <li><a href="index.php?load=Import/show" class="nav-links">Import</a></li>
             <!-- <li><a href="" class="nav-links ">Login</a></li> -->
         </ul>
