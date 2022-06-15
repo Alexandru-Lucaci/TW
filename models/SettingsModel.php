@@ -66,7 +66,7 @@ class SettingsModel extends Model{
 
         $statement->bindParam(1,$username,PDO::PARAM_STR,100);
         $statement->bindParam(2,$fieldName,PDO::PARAM_STR,50);
-        $statement->bindParam(3,$fieldValue,PDO::PARAM_STR,50);
+        $statement->bindParam(3,$fieldValue,PDO::PARAM_STR,100);
         $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,200);
 
         $statement->execute();
@@ -74,13 +74,15 @@ class SettingsModel extends Model{
         if(is_null($result)){
             return "Ceva sa intamplat cu executia sql";
         }
-        else if($result=="OK"&&$fieldName=="nume_utilizator"){
+        else if($result!="OK"){
+            return $result;
+        }
+        
+        if($fieldName=="nume_utilizator"){
             $_SESSION['username']=$fieldValue;
-            //TODO
-            //make information changed to be updated properly
         }
 
-        return $result;
+        return "OK";
     }
 
     public function logout(){

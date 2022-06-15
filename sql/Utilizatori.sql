@@ -73,7 +73,7 @@ as
     v_ok integer;
 begin
 
-    --mai este disponibil numele cerut?
+    --este acesta un utilizator?
     select count(*) into v_nr from utilizatori where trim(p_nume_utilizator)=trim(nume_utilizator);
     
     if(v_nr=0)then
@@ -108,7 +108,7 @@ begin
         select count(*) into v_nr from utilizatori where trim(p_valoare_camp)=trim(nume_utilizator);
     
         if(v_nr!=0)then
-            p_raspuns:='Numele de utilizator '||chr(39)||p_nume_utilizator||chr(39)||'nu este disponibil';
+            p_raspuns:='Numele de utilizator '||chr(39)||p_valoare_camp||chr(39)||'nu este disponibil';
             return;
         end if;
     end if;

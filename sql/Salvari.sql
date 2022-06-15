@@ -10,6 +10,8 @@ as
     v_nume_animal animale.denumire_populara%type;
     
     v_pozitie integer :=1;
+    
+    v_nr integer;
 begin
     
     --selectarea id pentru utilizator,daca exista
@@ -40,8 +42,15 @@ begin
             
             --daca exista animal
             if(v_id_animal!=-1)then
-                insert into salvari(id_utilizator,id_animal) values(v_id_utilizator,v_id_animal);
-                act_statistici_salvari(v_id_utilizator,v_id_animal);
+                
+                --cate aparitii ale acestei salvari se afla in baza de date
+                select count(*) into v_nr from salvari where id_utilizator=v_id_utilizator and id_animal=v_id_animal;
+                
+                --daca nu l-ai mai salvat
+                if(v_nr=0)then
+                    insert into salvari(id_utilizator,id_animal) values(v_id_utilizator,v_id_animal);
+                    act_statistici_salvari(v_id_utilizator,v_id_animal);
+                end if;
             end if;
         end if;
         

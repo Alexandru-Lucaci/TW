@@ -118,6 +118,7 @@ id_utilizator number(38,0) not null,
 id_animal number(38,0) not null,
 creat_la date default sysdate,
 actualizat_la date default sysdate,
+primary key(id_utilizator,id_animal),
 foreign key(id_utilizator) references utilizatori(id),
 foreign key(id_animal) references animale(id)
 );
@@ -149,4 +150,3 @@ creat_la date default sysdate,
 actualizat_la date default sysdate,
 primary key(clasa)
 );
-

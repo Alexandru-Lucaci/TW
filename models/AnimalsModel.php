@@ -231,7 +231,7 @@ class AnimalsModel extends Model{
             $result=$statement->fetchAll();
         }
         else{
-            $result="Value for animal name not set or empty";
+            $result="Numele animalulu nu este setat sau este gol";
         }
 
         return $result;
@@ -240,7 +240,7 @@ class AnimalsModel extends Model{
     public function score_search(){
 
         if(!(isset($_POST["text"])&&!empty($_POST["text"]))){
-            return "The text given is either null or empty";
+            return "Textul scris nu este setat sau este gol";
         }
 
         $text=htmlentities($_POST['text']);
@@ -259,7 +259,7 @@ class AnimalsModel extends Model{
 
         $result=$statement->fetchAll();
         if(is_null($result)){
-            return "No animals found";
+            return "Niciun animal gasit";
         }   
 
         $this::set_search_results($result);
@@ -268,72 +268,78 @@ class AnimalsModel extends Model{
     }
 
     public function download(&$response,&$content,&$fileFormat){
+
         $allowedFileFormats=array("xml","json");
         $response=null;
         $content=null;
 
-        if(isset($_POST["file_format"])&&!empty(($_POST["file_format"]))&&isset($_POST["animals_names"])&&!empty(($_POST["animals_names"]))){
-            $fileFormat=strtolower(htmlentities($_POST["file_format"]));
-            $animalsNames=explode(',',htmlentities($_POST["animals_names"]));
-
-            $nrAnimals=0;
-
-            $document=new XMLFile("menagerie");
-
-            if(in_array($fileFormat,$allowedFileFormats)){
-                $sql="select * from animale where lower(trim(denumire_populara))=lower(trim(:animalName))";
-                foreach($animalsNames as $animalName){
-                    if(!empty($animalName)){
-                        $statement=Database::getConnection()->prepare($sql);
-
-                        $statement->execute([
-                            "animalName"=>$animalName
-                        ]);
-
-                        $animalInfo=$statement->fetch();
-                        if(!is_null($animalInfo)&&!empty($animalInfo)){
-                            $nrAnimals++;
-
-                            $document->addAnimal(new Animal($animalInfo));
-                        }
-                    }                    
-                }
-
-                if($nrAnimals>0){
-                    $response="OK";
-                    
-                    if($fileFormat=="xml"){
-                        $content=$document->getContent();
-                    }
-                    if($fileFormat=="json"){
-                        $content=json_encode($document->getListAnimals());
-                    }
-                }
-                else{
-                    $response="No animals found";
-                }
-            }
-            else{
-                $$response="File format not supported for download";
-            }            
+        if(!(isset($_POST["file_format"])&&!empty(($_POST["file_format"])))){
+            $response="Formatul fisierului nu este setat sau este gol";
+            return;
         }
-        else{
-            $$response="The file format is either unset or empty,or the animal_names is unset or empty";
+
+        if(!(isset($_POST["animals_names"])&&!empty(($_POST["animals_names"])))){
+            $response="Numele pentru animalele descarcate nu este setat sau este gol";
+            return;
         }
+
+        $fileFormat=strtolower(htmlentities($_POST["file_format"]));
+        if(!in_array($fileFormat,$allowedFileFormats)){
+            $response="Formatul fisierului nu este unul permis(trebuie sa fie xml sau json)";
+            return;
+        }
+
+        $animalsNames=explode(',',htmlentities($_POST["animals_names"]));
+
+        $nrAnimals=0;
+
+        $document=new XMLFile("menagerie");
+
+        $sql="select * from animale where lower(trim(denumire_populara))=lower(trim(:animalName))";
+        foreach($animalsNames as $animalName){
+            if(!empty($animalName)){
+                $statement=Database::getConnection()->prepare($sql);
+
+                $statement->execute([
+                    "animalName"=>$animalName
+                ]);
+
+                $animalInfo=$statement->fetch();
+                if(!is_null($animalInfo)&&!empty($animalInfo)){
+                    $nrAnimals++;
+
+                    $document->addAnimal(new Animal($animalInfo));
+                }
+            }                    
+        }
+
+        if($nrAnimals==0){
+            $response="Niciun animal nu a fost gasit in baza de date din cele introduse";
+            return ;
+        }
+            
+        if($fileFormat=="xml"){
+            $content=$document->getContent();
+        }
+        if($fileFormat=="json"){
+            $content=json_encode($document->getListAnimals());
+        }
+
+        $response="OK";
     }
 
     public function save_animals(){
 
-        if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"]))){
-            return "Not logged into an account";
+        if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"])&&$_SESSION['loggedIn']==1)){
+            return "Nu sunteti autentificat intr-un cont pentru a putea salva animalul";
         }
 
         if(!(isset($_SESSION["username"])&&!empty($_SESSION["username"]))){
-            return "Username is unset or empty";
+            return "Numele de utilizator nu este setat sau este gol";
         }
 
         if(!(isset($_POST["animal_names"])||!empty($_POST["animal_names"]))){
-            return "String for animal names is unset or empty";
+            return "Numele pentru animale nu este setat sau este gol";
         }
 
         $username=htmlentities($_SESSION["username"]);
@@ -354,34 +360,10 @@ class AnimalsModel extends Model{
         $statement->execute();      
 
         if(is_null($response)){
-            return "Unexpected error occurred after sql statement has run";
+            return "Eroare neasteptata la rularea sql";
         }
 
         return $response;
-    }
-
-    public function get_saved_animals(){
-        if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"]))&&$_SESSION["loggedIn"]==1){
-            return "Not logged into an account";
-        }
-
-        if(!(isset($_SESSION["username"])&&!empty($_SESSION["username"]))){
-            return "Username is unset or empty";
-        }
-
-        $username=htmlentities($_SESSION["username"]);
-
-        $sql="select denumire_populara,denumire_stintifica,mini_descriere
-        from animale 
-        join salvari on id_utilizator=obtine_id_utilizator(?) and id=id_animal";
-
-        $statement=Database::getConnection()->prepare($sql);
-
-        $statement->bindParam(1,$username,PDO::PARAM_STR,100);
-
-        $statement->execute();
-
-        return $statement->fetchAll();
     }
 
         /**
@@ -575,15 +557,15 @@ class AnimalsModel extends Model{
 
     public function change_results_page(){
         if(!(isset($_SESSION["search_results"])&&!empty($_SESSION["search_results"]))){
-            return "No search result is set or is empty";
+            return "Niciun rezultat de cautare este setat sau este gol";
         }
 
         if(!(isset($_SESSION["page_number"])&&!empty($_SESSION["page_number"]))){
-            return "No search result page number is set or is empty";
+            return "Numarul de pagina nu este setat sau este gol";
         }
 
         if(!(isset($_POST["change_value"])&&!empty($_POST["change_value"]))){
-            return "The value change for the page number is not set or is empty";
+            return "Cu cat schimbam numarul paginii nu este setat sau este gol";
         }
 
         $nrAnimals=count($_SESSION["search_results"]);
@@ -592,14 +574,18 @@ class AnimalsModel extends Model{
 
         if($changeValue==-1){
             if(!($currentPageNr>1)){
-                return "This is the first page";
+                return "Aceasta este prima pagina";
             }
             $currentPageNr--;
         }
         else if($changeValue==1){
+            if(!(isset($_SESSION["results_per_page"])&&!empty($_SESSION["results_per_page"]))){
+                return "Nu este setat numarul de rezultate pe pagina";    
+            }
+
             $nrAnimalsPerPage=$_POST["results_per_page"];
             if(!($currentPageNr*$nrAnimalsPerPage<$nrAnimals)){
-                return "This is the last page";
+                return "Aceasta este ultima pagina";
             }
             $currentPageNr++;
         }
