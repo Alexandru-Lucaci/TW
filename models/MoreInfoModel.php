@@ -97,58 +97,64 @@ class MoreInfoModel extends Model{
     }
 
     public function download(&$response,&$content,&$fileFormat){
+
         $allowedFileFormats=array("xml","json");
         $response=null;
         $content=null;
 
-        if(isset($_POST["file_format"])&&!empty(($_POST["file_format"]))&&isset($_POST["animals_names"])&&!empty(($_POST["animals_names"]))){
-            $fileFormat=strtolower(htmlentities($_POST["file_format"]));
-            $animalsNames=explode(',',htmlentities($_POST["animals_names"]));
-
-            $nrAnimals=0;
-
-            $document=new XMLFile("menagerie");
-
-            if(in_array($fileFormat,$allowedFileFormats)){
-                $sql="select * from animale where lower(trim(denumire_populara))=lower(trim(:animalName))";
-                foreach($animalsNames as $animalName){
-                    if(!empty($animalName)){
-                        $statement=Database::getConnection()->prepare($sql);
-
-                        $statement->execute([
-                            "animalName"=>$animalName
-                        ]);
-
-                        $animalInfo=$statement->fetch();
-                        if(!is_null($animalInfo)&&!empty($animalInfo)){
-                            $nrAnimals++;
-
-                            $document->addAnimal(new Animal($animalInfo));
-                        }
-                    }                    
-                }
-
-                if($nrAnimals>0){
-                    $response="OK";
-                    
-                    if($fileFormat=="xml"){
-                        $content=$document->getContent();
-                    }
-                    if($fileFormat=="json"){
-                        $content=json_encode($document->getListAnimals());
-                    }
-                }
-                else{
-                    $response="No animals found";
-                }
-            }
-            else{
-                $$response="File format not supported for download";
-            }            
+        if(!(isset($_POST["file_format"])&&!empty(($_POST["file_format"])))){
+            $response="Formatul fisierului nu este setat sau este gol";
+            return;
         }
-        else{
-            $$response="The file format is either unset or empty,or the animal_names is unset or empty";
+
+        if(!(isset($_POST["animals_names"])&&!empty(($_POST["animals_names"])))){
+            $response="Numele pentru animalele descarcate nu este setat sau este gol";
+            return;
         }
+
+        $fileFormat=strtolower(htmlentities($_POST["file_format"]));
+        if(!in_array($fileFormat,$allowedFileFormats)){
+            $response="Formatul fisierului nu este unul permis(trebuie sa fie xml sau json)";
+            return;
+        }
+
+        $animalsNames=explode(',',htmlentities($_POST["animals_names"]));
+
+        $nrAnimals=0;
+
+        $document=new XMLFile("menagerie");
+
+        $sql="select * from animale where lower(trim(denumire_populara))=lower(trim(:animalName))";
+        foreach($animalsNames as $animalName){
+            if(!empty($animalName)){
+                $statement=Database::getConnection()->prepare($sql);
+
+                $statement->execute([
+                    "animalName"=>$animalName
+                ]);
+
+                $animalInfo=$statement->fetch();
+                if(!is_null($animalInfo)&&!empty($animalInfo)){
+                    $nrAnimals++;
+
+                    $document->addAnimal(new Animal($animalInfo));
+                }
+            }                    
+        }
+
+        if($nrAnimals==0){
+            $response="Niciun animal nu a fost gasit in baza de date din cele introduse";
+            return ;
+        }
+            
+        if($fileFormat=="xml"){
+            $content=$document->getContent();
+        }
+        if($fileFormat=="json"){
+            $content=json_encode($document->getListAnimals());
+        }
+
+        $response="OK";
     }
 }
 

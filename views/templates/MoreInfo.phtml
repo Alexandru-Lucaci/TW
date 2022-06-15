@@ -35,9 +35,6 @@
 
                     echo "</div>";
                 }
-                else{
-                    echo $data;
-                }
             }
             else{
                 echo "<p>Nimic de aratat</p>";
@@ -48,6 +45,42 @@
         <hr>
         
         <h3>Animalele care nu sunt gasite in baza de date evident nu vor aparea in fisier</h3>
+        
+        <?php
+
+            if(is_array($data)){
+
+            $animalName=$data[0]['DENUMIRE_POPULARA'];
+           
+            echo "<div>";
+                echo "<p>Descarca informatiile despre acest animal intr-un fisier XML</p>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/download\" />";
+                    echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
+            
+                    echo "<input type=\"hidden\" name=\"animals_names\" value=\"$animalName\" />";
+    
+                    echo "<input type=\"submit\" value=\"Descarca\" />";
+                echo "</form>";
+            echo "</div>";
+
+            echo "<div>";
+                echo "<p>Descarca informatiile despre acest animal intr-un fisier JSON</p>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/download\" />";
+                    echo "<input type=\"hidden\" name=\"file_format\" value=\"json\" />";
+            
+                    echo "<input type=\"hidden\" name=\"animals_names\" value=\"$animalName\" />";
+
+                    echo "<input type=\"submit\" value=\"Descarca\" />";
+                echo "</form>";
+            echo "</div>";
+
+            echo "<hr>";
+            echo "<hr>";
+
+            }
+        ?>
 
         <div>
             <p>Descarca informatiile intr-un fisier XML</p>
@@ -56,14 +89,11 @@
                 <input type="hidden" name="file_format" value="xml" />
                 
                 <label for="animals_names">Numele animalelor selectate,separete prin virgule</label>
-                <input type="text" name="animals_names">
+                <input type="text" name="animals_names" />
 
-                <input type="submit">
+                <input type="submit" value="Descarca" />
             </form>
         </div>
-
-        <hr>
-        <hr>
 
         <div>
             <p>Descarca informatiile intr-un fisier JSON</p>
@@ -72,11 +102,20 @@
                 <input type="hidden" name="file_format" value="json" />
                 
                 <label for="animals_names">Numele animalelor selectate,separete prin virgule</label>
-                <input type="text" name="animals_names">
+                <input type="text" name="animals_names" />
 
-                <input type="submit">
+                <input type="submit"  value="Descarca" />
             </form>
         </div>
+
+        <?php 
+            if(!is_array($data)){
+                echo "<p>Raspuns primit:$data</p>";
+            }
+        ?>
+
+        <hr>
+        <hr>
 
         <?php include("Footer.html"); ?>
     </body>
