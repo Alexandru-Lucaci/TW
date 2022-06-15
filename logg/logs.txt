@@ -1,0 +1,8 @@
+15-06-2022 : O noua descriere a fost adaugata cu datele id=1 , descriere=test , limba=test
+15-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=1 , nume_utilizator=Alex , parola=parolabuna , email= , telefon=
+15-JUN-22 : Utilizatorul cu id 1 si cu numele Alex isi modifica numele in HiImAlex
+15-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=11
+15-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=1 a salvat pentru contul sau animalul cu id=3
+15-06-2022 : Un nou utilizator a fost creat cu urmatoarele atribute: id= , nume_utilizator=remus , parola=remus , email= , telefon=
+15-06-2022 : Un nou utilizator a fost creat cu urmatoarele atribute: id=10 , nume_utilizator=remus , parola=remus , email= , telefon=
+15-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=11 , nume_utilizator=Alex , parola=parola , email= , telefon=
