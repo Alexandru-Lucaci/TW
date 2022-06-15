@@ -76,6 +76,8 @@ class LoginModel extends Model{
             return 'Trebuie sa te deloghezi de la contul curent pentru a putea crea alt cont';
         }
 
+        $result=null;
+
         $username=htmlentities($_POST['username']);
         $password=htmlentities($_POST['password']);
 

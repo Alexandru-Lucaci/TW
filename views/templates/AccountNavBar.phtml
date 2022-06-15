@@ -1,0 +1,20 @@
+<div>
+    <nav>
+        <ul>
+            <li><a href="index.php?load=Settings/show">Setari cont</a></li>
+            <li><a href="index.php?load=Savings/show">Salvari</a></li>
+            <li><a href="index.php?load=History/show">Istorie</a></li>
+            <?php
+                if(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1&&isset($_SESSION['username'])&&!empty($_SESSION['username'])){
+
+                    $response=AdminModel::is_administrator();
+
+                    if(!is_string($response)&&$response){
+                        echo "<li><a href=\"index.php?load=Admin/show\">Administrare</a></li>";
+                    }
+                }
+
+            ?>
+        </ul>
+    </nav>
+</div>

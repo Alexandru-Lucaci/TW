@@ -18,6 +18,9 @@ begin
     adaugare_utilizator('REMUS','paul',null,null);
 end;
 
+delete from utilizatori where nume_utilizator='remus';
+insert into utilizatori(id,nume_utilizator,parola,administrator) values((select max(id)+1 from utilizatori),'remus','remus',1); 
+
 adaugare_utilizator('chelsie.schuster','0z49367c0e2b','federico.blanda@hotmail.com','144-837-5361');
 adaugare_utilizator('thad.breitenberg','0f5nsmqwmkxy','nila.beer@hotmail.com','(968) 276-8241');
 adaugare_utilizator('blaine.abshire','kz7hh2ic2tudy','sha.schneider@gmail.com','517.539.4145');

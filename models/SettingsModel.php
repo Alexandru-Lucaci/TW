@@ -8,7 +8,7 @@ class SettingsModel extends Model{
 
     public function get_user_information(){
         if(!(isset($_SESSION['username'])&&!empty($_SESSION['username']))){                        
-            return 'Error!The username is not set or is empty!';
+            return 'Eroare!Numele de utilizator nu este setat sau este gol';
         }
 
         $username=htmlentities($_SESSION['username']);
@@ -27,14 +27,14 @@ class SettingsModel extends Model{
         $results=$statement->fetchAll();
 
         if(is_null($results)){
-            return 'The information obtained is null';
+            return 'Informatia obtinuta este nula';
         }
 
         if(count($results)==0){
-            return "No information about the user with this account exists";
+            return 'Nu exista informatii despre acest utilizator in baza de date(poate a fost sters contul intre timp)';
         }
         if(count($results)>1){
-            return "This username should not be able to get more than 1 recording :(";
+            return 'Acest nume de utilizator nu ar trebui sa poata sa aiba atatea informatii asociate :( ';
         }
 
         return array('user_info'=>$results[0]);
@@ -43,15 +43,15 @@ class SettingsModel extends Model{
     public function change_account_information(){
 
         if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){
-            return "Not logged into an account";
+            return "Nu este autentificat intr-un cont";
         }
 
         if(!(isset($_POST["field_name"])&&!empty($_POST["field_name"]))){
-            return "The field name is unset or empty";
+            return "Numele campului nu este setat sau este gol";
         }
 
         if(!(isset($_POST["field_value"])&&!empty($_POST["field_value"]))){
-            return "The field value is unset or empty";
+            return "Valoarea noua pentru camp nu este setat sau este goala";
         }
 
         $result=null;
@@ -72,7 +72,7 @@ class SettingsModel extends Model{
         $statement->execute();
 
         if(is_null($result)){
-            return "Something happened when executing the query";
+            return "Ceva sa intamplat cu executia sql";
         }
         else if($result=="OK"&&$fieldName=="nume_utilizator"){
             $_SESSION['username']=$fieldValue;
@@ -92,18 +92,19 @@ class SettingsModel extends Model{
             return "OK";
         }
 
-        return "Not logged into an account";
+        return "Nu este autentificat pe un cont";
 
     }
 
     public function delete_account(){
 
-        if(!(isset($_SESSION['username'])&&!empty($_SESSION['username']))){
-            return "Unexpected error occured";
+        if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){
+            return "Trebuie sa te autentifici pe contul pe care doriti sa il stergeti";
         }
 
-        if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){
-            return "You need to log into the account you wish to delete";
+
+        if(!(isset($_SESSION['username'])&&!empty($_SESSION['username']))){
+            return "Numele de utilizator nu este setat sau este gol";
         }
 
         $username=htmlentities($_SESSION['username']);
@@ -119,7 +120,7 @@ class SettingsModel extends Model{
         $statement->execute();
 
         if(is_null($result)){
-            return "Unexpected error after sql statement";
+            return "Eroare neasteptata cu executia sql";
         }
         else if($result!='OK'){
             return $result;
