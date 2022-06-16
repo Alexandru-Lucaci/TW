@@ -1,7 +1,7 @@
 <?php 
     //construct the page
     //constants
-    $nrAnimalsPerPage=5;
+    $nrAnimalsPerPage=1;
     if(!isset($_SESSION['saved_animals'])||empty($_SESSION['saved_animals'])){
         echo "<p>Nimic de aratat</p>";
     }
@@ -28,11 +28,11 @@
                 $smallDescription=htmlentities($results[$position]['MINI_DESCRIERE']);
 
                 //display
-                echo "<div>";
+                echo "<div class= \"card\">";
                     echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Imagine animal\" class=\"card-img\"/>";
                     echo "<h2 class=\"card-title\">$popularName</h2>";
                     //echo "<h2>$scientificName</h2>";
-                    echo "<div>";
+                    echo "<div class=\"card-content\">";
                         echo "<p>$smallDescription</p>";
                     echo "</div>";
 
