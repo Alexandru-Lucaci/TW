@@ -1,33 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
     <head>
-        <title>Administrare</title>
+        <title>Administrare animale</title>
     </head>
     <body>
 
-    <?php
-        if(is_array($data)){
+    <?php include("AdminUpdate.php"); ?>
 
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
-
-            //update session variables in case of request
-            $toBeUpdated=array('user_info','animal_info','list_users','list_animals','users_saved_animals','animal_saved_by_users','field_value');
-            foreach($toBeUpdated as $name){
-                if(isset($data[$name])){
-                    $_SESSION['admin'][$name]=$data[$name];
-                    echo "in:$name<br>";
-                }
-                else{
-                    echo "out:$name<br>";
-                }
-            }
-        }
-        else{
-            echo "<h3>$data</h3>";
-        }
-    ?>
     <?php
         include("NavBar.phtml"); 
     
@@ -40,7 +19,7 @@
         <div>
             <p>Gaseste animale dupa nume camp si valoare camp</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminAnimals/update" />
                 <input type="hidden" name="function" value="get_information" />
                 <input type="hidden" name="table" value="animale" />
 
@@ -66,7 +45,7 @@
         <div>
             <p>Obtine valoare camp pentru un animal</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminAnimals/update" />
                 <input type="hidden" name="function" value="get_animal_field_value" />
 
                 <label for="animal_name">Nume animal</label>
@@ -79,9 +58,12 @@
             </form>
             <div>
                 <?php 
-                    $value='-';
-                    if(isset($_SESSION['admin']['field_value'])&&!empty($_SESSION['admin']['field_value'])){
-                        $value=$_SESSION['admin']['field_value'];
+                    $value='';
+                    if(isset($_SESSION['admin']['animal_info'])){
+                        $value=$_SESSION['admin']['animal_info']['field_value'];
+                    }
+                    if(empty($value)){
+                        $value='-';
                     }
 
                     echo "<p>Valoare:$value</p>";                    
@@ -92,7 +74,7 @@
         <div>
             <p>Schimba valoare camp pentru un animal</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminAnimals/update" />
                 <input type="hidden" name="function" value="change_animal_field_value" />
 
                 <label for="animal_name">Nume animal</label>
@@ -111,7 +93,7 @@
         <div>
             <p>Obtine utilizatori care salveaza acest animal</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminAnimals/update" />
                 <input type="hidden" name="function" value="get_animal_saved_by_users" />
 
                 <label for="animal_name">Nume animal</label>
@@ -124,7 +106,7 @@
         <div>
             <p>Sterge un animal</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminAnimals/update" />
                 <input type="hidden" name="function" value="delete_animal" />
 
                 <label for="animal_name">Nume animal</label>

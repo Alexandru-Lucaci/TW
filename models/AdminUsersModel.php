@@ -38,7 +38,9 @@ class AdminUsersModel extends AdminModel{
             return 'Acest nume de utilizator nu ar trebui sa poata sa aiba atatea informatii asociate :( ';
         }
 
-        return array('user_info'=>$results[0]);
+        $results['type']='user_info';
+
+        return $results;
     }
 
     public function change_account_information(){
@@ -134,7 +136,9 @@ class AdminUsersModel extends AdminModel{
             return "Eroare la executarea sql";
         }
 
-        return array('users_saved_animals'=>$results);
+        $results['type']='users_saved_animals';
+
+        return $results;
     }
 }
 

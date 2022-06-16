@@ -6,33 +6,6 @@ class AdminAnimalsModel extends AdminModel{
         parent::__construct();
     }
 
-    public function get_saved_animals(){
-
-        if(!(isset($_POST["username"])&&!empty($_POST["username"]))){
-            return "Numele de utilizator nu este setat sau este gol";
-        }
-
-        $username=htmlentities($_SESSION["username"]);
-
-        $sql="select denumire_populara,denumire_stintifica,mini_descriere
-        from animale 
-        join salvari on id_utilizator=obtine_id_utilizator(?) and id=id_animal";
-
-        $statement=Database::getConnection()->prepare($sql);
-
-        $statement->bindParam(1,$username,PDO::PARAM_STR,100);
-
-        $statement->execute();
-
-        $results=$statement->fetchAll();
-
-        if(is_null($results)){
-            return "Eroare la executarea sql";
-        }
-
-        return array('users_saved_animals'=>$results);
-    }
-
     public function get_animal_field_value(){
         if(!(isset($_POST['animal_name'])&&!empty($_POST['animal_name']))){
             return 'Numele animalului nu este setat sau este gol';
@@ -79,7 +52,7 @@ class AdminAnimalsModel extends AdminModel{
             $fieldValue='-';
         }
 
-        return array('field_value'=>$fieldValue);
+        return array('field_value'=>$fieldValue,'type'=>'animal_info');
     }
 
     public function change_animal_field_value(){
@@ -215,9 +188,9 @@ class AdminAnimalsModel extends AdminModel{
             return 'Eroare la executarea sql';
         }
 
-        return array('text'<=array(0<=array('a','b'),1<=array('c','d')));
+        $results['type']='get_animal_saved_by_users';
 
-        //return array('animal_saved_by_users'<=$results);
+        return $results;
     }
 
     public function delete_animal(){
