@@ -6,3 +6,13 @@
 15-06-2022 : Un nou utilizator a fost creat cu urmatoarele atribute: id= , nume_utilizator=remus , parola=remus , email= , telefon=
 15-06-2022 : Un nou utilizator a fost creat cu urmatoarele atribute: id=10 , nume_utilizator=remus , parola=remus , email= , telefon=
 15-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=11 , nume_utilizator=Alex , parola=parola , email= , telefon=
+15-JUN-22 : Utilizatorul cu id 11 si cu numele Alex isi modifica email din lucacialexandru18@gmail.com in lucaci@yahoo.com
+15-JUN-22 : Utilizatorul cu id 11 si cu numele Alex isi modifica email din lucaci@yahoo.com in aaaaaaaaaaaaaaaaa
+15-JUN-22 : Utilizatorul cu id 11 si cu numele Alex isi modifica email din aaaaaaaaaaaaaaaaa in lucaci@yahoo.com
+15-JUN-22 : Utilizatorul cu id 11 si cu numele Alex isi modifica numele in Alexandru
+15-JUN-22 : Utilizatorul cu id 11 si cu numele Alexandru isi modifica parola din parola in parolaa
+15-JUN-22 : Utilizatorul cu id 11 si cu numele Alexandru isi modifica email din lucaci@yahoo.com in aaa
+15-JUN-22 : Utilizatorul cu id 11 si cu numele Alexandru isi modifica numarul de telefon din 0745881174 in 000125
+16-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=11 a salvat pentru contul sau animalul cu id=11
+16-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=11 a salvat pentru contul sau animalul cu id=3
+16-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=11 a salvat pentru contul sau animalul cu id=5

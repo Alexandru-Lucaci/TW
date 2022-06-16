@@ -12,11 +12,13 @@
 
     <?php include("NavBar.phtml"); ?>
 
-    <?php include("AccountNavBar.phtml") ?>;
     
     <div>
         <?php 
             if(isset($data['user_info'])&&!empty($data['user_info'])&&is_array($data['user_info'])){
+
+
+
                 $username=$data['user_info']['NUME_UTILIZATOR'];
                 $password=$data['user_info']['PAROLA'];
 
@@ -34,70 +36,132 @@
                 if(isset($data['function_response'])&&!empty($data['function_response'])){
                     $response=$data['function_response'];
                 }
-
-                echo "<p>Nume utilizator:$username</p>";
-                echo "<p>Parola:$password</p>";
-                echo "<p>Email:$email</p>";
-                echo "<p>Telefon:$cellphone</p>";
-                echo "<br>";
                 
-                echo "<p>Schimba numele de utilizator(daca este disponibil) cu numele:</p>";
+
+                echo "
+                <div class=\"wrapper\"><div class=\"left\">
+                  <h4>$username</h4>";
+               
+
+                echo "<h4> <div class =\"links\">";
+                include("AccountNavBar.phtml");
+                echo "</div></h4>
+                </div>";
+                echo "<div class=\"right\">
+                <div class=\"info\">
+                  <h3>Information</h3>
+                  <div class=\"info_data\">
+                    <div class=\"data\">
+                      <h4> Nume </h4>
+                      <p>$username</p>
+                      </div>";
+                
+                echo "
+                <div class=\"data\">
+                <h4>Parola </h4>
+                <p>$password</p>
+                </div>
+                </div>
+                </div>";
+
+                echo "<div class=\"info\">
+        
+                <div class=\"info_data\">
+      
+                  <div class=\"data\">
+                    <h4>Email</h4>
+                    <p>$email</p>
+                    </div>
+                    ";
+                
+                echo "<div class=\"data\">
+                <h4>Telefon</h4>
+                <p>$cellphone</p>
+                </div>
+                </div>
+                </div>";
+                
+ 
+                // echo "<p>Schimba numele de utilizator(daca este disponibil) cu numele:</p>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
                     echo "<input type=\"hidden\" name=\"field_name\" value=\"nume_utilizator\" />";
 
-                    echo "<label>Nume nou:</label>";
+                    echo "<div class=\"projects\">
+                    <h3>Modificari</h3>
+                        <div class=\"projects_data\">
+                          <div class=\"data\">
+                            <h4>";
+                    echo "<label>Nume:</label></h4></div>";
+
                     echo "<input type=\"text\" name=\"field_value\" />";
-
-                    echo "<input type=\"submit\" value=\"Schimba\" />";
-
+                    echo "</div>
+                    <div class=\"data\">";
+                    echo "<input type=\"submit\" value=\"Schimba\" /> </div>";
+                   
                 echo "</form>";
-
-                echo "<p>Schimba parola:</p>";
+                
+                // echo "<p>Schimba parola:</p>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
                     echo "<input type=\"hidden\" name=\"field_name\" value=\"parola\" />";
-
-                    echo "<label>Parola noua:</label>";
+                    echo " <div class=\"projects_data\">
+                    <div class=\"data\">
+                      <h4>";
+                    echo "<label>Parola:</label></h4></div>";
                     echo "<input type=\"text\" name=\"field_value\" />";
-
-                    echo "<input type=\"submit\" value=\"Schimba\" />";
+                    echo "</div>
+                    <div class=\"data\">
+                      ";
+                    echo "<input type=\"submit\" value=\"Schimba\" /></div>";
 
                 echo "</form>";
 
-                echo "<p>Schimba/seteaza un email:</p>";
+                // echo "<p>Schimba/seteaza un email:</p>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
                     echo "<input type=\"hidden\" name=\"field_name\" value=\"email\" />";
 
-                    echo "<label>Email:</label>";
-                    echo "<input type=\"text\" name=\"field_value\" />";
 
-                    echo "<input type=\"submit\" value=\"Schimba\" />";
+
+                    echo " <div class=\"projects_data\">
+              <div class=\"data\">
+                <h4><label>Email:</label></h4></div>";
+                    echo "<input type=\"text\" name=\"field_value\" />";
+                    echo "</div>
+                    <div class=\"data\">
+                      ";
+                    echo "<input type=\"submit\" value=\"Schimba\" /></div>";
 
                 echo "</form>";
 
-                echo "<p>Schimba/seteaza un numar de telefon:</p>";
+                // echo "<p>Schimba/seteaza un numar de telefon:</p>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
                     echo "<input type=\"hidden\" name=\"field_name\" value=\"telefon\" />";
 
-                    echo "<label>Telefon:</label>";
+                    echo " <div class=\"projects_data\">
+                    <div class=\"data\">
+                      <h4><label>Telefon:</label></h4></div>";
                     echo "<input type=\"text\" name=\"field_value\" />";
-
-                    echo "<input type=\"submit\" value=\"Schimba\" />";
+                    echo "</div>
+                    <div class=\"data\">
+                      ";
+                    echo "<input type=\"submit\" value=\"Schimba\" /></div>";
 
                 echo "</form>";
-
+                echo "<br>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"logout\" />";
-
-                    echo "<input type=\"submit\" value=\"Deconecteaza-te\" />";
+                    echo "<div class=\"projects_data\">
+                    <div class=\"data\">
+                      <h4>";
+                    echo "<input type=\"submit\" value=\"Deconecteaza-te\" /></h4></div>";
 
                 echo "</form>";
 
@@ -105,11 +169,13 @@
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"delete_account\" />";
 
-                    echo "<input type=\"submit\" value=\"Sterge cont\" />";
+                    echo " <div class=\"data\">";
+
+                    echo "<input type=\"submit\" value=\"Sterge cont\" /></div></div>";
 
                 echo "</form>";
                 
-                echo "<h4>$response</h4>";
+                // echo "<h4>$response</h4>";
             }
             else{
                 echo "<h2>$data</h2>";
@@ -117,7 +183,7 @@
         ?>
     </div>
     
-    <?php include("Footer.html"); ?>
+    <!-- <?php include("Footer.html"); ?> -->
     <script src="views/javascript/navBar.js"></script>
     </body>
 </html>
