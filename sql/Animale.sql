@@ -1,8 +1,5 @@
 --legat de animale
 
-describe animale;
-describe utilizatori;
-
 ----------------posibil cu mult mai usor in php-------------------
 
 --functie ajutatoare pentru cautare_multicriteriala

@@ -1,17 +1,18 @@
 <?php
 
-class SettingsModel extends Model{
+class AdminUsersModel extends AdminModel{
 
     function __construct(){
         parent::__construct();
     }
 
     public function get_user_information(){
-        if(!(isset($_SESSION['username'])&&!empty($_SESSION['username']))){                        
+
+        if(!(isset($_POST['username'])&&!empty($_POST['username']))){                        
             return 'Eroare!Numele de utilizator nu este setat sau este gol';
         }
 
-        $username=htmlentities($_SESSION['username']);
+        $username=htmlentities($_POST['username']);
 
         //get user info
         $sql="select * 
@@ -37,13 +38,15 @@ class SettingsModel extends Model{
             return 'Acest nume de utilizator nu ar trebui sa poata sa aiba atatea informatii asociate :( ';
         }
 
-        return array('user_info'=>$results[0]);
+        $results['type']='user_info';
+
+        return $results;
     }
 
     public function change_account_information(){
 
-        if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){
-            return "Nu este autentificat intr-un cont";
+        if(!(isset($_POST["username"])&&!empty($_POST["username"]))){
+            return "Numele utilizatorului nu este setat sau este gol";
         }
 
         if(!(isset($_POST["field_name"])&&!empty($_POST["field_name"]))){
@@ -56,7 +59,7 @@ class SettingsModel extends Model{
 
         $result=null;
 
-        $username=htmlentities($_SESSION['username']);
+        $username=htmlentities($_POST['username']);
         $fieldName=htmlentities($_POST['field_name']);
         $fieldValue=htmlentities($_POST['field_value']);
 
@@ -77,45 +80,17 @@ class SettingsModel extends Model{
         else if($result!="OK"){
             return $result;
         }
-        
-        if($fieldName=="nume_utilizator"){
-            $_SESSION['username']=$fieldValue;
-        }
 
         return "OK";
     }
 
-    private static function unset_session(){
-        unset($_SESSION['admin']);
-        unset($_SESSION['username']);
-    }
-
-    public function logout(){
-
-        if(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1){
-            $_SESSION['loggedIn']=0;
-            
-            $this->unset_session();
-
-            return "OK";
-        }
-
-        return "Nu este autentificat pe un cont";
-
-    }
-
     public function delete_account(){
 
-        if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){
-            return "Trebuie sa te autentifici pe contul pe care doriti sa il stergeti";
-        }
-
-
-        if(!(isset($_SESSION['username'])&&!empty($_SESSION['username']))){
+        if(!(isset($_POST['username'])&&!empty($_POST['username']))){
             return "Numele de utilizator nu este setat sau este gol";
         }
 
-        $username=htmlentities($_SESSION['username']);
+        $username=htmlentities($_POST['username']);
         $result=null;
 
         $sql="call sterge_utilizator(?,?)";
@@ -134,11 +109,36 @@ class SettingsModel extends Model{
             return $result;
         }
 
-        $_SESSION['loggedIn']=0;
-
-        $this->unset_session();
-
         return "OK";
+    }
+
+    public function get_saved_animals(){
+
+        if(!(isset($_POST["username"])&&!empty($_POST["username"]))){
+            return "Numele de utilizator nu este setat sau este gol";
+        }
+
+        $username=htmlentities($_SESSION["username"]);
+
+        $sql="select denumire_populara,denumire_stintifica,mini_descriere
+        from animale 
+        join salvari on id_utilizator=obtine_id_utilizator(?) and id=id_animal";
+
+        $statement=Database::getConnection()->prepare($sql);
+
+        $statement->bindParam(1,$username,PDO::PARAM_STR,100);
+
+        $statement->execute();
+
+        $results=$statement->fetchAll();
+
+        if(is_null($results)){
+            return "Eroare la executarea sql";
+        }
+
+        $results['type']='users_saved_animals';
+
+        return $results;
     }
 }
 

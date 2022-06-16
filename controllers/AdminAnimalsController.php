@@ -1,8 +1,8 @@
 <?php
 
-class AdminController extends Controller{
+class AdminAnimalsController extends Controller{
 
-    public function  show(){
+    public function show(){
 
         if(!$this->model->is_administrator()){
             return ;

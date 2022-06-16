@@ -1,6 +1,7 @@
 <?php
 
     class Model{
+        
         protected $connection;
         protected $query;
 
@@ -24,17 +25,6 @@
             $statement->execute($data);
 
             return $statement->fetchAll();
-        }
-
-        public function getRow($data = null){
-
-            if (!$this->query){
-                throw new Exception("No SQL query!");
-            }
-
-            $statement = $this->connection->prepare($this->query);
-            $statement->execute($data);
-            return $statement->fetch();
         }
     }
 ?>

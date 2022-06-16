@@ -1,33 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
     <head>
-        <title>Administrare</title>
+        <title>Administrare utilizatori</title>
     </head>
     <body>
 
-    <?php
-        if(is_array($data)){
+    <?php include("AdminUpdate.php"); ?>
 
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
-
-            //update session variables in case of request
-            $toBeUpdated=array('user_info','animal_info','list_users','list_animals','users_saved_animals','animal_saved_by_users','field_value');
-            foreach($toBeUpdated as $name){
-                if(isset($data[$name])){
-                    $_SESSION['admin'][$name]=$data[$name];
-                    echo "in:$name<br>";
-                }
-                else{
-                    echo "out:$name<br>";
-                }
-            }
-        }
-        else{
-            echo "<h3>$data</h3>";
-        }
-    ?>
     <?php
         include("NavBar.phtml"); 
     
@@ -40,7 +19,7 @@
         <div>
             <p>Gaseste utilizatori dupa nume camp si valoare camp</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="get_information" />
                 <input type="hidden" name="table" value="utilizatori" />
 
@@ -68,7 +47,7 @@
         <div>
             <p>Obtine informatiile despre utilizator</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="get_user_information" />
                 <input type="text" name="username" />
 
@@ -78,20 +57,22 @@
             <?php
                 if(isset($_SESSION['admin']['user_info'])&&!empty($_SESSION['admin']['user_info'])){
 
-                    $username=htmlentities($_SESSION['admin']['user_info']['NUME_UTILIZATOR']);
-                    $password=htmlentities($_SESSION['admin']['user_info']['PAROLA']);
+                    $info=$_SESSION['admin']['user_info']['0'];
+
+                    $username=htmlentities($info['NUME_UTILIZATOR']);
+                    $password=htmlentities($info['PAROLA']);
     
-                    $email=htmlentities($_SESSION['admin']['user_info']['EMAIL']);
+                    $email=htmlentities($info['EMAIL']);
                     if(is_null($email)||empty($email)){
                         $email='-';
                     }
     
-                    $cellphone=htmlentities($_SESSION['admin']['user_info']['TELEFON']);
+                    $cellphone=htmlentities($info['TELEFON']);
                     if(is_null($cellphone)||empty($cellphone)){
                         $cellphone='-';
                     }
 
-                    $isAdmin=htmlentities($_SESSION['admin']['user_info']['ADMINISTRATOR']);
+                    $isAdmin=htmlentities($info['ADMINISTRATOR']);
                     $isAdmin=($isAdmin==0)?"Nu":"Da";
 
                     echo "<p>Nume utilizator:$username</p>";
@@ -111,7 +92,7 @@
         <div>
             <p>Schimba informatiile despre un utilizator</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="change_account_information" />
                 
                 <label for="username">Nume utilizator:</label>
@@ -130,7 +111,7 @@
         <div>
             <p>Sterge un utilizator</p>
             <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
+                <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="delete_account" />
 
                 <label for="username">Nume utilizator:</label>
@@ -146,7 +127,7 @@
             <p>Vezi salvarile unui utilizator</p>
             <div>
                 <form action="index.php" method="post">
-                    <input type="hidden" name="load" value="Admin/update" />
+                    <input type="hidden" name="load" value="AdminUsers/update" />
                     <input type="hidden" name="function" value="get_saved_animals" />
 
                     <label for="username">Nume utilizator:</label>
@@ -188,81 +169,6 @@
 
         </div>
 
-    </div>
-    
-    <div>
-        <h2>Animale</h2>
-
-        <div>
-            <p>Gaseste animale dupa nume camp si valoare camp</p>
-            <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
-                <input type="hidden" name="function" value="get_information" />
-                <input type="hidden" name="table" value="animale" />
-
-                <label for="field_name">Nume camp</label>
-                <input type="text" name="field_name" maxlength="30" />
-
-                <label for="field_value">Valoare camp</label>
-                <input type="text" name="field_value" maxlength="30" />
-
-                <input type="submit" value="Gaseste" />
-            </form>
-        </div>
-
-        <div>
-            <p>Lista animale:</p>
-            <?php 
-                //echo "<pre>";
-                //print_r($data);
-                //echo "</pre>";
-            ?>
-        </div>
-
-        <div>
-            <p>Obtine valoare camp pentru un animal</p>
-            <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
-                <input type="hidden" name="function" value="get_animal_field_value" />
-
-                <label for="animal_name">Nume animal</label>
-                <input type="text" name="animal_name" />
-
-                <label for="field_name">Nume camp</label>
-                <input type="" name="field_name" />
-
-                <input type="submit" value="Gaseste" />
-            </form>
-            <div>
-                <?php 
-                    $value='-';
-                    if(isset($_SESSION['admin']['field_value'])&&!empty($_SESSION['admin']['field_value'])){
-                        $value=$_SESSION['admin']['field_value'];
-                    }
-
-                    echo "<p>Valoare:$value</p>";                    
-                ?>
-            </div>
-        </div>
-
-        <div>
-            <p>Schimba valoare camp pentru un animal</p>
-            <form action="index.php" method="post">
-                <input type="hidden" name="load" value="Admin/update" />
-                <input type="hidden" name="function" value="change_animal_field_value" />
-
-                <label for="animal_name">Nume animal</label>
-                <input type="text" name="animal_name" />
-
-                <label for="field_name">Nume camp schimbat</label>
-                <input type="" name="field_name" />
-
-                <label for="field_value">Valoare noua</label>
-                <input type="" name="field_value" />
-
-                <input type="submit" value="Schimba" />
-            </form>
-        </div>
     </div>
 
     <?php include("Footer.html"); ?>

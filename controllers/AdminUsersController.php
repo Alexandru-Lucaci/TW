@@ -1,9 +1,12 @@
 <?php
 
-class ImportController extends Controller{
+class AdminUsersController extends Controller{
 
-    public function show(){
-        //$usersInfo=$this->model->getData();
+    public function  show(){
+
+        if(!$this->model->is_administrator()){
+            return ;
+        }
 
         $presentation=$this->view->show();
 
@@ -11,7 +14,7 @@ class ImportController extends Controller{
     }
 
     public function update(){
-        
+
         //get data from model
         $content=null;
         if(isset($_POST['function'])&&!empty($_POST['function'])){

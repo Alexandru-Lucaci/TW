@@ -6,7 +6,10 @@ class ImportView extends View{
         parent::__construct("views/templates/Import.phtml");
     }
 
-    function show(){
+    function show($content=null){
+
+        $this->data=$content;
+
         return $this->output();
     }
 }
