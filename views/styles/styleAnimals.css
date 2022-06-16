@@ -6,8 +6,11 @@
 }
 *,*::befor,*::after{
     box-sizing: border-box;
+    white-space: nowrap;
 }
-
+div{
+    white-space: nowrap;
+}
 .gridBody{
 
     display: grid;
@@ -72,6 +75,7 @@
                rgba(0,0,0,.33);
     border-radius: 6px;
 
+
 }
 .filtre{
     display: block;
@@ -121,6 +125,7 @@
     box-shadow: 0 0 1em rgba(0,0,0,0.5);
     padding:1.5em;
     margin-bottom: 1.5em;
+    
 }
 
 .card-img{
@@ -141,6 +146,7 @@
     /* background:lightgreen; */
     /* display: grid; */
     grid-area: despre;
+    
 }
 .card-content a{
     color:coral;

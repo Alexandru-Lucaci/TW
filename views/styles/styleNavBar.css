@@ -30,7 +30,7 @@ body{
 .nav-menu{
     display:grid;
     /* margin:0; */
-    grid-template-columns: repeat(6,auto);
+    grid-template-columns: repeat(8,auto);
     
     list-style: none;
     text-align: center;
