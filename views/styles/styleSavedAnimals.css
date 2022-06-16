@@ -1,0 +1,32 @@
+
+
+@media only screen and (max-width: 1200px){
+
+
+    .card{
+        /* grid-area: continutulfinal; */
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: min-content ;
+     
+        color: #05719D;
+        grid-template-areas: 
+        "img img"
+        "title title"
+        "despre despre";
+        gap:10px;
+        border-radius: 20px;
+        box-shadow: 0 0 1em rgba(0,0,0,0.5);
+        padding:1.5em;
+        margin-bottom: 1.5em;
+    }
+    .rightplace{
+        grid-area:contine;
+        display: grid;
+        /* grid-template-columns: 1fr 1fr; */
+        /* grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "continutulfinal"; */
+       grid-template-columns: 1fr;
+    }
+
+}
