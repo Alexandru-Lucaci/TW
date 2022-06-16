@@ -112,6 +112,7 @@ drop table asocieri_descrieri;
 drop table statistici_clase_animale;
 /
 
+drop table salvari;
 
 create table salvari(
 id_utilizator number(38,0) not null,
@@ -119,8 +120,8 @@ id_animal number(38,0) not null,
 creat_la date default sysdate,
 actualizat_la date default sysdate,
 primary key(id_utilizator,id_animal),
-foreign key(id_utilizator) references utilizatori(id),
-foreign key(id_animal) references animale(id)
+foreign key(id_utilizator) references utilizatori(id) on delete cascade,
+foreign key(id_animal) references animale(id) on delete cascade
 );
 /
 create table asocieri_imagini(

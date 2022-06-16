@@ -1,11 +1,9 @@
 --legat de tabela salvari
 --primeste numele unui utilizator si un sir de nume de animale,separate printr-un separator
 --returneaza un mesaj de final corespunzator
+
 select * from salvari;
 
-select * from utilizatori;
-
-describe animale;
 
 create or replace procedure salvare_animale(p_nume_utilizator varchar2,p_nume_animale varchar2,p_separator varchar2,p_raspuns IN OUT varchar2)
 as
@@ -53,7 +51,6 @@ begin
                 --daca nu l-ai mai salvat
                 if(v_nr=0)then
                     insert into salvari(id_utilizator,id_animal) values(v_id_utilizator,v_id_animal);
-                    act_statistici_salvari(v_id_utilizator,v_id_animal);
                 end if;
             end if;
         end if;
@@ -63,11 +60,6 @@ begin
         
     p_raspuns:='OK';
 end;
-
-delete from salvari;
-describe salvari;
-select * from salvari;
-
 set serveroutput on;
 
 
