@@ -4,6 +4,10 @@
 
 select * from salvari;
 
+describe utilizatori;
+
+select id from utilizatori where nume_utilizator='remus'
+
 
 create or replace procedure salvare_animale(p_nume_utilizator varchar2,p_nume_animale varchar2,p_separator varchar2,p_raspuns IN OUT varchar2)
 as

@@ -38,6 +38,30 @@
                         echo "<p>$smallDescription</p>";
                     echo "</div>";
 
+                    //buttons to download animal info as xml
+                    echo "<div>";
+                        echo "<form action=\"index.php\" method=\"post\">";
+                            echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/download\" />";
+                            echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
+                    
+                            echo "<input type=\"hidden\" name=\"animals_names\" value=\"$popularName\" />";
+            
+                            echo "<input type=\"submit\" value=\"Descarca ca XML\" />";
+                        echo "</form>";
+                    echo "</div>";
+
+                    //buttons to download animal info as json
+                    echo "<div>";
+                        echo "<form action=\"index.php\" method=\"post\">";
+                            echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/download\" />";
+                            echo "<input type=\"hidden\" name=\"file_format\" value=\"json\" />";
+                    
+                            echo "<input type=\"hidden\" name=\"animals_names\" value=\"$popularName\" />";
+        
+                            echo "<input type=\"submit\" value=\"Descarca ca JSON\" />";
+                        echo "</form>";
+                    echo "</div>";
+
                     //button for more info about this animal
                     echo "<div>";
                         echo "<form action=\"index.php\" method=\"post\" >";
@@ -49,17 +73,44 @@
                         echo "</form>";
                     echo "</div>";
 
-                    if(isset($_SESSION['loggedIn'])&&!empty($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1){
-                        //button for saving info about an animal to the apporpiate account
-                        echo "<div>";
-                        echo "<form action=\"index.php\" method=\"post\" >";
-                            echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
-                            echo "<input type=\"hidden\" name=\"function\" value=\"save_animals\" />";
-                            echo "<input type=\"hidden\" name=\"animal_names\" value=\"$popularName\" />";
+                    if(isset($_SESSION['loggedIn'])&&!empty($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1&&isset($_SESSION['username'])&&!empty($_SESSION['username'])){
+                        //check to see if the animal is already saved
+                        $username=$_SESSION['username'];
 
-                            echo "<input type=\"submit\" value=\"Salveaza\" />";
-                        echo "</form>";
-                        echo "</div>";
+                        $response=AnimalsModel::animal_saved($username,$popularName);
+
+                        if(!is_string($response)){
+
+                            if($response){
+                                //button for deleting an animal from savings
+                                echo "<div>";
+                                    echo "<form action=\"index.php\" method=\"post\" >";
+                                        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
+                                        echo "<input type=\"hidden\" name=\"function\" value=\"delete_animal_from_savings\" />";
+                                        echo "<input type=\"hidden\" name=\"animal_name\" value=\"$popularName\" />";
+
+                                        echo "<input type=\"submit\" value=\"Sterge(de la salvari)\" />";
+                                    echo "</form>";
+                                echo "</div>";
+                            }
+                            else{
+                                //button for saving info about an animal to the apporpiate account
+                                echo "<div>";
+                                    echo "<form action=\"index.php\" method=\"post\" >";
+                                        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
+                                        echo "<input type=\"hidden\" name=\"function\" value=\"save_animals\" />";
+                                        echo "<input type=\"hidden\" name=\"animal_names\" value=\"$popularName\" />";
+
+                                        echo "<input type=\"submit\" value=\"Salveaza\" />";
+                                    echo "</form>";
+                                echo "</div>";
+                            }
+                        }
+                        else{
+                            echo "<div>";
+                                echo "<p>$response</p>";
+                            echo "</div>";
+                        }
                     }
 
                 echo "</div>";

@@ -338,7 +338,7 @@ class AnimalsModel extends Model{
             return "Numele de utilizator nu este setat sau este gol";
         }
 
-        if(!(isset($_POST["animal_names"])||!empty($_POST["animal_names"]))){
+        if(!(isset($_POST["animal_names"])&&!empty($_POST["animal_names"]))){
             return "Numele pentru animale nu este setat sau este gol";
         }
 
@@ -590,6 +590,155 @@ class AnimalsModel extends Model{
             $currentPageNr++;
         }
         $_SESSION['page_number']=$currentPageNr;
+
+        return "OK";
+    }
+
+    public static function animal_saved($username,$animalName){
+
+        if(empty($username)){
+            return 'Numele utilizatorului nu poate fi gol';
+        }
+
+        if(empty($animalName)){
+            return 'Numele animalului nu poate fi gol';
+        }
+
+        $connection=Database::getConnection();
+
+        //get username id
+        $sql="select id from utilizatori where nume_utilizator=trim(:username)";
+
+        $statement=$connection->prepare($sql);
+
+        $statement->execute([
+            "username"=>$username
+        ]);
+
+        $result=$statement->fetchAll();
+
+        if(empty($result)){
+            return 'Nu exista cont pentru utilizatorul cu numele '.$username;
+        }
+        if(count($result)>1){
+            return 'Eroare!Prea multe informatii asociate numelui '.$username;
+        }
+
+        $userId=$result[0]['ID'];
+
+        //get animal name id
+
+        $sql='select id from animale where lower(denumire_populara)=lower(:animalName)';
+
+        $statement=$connection->prepare($sql);
+
+        $statement->execute([
+            'animalName'=>$animalName
+        ]);
+
+        $result=$statement->fetchAll();
+
+        if(empty($result)){
+            return 'Nu exista un animal cu numele '.$animalName.' in baza de date';
+        }
+        if(count($result)>1){
+            return 'Eroare!Prea multe informatii asociate animalului cu numele '.$animalName;
+        }
+
+        $animalId=$result[0]['ID'];
+
+        //check to see if the user has saved this animal
+        $sql='select count(*) from salvari where id_animal=:animalId and id_utilizator=:userId';
+
+        $statement=$connection->prepare($sql);
+
+        $statement->execute([
+            'animalId'=>$animalId,
+            'userId'=>$userId
+        ]);
+
+        $result=$statement->fetchAll();
+
+        return ($result[0]['COUNT(*)']==0)?false:true;
+    }
+
+    public function delete_animal_from_savings(){
+
+        if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"])&&$_SESSION['loggedIn']==1)){
+            return "Nu sunteti autentificat intr-un cont pentru a putea sterge animalul";
+        }
+
+        if(!(isset($_SESSION["username"])&&!empty($_SESSION["username"]))){
+            return "Numele de utilizator nu este setat sau este gol";
+        }
+
+        if(!(isset($_POST["animal_name"])&&!empty($_POST["animal_name"]))){
+            return "Numele pentru animal nu este setat sau este gol";
+        }
+
+        $username=$_SESSION['username'];
+        $animalName=$_POST['animal_name'];
+
+        $connection=Database::getConnection();
+
+        //get username id
+        $sql="select id from utilizatori where nume_utilizator=trim(:username)";
+
+        $statement=$connection->prepare($sql);
+
+        $statement->execute([
+            "username"=>$username
+        ]);
+
+        $result=$statement->fetchAll();
+
+        if(empty($result)){
+            return 'Nu exista cont pentru utilizatorul cu numele '.$username;
+        }
+        if(count($result)>1){
+            return 'Eroare!Prea multe informatii asociate numelui '.$username;
+        }
+
+        $userId=$result[0]['ID'];
+
+        //get animal name id
+
+        $sql='select id from animale where lower(denumire_populara)=lower(:animalName)';
+
+        $statement=$connection->prepare($sql);
+
+        $statement->execute([
+            'animalName'=>$animalName
+        ]);
+
+        $result=$statement->fetchAll();
+
+        if(empty($result)){
+            return 'Nu exista un animal cu numele '.$animalName.' in baza de date';
+        }
+        if(count($result)>1){
+            return 'Eroare!Prea multe informatii asociate animalului cu numele '.$animalName;
+        }
+
+        $animalId=$result[0]['ID'];
+
+        //delete from the save tabel
+        $sql='delete from salvari where id_animal=:animalId and id_utilizator=:userId';
+
+        $statement=$connection->prepare($sql);
+
+        $nrRowsModified=$statement->execute([
+            'animalId'=>$animalId,
+            'userId'=>$userId
+        ]);
+
+        if($nrRowsModified==0){
+            return 'Nu a fost gasita aceasta salvare in baza de date';
+        }
+
+        if($nrRowsModified>1){
+            return 'Eroare!Prea multe stergeri de la salvari';
+        }
 
         return "OK";
     }
