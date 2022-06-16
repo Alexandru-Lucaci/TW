@@ -43,20 +43,26 @@
                 <div class=\"wrapper\"><div class=\"left\">
                   <h4>$username</h4>";
                
-
-                echo "<h4> <div class =\"links\">";
-                include("AccountNavBar.phtml");
-                echo "</div></h4>
-                </div>";
-                echo "<div class=\"right\">
-                <div class=\"info\">
-                  <h3>Information</h3>
-                  <div class=\"info_data\">
-                    <div class=\"data\">
-                      <h4> Nume </h4>
-                      <p>$username</p>
-                      </div>";
+                  echo "
+                  <h4> 
+                    <div class =\"links\">";
+                      include("AccountNavBar.phtml");
+                  echo "
+                    </div>
+                  </h4>
                 
+                </div>";
+
+                echo "
+                <div class=\"right\">
+                  <div class=\"info\">
+                    <h3>Information</h3>
+                    <div class=\"info_data\">
+                      <div class=\"data\">
+                        <h4> Nume </h4>
+                        <p>$username</p>
+                        </div>";
+                  
                 echo "
                 <div class=\"data\">
                 <h4>Parola </h4>
