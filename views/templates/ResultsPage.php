@@ -30,6 +30,7 @@
                 $smallDescription=htmlentities($results[$position]['MINI_DESCRIERE']);
 
                 //display
+                
                 echo "<div class=\"card\">";
                     echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Imagine animal\" class=\"card-img\"/>";
                     echo "<h2 class=\"card-title\">$popularName</h2>";
