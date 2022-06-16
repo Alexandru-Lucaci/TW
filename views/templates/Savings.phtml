@@ -1,27 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
     <head>
         <title>Salvari</title>
+        <link rel="stylesheet" type="text/css" href="views/styles/styleAnimals.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/styleNavBar.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/styleSearch.css" />
+        
+        <link rel="stylesheet" type="text/css" href="views/styles/styleSettings.css" />
     </head>
     <body>
 
     <?php
 
         include("NavBar.phtml"); 
+        echo "
+        <div class=\"wrapper\"><div class=\"left\">
+          <h4>$username</h4>";
+       
 
-        include("AccountNavBar.phtml") 
+        echo "<h4> <div class =\"links\">";
+        include("AccountNavBar.phtml");
+        echo "</div></h4>
+        </div>";
+        // include("AccountNavBar.phtml") 
     ?>;
     
-    <h2>Animale salvate</h2>
+    <!-- <h2>Animale salvate</h2> -->
 
     <?php 
+        // $username=$data['user_info']['NUME_UTILIZATOR'];
+        echo "<div class=\"right\">
+        <div class=\"info\">
+          <h3>Information</h3>
+        </div>";
+        
         include("SavedAnimalsPage.phtml");
+
+        echo "
+        </div>";
+        
 
         if(!is_null($data)&&!empty($data)&&!is_array($data)){
             echo "<p>Mesaj:$data</p>";
         }        
 
-        include("Footer.html"); 
+        // include("Footer.html"); 
     ?>
 
     </body>

@@ -16,3 +16,4 @@
 16-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=11 a salvat pentru contul sau animalul cu id=11
 16-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=11 a salvat pentru contul sau animalul cu id=3
 16-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=11 a salvat pentru contul sau animalul cu id=5
+16-JUN-22 : Un nou utilizator a fost creat cu urmatoarele atribute: id=12 , nume_utilizator=Alex , parola=parolaa , email= , telefon=
