@@ -2,34 +2,67 @@
 <html lang="ro">
     <head>
         <title>Mai multe informatii despre animale</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Menagerie on WEB contact information" />
+        <meta name="author" content="Ivan Remus" />
+        <meta name="author" content="Lucaci Alexandru-Constantin" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="views/images/logoBlack.jpg" />
+        <link rel="stylesheet" href="views/styles/styleFooter.css" />
+        <link rel="stylesheet" href="views/styles/styleContactPage.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
+        <link rel="stylesheet" href="views/styles/styleNavBar.css" />
+        <link rel="stylesheet" href="views/styles/styleSearch.css" />
+        <link rel="stylesheet" href="views/styles/styleMoreInfo.css" />
     </head>
     <body>
 
+        <div class="content">
         <?php include("NavBar.phtml") ?>
+        </div>
 
-        <h3>Mai multe informatii despre acest animal:</h3>
+        <div class="container">
 
+        <div class="row">
+            <h1>Mai multe informații despre acest animal:</h1>
+        </div>
         <?php
+            echo "<div class=\"row input-container\">";
             $ignoredFields=array('ID','CREAT_LA','ACTUALIZAT_LA');
             if(isset($data)&&!empty($data)){
                 if(is_array($data)){
 
-                    echo "<div>";
-                        echo "<h4>Imagine animal:</h4>";
-                        echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Empty image\" />";
+                    echo "
+                    <div class= \"row\">
+                        <div class=\"styled-input\">";
+                            echo "<h4>Imagine animal:</h4>";
+                            echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Empty image\" class =\"image\"/>";
+                        echo "</div>";
                     echo "</div>";
 
-
-                    echo "<div>";
-
+                    // echo "<div>";
+                    
+                    echo "<div class=\"row input-container\">";
                     foreach($data[0] as $field=>$value){
+
                         if(is_null($value)||empty($value)){
                             $value='-';
                         }
-                        
-                        if(!in_array($field,$ignoredFields)){
-                            echo "<h4>$field</h4>";
-                            echo "<p>$value</p>";
+                        else
+                            if(!in_array($field,$ignoredFields)){
+
+                                echo "
+                                <div class=\"col-xs-12\">
+                                    <div class=\"styled-input wide\">
+                                        <h4>$field</h4>
+                                        <p>$value</p>
+                                    </div>
+                                </div>";
+
+
+
+                            // echo "<h4>$field</h4>";
+                            // echo "<p>$value</p>";
                         }
                     }
 
@@ -37,86 +70,128 @@
                 }
             }
             else{
-                echo "<p>Nimic de aratat</p>";
-            }
+                echo "
+                <div class=\"row\">
+                    <h1>Nimic de aratat</h1>
+                </div>";
+            } 
         ?>
 
-        <hr>
-        <hr>
+   
+        <!-- <hr> -->
+        <div class="row">
+            <div class="styled-input wide">   
+                <h1>Animalele care nu sunt găsite în baza de date evident nu vor apărea în fișier</h1>
+            </div>
+        </div>
         
-        <h3>Animalele care nu sunt gasite in baza de date evident nu vor aparea in fisier</h3>
+                <!-- <h1>Animalele care nu sunt gasite in baza de date evident nu vor aparea in fisier</h1> -->
         
+     
         <?php
 
             if(is_array($data)){
 
             $animalName=$data[0]['DENUMIRE_POPULARA'];
            
-            echo "<div>";
-                echo "<p>Descarca informatiile despre acest animal intr-un fisier XML</p>";
+            echo "
+            <div class=\"col-md-6 col-sm-12\">
+                <div class=\"styled-input\">";
+
+                echo "<h4>Descarcă informațiile despre acest animal într-un fișier XML</h4>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/download\" />";
                     echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
             
                     echo "<input type=\"hidden\" name=\"animals_names\" value=\"$animalName\" />";
     
-                    echo "<input type=\"submit\" value=\"Descarca\" />";
+                    echo "<input class=\"btn-lrg submit-btn\" type=\"submit\" value=\"Descarca\" />";
                 echo "</form>";
+                echo "</div>";
             echo "</div>";
 
-            echo "<div>";
-                echo "<p>Descarca informatiile despre acest animal intr-un fisier JSON</p>";
+            echo "
+            <div class=\"col-md-6 col-sm-12\">
+                <div class=\"styled-input\">";
+
+                echo "<h4>Descarcă informațiile despre acest animal într-un fișier JSON</h4>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/download\" />";
                     echo "<input type=\"hidden\" name=\"file_format\" value=\"json\" />";
             
                     echo "<input type=\"hidden\" name=\"animals_names\" value=\"$animalName\" />";
 
-                    echo "<input type=\"submit\" value=\"Descarca\" />";
+                    echo "<input class=\"btn-lrg submit-btn\" type=\"submit\" value=\"Descarca\" />";
                 echo "</form>";
+                echo "</div>";
             echo "</div>";
-
-            echo "<hr>";
-            echo "<hr>";
+            // echo "<hr>";
+            // echo "<hr>";
 
             }
         ?>
 
         <div>
-            <p>Descarca informatiile intr-un fisier XML</p>
-            <form action="index.php" method="post">
-                <input type="hidden" name="load" value="MoreInfo/download" />
-                <input type="hidden" name="file_format" value="xml" />
-                
-                <label for="animals_names">Numele animalelor selectate,separete prin virgule</label>
-                <input type="text" name="animals_names" />
-
-                <input type="submit" value="Descarca" />
-            </form>
+            <div class="col-md-6 col-sm-12">
+                <div class="styled-input">
+                    <h4>Descarcă informațiile într-un fișier XML</h4>
+                    <form action="index.php" method="post">
+                        <input type="hidden" name="load" value="MoreInfo/download" />
+                        <input type="hidden" name="file_format" value="xml" />
+                        <div class="col-xs-12">
+                            <div class="styled-input wide">
+                                <input type="text" name="animals_names" />
+                                <label for="animals_names">Numele animalelor, separete prin virgule</label>
+                                
+                            </div>
+                        </div>
+                    <input class="btn-lrg submit-btn" type="submit" value="Descarca" />
+                    </form>
+                </div>  
+            </div>
+            
         </div>
 
         <div>
-            <p>Descarca informatiile intr-un fisier JSON</p>
-            <form action="index.php" method="post">
-                <input type="hidden" name="load" value="MoreInfo/download" />
-                <input type="hidden" name="file_format" value="json" />
-                
-                <label for="animals_names">Numele animalelor selectate,separete prin virgule</label>
-                <input type="text" name="animals_names" />
+            <div class="col-md-6 col-sm-12">
+                  <div class="styled-input" style="float:right;">
+                    <h4>Descarca informatiile intr-un fisier JSON</h4>
+                    <form action="index.php" method="post">
+                        <input type="hidden" name="load" value="MoreInfo/download" />
+                        <input type="hidden" name="file_format" value="json" />
+                        <div class="col-xs-12">
+                            <div class="styled-input wide">
+                                <input type="text" name="animals_names" />
+                                <label for="animals_names">Numele animalelor, separete prin virgule</label>
+                        
+                            </div>
+                        </div>
+                <!-- <label for="animals_names">Numele animalelor selectate,separete prin virgule</label>
+                <input type="text" name="animals_names" /> -->
 
-                <input type="submit"  value="Descarca" />
-            </form>
+                        <input class="btn-lrg submit-btn" type="submit"  value="Descarca" />
+                    </form>
+                </div>   
+            </div>
         </div>
-
+     
         <?php 
             if(!is_array($data)){
                 echo "<p>Raspuns primit:$data</p>";
             }
         ?>
 
-        <hr>
-        <hr>
+  
+        </div>
+        </div>
 
-        <?php include("Footer.html"); ?>
+        
+    
+        <script src="views/javascript/navBar.js"></script>
+        <script src="views/javascript/pressedfilterButon.js"></script>
+         
+      
+     
+        
     </body>
 </html>
