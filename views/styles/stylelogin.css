@@ -53,7 +53,7 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
-input{
+.loginPageInput{
 	width: 60%;
 	height: 20px;
 	background: #FFE9C9;

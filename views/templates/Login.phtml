@@ -24,7 +24,7 @@
 
     <!-- <link rel="stylesheet" href="styles/styleMainPage.css" /> -->
     
-    <link rel="stylesheet" href="views/styles/stylelogin.css" />
+    <link rel="stylesheet" href="views/styles/styleLogin.css" />
     <link rel="stylesheet" href="views/styles/styleNavBar.css" />
     <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
    
@@ -36,29 +36,29 @@
     </div>
     <div class="log">
       <div class="main">  	
-        <input type="checkbox" id="chk" aria-hidden="true">
+        <input class="loginPageInput" type="checkbox" id="chk" aria-hidden="true">
         <div class="signup">
           <form action="index.php" method="post">
-            <input type="hidden" name="load" value="Login/update" />
-            <input type="hidden" name="function" value="register" />
+            <input class="loginPageInput" type="hidden" name="load" value="Login/update" />
+            <input class="loginPageInput" type="hidden" name="function" value="register" />
 
             <label for="chk" aria-hidden="true">Inregistrare</label>
-            <input type="text" name="username" placeholder="Nume" required="" />
-            <input type="password" name="password" placeholder="Parola" required="" />
-            <input type="email" name="email" placeholder="Email" />
-            <input type="tel" name="telephone" placeholder="Numar de telefon" />
+            <input class="loginPageInput" type="text" name="username" placeholder="Nume" required="" />
+            <input class="loginPageInput" type="password" name="password" placeholder="Parola" required="" />
+            <input class="loginPageInput" type="email" name="email" placeholder="Email" />
+            <input class="loginPageInput" type="tel" name="telephone" placeholder="Numar de telefon" />
             <button>Inregistrare</button>
           </form>
         </div>
 
         <div class="login">
           <form action="index.php" method="post">
-            <input type="hidden" name="load" value="Login/update" />
-            <input type="hidden" name="function" value="login" />
+            <input class="loginPageInput" type="hidden" name="load" value="Login/update" />
+            <input class="loginPageInput" type="hidden" name="function" value="login" />
 
             <label for="chk" aria-hidden="true">Autentificare</label>
-            <input type="text" name="username" placeholder="Nume" required="" />
-            <input type="password" name="password" placeholder="Parola" required="">
+            <input class="loginPageInput" type="text" name="username" placeholder="Nume" required="" />
+            <input class="loginPageInput" type="password" name="password" placeholder="Parola" required="">
             <button>Autentificare</button>
           </form>
         </div>

@@ -6,6 +6,7 @@ select * from salvari;
 
 describe utilizatori;
 
+
 select id from utilizatori where nume_utilizator='remus'
 
 
