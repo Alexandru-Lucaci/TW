@@ -23,7 +23,7 @@ begin
     
     p_raspuns:='OK';
 end;
-
+/
 -------
 create or replace procedure autentificare(p_nume_utilizator varchar2,p_parola_trimisa varchar2,p_raspuns OUT varchar2)
 as
@@ -44,7 +44,7 @@ begin
     
     p_raspuns:='OK';
 end;
-
+/
 create or replace procedure sterge_utilizator(p_nume_utilizator varchar2,p_raspuns OUT varchar2)
 as
 begin
@@ -57,7 +57,7 @@ begin
     
     p_raspuns:='OK';    
 end;
-
+/
 --p_nume_camp=nume_utilizator,schimba numele,daca e disponibil numele nou
 --p_nume_camp=parola,schimba parola
 --p_nume_camp=email,schimba email
@@ -122,7 +122,7 @@ begin
     --assume everything works :( ... for now
     p_raspuns:='OK';    
 end;
-
+/
 describe utilizatori;
 
 create or replace function obtine_id_utilizator(p_nume_utilizator varchar2)
@@ -138,6 +138,7 @@ exception
     when too_many_rows then
     return -1;
 end;
+/
 
 select * from salvari;
 --------------------------for testing
@@ -180,7 +181,7 @@ delete from utilizatori;
 select * from utilizatori;
 
 select * from animale;
-
+/
 select * from utilizatori where nume_utilizator='tre';
 
 select name,line,text from user_source where lower(name)='schimbare_camp_utilizator' order by line asc;
@@ -193,5 +194,9 @@ begin
     schimbare_camp_utilizator(v_nume_utilizator,v_nume_camp,v_valoare_camp,v_raspuns);
     dbms_output.put_line(v_raspuns);
 end;
+/
+insert into utilizatori (id, nume_utilizator , parola , administrator) VALUES (10, 'remus', 'remus', 1);
 
+
+delete from animale where id =1;/
 select * from utilizatori where id<5;
