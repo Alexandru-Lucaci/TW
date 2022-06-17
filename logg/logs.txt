@@ -25,3 +25,11 @@
 16-JUN-22 : Utilizatorul cu id 12 si cu numele Alex isi modifica numele in parola
 16-JUN-22 : Utilizatorul cu id 12 si cu numele parola isi modifica numele in Alex
 16-JUN-22 : Utilizatorul cu id 12 si cu numele Alex isi modifica parola din parolaa in parola
+17-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=10 a salvat pentru contul sau animalul cu id=18
+17-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=10 a salvat pentru contul sau animalul cu id=14
+17-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=10 a salvat pentru contul sau animalul cu id=12
+17-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=10 a salvat pentru contul sau animalul cu id=16
+17-JUN-22 : O salvare a fost stearsa.Salvarea era pentru utilizatorul cu id=10 avand animalul cu id=16
+17-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=10 a salvat pentru contul sau animalul cu id=2
+17-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=10 a salvat pentru contul sau animalul cu id=5
+17-JUN-22 : O noua salvare a fost adaugata.Utilizatorul cu id=10 a salvat pentru contul sau animalul cu id=16

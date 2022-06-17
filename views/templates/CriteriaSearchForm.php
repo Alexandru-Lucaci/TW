@@ -58,7 +58,7 @@
         }
         echo "<br>";
 
-        echo "<input type=\"submit\" />";
+        echo "<input type=\"submit\" class=\"filtbutt\"/>";
 
     echo "</form>";
     
