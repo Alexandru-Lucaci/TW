@@ -2,7 +2,7 @@
 
 class AnimalsController extends Controller{
 
-    public function show(){
+    public function update(){
         $content=null;
         if(isset($_POST['function'])&&!empty($_POST['function'])){
         
@@ -22,9 +22,10 @@ class AnimalsController extends Controller{
         $presentation=$this->view->show($content);
 
         echo $presentation;
-    }
+    }    
 
-    public function reload($content=null){
+    public function show($content=null){
+
         $presentation=$this->view->show($content);
 
         echo $presentation;
@@ -54,7 +55,7 @@ class AnimalsController extends Controller{
             }
         }
         else{
-            $this->reload($response);
+            $this->show($response);
         }
     }
 }

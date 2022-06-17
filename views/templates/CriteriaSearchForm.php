@@ -11,7 +11,7 @@
 
     echo "<form action=\"index.php\" method=\"post\">";
         
-        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
+        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\" />";
         echo "<input type=\"hidden\" name=\"function\" value=\"multicriterial_search\" />";
         // echo "<div class=\"butt\"> <button class=\"filtbutt\" onclick=\"functionButt()\"> Filtru animale </button> </div>";
         foreach($criterias as $name=>$values){

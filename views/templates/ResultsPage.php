@@ -86,7 +86,7 @@
                                 //button for deleting an animal from savings
                                 echo "<div>";
                                     echo "<form action=\"index.php\" method=\"post\" >";
-                                        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
+                                        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\" />";
                                         echo "<input type=\"hidden\" name=\"function\" value=\"delete_animal_from_savings\" />";
                                         echo "<input type=\"hidden\" name=\"animal_name\" value=\"$popularName\" />";
 
@@ -98,7 +98,7 @@
                                 //button for saving info about an animal to the apporpiate account
                                 echo "<div>";
                                     echo "<form action=\"index.php\" method=\"post\" >";
-                                        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\" />";
+                                        echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\" />";
                                         echo "<input type=\"hidden\" name=\"function\" value=\"save_animals\" />";
                                         echo "<input type=\"hidden\" name=\"animal_names\" value=\"$popularName\" />";
 
@@ -121,7 +121,7 @@
 
             //display previous page form
             echo "<form action=\"index.php\" method=\"post\">";
-                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\">";
+                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\">";
                 echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
                 echo "<input type=\"hidden\" name=\"change_value\" value=\"-1\">";
                 echo "<input type=\"submit\" value=\"Pagina Anterioara\">";
@@ -132,7 +132,7 @@
 
             //display next page form
             echo "<form action=\"index.php\" method=\"post\">";
-                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/show\">";
+                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\">";
                 echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
                 echo "<input type=\"hidden\" name=\"change_value\" value=\"1\">";
                 echo "<input type=\"hidden\" name=\"results_per_page\" value=\"$nrAnimalsPerPage\">";
@@ -142,13 +142,11 @@
             echo "</div>";
         }
     }
+
+    if(is_string($data)){
+        echo "<p>Message:$data</p>";
+    }
             
     echo "</div>";
     echo "</div>";
-
-    if(!empty($data)){
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-    }
 ?>
