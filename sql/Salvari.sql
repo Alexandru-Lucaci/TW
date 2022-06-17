@@ -3,6 +3,7 @@
 --returneaza un mesaj de final corespunzator
 
 select * from salvari;
+select * from utilizatori;
 
 describe utilizatori;
 

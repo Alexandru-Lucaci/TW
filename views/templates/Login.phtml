@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="views/styles/styleLogin.css" />
     <link rel="stylesheet" href="views/styles/styleNavBar.css" />
     <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
-   
+
+    <script type="text/javascript" src="views/javaScript/LoginPageChecker.js"></script>
+
   </head>
 
   <body>
@@ -43,10 +45,17 @@
             <input class="loginPageInput" type="hidden" name="function" value="register" />
 
             <label for="chk" aria-hidden="true">Inregistrare</label>
-            <input class="loginPageInput" type="text" name="username" placeholder="Nume" required="" />
+
+            <input class="loginPageInput" type="text" name="username" placeholder="Nume" required="" 
+            onblur="javascript:check_username_exists(this.value,'register','register_label')" />
+            <label class="hidden" id="register_label">Numele de utilizator nu este disponibil</label>
+
             <input class="loginPageInput" type="password" name="password" placeholder="Parola" required="" />
+            
             <input class="loginPageInput" type="email" name="email" placeholder="Email" />
+            
             <input class="loginPageInput" type="tel" name="telephone" placeholder="Numar de telefon" />
+            
             <button>Inregistrare</button>
           </form>
         </div>
@@ -57,8 +66,13 @@
             <input class="loginPageInput" type="hidden" name="function" value="login" />
 
             <label for="chk" aria-hidden="true">Autentificare</label>
-            <input class="loginPageInput" type="text" name="username" placeholder="Nume" required="" />
+
+            <input class="loginPageInput" type="text" name="username" placeholder="Nume" required=""
+            onblur="javascript:check_username_exists(this.value,'login','login_label')" />
+            <label class="hidden" id="login_label">Nu exista numele de utilizator</label>
+            
             <input class="loginPageInput" type="password" name="password" placeholder="Parola" required="">
+            
             <button>Autentificare</button>
           </form>
         </div>
