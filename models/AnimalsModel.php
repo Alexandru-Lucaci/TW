@@ -278,9 +278,23 @@ class AnimalsModel extends Model{
             return;
         }
 
-        if(!(isset($_POST["animals_names"])&&!empty(($_POST["animals_names"])))){
-            $response="Numele pentru animalele descarcate nu este setat sau este gol";
-            return;
+        if(isset($_POST["sent_by_session"])){
+            if(!(isset($_SESSION['search_results'])&&!empty($_SESSION['search_results']))){
+                $response='Rezultatele nu sunt salvate in sesiune';
+                return;
+            }
+
+            $animalsNames=array();
+            foreach($_SESSION['search_results'] as $animal){
+                array_push($animalsNames,$animal['DENUMIRE_POPULARA']);
+            }
+        }
+        else{
+            if(!(isset($_POST["animals_names"])&&!empty(($_POST["animals_names"])))){
+                $response="Numele pentru animalele descarcate nu este setat sau este gol";
+                return;
+            }
+            $animalsNames=explode(',',htmlentities($_POST["animals_names"]));
         }
 
         $fileFormat=strtolower(htmlentities($_POST["file_format"]));
@@ -288,8 +302,6 @@ class AnimalsModel extends Model{
             $response="Formatul fisierului nu este unul permis(trebuie sa fie xml sau json)";
             return;
         }
-
-        $animalsNames=explode(',',htmlentities($_POST["animals_names"]));
 
         $nrAnimals=0;
 

@@ -23,9 +23,8 @@
 
         echo "<h4> <div class =\"links\">";
         include("AccountNavBar.phtml");
-        echo "</div></h4>
-        </div>";
-        // include("AccountNavBar.phtml") 
+        echo "</div></h4></div>";
+        
     ?>;
     
     <!-- <h2>Animale salvate</h2> -->
@@ -39,8 +38,25 @@
         
         include("SavedAnimalsPage.phtml");
 
-        echo "
-        </div>";
+        echo "</div>";
+
+        if(isset($_SESSION["saved_animals"])&&!empty(($_SESSION["saved_animals"]))){
+            echo "<div>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Savings/download\" />";
+                    echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
+                    echo "<input type=\"submit\" value=\"Descarca salvari ca XML\" />";
+                echo "</form>";
+            echo "</div>";
+
+            echo "<div>";
+                echo "<form action=\"index.php\" method=\"post\">";
+                    echo "<input type=\"hidden\" name=\"load\" value=\"Savings/download\" />";
+                    echo "<input type=\"hidden\" name=\"file_format\" value=\"json\" />";
+                    echo "<input type=\"submit\" value=\"Descarca salvari ca JSON\" />";
+                echo "</form>";
+            echo "</div>";
+        }
         
 
         if(!is_null($data)&&!empty($data)&&!is_array($data)){
