@@ -102,7 +102,7 @@
                                         echo "<input type=\"hidden\" name=\"function\" value=\"save_animals\" />";
                                         echo "<input type=\"hidden\" name=\"animal_names\" value=\"$popularName\" />";
 
-                                        echo "<input type=\"submit\" value=\"Salveaza\" />";
+                                        echo "<input type=\"submit\" value=\"Salveaza\" calss=\"filtbutt\" />";
                                     echo "</form>";
                                 echo "</div>";
                             }

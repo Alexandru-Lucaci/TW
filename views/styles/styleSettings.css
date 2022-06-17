@@ -9,11 +9,11 @@
     /* white-space: nowrap; */
   }
   
-div{
-    /* white-space: nowrap; */
+/* div{
+   white-space: nowrap; 
     word-break: break-all;
     
-}
+} */
 
   
 .links a {
@@ -56,6 +56,7 @@ div{
   
   .wrapper .left{
     width: 25%;
+    /* margin-top: 150px; */
     background: linear-gradient(to right,#FF7000,#F97432);
     padding: 30px 25px;
     border-top-left-radius: 5px;
@@ -80,7 +81,7 @@ div{
     background:  #FFE9C9;
   }
   .wrapper .right{
-    width: 75%;
+    /* width: 75%; */
     background:  #FFE9C9;
     padding: 30px 25px;
     border-top-right-radius: 5px;
@@ -157,7 +158,7 @@ div{
       box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
     }
     .wrapper .right{
-      width: 65%;
+      /* width: 65%; */
       background:  #FFE9C9;
       padding: 30px 25px;
       border-top-right-radius: 5px;
