@@ -106,3 +106,16 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+
+/* For warning label */
+.show{
+	display: block;
+	color: red;
+	font-size: 1em;
+}
+
+.hidden{
+	display: none;
+}
+
+
