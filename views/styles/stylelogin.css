@@ -28,7 +28,7 @@ body{
 }
 .main{
 	width: 350px;
-	height: 500px;
+	height: 600px;
 	background: red;
 	overflow: hidden;
 	background-color: #F97432;
@@ -98,7 +98,7 @@ button:hover{
 }
 
 #chk:checked ~ .login{
-	transform: translateY(-500px);
+	transform: translateY(-600px);
 }
 #chk:checked ~ .login label{
 	transform: scale(1);	

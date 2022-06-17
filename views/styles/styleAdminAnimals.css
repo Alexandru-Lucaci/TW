@@ -1,3 +1,6 @@
+.main-navbar-container{
+    z-index: 1;
+}
 
 body{
     display:grid;

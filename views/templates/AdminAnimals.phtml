@@ -14,8 +14,9 @@
     <?php include("AdminUpdate.php"); ?>
     
     <?php
-        include("NavBar.phtml"); 
-    
+        echo "<div class=\"main-navbar-container\">";
+            include("NavBar.phtml"); 
+        echo "</div>";
         echo "
         <div class=\"wrapper\"><div class=\"left\">
           <h4>$username</h4>";
