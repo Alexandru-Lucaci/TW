@@ -1,5 +1,10 @@
 
-
+.wrapper .left{
+    margin-top: 100px;
+  }
+  .wrapper .right{
+    margin-top: 100px;
+  }
 @media only screen and (max-width: 1200px){
 
 

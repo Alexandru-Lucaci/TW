@@ -10,6 +10,8 @@
         <link rel="stylesheet" type="text/css" href="views/styles/styleSettings.css" />
         <!-- <link rel="stylesheet" href="views/styles/buttons.css" /> -->
         <link rel="stylesheet" type="text/css" href="views/styles/styleSavedAnimals.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="views/styles/styleAdminAnimals.css" /> -->
+        <link rel="stylesheet" href="views/styles/styleButtons.css" />
     </head>
     <body>
 
@@ -25,7 +27,7 @@
         include("AccountNavBar.phtml");
         echo "</div></h4></div>";
         
-    ?>;
+    ?>
     
     <!-- <h2>Animale salvate</h2> -->
 
@@ -38,14 +40,20 @@
         
         include("SavedAnimalsPage.phtml");
 
-        echo "</div>";
+        
 
         if(isset($_SESSION["saved_animals"])&&!empty(($_SESSION["saved_animals"]))){
             echo "<div>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Savings/download\" />";
                     echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
-                    echo "<input type=\"submit\" value=\"Descarca salvari ca XML\" />";
+
+                    echo "
+                    <div class=\"projects_data\">
+                    
+                    <input type=\"submit\" value=\"Descarca salvari ca XML\" class=\"filtbutt\" />
+                    
+                    </div> " ;
                 echo "</form>";
             echo "</div>";
 
@@ -53,8 +61,17 @@
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Savings/download\" />";
                     echo "<input type=\"hidden\" name=\"file_format\" value=\"json\" />";
-                    echo "<input type=\"submit\" value=\"Descarca salvari ca JSON\" />";
+                    echo "
+                    <div class=\"projects_data\">
+                    
+                    <input type=\"submit\" value=\"Descarca salvari ca JSON\" class=\"filtbutt\" />
+                    
+                    </div> " ;
+
+                    // echo "<input type=\"submit\" value=\"Descarca salvari ca JSON\" />";
                 echo "</form>";
+            echo "</div>";
+            
             echo "</div>";
         }
         
