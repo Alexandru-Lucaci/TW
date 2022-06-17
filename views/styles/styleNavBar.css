@@ -118,13 +118,19 @@ body{
 @media only screen and (max-width: 1200px)
 {
     .nav-container{
+        z-index:10;
         position: relative;
+        background: #212329;
+        color : red;
+        height: 100vh;
+
     }
     .nav-menu{
         display:grid;
         grid-template-columns: auto;
         background:rgb(198, 24, 79);
         margin:0;
+        background: #212329;
         position:absolute;
         width:100%;
        /* to do  */

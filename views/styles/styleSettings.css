@@ -6,11 +6,11 @@
     /* box-sizing: border-box; */
     list-style: none;
     font-family: 'Josefin Sans', sans-serif;
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
   
 div{
-    white-space: nowrap;
+    /* white-space: nowrap; */
     word-break: break-all;
     
 }
