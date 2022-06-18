@@ -43,7 +43,7 @@ function check_username_exists( username, typeOperation, idLabel){
         globalThis.typeOperation=typeOperation;
         globalThis.idLabel=idLabel;
 
-        loadXML ('models/LoginPageAJAX.php?username=' + username);
+        loadXML ('models/ajax/checkUsername.php?username=' + username);
     }
 }
 
