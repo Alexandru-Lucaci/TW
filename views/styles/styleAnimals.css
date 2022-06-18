@@ -29,12 +29,10 @@ div{
         
 }
 
-
 .navbar{
     height: 80px;
 }
 .searchBar{
-    height: 30px;
     /* justify-self: right; */
    left: 15%;
 }
