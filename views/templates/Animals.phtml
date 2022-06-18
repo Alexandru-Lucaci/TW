@@ -59,6 +59,17 @@
               echo "</form>";
             echo "</div>";
 
+            echo "<div>";
+              echo "<button onclick=\"startSelection()\" class=\"filtbutt\">Marcheaza animale</button>";
+            echo "</div>";
+
+            echo "<div>";
+              echo "<button onclick=\"downloadMarkedAnimals('xml')\" class=\"filtbutt\" >Descarca animale selectate ca XML</button>";
+            echo "</div>";
+
+            echo "<div>";
+              echo "<button onclick=\"downloadMarkedAnimals('json')\" class=\"filtbutt\">Descarca animale selectate ca JSON</button>";
+            echo "</div>";
 
             if(isset($_SESSION['loggedIn'])&&!empty($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1&&isset($_SESSION['username'])&&!empty($_SESSION['username'])){
               $username=$_SESSION['username'];

@@ -3,7 +3,7 @@
     echo "<div class=\"rightplace\">";
     //construct the page
     //constants
-    $nrAnimalsPerPage=8;
+    $nrAnimalsPerPage=5;
     if(!isset($_SESSION['search_results'])||empty($_SESSION['search_results'])){
         echo "<p>Nimic de aratat</p>";
     }
