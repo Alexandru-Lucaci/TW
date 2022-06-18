@@ -46,7 +46,7 @@
                   echo "<input type=\"hidden\" name=\"load\" value=\"Animals/download\" />";
                   echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
                   echo "<input type=\"hidden\" name=\"sent_by_session\" value=\"true\" />";
-                  echo "<input type=\"submit\" value=\"Descarca rezultate ca XML\" />";
+                  echo "<input type=\"submit\" value=\"Descarca rezultate ca XML\" class=\"filtbutt\" />";
               echo "</form>";
             echo "</div>";
 
@@ -55,26 +55,15 @@
                 echo "<input type=\"hidden\" name=\"load\" value=\"Animals/download\" />";
                 echo "<input type=\"hidden\" name=\"file_format\" value=\"json\" />";
                 echo "<input type=\"hidden\" name=\"sent_by_session\" value=\"true\" />";
-                echo "<input type=\"submit\" value=\"Descarca rezultate ca JSON\" />";
+                echo "<input type=\"submit\" value=\"Descarca rezultate ca JSON\" class=\"filtbutt\" />";
               echo "</form>";
             echo "</div>";
 
-            echo "<div>";
-              echo "<button onclick=\"startSelection()\">Marcheaza animale</button>";
-            echo "</div>";
-
-            echo "<div>";
-              echo "<button onclick=\"downloadMarkedAnimals('xml')\">Descarca animale selectate ca XML</button>";
-            echo "</div>";
-
-            echo "<div>";
-              echo "<button onclick=\"downloadMarkedAnimals('json')\">Descarca animale selectate ca JSON</button>";
-            echo "</div>";
 
             if(isset($_SESSION['loggedIn'])&&!empty($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1&&isset($_SESSION['username'])&&!empty($_SESSION['username'])){
               $username=$_SESSION['username'];
               echo "<div>";
-                echo "<button onclick=\"saveMarkedAnimals('$username')\">Salveaza animale selectate</button>";
+                echo "<button onclick=\"saveMarkedAnimals('$username')\" class=\"filtbutt\" >Salveaza animale selectate</button>";
               echo "</div>";
             }
           }

@@ -59,6 +59,16 @@
         echo "<br>";
 
         echo "<input type=\"submit\" class=\"filtbutt\"/>";
+        echo "<div>";
+            echo "<button onclick=\"startSelection()\" class=\"filtbutt\">Marcheaza animale</button>";
+        echo "</div>";
+        echo "<div>";
+            echo "<button onclick=\"downloadMarkedAnimals('xml')\" class=\"filtbutt\" >Descarca animale selectate ca XML</button>";
+         echo "</div>";
+
+        echo "<div>";
+            echo "<button onclick=\"downloadMarkedAnimals('json')\" class=\"filtbutt\">Descarca animale selectate ca JSON</button>";
+        echo "</div>";
 
     echo "</form>";
     
