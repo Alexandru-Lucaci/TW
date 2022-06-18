@@ -34,13 +34,35 @@ function markAnimal(animalName){
             sessionStorage.removeItem(animalName);
         }
         else{
-            document.getElementById(animalName).style.borderLeft="2px solid #FFFFFF";
+            document.getElementById(animalName).style.borderLeft="10px solid #FFFFFF";
 
             sessionStorage.setItem(animalName,true);
         }
     }
 }
 
+/**
+ * Used to remark the animals after changing the result page
+ */
+function remarkAnimals(){
+
+    for(var i=0;i<sessionStorage.length;i++){
+        
+        animalName=sessionStorage.key(i);
+        
+        if(animalName!='start'){
+            var element=document.getElementById(animalName);
+
+            if(element!=null){
+                element.style.borderLeft="10px solid #FFFFFF";
+            }
+        }
+    }
+}
+
+/**
+ * Unmarks everything and clears the session storage data
+ */
 function endSelection(){
     
     for(var i=0;i<sessionStorage.length;i++){
@@ -119,9 +141,8 @@ function handleResponse(){
     if (request.readyState == 4) {
 
         if (request.status == 200) {
-            var root = request.responseXML.documentElement;
 
-            var res = root.getElementsByTagName('result')[0].firstChild.data;
+            console.log('Ok');
 
         }
         else { 
@@ -133,6 +154,16 @@ function handleResponse(){
 /**
  * Download the information about the animals
  */
-function downloadMarkedAnimals(){
+function downloadMarkedAnimals(fileFormat){
+
+    start=sessionStorage.getItem('start');
+
+    if(start!=null){
+        
+        animlaNames=getAnimalNames();
+
+        endSelection();
     
+        window.location.href="models/ajax/downloadAnimalsInfo.php?animal_names="+animalNames+"&file_format="+fileFormat;
+    }
 }
