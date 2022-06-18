@@ -151,3 +151,15 @@ creat_la date default sysdate,
 actualizat_la date default sysdate,
 primary key(clasa)
 );
+
+drop table formulare_contact;
+/
+create table formulare_contact(
+id integer primary key,
+nume varchar2(100),
+email varchar2(100) default null,
+telefon varchar2(100) default null,
+mesaj varchar2(3500),
+creat_la date default sysdate,
+actualizat_la date default sysdate
+);

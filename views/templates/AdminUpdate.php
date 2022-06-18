@@ -2,13 +2,8 @@
 
     if(is_array($data)){
 
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-
-
         //update session variables in case of request
-        $toBeUpdated=array('user_info','animal_info','list_users','list_animals','users_saved_animals','animal_saved_by_users');
+        $toBeUpdated=array('user_info','animal_info','list_users','list_animals','users_saved_animals','animal_saved_by_users','list_forms');
         if(isset($data['type'])&&in_array($data['type'],$toBeUpdated)){
             
             //take type and unset it
@@ -16,6 +11,9 @@
             unset($data['type']);
             
             $_SESSION['admin'][$type]=$data;
+            if($type=='list_forms'){
+                $_SESSION['admin']['form_position']=1;
+            }
 
             echo "<p>Updated $type</p>";
         }
