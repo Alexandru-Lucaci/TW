@@ -253,49 +253,107 @@
         <section>
           <h3>2.1 Perspectiva produsului</h3>
           <p>
-            Acest produs poate fi folosit in contextul in care o gradina
-            zoologica nu are un sit si doreste sa isi faca
-            informatiile,preturile si serviciile oferite de acestia mai usor
-            cunoscute si mai accesibile prin intermediul unui sit.
+            Acest produs poate fi folosit în contextul în care o grădină
+            zoologică nu are un site și doreste să își facă informațiile oferite
+            de acestia mai ușor cunoscute și mai accesibile prin intermediul
+            unui site. Acest produs oferă posibilitatea de a permite o
+            administrare mai rapidă, fiabilă și sigură a tuturor animalelor prin
+            intermediul bazei de date foarte bine structurate și volatilă la
+            schimbări.
+          </p>
+
+          <p>
+            Produsul nostru oferă posibilitatea de înlocuirii a simplelor
+            informații text scrise pe foaie care prezintă fiecare animal cu un
+            code qr care trimite turistul/vizitatoru/administratorul direct pe
+            pagina specifică fiecărui animal. Această modalitate este una mult
+            mai fiabilă, deoarece modificările se pot realiza și transmite
+            într-un timp mult mai scurt, iar toate acestea sunt eco-friendly, nu
+            se consumă hârtie, țuș, curent inutil.
+          </p>
+          <p>
+            Aplicația este structurată în trei mari părți. Prima parte este
+            reprezentată de front-end care reprezintă interacțiunea dintre
+            client(utilizator). Utilizatorul are posibilittea de a vizualiza
+            lista de animale ale grădinii zoologice, crearea unui cont/
+            autentificarea pe site, salvarea animalele preferate, contactarea
+            administratorilor, administrarea contului. A doua parte este
+            reprezentată de baza noastră de date folosită pentru stocarea
+            datelor, atât a utilizatorilor( nume, parolă, email, telefon,
+            animale, salvate), cât și a animalelor ( toate informațiile care se
+            găsesc în filtrele de căutare). A treia parte este reprezentată de
+            back-end( php și javascript) care gestionează și crează toate
+            funcționalitățile care sunt folosite de clienți.
           </p>
         </section>
 
         <section>
           <h3>2.2 Functionalitatile produsului</h3>
-          <p>Functionalitatile pe care le ofera sit-ul sunt:</p>
+          <p>Funcționalitățile pe care le oferă site-ul sunt:</p>
           <ul>
             <li>
-              accesul la informatii despre gradina zoologica cum ar fi
-              preturi,program in 3 limbi(romana,engleza,franceza)
+              Accesul la informații despre animalele de la grădina zoologică (
+              chiar dacă nu ești înregistrat/autentificat pe un cont).
+            </li>
+
+            <li>
+              Permite crearea unui cont în baza de date a serverului și
+              conectarea cu un cont deja creat aflat în baza de date.
             </li>
             <li>
-              accesul la informatii despre animalele de la gradina zoologica si
-              selectia lor pe baza unor criterii
+              Permite conectarea ca administrator și putând face modificări
+              (insert, delete, update) în bazele de date atât pentru
+              utilizatori( conturi create ), cât și pentru animale.
             </li>
-            <li>permite crearea unui cont pe acest sit</li>
             <li>
-              continutul se redimensioneaza corespunzator in functie de
-              dimensiunea ecranului de pe care este vizualizat sit-ul
+              Permite filtrarea, selecția animalelor, prin mai multe filtre
+              prestabilite, dar și prin folosirea unui search bar în care se pot
+              introduce cuvinte cheie.
             </li>
-            <li>trimiterea unui formular prin intermediul sit-ului</li>
+
+            <li>
+              Conținutul se redimensionează corespunzător în funcție de
+              dimensiunea ecranului de pe care este vizualizat site-ul.
+            </li>
+            <li>
+              Perminte transmiterea unui mesaj prin contactarea unui
+              administrator (acest lucru se poate face și fără un cont)
+            </li>
+            <li>
+              Permite utilizatorilor să salveze (atât pe cont) cât și local
+              (download XML/JSON) informații despre animalele pe care le
+              preferă.
+            </li>
           </ul>
         </section>
 
         <section>
-          <h3>2.3 Clasele de utilizatori si caracteristici</h3>
-          <p>Clasele de utilizatori care vor folosi acest sit sunt:</p>
+          <h3>2.3 Clasele de utilizatori și caracteristici</h3>
+          <p>Clasele de utilizatori care vor folosi acest site sunt:</p>
           <ul>
             <li>
-              Vizitatori -> doresc sa viziteze gradina zoologica in functie de
-              program si preturi
+              Vizitatori &#8594; doresc să viziteze gradina zoologica și să
+              descopere mai multe informați despre animalele prezente acolo
             </li>
             <li>
-              Personalul administrativ -> doresc sa faca anunturi sau sa publice
-              stiri de interes pentru vizitatori
+              Personalul administrativ &#8594; doresc să facă actualizări ale
+              bazelor de date ( actualizări pentru datele animalelor și a
+              utilizătorilor)
             </li>
             <li>
-              Posibili angajati -> folosirea sit-ului pentru a putea face
-              contact cu gradina zoologica
+              Posibili angajați &#8594; folosirea site-ului pentru a putea face
+              contact cu gradina zoologică
+            </li>
+            <li>
+              Posibili voluntari &#8594; folosirea site-ului pentru a putea face
+              contact cu gradina zoologică
+            </li>
+            <li>
+              Posibili viitori clienți care doresc site-uri din această
+              categorie ( site-ul poate fi modificat pentru a funcționa și
+              pentru expoziții, muzee, showrooms, orice domeniu care are de
+              prezentat anumite informații despre obiectele pe care le
+              dețin/vând)
             </li>
           </ul>
         </section>
@@ -303,9 +361,76 @@
         <section>
           <h3>2.4 Mediu de operare</h3>
           <p>
-            Acest produs poate functiona pe sistemele de operare Windows,Linux
-            si Mac ,dar necesita un program care poate interpreta cod html,css
-            si javascript pentru a putea functiona in mod corespunzator
+            Acest produs poate functiona pe toate sistemele de operare Windows,
+            Linux, Android, iOS, iPadOS, Chrome OS, MacOS care au un navigator
+            web( web browser).
+          </p>
+          <p>
+            Cerintele minime conform
+            <a
+              href="https://www.w3schools.com/tags/ref_html_browsersupport.asp"
+            >
+              HTML Reference - Browser Support
+            </a>
+            si
+            <a href="https://caniuse.com/">Can I Use</a>
+            sunt:
+          </p>
+          <ul>
+            <li>IE &#8594; nu se recomandă folosirea acestui browser.</li>
+            <li>
+              Opera mini &#8594; nu se recomandă folosirea acestui browser.
+            </li>
+            <li>Edge &#8594; se recomandă v79+.</li>
+            <li>Firefox &#8594; se recomandă v67+.</li>
+            <li>Chrome &#8594; se recomandă v63+.</li>
+            <li>Safari &#8594; se recomandă v11+.</li>
+            <li>Opera &#8594; se recomandă v50+.</li>
+            <li>Chrome for Android &#8594; se recomandă v101.</li>
+          </ul>
+          <p>
+            Pentru a putea folosii corect serverul este nevoie de un XAMPP care
+            să suporte oci8 ( extensie necesară pentru a putea folosii Oracle).
+            Se recomandă vizualizarea acestui
+            <a
+              href="https://blogs.oracle.com/opal/post/installing-xampp-on-windows-for-php-and-oracle-database"
+              >tutorial.</a
+            >
+          </p>
+          <p>Cerințe</p>
+          <ul>
+            <li>XAMPP win32-7.0.33-0vc14</li>
+            <li>instantclient-basic-nt-12.2.0.1.0.zip</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>2.5 Restricții de proiectare și implementare</h3>
+          <p>
+            Nu este posibilă folosirea framework-urilor. Astfel nu ne este
+            permisă utilizarea React, jQuery, Bootstrap sau oricărui alt
+            framework.
+          </p>
+        </section>
+        <section>
+          <h3>2.6 Restricții de proiectare și implementare</h3>
+          <p>
+            Documentul acesta poate fi ilustativ pentru manualul de utilizare.
+            Funcționalitatea și caracteristicilepaginiilor web sunt prezentate
+            în acest document. De asemenea, toate informațiile necesare pentru
+            crearea și funcționalitatea bazei de date se pot găsii în fișierul
+            <strong>MeoW_Database_Info.txt</strong>.
+          </p>
+        </section>
+        <section>
+          <h3>2.7 Dependențe și ipoteze externe</h3>
+          <p>
+            Proiectul nostru este dependent de baza e date, toate informațiile
+            importante, cum ar fi conturile utilizatorilor și informațiile
+            animalelor. De asemenea, acesta depinde și de rețeaua de internet al
+            utilizatorului/administratorilor, putând afecta performanța sau, în
+            cel mai rău caz, chiar oprirea permisiuni de accesare al paginilor
+            web.
           </p>
         </section>
       </section>
