@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
   <head>
     <meta charset="utf-8" />
-
-    <title>Documentatie</title>
+    <meta name="description" content="Menagerie on WEB" />
+    <meta
+      name="keywords"
+      content="Menagerie on Web, MeoW, ZOO, zoo, TW proiect, 2B2 "
+    />
+    <meta name="author" content="Ivan Remus" />
+    <meta name="author" content="Lucaci Alexandru-Constantin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentație</title>
   </head>
 
   <body>
     <article resource="#" typeof="schema:ScholarlyArticle">
       <header>
-        <h1 property="schema:name">Documentatie</h1>
+        <h1 property="schema:name">Documentație</h1>
       </header>
 
       <div role="contentinfo">
@@ -68,19 +75,23 @@
           <li>
             <a>Introducere</a>
             <ul>
-              <li><a>1.1 Cerinta si motivatie</a></li>
-              <li><a>1.2 Convetii</a></li>
-              <li><a>1.3 Audienta tinta si sugestii de citire</a></li>
+              <li><a>1.1 Cerința și motivație</a></li>
+              <li><a>1.2 Conveții</a></li>
+              <li><a>1.3 Audiența țintă și sugestii de citire</a></li>
               <li><a>1.4 Scop</a></li>
+              <li><a>1.5 Referințe</a></li>
             </ul>
           </li>
           <li>
             <a>Descriere</a>
             <ul>
               <li><a>2.1 Perspectiva produsului</a></li>
-              <li><a>2.2 Functionalitatile produsului</a></li>
-              <li><a>2.3 Clasele de utilizatori si caracteristici</a></li>
+              <li><a>2.2 Funcționalitațile produsului</a></li>
+              <li><a>2.3 Clasele de utilizatori și caracteristici</a></li>
               <li><a>2.4 Mediu de operare</a></li>
+              <li><a>2.5 Restricții de proiectare și implementare</a></li>
+              <li><a>2.6 Manual de utilizare</a></li>
+              <li><a>2.7 Dependențe și ipoteze externe</a></li>
             </ul>
           </li>
           <li>
@@ -119,69 +130,121 @@
         <h2>1. Introducere</h2>
 
         <section>
-          <h3>1.1 Cerinta si motivatie</h3>
+          <h3>1.1 Cerința și motivație</h3>
           <p>
-            Sa se implementeze o aplicatie Web menita a gestiona informatiile
-            vizand o gradina zoologica. Se vor facilita redarea si managementul
-            datelor despre animalele gazduite: denumire populara/stiintifica,
+            Să se implementeze o aplicatie Web menita a gestiona informațiile
+            vizând o grădina zoologică. Se vor facilita redarea și managementul
+            datelor despre animalele găzduite: denumire populară/științifică,
             descriere (de dorit, multilingva), origine, statut (e.g., specie
-            protejata, pe cale de disparitie, daunatoare etc.), caracteristici
-            (de exemplu, dependenta de clima, periculozitate, proprietati
-            speciale), specii inrudite, dusmani naturali, imagini de interes,
-            regim alimentar (vegetarian, carnivor, omnivor), mod de inmultire si
-            altele. Se vor pune la dispozitie mecanisme de
-            cautare/filtrare/prezentare multi-criteriala -- de pilda, afisarea
-            tuturor mamiferelor cu blana de origine europeana ce pot fi dresate
-            sau generarea unei liste de pasari/taratoare capabile sa
-            supravietuiasca in conditii desertice. Datele vor putea fi
-            importate/exportate via fisiere disponibile in formatele JSON si
+            protejată, pe cale de dispariție, dăunatoare etc.), caracteristici
+            (de exemplu, dependența de climă, periculozitate, proprietăți
+            speciale), specii inrudite, dușmani naturali, imagini de interes,
+            regim alimentar (vegetarian, carnivor, omnivor), mod de înmulțire și
+            altele. Se vor pune la dispoziție mecanisme de
+            căutare/filtrare/prezentare multi-criterială -- de pildă, afișarea
+            tuturor mamiferelor cu blană de origine europeană ce pot fi dresate
+            sau generarea unei liste de păsări/târâtoare capabile să
+            supraviețuiască în condiții desertice. Datele vor putea fi
+            importate/exportate via fișiere disponibile în formatele JSON și
             XML.
           </p>
           <p>
-            Motivul pentru care am ales de realizat acest proiect este pentru a
-            putea aprofunda si intelege mai bine utilitatile bazelor de date in
-            pastrarea de text si imagini dar si deoarece este o oportunitate de
-            a invata mai multe despre regatul animalelor(cum ar fi Hidra care nu
-            moare de batranete ci doar daca e mancata de un pradator al ei).De
-            asemenea,acest site ne ajuta sa digitalizam si sa facem mai
-            accesibil informatiile legate de animale.
+            Motivul pentru care am ales să realizăm acest proiect este pentru a
+            putea aprofunda și intelege mai bine utilitatile bazelor de date în
+            păstrarea de text, dar acest proiect oferă și oportunitatea de a
+            învața mai multe despre regatul animalelor(cum ar fi Hidra care nu
+            moare de bătrânețe, ci doar dacă e mâncată de un prădător al ei). De
+            asemenea, acest site ne ajuta sa digitalizăm și să facem mai
+            accesibil informațiile legate de animale. Un alt motiv pentru care
+            am ales acest proiect, motiv care după părerea nostră este mai
+            important decât cel prezentat, este acela că toți membrii grupei
+            sunt pasionați și fascinați de animale atât domestice, cât și
+            sălbatice. Acest proiect ne permite să ne mărim cunoștințele despre
+            ceva ce ne interesează pe toți.
           </p>
         </section>
 
         <section>
-          <h3>1.2 Convetii</h3>
+          <h3>1.2 Conveții</h3>
           <p>
-            Acest document este scris dupa formatul Scholarly HTML cu caractere
+            Acest document este scris după formatul Scholarly HTML cu caractere
             de tip UTF-8.
           </p>
-        </section>
-
-        <section>
-          <h3>1.3 Audienta tinta si sugestii de citire</h3>
           <p>
-            Acest document este destinat pentru dezvoltatori de tehnologii
-            web,testeri si scriitori de documentatii.
+            Titlurile capitulelor/ subcapitulelor vor fi numerotate. De
+            asemenea, acestea vor fi scrise cu un font diferit, îngroșat (bold)
+            pentru a permite o parcurgere mai plăcută și mai ușoară a
+            conținutului. De asemenea, acest mod de a scrie facilitează o
+            structurare mai bună, permițând accesarea strictă doar a
+            informațiilor necesare pe moment.
           </p>
         </section>
 
+        <section>
+          <h3>1.3 Audiența țintă și sugestii de citire</h3>
+          <p>
+            Acest document este destinat dezvoltatoriilor de tehnologii web,
+            utilizatorilor, testeri și scriitori de documentații.
+          </p>
+          <p>Sugestiile de citire sunt următoarele:</p>
+          <ul>
+            <li>
+              Introducere - destinată testerilor și a scriitorilor de
+              documentație
+            </li>
+            <li>
+              Descriere - destinată dezvoltatoriilor de tehnologii web și de
+              utilizatori
+            </li>
+            <li>
+              Cerințe de interfață externă - destinată dezvoltatoriilor de
+              tehnologii web
+            </li>
+            <li>
+              Funcționalități - destinată testerilor, utilizatorilor,
+              dezvoltatoriilor de tehnologii web
+            </li>
+          </ul>
+        </section>
         <section>
           <h3>1.4 Scop</h3>
           <p>
-            Scopul acestui produs este de a face informatiile legate de gradina
-            zoologica sa fie mai usor accesibile pentru publicul larg,si de a
-            oferi mai multa popularitate gradinii zoologice. Culoare
-            preponderent folosită este „#212329” ( gri inchis), folosită
-            preponderent pentru fundaluri, deoarece nu este o culoare care sa
-            atragă atenția, concentrează cititorul către lucrurile importante.
-            Alte culoari des folosite sunt culori calde cum ar fi „coral”,
-            „rgb(255, 212, 156)” care au rolul de a atrage atenția cititorului,
-            deseori avand un background închis la culoare. Culorile aprinse cum
-            ar fi „red”, „visiniu”(rgb(198, 24, 79)) sunt special folosite
-            pentru a marca un element foarte important.<br />
-            Culoarea de baza este „#32ff7e”(verde descbis) a fost aleasa cu
-            foarte multă atenție, aceasta exprima estența grădinii zoologice,
-            adică natura și fauna reprezentate cel mai bine de această culoare.
+            Proiectul nostru are ca scop realizarea unui site modern care să
+            permită accesarea mai ușoară a informațiilor despre anumite animale,
+            atât de turiști care doresc să descopere mai multe despre anumite
+            animale din portofoliul nostru, cât și de administratorii grădinii
+            zoologice pentru a putea actualiza sau modifica anumite informații
+            despre animalele noastre dragi. De asemenea, site-ul nostru încearcă
+            să crească popularitatea grădinii zoologice oferind o tentă modernă
+            a unei instituții care există de foarte mulți ani. Site-ul este
+            întrebuințat domeniului turistic, dar și domeniului administrativ
+            înglobând o multitudine de funcționalități cum ar fi: stocarea
+            informațiilor despre animalele grădinii, selecția animalelor dorite
+            după diverse criterii de căutare, posibilitatea administrării
+            fiecărui animal, posibilitatea de modificări/ ștergeri ale annumitor
+            animale.
           </p>
+        </section>
+        <section>
+          <h3>1.5 Referințe</h3>
+          <p>
+            Pentru realizarea acestei documentații, dar și a întregului proiect
+            am folosit mai multe referințe bibliografice, cum ar fi:
+          </p>
+          <ul>
+            <li>
+              <a href="https://github.com/rick4470/IEEE-SRS-Tempate">
+                IEE - template</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://blogs.oracle.com/opal/post/installing-xampp-on-windows-for-php-and-oracle-database"
+                >Tutorial pentru instalarea și utilizarea sistemului de
+                gestionare a bazelor de date Oracle</a
+              >
+            </li>
+          </ul>
         </section>
       </section>
 
