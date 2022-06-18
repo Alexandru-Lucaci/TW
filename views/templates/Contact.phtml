@@ -34,36 +34,40 @@
         <div class="row">
             <h4 style="text-align:center">Ne-am bucura să te auzim!</h4>
         </div>
+          <form action="index.php" method="post">
+            <input type="hidden" name="load" value="Contact/send_form" />
+            <input type="hidden" name="function" value="save_contact_form" />
 
             <div class="row input-container">
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <input type="text" required />
+                    <input type="text" name="name" required />
                     <label>Nume</label> 
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="styled-input">
-                    <input type="text" required />
+                    <input type="text" name="email" required />
                     <label>Email</label> 
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="styled-input" style="float:right;">
-                    <input type="text" required />
+                    <input type="text" name="telephone"/>
                     <label>Număr de telefon</label> 
                   </div>
                 </div>
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea required></textarea>
+                    <textarea name="message" required></textarea>
                     <label>Mesaj</label>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <div class="btn-lrg submit-btn">Trimite mesajul</div>
+                  <input class="btn-lrg submit-btn" type="submit" value="Trimite mesajul"></input>
                 </div>
             </div>
+          </form>
     </div>
 
     <script src="views/javascript/navBar.js"></script>

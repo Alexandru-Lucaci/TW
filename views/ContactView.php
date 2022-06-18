@@ -6,9 +6,9 @@ class ContactView extends View{
         parent::__construct("views/templates/Contact.phtml");
     }
 
-    function show($usersInfo=null){
+    function show($content=null){
 
-        $this->data = $usersInfo;
+        $this->data = $content;
 
         return $this->output();
     }

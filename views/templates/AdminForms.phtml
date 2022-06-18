@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Administrare formulare de contact</title>
+    </head>
+
+    <body>
+
+    <?php include("AdminUpdate.php"); ?>
+    
+    <?php
+        echo "<div class=\"main-navbar-container\">";
+            include("NavBar.phtml"); 
+        echo "</div>";
+        echo "
+        <div class=\"wrapper\"><div class=\"left\">
+          <h4>$username</h4>";
+       
+
+        echo "<h4> <div class =\"links\">";
+        include("AccountNavBar.phtml");
+        echo "</div></h4>
+        </div>";
+    ?>;
+
+    <div>
+        <h3>Formulare de contact</h3>
+
+        <div>
+            <p>Reincarca rezultatele</p>
+            <form action="index.php" method="post">
+                <input type="hidden" name="load" value="AdminForms/update" />
+                <input type="hidden" name="function" value="get_forms" />
+
+                <input type="submit" value="Reincarca" />
+            </form>
+        </div>
+
+    </div>
+
+    <div>
+        <?php
+            if(isset($_SESSION['admin']['list_forms'])&&!empty($_SESSION['admin']['list_forms'])){
+
+                echo "<div>";
+                    echo "<form action=\"index.php\" method=\"post\">";
+                        echo "<input type=\"hidden\" name=\"load\" value=\"AdminForms/update\" />";
+                        echo "<input type=\"hidden\" name=\"function\" value=\"change_page\" />";
+                        echo "<input type=\"hidden\" name=\"change_value\" value=\"-1\" />";
+        
+                        echo "<input type=\"submit\" value=\"Formularul anterior\" />";
+                    echo "</form>";
+                echo "</div>";
+
+                echo "<div>";
+                    echo "<form action=\"index.php\" method=\"post\">";
+                        echo "<input type=\"hidden\" name=\"load\" value=\"AdminForms/update\" />";
+                        echo "<input type=\"hidden\" name=\"function\" value=\"change_page\" />";
+                        echo "<input type=\"hidden\" name=\"change_value\" value=\"1\" />";
+
+                        echo "<input type=\"submit\" value=\"Formularul urmator\" />";
+                    echo "</form>";
+                echo "</div>";
+                
+                $forms=$_SESSION['admin']['list_forms'];
+                $position=$_SESSION['admin']['form_position'];
+
+                $name=htmlentities($forms[$position]['NUME']);
+                if(empty($name)){
+                    $name='-';
+                }
+
+                $email=htmlentities($forms[$position]['EMAIL']);
+                if(empty($email)){
+                    $email='-';
+                }
+
+                $telephone=htmlentities($forms[$position]['TELEFON']);
+                if(empty($telephone)){
+                    $telephone='-';
+                }
+
+                $message=htmlentities($forms[$position]['MESAJ']);
+                if(empty($message)){
+                    $message='-';
+                }
+
+                echo "<div>";
+                    echo "<h3>Informatii formular de contact:</h3>";
+                    echo "<div>";
+                        echo "<p>Nume:$name</p>";
+                    echo "</div>";
+
+                    echo "<div>";
+                        echo "<p>Email:$email</p>";
+                    echo "</div>";
+
+                    echo "<div>";
+                        echo "<p>Numar de telefon:$telephone</p>";
+                    echo "</div>";
+
+                    echo "<div>";
+                        echo "<p>Mesaj:$message</p>";
+                    echo "</div>";
+                echo "</div>";
+            }
+            else{
+                echo "<p>Nimic de aratat</p>";
+            }
+        ?>
+    </div>
+
+    </body>
+</html>

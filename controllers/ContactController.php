@@ -9,6 +9,15 @@ class ContactController extends Controller{
 
         echo $presentation;
     }
+
+    public function send_form(){
+        
+        $response=$this->model->save_contact_form();
+
+        $presentation=$this->view->show($response);
+
+        echo $presentation;
+    }
 }
 
 ?>
