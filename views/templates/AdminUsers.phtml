@@ -2,6 +2,12 @@
 <html lang="ro">
     <head>
         <title>Administrare utilizatori</title>
+        <link rel="stylesheet" type="text/css" href="views/styles/styleNavBar.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/styleSearch.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/styleSettings.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/styleAdminUtilizator.css" />
+        <link rel="stylesheet" href="views/styles/styleButtons.css" />
     </head>
     <body>
 
@@ -10,50 +16,100 @@
     <?php
         include("NavBar.phtml"); 
     
-        include("AccountNavBar.phtml") 
-    ?>;
+        echo "
+        <div class=\"wrapper\"><div class=\"left\">
+          <h4>$username</h4>";
+       
 
-    <div>
-        <h2>Utilizatori</h2>
+        echo "<h4> <div class =\"links\">";
+        include("AccountNavBar.phtml");
+        echo "</div></h4>
+        </div>";
+    ?>
 
+    <div class="mainClass">
+        <div class="right">
+            <div class="info">
+                <h3>Utilizatori</h3>
+            </div>
+       
         <div>
-            <p>Gaseste utilizatori dupa nume camp si valoare camp</p>
+            <div class="info">
+                <h3>Găsește utilizatori după nume câmp și valoare câmp</h3>
+            </div>
+           
             <form action="index.php" method="post">
                 <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="get_information" />
                 <input type="hidden" name="table" value="utilizatori" />
 
-                <label for="field_name">Nume camp</label>
-                <input type="text" name="field_name" maxlength="30" />
+                <div class="projects_data">
+                    <div class="data">
+                        <h4><label for="field_name">Nume câmp</label></h4>
+                        <input type="text" name="field_name" maxlength="30" />
+                    </div>
+                </div>
 
-                <label for="field_value">Valoare camp</label>
-                <input type="text" name="field_value" maxlength="30" />
-
-                <input type="submit" />
+                <div class="projects_data">
+                    <div class="data">
+                        <h4><label for="field_value">Valoare câmp</label></h4>
+                        <input type="text" name="field_value" maxlength="30" />
+                    </div>
+                </div>
+                <br>
+                <div class="projects_data">
+                    
+                    <input type="submit" value="Găsește" class="filtbutt" />
+                    
+                </div>  
+                <br>
             </form>
         </div>
 
         <div>
-            <p>Lista utilizatori:</p>
-            <?php 
-                //echo "<pre>";
-                //print_r($data);
-                //echo "</pre>";
-            ?>
+            <div class="info">
+                <h3>Listă utilizatori: </h3>
+            </div>
+            <div class="projects_data">
+                <?php 
+                    //echo "<pre>";
+                    //print_r($data);
+                    //echo "</pre>";
+                ?>
+
+            </div>  
         </div>
 
-        <hr>
+        <!-- <hr>  -->
 
         <div>
-            <p>Obtine informatiile despre utilizator</p>
+            <div class="info">
+                <h3>Obține informațiile despre utilizator</h3>
+            </div>
+            
             <form action="index.php" method="post">
                 <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="get_user_information" />
-                <input type="text" name="username" />
+                <div class="projects_data">
+                    <div class="data">
+                        <h4><label for="field_name">Nume</label></h4>
+                        <input type="text" name="username" />   
+                    </div>
+                </div>
+                <br>
+                <div class="projects_data">
+                    
+                <input type="submit" value="Obtine informatii utilizator" class ="filtbutt"/>
+                   
+                </div>
+                <br>
 
-                <input type="submit" value="Obtine informatii utilizator" />
+                 
             </form>
-            <h4>Informatii utilizator</h4>
+            <div class="info">
+                <h3>Informații utilizator</h3>
+            </div>
+            
             <?php
                 if(isset($_SESSION['admin']['user_info'])&&!empty($_SESSION['admin']['user_info'])){
 
@@ -74,12 +130,24 @@
 
                     $isAdmin=htmlentities($info['ADMINISTRATOR']);
                     $isAdmin=($isAdmin==0)?"Nu":"Da";
+                    
+                    echo "
+                        <div class=\"projects_data\">
+                            <div class=\"data\">";
+                            echo "<p>Nume utilizator:$username</p>";
+                            echo "<p>Parola:$password</p>";
+                            echo "<p>Email:$email</p>";
+                            echo "<p>Numar de telefon:$cellphone</p>";
+                            echo "<p>Este administrator:$isAdmin</p>";    
+                    echo "  </div>
+                        </div>";
 
-                    echo "<p>Nume utilizator:$username</p>";
-                    echo "<p>Parola:$password</p>";
-                    echo "<p>Email:$email</p>";
-                    echo "<p>Numar de telefon:$cellphone</p>";
-                    echo "<p>Este administrator:$isAdmin</p>";                    
+
+                    // echo "<p>Nume utilizator:$username</p>";
+                    // echo "<p>Parola:$password</p>";
+                    // echo "<p>Email:$email</p>";
+                    // echo "<p>Numar de telefon:$cellphone</p>";
+                    // echo "<p>Este administrator:$isAdmin</p>";                    
                 }
                 else{
                     echo "<p>Nimic de afisat</p>";
@@ -90,79 +158,141 @@
         <hr>
 
         <div>
-            <p>Schimba informatiile despre un utilizator</p>
+            <div class="info">
+                <h3>Schimbă informațiile despre un utilizator</h3>
+            </div>
+            
             <form action="index.php" method="post">
                 <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="change_account_information" />
                 
-                <label for="username">Nume utilizator:</label>
-                <input type="text" name="username" />
+                <div class="projects_data">
+                    <div class="data">
+                       <h4> <label for="username">Nume utilizator:</label></h4>
+                        <input type="text" name="username" />
+                    </div>
+                </div> 
+
+                <div class="projects_data">
+                    <div class="data">
+                        <h4><label for="field_name">Nume câmp</label></h4>
+                        <input type="text" name="field_name" />
+                    </div>
+                </div> 
                 
-                <label for="field_name">Nume camp</label>
-                <input type="text" name="field_name" />
+                <div class="projects_data">
+                    <div class="data">
+                        <h4><label for="field_value">Valoare nouă a câmpului</label></h4>
+                        <input type="text" name="field_value" />
+                    </div>
+                </div> 
 
-                <label for="field_value">Valoare noua a campului</label>
-                <input type="text" name="field_value" />
+                <br>
+                <div class="projects_data"> 
+                    <input type="submit" value="Modifică camp" class ="filtbutt" />
+                </div>
+                <br>
 
-                <input type="submit" value="Modifica camp" />
+
+                
             </form>
         </div>
 
         <div>
-            <p>Sterge un utilizator</p>
+            <div class="info">
+                <h3>Șterge un utilizator </h3>
+            </div> 
             <form action="index.php" method="post">
                 <input type="hidden" name="load" value="AdminUsers/update" />
                 <input type="hidden" name="function" value="delete_account" />
 
-                <label for="username">Nume utilizator:</label>
-                <input type="text" name="username" />
+                
+                <div class="projects_data">
+                    <div class="data">
+                        <h4><label for="username">Nume utilizator:</label></h4>
+                        <input type="text" name="username" />
+                    </div>
+                </div>  
+                <br>
+                <div class="projects_data"> 
+                    <input type="submit" value="Șterge cont" class ="filtbutt" />
+                </div>
+                <br>
 
-                <input type="submit" value="Sterge cont" />
             </form>
         </div>
 
         <hr>
 
         <div>
-            <p>Vezi salvarile unui utilizator</p>
+            <div class="info">
+                <h3>Vezi salvările unui utilizator </h3>
+            </div>
+        
             <div>
                 <form action="index.php" method="post">
                     <input type="hidden" name="load" value="AdminUsers/update" />
                     <input type="hidden" name="function" value="get_saved_animals" />
 
-                    <label for="username">Nume utilizator:</label>
-                    <input type="text" name="username" />
+
+                    <div class="projects_data">
+                        <div class="data">
+                            <h4><label for="username">Nume utilizator:</label></h4>
+                            <input type="text" name="username" />
+                        </div>
+                    </div>  
+                    <br>
+                    <div class="projects_data"> 
+                        <input type="submit" value="Obține salvari" class ="filtbutt" />
+                    </div>
+                    <br>
+
+                   
                 
-                    <input type="submit" value="Obtine salvari" />
 
                 </form>
             </div>
             <div>
-                <h3>Salvarile:</h3>
+                <div class="info">
+                    <h3>Salvările </h3>
+                </div>
+               
                 <?php 
                     if(isset($_SESSION['admin']['users_saved_animals'])&&!empty($_SESSION['admin']['users_saved_animals'])){
 
                         $listAnimals=$_SESSION['admin']['users_saved_animals'];
 
                         if(empty($listAnimals)){
-                            echo "<p>Niciun animal salvat</p>";
+                            echo "<div class=\"projects_data\">
+                                    <div class=\"data\"";
+                                    echo "<p>Niciun animal salvat</p>";
+                            echo "</div>
+                            </div>";
                         }
                         else{
                             $position=1;
+                            echo "<div class=\"projects_data\">
+                                    <div class=\"data\"";
                             foreach($listAnimals as $animal){
                                 
                                 $popularName=$animal['DENUMIRE_POPULARA'];
                                 $scientificName=$animal['DENUMIRE_STINTIFICA'];
 
                                 echo "<p>$position : $popularName,$scientificName</p>";
-                                echo "<hr>";
+                                // echo "<hr>";
 
                                 $position++;
                             }
+                            echo "</div>
+                            </div>";
                         }          
                     }
                     else{
+                        echo "<div class=\"projects_data\">
+                                    <div class=\"data\"";
                         echo "<p>Nimic de afisat</p>";
+                        echo "</div>
+                            </div>";
                     } 
                 ?>
             </div>
@@ -170,8 +300,7 @@
         </div>
 
     </div>
-
-    <?php include("Footer.html"); ?>
-
+    </div>
+    <script src="views/javascript/navBar.js"></script>
     </body>
 </html>
