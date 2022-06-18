@@ -46,8 +46,9 @@
                             echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
                     
                             echo "<input type=\"hidden\" name=\"animals_names\" value=\"$popularName\" />";
-            
-                            echo "<input type=\"submit\" value=\"Descarca ca XML\" />";
+                            echo "<div class=\"card-content\">";
+                                echo "<input type=\"submit\" value=\"Descarca ca XML\" class=\"filtbutt\"/>";
+                            echo "</div>";
                         echo "</form>";
                     echo "</div>";
 
@@ -58,8 +59,11 @@
                             echo "<input type=\"hidden\" name=\"file_format\" value=\"json\" />";
                     
                             echo "<input type=\"hidden\" name=\"animals_names\" value=\"$popularName\" />";
-        
-                            echo "<input type=\"submit\" value=\"Descarca ca JSON\" />";
+
+                            echo "<div class=\"card-content\">";
+                                echo "<input type=\"submit\" value=\"Descarca ca JSON\" class=\"filtbutt\"/>";
+                            echo "</div>";
+                            
                         echo "</form>";
                     echo "</div>";
 
@@ -70,7 +74,11 @@
                             echo "<input type=\"hidden\" name=\"function\" value=\"get_animal_information\" />";
                             echo "<input type=\"hidden\" name=\"animal_name\" value=\"$popularName\" />";
 
-                            echo "<input type=\"submit\" value=\"Mai multe\" />";
+                            echo "<div class=\"card-content\">";
+                                echo "<input type=\"submit\" value=\"Mai multe\" class=\"filtbutt\"/>";
+                            echo "</div>";
+
+        
                         echo "</form>";
                     echo "</div>";
 
@@ -90,7 +98,10 @@
                                         echo "<input type=\"hidden\" name=\"function\" value=\"delete_animal_from_savings\" />";
                                         echo "<input type=\"hidden\" name=\"animal_name\" value=\"$popularName\" />";
 
-                                        echo "<input type=\"submit\" value=\"Sterge(de la salvari)\" />";
+                                        echo "<div class=\"card-content\">";
+                                            echo "<input type=\"submit\" value=\"Sterge(de la salvari)\" class=\"filtbutt\"/>";
+                                        echo "</div>";
+                                        
                                     echo "</form>";
                                 echo "</div>";
                             }
@@ -101,8 +112,10 @@
                                         echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\" />";
                                         echo "<input type=\"hidden\" name=\"function\" value=\"save_animals\" />";
                                         echo "<input type=\"hidden\" name=\"animal_names\" value=\"$popularName\" />";
-
-                                        echo "<input type=\"submit\" value=\"Salveaza\" calss=\"filtbutt\" />";
+                                        echo "<div class=\"card-content\">";
+                                            echo "<input type=\"submit\" value=\"Salveaza\" class=\"filtbutt\"/>";
+                                        echo "</div>";
+                                        
                                     echo "</form>";
                                 echo "</div>";
                             }
@@ -124,19 +137,19 @@
                 echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\">";
                 echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
                 echo "<input type=\"hidden\" name=\"change_value\" value=\"-1\">";
-                echo "<input type=\"submit\" value=\"Pagina Anterioara\">";
+                echo "<input type=\"submit\" value=\"Pagina Anterioara\" class =\"filtbutt\">";
             echo "</form>";
 
             //display current page
-            echo "<h4>$pageNumber</h4>";
+            echo "<h2 style = \"text-align: center\" >$pageNumber</h2>";
 
             //display next page form
             echo "<form action=\"index.php\" method=\"post\">";
                 echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\">";
                 echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
-                echo "<input type=\"hidden\" name=\"change_value\" value=\"1\">";
+                echo "<input type=\"hidden\" name=\"change_value\" value=\"1\" >";
                 echo "<input type=\"hidden\" name=\"results_per_page\" value=\"$nrAnimalsPerPage\">";
-                echo "<input type=\"submit\" value=\"Pagina Urmatoare\">";
+                echo "<input type=\"submit\" value=\"Pagina Urmatoare\" class=\"filtbutt\">";
             echo "</form>";
 
             echo "</div>";
@@ -144,7 +157,7 @@
     }
 
     if(is_string($data)){
-        echo "<p>Message:$data</p>";
+        // echo "<p>Message:$data</p>";
     }
             
     echo "</div>";
