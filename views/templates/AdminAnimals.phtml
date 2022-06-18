@@ -17,15 +17,15 @@
         echo "<div class=\"main-navbar-container\">";
             include("NavBar.phtml"); 
         echo "</div>";
-        echo "
-        <div class=\"wrapper\"><div class=\"left\">
-          <h4>$username</h4>";
-       
 
-        echo "<h4> <div class =\"links\">";
-        include("AccountNavBar.phtml");
-        echo "</div></h4>
-        </div>";
+        echo "<div class=\"wrapper\">";
+            echo "<div class=\"left\">";
+                echo "<h4>$username</h4>";
+                echo "<div class =\"links\">";
+                    include("AccountNavBar.phtml");
+                echo "</div>";
+            echo "</div>";
+        //aparent,nu trebuie inca un </div>...
     ?>;
     
     <div class="mainClass">
@@ -48,13 +48,13 @@
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_name">Nume câmp</label><h4>
+                        <h4><label>Nume câmp</label></h4>
                         <input type="text" name="field_name" maxlength="30" />
                     </div>
                 </div>
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_value">Valoare câmp</label></h4>
+                        <h4><label>Valoare câmp</label></h4>
                         <input type="text" name="field_value" maxlength="30" />
                     </div>
              
@@ -80,7 +80,6 @@
                     //print_r($data);
                     //echo "</pre>";
                 ?>
-
             </div>  
 
         </div>
@@ -95,14 +94,14 @@
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="animal_name">Nume animal</label></h4>
+                        <h4><label>Nume animal</label></h4>
                         <input type="text" name="animal_name" />
                     </div>
                 </div> 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_name">Nume camp</label></h4>
-                        <input type="" name="field_name" />     
+                        <h4><label>Nume camp</label></h4>
+                        <input type="text" name="field_name" />     
                     </div>
                 </div>
                 <br>
@@ -126,7 +125,7 @@
                         $value='-';
                     }
 
-                    echo "<h4><p>Valoare:$value</p></h4>";                    
+                    echo "<p>Valoare:$value</p>";                    
                 ?>
             </div>
         </div>
@@ -145,21 +144,21 @@
                 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="animal_name">Nume animal</label></h4>
+                        <h4><label>Nume animal</label></h4>
                         <input type="text" name="animal_name" />
                     </div>
                 </div> 
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_name">Nume camp schimbat</label></h4>
-                        <input type="" name="field_name" /> 
+                        <h4><label>Nume camp schimbat</label></h4>
+                        <input type="text" name="field_name" /> 
                     </div>
                 </div>
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_value">Valoare noua</label></h4>
-                        <input type="" name="field_value" />
+                        <h4><label>Valoare noua</label></h4>
+                        <input type="text" name="field_value" />
                     </div>
                 </div>  
                 <br>
@@ -186,7 +185,7 @@
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="animal_name">Nume animal</label></h4>
+                        <h4><label>Nume animal</label></h4>
                         <input type="text" name="animal_name" />
                     </div>
                 </div>  
@@ -215,7 +214,7 @@
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="animal_name">Nume animal</label><h4>
+                        <h4><label>Nume animal</label></h4>
                         <input type="text" name="animal_name" />
                     </div>
                 </div>  

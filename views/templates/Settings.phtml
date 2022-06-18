@@ -41,19 +41,13 @@
                 }
                 
 
-                echo "
-                <div class=\"wrapper\"><div class=\"left\">
-                  <h4>$username</h4>";
-               
-                  echo "
-                  <h4> 
-                    <div class =\"links\">";
-                      include("AccountNavBar.phtml");
-                  echo "
-                    </div>
-                  </h4>
-                
-                </div>";
+                echo "<div class=\"wrapper\">";
+                echo "<div class=\"left\">";
+                    echo "<h4>$username</h4>";
+                    echo "<div class =\"links\">";
+                        include("AccountNavBar.phtml");
+                    echo "</div>";
+                echo "</div>";
 
                 echo "
                 <div class=\"right\">
@@ -97,17 +91,21 @@
                     echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
                     echo "<input type=\"hidden\" name=\"field_name\" value=\"nume_utilizator\" />";
 
-                    echo "<div class=\"projects\">
-                    <h3>Modificari</h3>
-                        <div class=\"projects_data\">
-                          <div class=\"data\">
-                            <h4>";
-                    echo "<label>Nume:</label></h4></div>";
+                    echo "<div class=\"projects\">";
+                      echo "<h3>Modificari</h3>";
+                      echo "<div class=\"projects_data\">";
+                        echo "<div class=\"data\">";
+                          echo "<h4>";
+                          echo "<label>Nume:</label>";
+                          echo "</h4>";
+                        echo "</div>";
+                        echo "<input type=\"text\" name=\"field_value\" />";
+                      echo "</div>";
 
-                    echo "<input type=\"text\" name=\"field_value\" />";
-                    echo "</div>
-                    <div class=\"data\">";
-                    echo "<input type=\"submit\" value=\"Schimba\" /> </div>";
+                      echo "<div class=\"data\">";
+                        echo "<input type=\"submit\" value=\"Schimba\" />";
+                      echo "</div>";
+                    echo "</div>";
                    
                 echo "</form>";
                 
@@ -153,24 +151,30 @@
                     echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
                     echo "<input type=\"hidden\" name=\"field_name\" value=\"telefon\" />";
 
-                    echo " <div class=\"projects_data\">
-                    <div class=\"data\">
-                      <h4><label>Telefon:</label></h4></div>";
-                    echo "<input type=\"text\" name=\"field_value\" />";
-                    echo "</div>
-                    <div class=\"data\">
-                      ";
-                    echo "<input type=\"submit\" value=\"Schimba\" /></div>";
+                    echo "<div class=\"projects_data\">";
+                      echo "<div class=\"data\">";
+                        echo "<h4><label>Telefon:</label></h4>";
+                      echo "</div>";
+                      
+                      echo "<input type=\"text\" name=\"field_value\" />";
+                    echo "</div>";
 
+                    echo "<div class=\"data\">";
+                      echo "<input type=\"submit\" value=\"Schimba\" />";
+                    echo "</div>";
+                
                 echo "</form>";
+
                 echo "<br>";
+                
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"logout\" />";
-                    echo "<div class=\"projects_data\">
-                    <div class=\"data\">
-                      <h4>";
-                    echo "<input type=\"submit\" value=\"Deconecteaza-te\" /></h4></div>";
+                    echo "<div class=\"projects_data\">";
+                      echo "<div class=\"data\">";
+                        echo "<input type=\"submit\" value=\"Deconecteaza-te\" />";
+                      echo "</div>";
+                    echo "</div>";
 
                 echo "</form>";
 
@@ -178,9 +182,9 @@
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
                     echo "<input type=\"hidden\" name=\"function\" value=\"delete_account\" />";
 
-                    echo " <div class=\"data\">";
-
-                    echo "<input type=\"submit\" value=\"Sterge cont\" /></div></div>";
+                    echo "<div class=\"data\">";
+                      echo "<input type=\"submit\" value=\"Sterge cont\" />";
+                    echo "</div>";
 
                 echo "</form>";
                 

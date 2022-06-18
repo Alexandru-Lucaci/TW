@@ -164,6 +164,6 @@
     echo "</div>";
 ?>
 <!--Used to remark animals the animals already selected after changing the page -->
-<script type="text/javascript">
+<script>
     remarkAnimals();
 </script>

@@ -17,15 +17,15 @@
 
     <?php
 
-        include("NavBar.phtml"); 
-        echo "
-        <div class=\"wrapper\"><div class=\"left\">
-          <h4>$username</h4>";
-       
-
-        echo "<h4> <div class =\"links\">";
-        include("AccountNavBar.phtml");
-        echo "</div></h4></div>";
+        include("NavBar.phtml");
+         
+        echo "<div class=\"wrapper\">";
+            echo "<div class=\"left\">";
+                echo "<h4>$username</h4>";
+                echo "<div class =\"links\">";
+                    include("AccountNavBar.phtml");
+                echo "</div>";
+            echo "</div>";
         
     ?>
     

@@ -21,7 +21,7 @@
             echo "<p>Nothing to update</p>";
         }
     }
-    else{
+    else if(!empty($data)){
         echo "<h3>$data</h3>";
     }
 

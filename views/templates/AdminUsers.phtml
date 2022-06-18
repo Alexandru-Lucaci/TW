@@ -16,15 +16,13 @@
     <?php
         include("NavBar.phtml"); 
     
-        echo "
-        <div class=\"wrapper\"><div class=\"left\">
-          <h4>$username</h4>";
-       
-
-        echo "<h4> <div class =\"links\">";
-        include("AccountNavBar.phtml");
-        echo "</div></h4>
-        </div>";
+        echo "<div class=\"wrapper\">";
+            echo "<div class=\"left\">";
+                echo "<h4>$username</h4>";
+                echo "<div class =\"links\">";
+                    include("AccountNavBar.phtml");
+                echo "</div>";
+            echo "</div>";
     ?>
 
     <div class="mainClass">
@@ -45,14 +43,14 @@
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_name">Nume câmp</label></h4>
+                        <h4><label>Nume câmp</label></h4>
                         <input type="text" name="field_name" maxlength="30" />
                     </div>
                 </div>
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_value">Valoare câmp</label></h4>
+                        <h4><label>Valoare câmp</label></h4>
                         <input type="text" name="field_value" maxlength="30" />
                     </div>
                 </div>
@@ -92,7 +90,7 @@
                 <input type="hidden" name="function" value="get_user_information" />
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_name">Nume</label></h4>
+                        <h4><label>Nume</label></h4>
                         <input type="text" name="username" />   
                     </div>
                 </div>
@@ -168,21 +166,21 @@
                 
                 <div class="projects_data">
                     <div class="data">
-                       <h4> <label for="username">Nume utilizator:</label></h4>
+                       <h4> <label>Nume utilizator:</label></h4>
                         <input type="text" name="username" />
                     </div>
                 </div> 
 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_name">Nume câmp</label></h4>
+                        <h4><label>Nume câmp</label></h4>
                         <input type="text" name="field_name" />
                     </div>
                 </div> 
                 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="field_value">Valoare nouă a câmpului</label></h4>
+                        <h4><label>Valoare nouă a câmpului</label></h4>
                         <input type="text" name="field_value" />
                     </div>
                 </div> 
@@ -209,7 +207,7 @@
                 
                 <div class="projects_data">
                     <div class="data">
-                        <h4><label for="username">Nume utilizator:</label></h4>
+                        <h4><label>Nume utilizator:</label></h4>
                         <input type="text" name="username" />
                     </div>
                 </div>  
@@ -237,7 +235,7 @@
 
                     <div class="projects_data">
                         <div class="data">
-                            <h4><label for="username">Nume utilizator:</label></h4>
+                            <h4><label>Nume utilizator:</label></h4>
                             <input type="text" name="username" />
                         </div>
                     </div>  
@@ -288,11 +286,11 @@
                         }          
                     }
                     else{
-                        echo "<div class=\"projects_data\">
-                                    <div class=\"data\"";
-                        echo "<p>Nimic de afisat</p>";
-                        echo "</div>
-                            </div>";
+                        echo "<div class=\"projects_data\">";
+                            echo "<div class=\"data\">";
+                            echo "<p>Nimic de afisat</p>";
+                            echo "</div>";
+                        echo "</div>";
                     } 
                 ?>
             </div>

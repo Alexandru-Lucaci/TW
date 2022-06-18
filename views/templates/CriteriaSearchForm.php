@@ -46,8 +46,7 @@
                 }
                 echo "/>";
 
-                
-                echo "<label>$displayValue</label>";
+                echo "<label>$displayName</label>";
 
                 
             }
