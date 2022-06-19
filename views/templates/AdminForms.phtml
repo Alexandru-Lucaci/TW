@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="ro">
     <head>
-        <title>Administrare formulare de contact</title>
+        <title>Administrare formulare de contact</title>       
+         <title>Administrare utilizatori</title>
+        <link rel="stylesheet" type="text/css" href="views/styles/styleNavBar.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/styleSearch.css" />
+        <link rel="stylesheet" type="text/css" href="views/styles/styleSettings.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="views\styles\styleAdminForms.css" /> -->
+        <link rel="stylesheet" href="views/styles/styleButtons.css" />
     </head>
 
     <body>
@@ -20,18 +27,35 @@
                     include("AccountNavBar.phtml");
                 echo "</div>";
             echo "</div>";
-    ?>;
-
+    ?>
+    <div class = "mainClass">
+    <div class="right">
     <div>
-        <h3>Formulare de contact</h3>
+        <div class="info">
+                <h3>Formulare de contact</h3>
+            </div>
+       
 
         <div>
-            <p>Reincarca rezultatele</p>
+            <div class="info">
+                <h3>Reîncarcă rezultatele</h3>
+            </div>
+       
+        
             <form action="index.php" method="post">
                 <input type="hidden" name="load" value="AdminForms/update" />
                 <input type="hidden" name="function" value="get_forms" />
+                <br>
+                    <div class="projects_data">
+                        
+                    <input type="submit" value="Reincarca" class="filtbutt" />
+                        
+                    </div>  
+                <br>
+              
+            
 
-                <input type="submit" value="Reincarca" />
+
             </form>
         </div>
 
@@ -47,7 +71,15 @@
                         echo "<input type=\"hidden\" name=\"function\" value=\"change_form_position\" />";
                         echo "<input type=\"hidden\" name=\"change_value\" value=\"-1\" />";
         
-                        echo "<input type=\"submit\" value=\"Formularul anterior\" />";
+                        echo "
+                        <br>
+                        <div class=\"projects_data\">
+                            
+                            <input type=\"submit\" value=\"Formularul anterior\" class=\"filtbutt\"/>
+                            
+                        </div>  
+                        <br>";
+        
                     echo "</form>";
                 echo "</div>";
 
@@ -56,8 +88,16 @@
                         echo "<input type=\"hidden\" name=\"load\" value=\"AdminForms/update\" />";
                         echo "<input type=\"hidden\" name=\"function\" value=\"change_form_position\" />";
                         echo "<input type=\"hidden\" name=\"change_value\" value=\"1\" />";
+                        echo "
+                        <br>
+                        <div class=\"projects_data\">
+                            
+                             <input type=\"submit\" value=\"Formularul urmator\" class=\"filtbutt\"/>
+                            
+                        </div>  
+                        <br>";
 
-                        echo "<input type=\"submit\" value=\"Formularul urmator\" />";
+                        
                     echo "</form>";
                 echo "</div>";
                 
@@ -85,28 +125,37 @@
                 }
 
                 echo "<div>";
-                    echo "<h3>Informatii formular de contact:</h3>";
-                    echo "<div>";
-                        echo "<p>Nume:$name</p>";
-                    echo "</div>";
-
-                    echo "<div>";
-                        echo "<p>Email:$email</p>";
-                    echo "</div>";
-
-                    echo "<div>";
-                        echo "<p>Numar de telefon:$telephone</p>";
-                    echo "</div>";
-
-                    echo "<div>";
-                        echo "<p>Mesaj:$message</p>";
-                    echo "</div>";
+                    echo "
+                    <div class=\"info\">
+                        <h3>Informații formular de contact:</h3>
+                    </div>";
+                    echo "
+                    <div class=\"projects_data\">
+                    <div class=\"data\">
+                        <h4><label>Nume:$name</label></h4>
+                        <h4><label>Email:$email</label></h4>
+                        <h4><label>Numar de telefon:$telephone</label></h4>
+                        <h4><label>Mesaj:$message</label></h4>
+                         />
+                    </div>
+                    </div>";
                 echo "</div>";
+
             }
             else{
-                echo "<p>Nimic de aratat</p>";
+
+                echo "
+                <div class=\"projects_data\">
+                <div class=\"data\">
+                    <h4><label>Nimic de aratat</label></h4>
+              
+                    </div>
+                 </div>";
+                
             }
         ?>
+    </div>
+    </div>
     </div>
 
     </body>
