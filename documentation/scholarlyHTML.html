@@ -10,13 +10,14 @@
     <meta name="author" content="Ivan Remus" />
     <meta name="author" content="Lucaci Alexandru-Constantin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Documentație</title>
   </head>
 
   <body>
     <article resource="#" typeof="schema:ScholarlyArticle">
       <header>
-        <h1 property="schema:name">Documentație</h1>
+        <h1 property="schema:name">MeoW (Menagerie on Web)</h1>
       </header>
 
       <div role="contentinfo">
@@ -449,6 +450,7 @@
             </p>
             <figure typeof="sa:image">
               <img src="paletaCulori.png" alt="paletă culori" />
+              <figcaption>Fig.1 - Paleta de culori a site-ului</figcaption>
             </figure>
             <p>Culorile de la stânga la dreapta sunt</p>
             <ul>
@@ -565,35 +567,90 @@
             <h4>Header</h4>
             <p>
               Pentru fiecare pagină a site-ului, header se află in partea de sus
-              a paginii.
+              a paginii ocupând 80px pe toate dimensiunele de ecran( atât pentru
+              width mai mare de 1270px cât șli pentru mai puțin) și 100% din
+              width.
               <br />
-              Header este compus dintr-o bara de navigare care este un
-              dreptunghi pe axa orizontala si care conține 7 butoane și un camp
+              Header este compus dintr-o bară de navigare care este un
+              dreptunghi pe axă orizontală și care conține 7 butoane și un câmp
               de căutare. Odată ce un buton este apăsat, acesta va încărca
               pagina asociată cu el. Dacă este folosit câmpul de căutare, acesta
-              va încărca pe ecran pagina cu informațiile conform celor căutate,
-              dacă există.
+              trimite automat la pagina web unde sunt reprezentate animalele și
+              se va afișa, dacă este cazul, animalele care au legătură cu ce a
+              căutat utilziatorul. Nav bar-ul funcționează diferit în funcție de
+              lățimea paginii care îl deschide, astfel avem o bară de navigație
+              în care sunt butoanele vizibile și o bară de navigație în care
+              butoanele de cautare sunt înlocuite de un buton care permite, la
+              apăsarea lui, afișeară pe înălțime butoanele.
+            </p>
+            <p>Mai jos sunt reprezentate niște schițe ale bării de navigare:</p>
+            <figure typeof="sa:image">
+              <img src="mockups/navBar1.png" alt="header mockup" />
+              <figcaption>Fig.2 - Schiță pentru bara de navigare1</figcaption>
+            </figure>
+            <p>
+              O observație care se poate aduce aici este că butonul de
+              deconectare este mai mic decât celelalte pentru a fi mai dificil
+              de apăsat din neatenție sau fără intenție.
             </p>
             <figure typeof="sa:image">
-              <img src="mockups/Header.png" alt="header mockup" />
+              <img src="mockups/navBar2.png" alt="header mockup" />
+              <figcaption>
+                Fig.3 - Schiță pentru bara de navigare2 - butonul de navigare nu
+                este apăsat
+              </figcaption>
+            </figure>
+            <figure typeof="sa:image">
+              <img src="mockups/navBar3.png" alt="header mockup" />
+              <figcaption>
+                Fig.4 - Schiță pentru bara de navigare2 - butonul de navigare
+                este apăsat
+              </figcaption>
+            </figure>
+            <p>Pe pagina noastră header-ul arată așa:</p>
+            <figure typeof="sa:image">
+              <img src="mockups/navBar4.png" alt="header mockup" />
+              <figcaption>
+                Fig.5 - Fig.2 - Schiță pentru bara de navigare
+              </figcaption>
+            </figure>
+            <figure typeof="sa:image">
+              <img src="mockups/navBar5.png" alt="header mockup" />
+              <figcaption>
+                Fig.6 -Schiță pentru bara de navigare2 - butonul de navigare nu
+                este apăsat
+              </figcaption>
+            </figure>
+            <figure typeof="sa:image">
+              <img src="mockups/navBar6.png" alt="header mockup" />
+              <figcaption>
+                Fig.7 - Schiță pentru bara de navigare2 - butonul de navigare
+                este apăsat
+              </figcaption>
             </figure>
           </section>
 
           <section>
             <h4>Footer</h4>
             <p>
-              Pentru fiecare pagina a sit-ului,footer-ul se afla in partea de
-              jos a fiecare pagini.
+              Footer-ul este disponibil pe majoritatea paginilor site-ului și
+              are ca scop afișarea mai multor informații despre grădina
+              zoologica, cum ar fi: locația, numărul de telefon, adresă de
+              email.
               <br />
-              Footer-ul retine informatii de contact pentru gradina zoologica si
-              pentru sit cum ar fi adresa,numarul de telefon,pagina de Facebook
-              si email-ul sit-ului pentru gradina zoologica.De asemenea contine
-              informatii despre administratorul sit-ului.
+              Acesta se redimensionează în funcție de lățimea paginii web,
+              astfel avem posibile următoarele schițe pentru această pagină:
             </p>
             <figure typeof="sa:image">
-              <img src="mockups/Footer.png" alt="footer mockup" />
+              <img src="mockups/footer1.png" alt="footer mockup" />
+              <figcaption>Fig.8 - Schiță pentru footer1</figcaption>
             </figure>
           </section>
+          <figure typeof="sa:image">
+            <img src="mockups/footer2.png" alt="footer mockup" />
+            <figcaption>Fig.9 - Schiță pentru footer2</figcaption>
+          </figure>
+        </section>
 
           <section>
             <h4>Pagina Acasa</h4>
@@ -718,7 +775,7 @@
       </section>
 
       <section>
-        <h2>4. Functionalitati</h2>
+        <h2>4. Functionalități</h2>
 
         <section>
           <h3>4.1 Acces la informatii despre gradina zoologica</h3>

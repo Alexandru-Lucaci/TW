@@ -1,0 +1,50 @@
+/* figcaption {
+    /* background-color: black;
+    color: white; 
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+  } */
+
+html{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". content .";
+}
+
+body{
+    display : grid;
+    grid-area: content;
+    text-align: justify;
+    text-justify: inter-word;
+    
+    background-color: #212329;
+    color: white;
+    font-size:22px;
+
+   
+}
+a{
+    color:#20b2aa;
+}
+h1{
+    color: coral;
+}
+h2{
+    color:#F9C87C;
+}
+h3{
+    color:  #FFE9C9;
+}
+h4{
+    color :#D7F9FB;
+}
+img{
+    border-radius: 5%;
+}
+@media only screen and (max-width: 1200px){
+    html{
+        display:inline-block;
+
+    }
+}
