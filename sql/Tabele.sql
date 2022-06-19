@@ -67,7 +67,7 @@ create table animale(
 id number(38,0),
 denumire_populara varchar2(50) not null unique,
 denumire_stintifica varchar2(100) not null,
-mini_descriere varchar2(500) not null,
+mini_descriere varchar2(1500) not null,
 etimologie varchar2(4000),
 origine varchar2(20),
 clasa varchar2(20),

@@ -141,7 +141,7 @@ class AnimalsModel extends Model{
                     if($position!=0){
                         $whereClause.=' or ';
                     }
-                    $whereClause.= $column.'=\''.strtolower($value).'\'';
+                    $whereClause.= 'lower('.$column.')=\''.strtolower($value).'\'';
 
                     $position++;
                 }

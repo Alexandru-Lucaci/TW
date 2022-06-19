@@ -156,7 +156,7 @@ class ImportModel extends Model{
         $fields=array(
             new InputField('DENUMIRE_POPULARA',50,true),
             new InputField('DENUMIRE_STINTIFICA',100,true),
-            new InputField('MINI_DESCRIERE',500,false),
+            new InputField('MINI_DESCRIERE',1500,false),
             new InputField('ETIMOLOGIE',4000,false),
             new InputField('ORIGINE',20,false),
             new InputField('CLASA',20,false),
@@ -164,7 +164,7 @@ class ImportModel extends Model{
             new InputField('INVAZIVA',20,false),
             new InputField('STARE_DE_CONSERVARE',40,false),
             new InputField('REGIM_ALIMENTAR',15,false),
-            new InputField('DIETA',1300,false),
+            new InputField('DIETA',4000,false),
             new InputField('MOD_DE_INMULTIRE',30,false),
             new InputField('REPRODUCERE',4000,false),
             new InputField('DEZVOLTARE',4000,false),

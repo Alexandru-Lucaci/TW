@@ -380,6 +380,14 @@ insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,orig
 
 --test
 
+select id,denumire_populara from animale;
+
+select id,regim_alimentar from animale;
+
+update animale set regim_alimentar='Ierbivor' where id in(4);
+
+delete from animale;
+
 select denumire_populara,origine,clasa,punctaj_animal('tigriasdas leu',denumire_populara) as scor
 from animale
 where punctaj_animal('tigriasdas leu',denumire_populara)>0

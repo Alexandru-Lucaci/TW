@@ -180,6 +180,7 @@ begin
 end;
 
 delete from animale;
+select * from animale;
 describe animale;
 
 declare
