@@ -10,13 +10,14 @@
     <meta name="author" content="Ivan Remus" />
     <meta name="author" content="Lucaci Alexandru-Constantin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Documentație</title>
   </head>
 
   <body>
     <article resource="#" typeof="schema:ScholarlyArticle">
       <header>
-        <h1 property="schema:name">Documentație</h1>
+        <h1 property="schema:name">MeoW (Menagerie on Web)</h1>
       </header>
 
       <div role="contentinfo">
@@ -440,166 +441,1100 @@
 
         <section>
           <h3>3.1 Interfete cu utilizator</h3>
+          <section>
+            <h4>Culori</h4>
+            <p>
+              Culoarile noastre au fost alese astfel încât să creeze un contrast
+              destul de mare între ce este în prin plan (foreground) și ce este
+              în fundal (background). Astfel am ales următoare paletă de culori:
+            </p>
+            <figure typeof="sa:image">
+              <img
+                src="paletaCulori.png"
+                alt="paletă culori"
+                style="max-width: 500px"
+              />
+              <figcaption>Fig.1 - Paleta de culori a site-ului</figcaption>
+            </figure>
+            <p>Culorile de la stânga la dreapta sunt</p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.computerhope.com/cgi-bin/htmlcolor.pl?c=FF7F50"
+                >
+                  Coral &#8594; #FF7F50</a
+                >
+              </li>
+              <li>
+                <a href="https://www.schemecolor.com/sample?getcolor=ffac4a">
+                  Pastel Orange &#8594; #FFAC4A</a
+                >
+              </li>
+
+              <li>
+                <a href="https://www.schemecolor.com/sample?getcolor=ffe9c9">
+                  Blanched Almond &#8594; #FFE9C9</a
+                >
+              </li>
+              <li>
+                <a href="https://www.schemecolor.com/sample?getcolor=ff7000">
+                  Philippine Orange &#8594; #FF7000</a
+                >
+              </li>
+              <li>
+                <a href="https://www.schemecolor.com/sample?getcolor=D7F9FB ">
+                  Whater &#8594; #D7F9FB</a
+                >
+              </li>
+              <li>
+                <a href="https://www.schemecolor.com/sample?getcolor=A0D5E8">
+                  Non-Photo Blue &#8594; #A0D5E8</a
+                >
+              </li>
+              <li>
+                <a href="https://www.schemecolor.com/sample?getcolor=05719D">
+                  CG Blue &#8594; #05719D</a
+                >
+              </li>
+            </ul>
+            <p>
+              De asemenea, mai folosim și alte câteva culori cum ar fi
+              <a href="https://www.htmlcsscolor.com/hex/212329"
+                ><strong>#212329(Black Russian)</strong></a
+              >,
+              <a href="https://www.html-color-names.com/lightseagreen.php"
+                ><strong>#20b2aa(LightSeaGreen)</strong></a
+              >,
+
+              <a href="https://color-hex.org/color/c6184f">
+                <strong>#C60718(Venetian Red)</strong></a
+              >
+              și grii/alb.
+            </p>
+            <p>
+              Background-ul paginilor este BlackRussian, un background închis la
+              culoare, deoarece conform acestui link
+              <a
+                href="https://uxplanet.org/dark-side-of-ui-benefits-of-dark-background-12f560bf7165"
+                >Dark Side of UI. Benefits of Dark Background</a
+              >
+              culorile închise folosite ca și background ajută user-ul să
+              citească mai ușor textul. De asemenea, culorile închise ca și
+              fundal sunt în clipa de față la „modă”
+            </p>
+            <p>
+              Restul tuturor culorilor ( mai puțin<a
+                href="https://color-hex.org/color/c6184f"
+              >
+                <strong>#C60718(Venetian Red)</strong></a
+              >
+              și
+              <a href="https://www.schemecolor.com/sample?getcolor=05719D">
+                CG Blue &#8594; #05719D</a
+              >) sunt culori alese calde cu scopul de a creea un contrast mare
+              între fundal și prim plan. Aceste culori, cum ar fi
+              <a
+                href="https://www.computerhope.com/cgi-bin/htmlcolor.pl?c=FF7F50"
+              >
+                Coral &#8594; #FF7F50</a
+              >, sunt culori calde care relaxează ochii, nu obosesc. Acestea
+              sunt folosite pentru textul important, informații, selecția
+              butoanelor, culoarea butoanelor.
+            </p>
+
+            <p>
+              Culorile „țipătoare” (
+              <a href="https://color-hex.org/color/c6184f">
+                #C60718(Venetian Red)</a
+              >,
+              <a href="https://www.html-color-names.com/lightseagreen.php"
+                ><strong>#20b2aa(LightSeaGreen)</strong></a
+              >) sunt folosite pentru a evidenția butoanele importante (contact,
+              autentificare, delogare) și anumite link-uri importante.
+            </p>
+            <p>
+              Culoarea
+              <a href="https://www.schemecolor.com/sample?getcolor=05719D">
+                CG Blue &#8594; #05719D</a
+              >
+              este folosită pentru a colora anumite butoane din pagina de
+              adminsitarem, iar gri/alb este folosit preponderent pentru text
+              deoarece sunt culori care intră în contrastcu cu
+              <a href="https://www.htmlcsscolor.com/hex/212329"
+                ><strong>#212329(Black Russian)</strong></a
+              >
+              și este prezentat foarte clar.
+            </p>
+          </section>
 
           <section>
             <h4>Header</h4>
             <p>
-              Pentru fiecare pagina a sit-ului ,header se afla in partea de sus
-              a paginii(exceptie fiind pagina principala Acasa ,in care acesta
-              apare sub poza de la gradina zoologica)
+              Pentru fiecare pagină a site-ului, header se află in partea de sus
+              a paginii ocupând 80px pe toate dimensiunele de ecran( atât pentru
+              width mai mare de 1270px cât șli pentru mai puțin) și 100% din
+              width.
               <br />
-              Header este compus dintr-o bara de navigare care este un
-              dreptunghi pe axa orizontala si care contine 6 butoane si un camp
-              de cautare. Odata ce un buton este apasat,acesta va incerca pagina
-              asociata cu el.Daca este folosit campul de cautare ,acesta va
-              incarca pe ecran pagina cu informatiile conform celor cautate,daca
-              exista.
+              Header este compus dintr-o bară de navigare care este un
+              dreptunghi pe axă orizontală și care conține 7 butoane și un câmp
+              de căutare. Odată ce un buton este apăsat, acesta va încărca
+              pagina asociată cu el. Dacă este folosit câmpul de căutare, acesta
+              trimite automat la pagina web unde sunt reprezentate animalele și
+              se va afișa, dacă este cazul, animalele care au legătură cu ce a
+              căutat utilziatorul. Nav bar-ul funcționează diferit în funcție de
+              lățimea paginii care îl deschide, astfel avem o bară de navigație
+              în care sunt butoanele vizibile și o bară de navigație în care
+              butoanele de cautare sunt înlocuite de un buton care permite, la
+              apăsarea lui, afișeară pe înălțime butoanele.
+            </p>
+            <p>Mai jos sunt reprezentate niște schițe ale bării de navigare:</p>
+            <figure typeof="sa:image">
+              <img
+                src="mockups/navBar1.png"
+                alt="header mockup"
+                style="max-width: 500px"
+              />
+              <figcaption>Fig.2 - Schiță pentru bara de navigare1</figcaption>
+            </figure>
+            <p>
+              O observație care se poate aduce aici este că butonul de
+              deconectare este mai mic decât celelalte pentru a fi mai dificil
+              de apăsat din neatenție sau fără intenție.
             </p>
             <figure typeof="sa:image">
-              <img src="mockups/Header.png" alt="header mockup" />
+              <img
+                src="mockups/navBar2.png"
+                alt="header mockup"
+                style="max-width: 500px"
+              />
+              <figcaption>
+                Fig.3 - Schiță pentru bara de navigare2 - butonul de navigare nu
+                este apăsat
+              </figcaption>
+            </figure>
+            <figure typeof="sa:image">
+              <img
+                src="mockups/navBar3.png"
+                alt="header mockup"
+                style="max-width: 500px"
+              />
+              <figcaption>
+                Fig.4 - Schiță pentru bara de navigare2 - butonul de navigare
+                este apăsat
+              </figcaption>
+            </figure>
+            <p>Pe pagina noastră header-ul arată astfel:</p>
+            <figure typeof="sa:image">
+              <img
+                src="mockups/navBar4.png"
+                alt="header mockup"
+                style="max-width: 500px"
+              />
+              <figcaption>Fig.5 - bara de navigare</figcaption>
+            </figure>
+            <figure typeof="sa:image">
+              <img
+                src="mockups/navBar5.png"
+                alt="header mockup"
+                style="max-width: 500px"
+              />
+              <figcaption>
+                Fig.6 - bara de navigare2 - butonul de navigare nu este apăsat
+              </figcaption>
+            </figure>
+            <figure typeof="sa:image">
+              <img
+                src="mockups/navBar6.png"
+                alt="header mockup"
+                style="max-width: 500px"
+              />
+              <figcaption>
+                Fig.7 - bara de navigare2 - butonul de navigare este apăsat
+              </figcaption>
             </figure>
           </section>
 
           <section>
             <h4>Footer</h4>
             <p>
-              Pentru fiecare pagina a sit-ului,footer-ul se afla in partea de
-              jos a fiecare pagini.
+              Footer-ul este disponibil pe majoritatea paginilor site-ului și
+              are ca scop afișarea mai multor informații despre grădina
+              zoologica, cum ar fi: locația, numărul de telefon, adresă de
+              email.
               <br />
-              Footer-ul retine informatii de contact pentru gradina zoologica si
-              pentru sit cum ar fi adresa,numarul de telefon,pagina de Facebook
-              si email-ul sit-ului pentru gradina zoologica.De asemenea contine
-              informatii despre administratorul sit-ului.
-            </p>
-            <figure typeof="sa:image">
-              <img src="mockups/Footer.png" alt="footer mockup" />
-            </figure>
-          </section>
-
-          <section>
-            <h4>Pagina Acasa</h4>
-            <p>
-              Pagina principala Acasa(descrisa de documentul html index.html) se
-              ocupa cu prezentarea continutului acestui sit pentru utilizatori
-              ,acest continut fiind informatiile despre gradina
-              zoologica(preturi,program,anunturi).Aceasta contine o prezentare
-              cu 3 poze cu animale care se afla la gradina zoologica si cuvinte
-              cheie care descriu atmosefera si motto-ul dorit la gradina
-              zoologica.
-            </p>
-            <figure typeof="sa:image">
-              <img src="mockups/MainPage2.png" alt="pagina Acasa mockup" />
-            </figure>
-            <figure typeof="sa:image">
-              <img src="mockups/MainPage1.png" alt="pagina Acasa mockup" />
-            </figure>
-          </section>
-
-          <section>
-            <h4>Pagina Animale</h4>
-            <p>
-              Pagina Animale(descrisa de documentul aflat in Animals/index.html)
-              se ocupa cu prezentarea informatiilor despre animalelor care fac
-              parte din gradina zoologica(informatii cum ar fi poze cu
-              acestea,provenienta,durata de traire,denumire populare,denumire
-              stintifica etc).In partea stanga se afla un meniu vertical care
-              prezinta optiune de selecti pentru animale,ele putand fi ordonare
-              in ordine crescatoare sau descrescatoare alfabetic,dupa clasa de
-              animale,origine,statut,daca sunt specii inrudite,regimul
-              alimentar(ierbivor,carnivor,omnivor) si mod de inmultire.
-              <br />
-              Pentru fiecare animal care respecta criteriile
-              selectate,informatiile despre acestea sunt puse intr-un chenar in
-              care avem ca si titlu numele stintific,o poza cu un animal din
-              specia respectiva, o descriere scurta a acestora si un hipertext
-              denumit 'Mai multe' care trimite catre o pagina unde exista mai
-              multe informatii despre animalul respectiv.
-            </p>
-            <figure typeof="sa:image">
-              <img src="mockups/Animale.png" alt="pagina Animale mockup" />
-            </figure>
-          </section>
-
-          <section>
-            <h4>Pagina Despre</h4>
-            <p>
-              Pagina Despre(descrisa de documentul about.html) se ocupa cu
-              prezentarea informatii legate de personalul gradinii
-              zoologice(cine suntem si de ce facem ceea ce facem) si de asemenea
-              echipa care a creat sit-ul.Fiecare membru este descris intr-un
-              chenar care contine o poza(o poza corespunzatoare este pusa in caz
-              ca persoana respectiva nu doreste sa plaseze una),numele,slujba si
-              o descriere data de acestia.
-              <br />
-              Aceasta este impartita in 2 sectiune: una fiind informatii
-              generale despre persoanele de la gradina zoologica(in chenarul
-              Despre noi) si alta fiind in sectiune Intalneste echipa.
-            </p>
-            <figure typeof="sa:image">
-              <img src="mockups/Despre.png" alt="pagina Despre mockup" />
-            </figure>
-          </section>
-
-          <section>
-            <h4>Pagina Ajutor</h4>
-            <p>
-              Pagina Ajutor(descrisa de documentul help.html) se ocupa cu
-              prezentarea unor informatii care pot fi de ajutor utilizatorilor
-              care au nedumeriri sau intrebari.Aceasta pagina are o sectiune
-              denumita Intrebari frecvente in care sunt puse intrebari si
-              raspunsuri ale acestora.Printr-un click sau aducerea mouse-ului
-              asupra unei intrebari,raspunsul acesteia va aparea sub intrebare.
-            </p>
-            <figure typeof="sa:image">
-              <img src="mockups/Ajutor.png" alt="pagina Acasa mockup" />
-            </figure>
-            <figure typeof="sa:image">
-              <img
-                src="mockups/AjutorHove.png"
-                alt="pagina Acasa hover mockup"
-              />
-            </figure>
-          </section>
-
-          <section>
-            <h4>Pagina Contact</h4>
-            <p>
-              Pagina Contact(descrisa de documentul contact.html) se ocupa cu
-              oferirea unui modalitati de contact dintre utilizator si
-              reprezentanti sit-ului prin trimiterea unui formular odata ce
-              utilizatorul a completat campurile pentru nume,prenume,telefon si
-              email.Odata ce formularul a fost completat si utilizatorul apasa
-              butonul send,formularul va fi transmis doar daca informatiile pot
-              fi considerate valide(in cazul numarului de telefon si
-              email-ului).
-            </p>
-            <figure typeof="sa:image">
-              <img src="mockups/Contact.png" alt="pagina Contact mockup" />
-            </figure>
-          </section>
-
-          <section>
-            <h4>Pagina Autentificare</h4>
-            <p>
-              Pagina Autentificare(descrisa de documentul login.html) se ocupa
-              cu autentificarea si crearea unui cont pentru acest sit. Aceasta
-              contine logo-ul sit-ului impreuna cu 2 campuri pentru introducerea
-              de date:a username-ului si a parolei.De asemenea,avem butoane
-              pentru a retine parola pentru utilizator si un buton pentru
-              recuperare parola daca a fost uitata.
+              Acesta se redimensionează în funcție de lățimea paginii web,
+              astfel avem posibile următoarele schițe pentru această pagină:
             </p>
             <figure typeof="sa:image">
               <img
-                src="mockups/Autentificare.png"
-                alt="pagina Autentificare mockup"
+                src="mockups/footer1.png"
+                alt="footer mockup"
+                style="max-width: 500px"
               />
+              <figcaption>Fig.8 - Schiță pentru footer1</figcaption>
             </figure>
           </section>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/footer2.png"
+              alt="footer mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.9 - Schiță pentru footer2</figcaption>
+          </figure>
+          <p>Pe pagina noastră header-ul arată astfel:</p>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/footer3.png"
+              alt="footer mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.10 - Schiță pentru footer2</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/footer4.png"
+              alt="footer mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.11 - Schiță pentru footer2</figcaption>
+          </figure>
         </section>
+
+        <section>
+          <h4>Pagina Acasă</h4>
+          <p>
+            Pagina de început Acasă(scrisă de documentul phtml Home.phtml) se
+            ocupă cu prezentarea generală a acestui site pentru utilizatori.
+            Aceasta pagina este imporțită în trei componente. Prima componentă
+            prezintă numele proiectului „MeoW (Menagerie on Web)”, alături de
+            realizatorii proiectului și tema generală a proiectului (link-ul
+            despre). De asemenea, este prezentat logo-ul care este:
+          </p>
+          <figure typeof="sa:image">
+            <img
+              src="../views/images/logoBlack.jpg"
+              alt="pagina Animale logo"
+              style="max-width: 100px"
+            />
+            <figcaption>Fig.12 - Logo</figcaption>
+          </figure>
+          <p>
+            A doua componentă conține un slide în care sunt puse imagini cu
+            animalele. A treia componentă este reprezentată de trei citate
+            despre importanța animalelor și necesitatea lor de a fi îngrijite cu
+            grijă de oameni. În aceste citate este dedus și faptul că animalele
+            sunt destul de inteligente, chiar dacă unele nu par. Această
+            componentă este divizat în 2 componente. În componentele din stânga
+            se află autorii citatelor, iar în dreapta citate propriu zise
+            traduse în limba română. Schițele paginii sunt următoarele
+          </p>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/MainPageGeneral.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.13 - Schiță pentru pagina acasă</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/MainPageDetailed.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.14 - Schiță pentru pagina acasă</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/MainPagePhoneSize1.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.15 - Schiță pentru pagina acasă phone size
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/MainePagePhoneSize2.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.16 - Schiță pentru pagina acasă phone size - buton pentru
+              navigare apăsat
+            </figcaption>
+          </figure>
+          <!-- <figure typeof="sa:image">
+            <img src="mockups/MainPage2.png" alt="pagina Acasa mockup" />
+          </figure>
+          <figure typeof="sa:image">
+            <img src="mockups/MainPage1.png" alt="pagina Acasa mockup" />
+          </figure>-->
+          <p>Pagina finalizată este în forma asta:</p>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/MainPageDone1.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/MainPageDon2â.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/MainPageDone3.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/MainPageDone4.png"
+              alt="Home mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.17 - Pagina Acasă</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Pagina Animale</h4>
+          <p>
+            Pagina Animale se ocupă cu prezentarea informațiilor despre animale
+            care fac parte din gradina zoologica(informații cum ar fi poze cu
+            acestea,proveniența ,durata de trăire,denumire populară,denumire
+            ștințifică etc). Pagina este împărțită în 3 componente. Prima
+            componentă se aflăm În partea stânga a paginii și se află un meniu
+            vertical care este un filtru de căutare al animalelor, ele putând fi
+            ordonare in ordine crescătoare sau descrescătoare alfabetic, după
+            clasa de animale, origine, statut, dacă sunt specii inrudite,
+            regimul alimentar(ierbivor,carnivor,omnivor) și mod de înmulțire.
+            Partea a doua este compusă din animalele care respectă filtrele.
+            Fiecare componentă ( animal ) care respectă criteriile selectete are
+            afișat intr-un chenar in titlu numele ștințific, o poză cu animalul
+            respectiv din specia respectiva, o imagine, o mică descriere și
+            patru butoane
+          </p>
+          <ul>
+            <li>
+              Mai multe - un buton care trimite clientul către pagina principală
+              al animalului unde se găsesc toate informațiile
+            </li>
+            <li>
+              Descarcă ca XML - un buton care descarcă informațiile animalului
+              în format XML
+            </li>
+            <li>
+              Descarcă ca JSON - un buton care descarcă informațiile animalului
+              în format JSON
+            </li>
+            <li>
+              Salvează/ șterge - un buton care salvează în cont animalul/ sterge
+              din cont animalul. Butonu acesta apare doar când ești autentificat
+            </li>
+          </ul>
+          <p>A treia componentă este reprezentă de 6 butoane:</p>
+          <ul>
+            <li>
+              Descarcă rezultate ca XML - Descarcă toate animalele care respectă
+              criteriile din filtru în formalt XML
+            </li>
+            <li>
+              Descarcă rezultate ca JSON - Descarcă toate animalele care
+              respăectă criteriile din filtru în formalt JSON
+            </li>
+            <li>
+              Marchează animale - Permite marcarea animalelor care le preferă
+              utilizatorul clientul pentru a putea folosii următoarele butoane:
+              salvează animalele selectate și descărcarea animalelor care sunt
+              selectate într-un anumit format
+            </li>
+            <li>
+              Salvează animalele selectate - Permite salvearea în cont al
+              animalelor selectate
+            </li>
+            <li>
+              Descarcă animalele selectate ca JSON - Permite descărcarea
+              animalelor selectate în format JSON
+            </li>
+            <li>
+              Descarcă animalele selectate ca XML - Permite descărcarea
+              animalelor selectate în format XML
+            </li>
+          </ul>
+          <p>
+            Pagina este responsive, se modifică o dată cu schimbarea dimensiunii
+            browser-ului. Mai jos vor fi reprezentate niște schițe și varianta
+            finală a paginii.
+          </p>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AnimalsPageGeneral.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.18 - Schiță pentru pagina animale generală
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AnimalsPageDetailed.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.19 - Schiță detaliată pentru pagina animale - normal size
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AnimalsPageDetailed2.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.20 - Schiță detaliată pentru pagina animale - short size
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AnimalsPageDetailed3.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.21 - Schiță detaliată pentru pagina animale - phone size,
+              buton de navigare care nu este apăsat
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AnimalsPageDetailed4.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.22 - Schiță detaliată pentru pagina animale - phone size,
+              buton de navigare care nu este apăsat
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AnimalsPageDetailed4.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.23 - Schiță detaliată pentru pagina animale - phone size,
+              buton de navigare care este apăsat
+            </figcaption>
+          </figure>
+
+          <figure typeof="sa:image">
+            <img
+              src="mockups/ANimalPageFinal1.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/AnimalPageFinal2.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+
+            <img
+              src="mockups/AnimalPageFinal3.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/AnimalPageFinal4.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/AnimalPageFinal5.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/AnimalPageFinal6.png"
+              alt="Animals mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.24 - Pagina finală ( animalele încă nu sunt complet inserate)
+            </figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Pagina Despre</h4>
+          <p>
+            Pagina Despre se ocupă cu prezentarea informațiilor legate de
+            personalul administrativ al paginilor web. Fiecare membru este
+            descris într-un chenar care conține o poza(o poza corespunzatoare
+            este pusa in caz ca persoana respectiva nu doreste sa plaseze una),
+            numele, ocupație/meserie și o descriere data de acesta. Această
+            pagină este responsive modificându-și dimensiunea o dată cu
+            modificarea dimensiunii browser-ului. Mai jos sunt schițele paginii
+            și pagina finală:
+          </p>
+
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AboutPage.png"
+              alt="About mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.25 - Schiță generală About Page.</figcaption>
+          </figure>
+
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AboutPageDetailed1.png"
+              alt="About mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.26 - Schiță detaliată About Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AboutPageDetailed2.png"
+              alt="About mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.27 - Schiță detalaită About Page.</figcaption>
+          </figure>
+
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AboutPageDetailed3.png"
+              alt="About mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.28 - Schiță detalaită About Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/AboutPageDone1.png"
+              alt="About mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/AboutPageDone2.png"
+              alt="About mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/AboutPageDone3.png"
+              alt="About mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.29 - Pagina despre.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Pagina Ajutor</h4>
+          <p>
+            Pagina Ajutor(descrisa de documentul help.html) se ocupa cu
+            prezentarea unor informatii care pot fi de ajutor utilizatorilor
+            care au nedumeriri sau intrebări. Aceasta pagina are o sectiune
+            denumita „Cum putem ajuta” în care sunt puse mai multe modalități de
+            a ajuta animalele și explicații ale acestora. Printr-un click
+            răspunsul acesteia va aparea sub întrebare. Această pagină este
+            perfectă pentru persoanele care sunt pasionate de animale și vor să
+            aibă grijă de ele, dar nu știu exact modalitățile cele mai simple de
+            a ajuta.
+          </p>
+          <p>
+            A doua secțiune cuprinde, după cum spune și titlul, „Moduri prin
+            care putem ajuta” animalele care au nevoie, atât animalele sălbatice
+            cât și animalele domestice. Acestă secvență cuprinde subcapitolele:
+          </p>
+          <ul>
+            <li>Salvarea animalelor în capcană și rănite</li>
+            <li>Vaccinarea și vindecarea animalelor bolnave</li>
+            <li>Asigurarea nevoilor de bază ale animalelor</li>
+            <li>Îngrijirea animalelor orfane</li>
+            <li>
+              Muncind pentru un viitor cu mai puține daune aduse animalelor din
+              sălbăticie
+            </li>
+          </ul>
+          <p>Mai jos sunt schițele paginii și pagina oficială:</p>
+
+          <figure typeof="sa:image">
+            <img
+              src="mockups/HelpPageGeneral.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.30 - Schiță generală Help Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/HelpPageDetailed1.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.31 - Schiță detalaită Help Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/HelpPageDetailed2.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.32 - Schiță detalaită Help Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/HelpPageDetailed3.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.33 - Schiță detalaită Help Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/HelpPageDone1.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/HelpPageDone2.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/HelpPageDone3.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/HelpPageDone4.png"
+              alt="Help mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.34 - Pagina Ajutor.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Pagina Contact</h4>
+          <p>
+            Pagina Contact se ocupă cu oferirea unui modalități de contact un
+            reprezentant al site-ului prin trimiterea unui formular odată ce
+            utilizatorul a completat câmpurile pentru nume, telefon și email.
+            Odată ce formularul a fost completat si utilizatorul apasă butonul
+            send, formularul va fi transmis către toate conturile care sunt
+            administratori. Acestă pagină are ca scop oferirea posibilității de
+            a comunica orice cu adminsitratorii. Această pagină nu conține
+            footer-ul, deoarece nu este necesar, se întâlnește doar bara de
+            navigare și câmpurile necesare pentru a contacta un administrator.
+            Butonul „Trimite mesajul” este pus la finalul formularului în
+            centrul paginii pentru a fi ușor de identificat și apăsat.
+          </p>
+          <p>Mai jos sunt schițele paginii și pagina oficială:</p>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/ContactPage.png"
+              alt="Contact mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.35 - Schiță generală Contact Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/ContactPagedetailed.png"
+              alt="Contact mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.36 - Schiță detaliată Contact Page - normal size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/ContactPageDetailed2.png"
+              alt="Contact mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.37 - Schiță detaliată Contact Page - phone size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/ContactPageDetailed3.png"
+              alt="Contact mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.38 - Schiță detaliată Contact Page - phone size and nav bar
+              button pressed.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/ContactpageDone1.png"
+              alt="Contact mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/ContactpageDone2.png"
+              alt="Contact mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.39 - Pagina Contact.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Pagina Autentificare</h4>
+          <p>
+            Pagina Autentificare se ocupă cu autentificarea si crearea unui cont
+            pentru acest site. Pagina autentiicare este divizată în două parți:
+            partea de înregistrare și partea de autentificare. <br />
+            Partea de înregistrare reprezintă modalitatea prin care utilizatorii
+            au posibilitatea de a crea un cont pe site. Această componentă
+            conține următoarele câmpuri
+          </p>
+          <ul>
+            <li>Nume</li>
+            <li>Parola</li>
+            <li>Email</li>
+            <li>Număr de telefon</li>
+          </ul>
+          <p>
+            Câmpurile obligatorii sunt „Nume” și „Parola”. Câmpul nume este
+            verificat în timp real pentru a nu fi fost utilizat deja (AJAX).
+            Dacă totul decurge bine se creează un cont și ești conectat direct
+            la el, putând după să merg în administrare și să modifici câmpurile.
+          </p>
+          <p>
+            Partea de autentificare reprezintă modalitatea utilizatorului/
+            administratorului de a se putea autentifica la un cont deja creat.
+            Această componentă conține următoarele câmpuri:
+          </p>
+          <ul>
+            <li>Nume</li>
+            <li>Parola</li>
+          </ul>
+          <p>
+            Ambele câmpuri sun oblicatorii, fiind imposibilă autentificarea fără
+            a completa ambele câmpuri. Dacă numele de utilziator nu există, nu
+            se găsește în baza de date, atunci clientul va primii o avertizare
+            în timp real (AJAX). Dacă ambele câmpuri sunt corecte atunci
+            clientul este autentificat și poate intra în pagina de setări să
+            modifice datele contului. De asemenea, o dată ce ești conectat la
+            cont în bara de navigare se poate accesa pagina cu setările contului
+            și cu salvările pe care le-au selectat. Este prezent și butonul de
+            deconectare care permite deconectarea de la contul în cauza.
+            Conturile care sunt administratori vor avea mai multe
+            funcționalități din pagina contului. <br />
+            Mai jos sunt schițele paginii și pagina oficială:
+          </p>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/loginPage.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.40 - Schiță generală Login Page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/loginPageDetailed1.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.41 - Schiță detaliată Login Page, register panel.
+            </figcaption>
+          </figure>
+
+          <figure typeof="sa:image">
+            <img
+              src="mockups/loginPageDetailed2.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.42 - Schiță detaliată Login Page, login panel.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/loginPageDetailed3.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.43 - Schiță detaliată Login Page, register panel - phone size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/loginPageDetailed4.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.44 - Schiță detaliată Login Page, login panel - phone size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/loginPageDone1.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/loginPageDone2.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/loginPageDone3.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/loginPageDone4.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.45 - Pagina autentificare.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Pagina import</h4>
+          <p>
+            Pagina import este utilizată pentru a putea introduce animale noi în
+            baza de date și implicit să se adauge animale pe site. Pagina este
+            împărțită în 2 componente. Prima componentă este reprezentata de
+            introducerea manuală a informațiilor despre un animal. Câmpurile
+            paginii sunt:
+          </p>
+          <ul>
+            <li>Denumirea populară al animalului</li>
+            <li>Denumirea științifică al animalului</li>
+            <li>Mini descriere</li>
+            <li>Etimologie</li>
+            <li>Origine</li>
+            <li>Clasa</li>
+            <li>Starea de conservare</li>
+            <li>Invaziva</li>
+            <li>Regim alimentar</li>
+            <li>Dieta</li>
+            <li>Mod de înmulțire</li>
+            <li>Reproducere</li>
+            <li>Dezvoltare</li>
+            <li>Viața</li>
+            <li>Mortalitate</li>
+            <li>Istorie</li>
+            <li>Dușmani naturali</li>
+          </ul>
+          <p>
+            Doar primele trei câmpuri: denumirea populara, denumirea stiintifica
+            si mini descriere sunt obligatorii, restul putând să fie completate
+            mai târziu din pagina de administrare al animalelor. <br />
+            Partea a doua este reprezentată de importul de animale prin
+            intermediul unui fișier JSON sau XML. Procesul de adăugare este
+            următorul: administratorul selectează fișierul din computerul său,
+            fișierul trebuie să fie unul corect din punct de vedere structural
+            (XML/JSON). După selectarea fișierului, administratorul apasă pe
+            butonul Submit de la finalul paginii. <br />
+            Asupra fișierului sunt atribuite anumite restricții: fișierul nu
+            poate fi de dimensiuni mai mari de 1GB, iar orice câmp din fișier
+            trebuie să fie identic cu cel din baza de date, altfel acel câmp va
+            fi ignorat.
+            <br />
+            Această pagină este accesibilă doar dacă utilziatorul este conectat,
+            iar contul cu care s-a conectat este considerat a fi un
+            administrator, astfel pagina nu va apărea în pagina de administrare
+            a contului. <br />
+            Această pagină nu conține footer-ul, deoarece nu este necesar, se
+            întâlnește doar bara de navigare și câmpurile necesare pentru a
+            importa.Mai jos sunt schițele paginii și pagina oficială:
+          </p>
+
+          <figure typeof="sa:image">
+            <img
+              src="mockups/importPage.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.46 - Schiță generală Import page.</figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/importPageDetailed.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.47 - Schiță detaliată Import page, normal size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/importPageDetailed2.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.48 - Schiță detaliată Import page, phone size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/importPageDone1.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/importPageDone2.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/importPageDone3.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/importPageDone4.png"
+              alt="Login mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.48 - Pagina Import.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4>Pagina Setări cont</h4>
+          <p>
+            Pagina aceasta apare disponibilă în bara de navigare o dată ce
+            utilizatorul se autentifică sau dacă își creează un cont nou.
+            Această pagină face posibilă modificarea setărilor contului.
+            Câmpurile care pot fi modificate sunt:
+          </p>
+          <ul>
+            <li>Nume</li>
+            <li>Parola</li>
+            <li>Email</li>
+            <li>Telefon</li>
+          </ul>
+          <p>
+            Această pagină este compusă din trei părți. Prima parte este
+            repredentată de un meniu al contului în care se găsesc referințe
+            către pagini cum ar fi:
+          </p>
+          <ul>
+            <li>Setări cont</li>
+            <li>Salvări</li>
+            <li>Administrare utilizatori</li>
+            <li>Administrare animale</li>
+            <li>Administrare formulare de contact</li>
+            <li>Importează informații animale</li>
+          </ul>
+          <p>
+            Doar primele referințe sunt disponibile utilizatorilor/
+            vizitatorilor, iar restul sunt disponibile conturilor care sunt
+            administratori.
+          </p>
+          <p>
+            Partea a doua este reprezentată de informațiile curente ale
+            contului. Dacă informațiile opționale încă nu au fost trecute câmpul
+            destinat lor va afișa „-”. Informațiile se vor modifica imediat după
+            schimbarea lor.
+          </p>
+          <p>
+            Partea a treia este repreznetată de zona de modificare a contului
+            unde sunt disponibile schimbarea tuturor valorilor. Această parte
+            este împoțită în:
+          </p>
+          <ul>
+            <li>Zona de modificare a numelui</li>
+            <li>Zona de modificare a parolei</li>
+            <li>Zona de modifcare a email-ului</li>
+            <li>Zona de modficare a telefonului</li>
+          </ul>
+          <p>
+            Fiecare categorie poate conține trei elemente: label-ul care
+            prezintă ce se poate modifica, input-ul care permite scriere unei
+            noi valori și butonul „schimbă” care permite schimbarea în baza de
+            date. Acesta se redimensionează în funcție de lățimea paginii web,
+            astfel avem posibile următoarele schițe pentru această pagină:
+          </p>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/settingsPage.png"
+              alt="settings mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.47 - Schiță generală Settings page, normal size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/settingsPageDetailed.png"
+              alt="settings mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.47 - Schiță detaliată Settings page, normal size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/settingsPageDetailed2.png"
+              alt="settings mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>
+              Fig.48 - Schiță detaliată Settings page, phone size.
+            </figcaption>
+          </figure>
+          <figure typeof="sa:image">
+            <img
+              src="mockups/settingsPageDone1.png"
+              alt="settings mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/settingsPageDone2.png"
+              alt="settings mockup"
+              style="max-width: 500px"
+            />
+            <img
+              src="mockups/settingsPageDone3.png"
+              alt="settings mockup"
+              style="max-width: 500px"
+            />
+            <figcaption>Fig.49 - Pagina setări cont.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h4></h4>
+        </section>
+
+
+
+
       </section>
 
       <section>
-        <h2>4. Functionalitati</h2>
+        <h2>4. Functionalități</h2>
 
         <section>
           <h3>4.1 Acces la informatii despre gradina zoologica</h3>
