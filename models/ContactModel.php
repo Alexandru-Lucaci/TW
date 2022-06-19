@@ -6,6 +6,10 @@ class ContactModel extends Model{
         parent::__construct();
     }
 
+    /**
+     * Salveaza un formular de contact in baza de date
+     * Primeste prin POST numele,email,numar de telefon si mesajul
+     */
     public function save_contact_form(){
         if(!(isset($_POST['name']))&&!empty($_POST['name'])){
             return 'Trebuie sa oferiti un nume pentru cine a trimis acest formular de contact';

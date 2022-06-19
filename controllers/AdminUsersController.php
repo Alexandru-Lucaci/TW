@@ -2,7 +2,7 @@
 
 class AdminUsersController extends Controller{
 
-    public function  show(){
+    public function show(){
 
         if(!$this->model->is_administrator()){
             return ;

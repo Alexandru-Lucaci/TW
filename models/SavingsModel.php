@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Folosita pentru a genera un fisier XML
+ */
 class XMLFile{
     private $document;
     private $rootNode;
@@ -31,6 +34,9 @@ class XMLFile{
     }
 }
 
+/**
+ * Folosita pentru a asocia informatiile despre un animal ca un nod pentru document
+ */
 class Animal{
     
     private $animalInfo;
@@ -73,13 +79,17 @@ class SavingsModel extends Model{
     }
 
     /**
-     * Save to session the animals saved and the starting page
+     * Salveaza in sesiune animalele salvate si pagina de inceput
      */
     public static function save_to_session($animals){
         $_SESSION['saved_animals']=$animals;
         $_SESSION['savings_page_number']=1;
     }
 
+    /**
+     * Obtine animalele salvate de catre utilizatorul curent si le salveaza in sesiune
+     * Returneaza 'animalele ca un tablou daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function get_saved_animals(){
         if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"]))&&$_SESSION["loggedIn"]==1){
             return "Nu esti autentificat intr-un cont";
@@ -112,6 +122,11 @@ class SavingsModel extends Model{
         return $results;
     }
     
+    /**
+     * Schimba pagina curenta la salvari
+     * Primeste prin POST valoarea cu care se schimba si numarul de rezultate pe pagina
+     * Returneaza 'OK' daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function change_savings_page(){
         if(!(isset($_SESSION["saved_animals"])&&!empty($_SESSION["saved_animals"]))){
             return "Nu exista animale salvate sau variabila este goala";
@@ -151,6 +166,10 @@ class SavingsModel extends Model{
         return "OK";
     }
 
+    /**
+     * Descarca salvarile curente intr-un fiser XML sau JSON
+     * Returneaza 'OK' daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function download(&$response,&$content,&$fileFormat){
 
         $allowedFileFormats=array("xml","json");

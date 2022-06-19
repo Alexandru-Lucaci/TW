@@ -6,6 +6,10 @@ class SettingsModel extends Model{
         parent::__construct();
     }
 
+    /**
+     * Obtine informatii despre utilizatorul curent
+     * Returneaza un tablou cu informatiile respective daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function get_user_information(){
         if(!(isset($_SESSION['username'])&&!empty($_SESSION['username']))){                        
             return 'Eroare!Numele de utilizator nu este setat sau este gol';
@@ -40,6 +44,11 @@ class SettingsModel extends Model{
         return array('user_info'=>$results[0]);
     }
 
+    /**
+     * Schimba informatiile despre un camp al acestui utilizator
+     * Primeste prin POST numele campului si valoare noua a campului
+     * Returneaza 'OK' daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function change_account_information(){
 
         if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){
@@ -85,11 +94,17 @@ class SettingsModel extends Model{
         return "OK";
     }
 
+    /**
+     * Sterge datele salvate in sesiune la apasarea butonului de deconectare
+     */
     private static function unset_session(){
         unset($_SESSION['admin']);
         unset($_SESSION['username']);
     }
 
+    /**
+     * Deconecteaza utilizatorul curent
+     */
     public function logout(){
 
         if(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1){
@@ -104,6 +119,10 @@ class SettingsModel extends Model{
 
     }
 
+    /**
+     * Sterge contul care este autentificat in momentul acesta
+     * Datele despre cont se extrag din sesiune
+     */
     public function delete_account(){
 
         if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){

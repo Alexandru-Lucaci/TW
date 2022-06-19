@@ -32,13 +32,13 @@ class ImportModel extends Model{
     }
 
     /**
-     * Based on the $_POST["input_option"] value it will compute the data about the animals to be inserted from $_FILES['file']
-     * The parameter checks if the fields 
-     * Only takes as input files of type xml or json
-     * Files cannot exceed 1GB
-     * Returns an array of associative arrays,each associative array containing the details about an animal 
-     * In case of failure,returns a
-     * The parameter $fields is used to check if the content of the 
+     * Verificara integritatea datelor incarcate
+     * Bazandu-se pe $_POST["input_option"],va lua datele despre fisierul incarcat din $_FILES['file']
+     * Daca se incarca un fisier,verificam ca:
+     * Tipul acestuia este xml sau json
+     * Nu e mai mare de 1GB
+     * Returneaza un tablou de tablouri asociative,fiecare tablou asociativ  continand informatii despre animale
+     * sau un mesaj de eroare corespunzator     
      */
     private static function get_field_values($fields){
         if(!isset($_POST["input_option"])){
@@ -144,6 +144,10 @@ class ImportModel extends Model{
         return $animalsData;
     }
 
+    /**
+     * Insereaza datele despre animale in baza de date,folosindu-se de functia ajutatoare get_field_values()
+     * Returneaza un tablou cu raspunsuri
+     */
     public function insert_animal_info(){
         
         if(!(isset($_SESSION["loggedIn"])&&!empty($_SESSION["loggedIn"]))||$_SESSION["loggedIn"]==0){

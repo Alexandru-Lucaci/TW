@@ -6,6 +6,11 @@ class LoginModel extends Model{
         parent::__construct();
     }
     
+    /**
+     * Inregistreaza in baza de date utilizatorul cu propietatile date
+     * Propietatile unui utilizator sunt primite prin metoda POST
+     * Returneaza 'OK' daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function register(){
 
         if(!(isset($_POST['username'])&&!empty($_POST['username']))){
@@ -62,6 +67,10 @@ class LoginModel extends Model{
         return 'Succes!';
     }
 
+    /**
+     * Verifica daca operatiune de autentificare este valida(exista numele de utilizator si parola e corecta)
+     * Returneaza 'OK' daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function login(){
 
         if(!(isset($_POST['username'])&&!empty($_POST['username']))){

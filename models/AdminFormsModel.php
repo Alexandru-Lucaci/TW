@@ -6,6 +6,9 @@ class AdminFormsModel extends Model{
         parent::__construct();
     }
 
+    /**
+     * Obtine formulare din baza de date
+     */
     public function get_forms(){
         
         $this->setQuery('select * from formulare_contact');
@@ -17,7 +20,11 @@ class AdminFormsModel extends Model{
         return $results;
     }
 
-    public function change_page(){
+    /**
+     * Schimba pozitia curenta a formularului adaugand o valoare,actualizand $_SESSION['admin']['form_position'] corespunzator
+     * Valoarea cu care se chimba formularul este primita prin POST 
+     */
+    public function change_form_position(){
         if(!(isset($_POST['change_value'])&&!empty($_POST['change_value']))){
             return 'Valoarea cu care se schima pozitia formularului curent nu e stabilita';
         }

@@ -32,9 +32,8 @@
             if(isset($data)&&!empty($data)){
                 if(is_array($data)){
 
-                    echo "
-                    <div class= \"row\">
-                        <div class=\"styled-input\">";
+                    echo "<div class= \"row\">";
+                        echo "<div class=\"styled-input\">";
                             echo "<h4>Imagine animal:</h4>";
                             echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Empty image\" class =\"image\"/>";
                         echo "</div>";
@@ -48,21 +47,16 @@
                         if(is_null($value)||empty($value)){
                             $value='-';
                         }
-                        else
-                            if(!in_array($field,$ignoredFields)){
+                        
+                        if(!in_array($field,$ignoredFields)){
 
-                                echo "
-                                <div class=\"col-xs-12\">
-                                    <div class=\"styled-input wide\">
-                                        <h4>$field</h4>
-                                        <p>$value</p>
-                                    </div>
-                                </div>";
-
-
-
-                            // echo "<h4>$field</h4>";
-                            // echo "<p>$value</p>";
+                            echo 
+                            "<div class=\"col-xs-12\">
+                                <div class=\"styled-input wide\">
+                                    <h4>$field</h4>
+                                    <p>$value</p>
+                                </div>
+                            </div>";
                         }
                     }
 

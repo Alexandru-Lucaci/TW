@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Folosita pentru a genera un fisier XML
+ */
 class XMLFile{
     private $document;
     private $rootNode;
@@ -31,6 +34,9 @@ class XMLFile{
     }
 }
 
+/**
+ * Folosita pentru a asocia informatiile despre un animal ca un nod pentru document
+ */
 class Animal{
     
     private $animalInfo;
@@ -71,6 +77,11 @@ class MoreInfoModel extends Model{
         parent::__construct();
     }
 
+    /**
+     * Obtine informatiile despre un animal
+     * Prin POST primeste numele animalului
+     * Returneaza un tablou cu aceste informatii, sau un mesaj de eroare
+     */
     public function get_animal_information(){
 
         if(!(isset($_POST['animal_name'])&&!empty($_POST['animal_name']))){
@@ -79,7 +90,7 @@ class MoreInfoModel extends Model{
 
         $animalName=htmlentities($_POST['animal_name']);
             
-        $sql="select * from animale where lower(denumire_populara)=:name";
+        $sql="select * from animale where lower(denumire_populara)=lower(:name)";
 
         $statement=Database::getConnection()->prepare($sql);
 
@@ -90,12 +101,18 @@ class MoreInfoModel extends Model{
         $result=$statement->fetchAll();
 
         if(empty($result)){
-            return "Nu exista informatii despre acest animal";
+            return "Nu exista informatii despre acest animalul cu numele '".$animalName."'";
         }
 
         return $result;
     }
 
+    /**
+     * Functie pentru descarcarea informatiilor despre animale.
+     * Primeste ca parametru tipul fisierului descarcat(XML sau JSON) si tipul de trimitere a numelor animalelor
+     * Schimba la referinta &$content valoarea respectiva 
+     * Returneaza 'OK' daca totul merge bine sau un mesaj de eroare altfel
+     */
     public function download(&$response,&$content,&$fileFormat){
 
         $allowedFileFormats=array("xml","json");

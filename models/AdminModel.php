@@ -6,6 +6,9 @@ class AdminModel extends Model{
         parent::__construct();
     }
 
+    /**
+     * Verifica ca utilizatorul curent are drepturi de administrator
+     */
     public function is_administrator(){
 
         if(!(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1)){
@@ -39,6 +42,12 @@ class AdminModel extends Model{
         return ($result[0]['ADMINISTRATOR']==0)?false:true;
     }
     
+    /**
+     * Asociaza pentru animale sau utilizatori un scor in functie de numele unui camp si valoarea acestuia,un scor mai mare
+     * inseamnd o apropiere mai mare a acelui utilizator/animal
+     * Parametri(nume camp,valaore camp,nume tabel) sunt oferite prin POST 
+     * Returneaza un tablou cu informatiile despre acele animalele/utilizatori 
+     */
     public function get_information(){
 
         //TODO

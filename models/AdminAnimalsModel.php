@@ -6,6 +6,11 @@ class AdminAnimalsModel extends AdminModel{
         parent::__construct();
     }
 
+    /**
+     * Obtine pentru un animal ,valoarea unui camp din cele permise.
+     * Primeste numele campului si numele animalului prin metoda POST
+     * In caz de apare o problema,functia va returna un mesaj corespunzator,altfel va returna un tablou care va avea setat un tip si valoarea campului cerut
+     */
     public function get_animal_field_value(){
         if(!(isset($_POST['animal_name'])&&!empty($_POST['animal_name']))){
             return 'Numele animalului nu este setat sau este gol';
@@ -15,7 +20,7 @@ class AdminAnimalsModel extends AdminModel{
             return 'Numele campului nu este setat sau este gol';
         }
 
-        $fieldNames=array("ID","DENUMIRE_POPULARA","DENUMIRE_STINTIFICA","MINI_DESCRIERE","ETIMOLOGIE","ORIGINE","CLASA","INVAZIVA","STARE_DE_CONSERVARE","REGIM_ALIMENTAR","DIETA","MOD_DE_INMULTIRE","REPRODUCERE","DEZVOLTARE","VIATA","MORTALITATE","ISTORIE","DUSMANI_NATURALI","NR_ACCESARI","NR_SALVARI","NR_DESCARCARI","CREAT_LA","ACTUALIZAT_LA");
+        $fieldNames=array("ID","DENUMIRE_POPULARA","DENUMIRE_STINTIFICA","MINI_DESCRIERE","ETIMOLOGIE","ORIGINE","CLASA","HABITAT","INVAZIVA","STARE_DE_CONSERVARE","REGIM_ALIMENTAR","DIETA","MOD_DE_INMULTIRE","REPRODUCERE","DEZVOLTARE","VIATA","ISTORIE","DUSMANI_NATURALI","NR_ACCESARI","NR_SALVARI","NR_DESCARCARI","CREAT_LA","ACTUALIZAT_LA");
         
         $fieldName=str_replace(' ','_',strtoupper(htmlentities($_POST['field_name'])));
         $animalName=htmlentities($_POST['animal_name']);
@@ -55,6 +60,11 @@ class AdminAnimalsModel extends AdminModel{
         return array('field_value'=>$fieldValue,'type'=>'animal_info');
     }
 
+    /**
+     * Schimba valoarea unui camp specific unui animal din baza de date.
+     * Parametri primeste prin intermediul metodei POST numele animalului,numele campului si valoarea noua a campului
+     * In caz de apare o problema,functia va returna un mesaj corespunzator sau OK daca schimbarea a avut loc cu succes
+     */
     public function change_animal_field_value(){
         if(!(isset($_POST['animal_name'])&&!empty($_POST['animal_name']))){
             return 'Numele animalului nu este setat sau este gol';
@@ -74,19 +84,19 @@ class AdminAnimalsModel extends AdminModel{
 
         $fieldsLimit=array('DENUMIRE_POPULARA'=>50,
         'DENUMIRE_STINTIFICA'=>100,
-        'MINI_DESCRIERE'=>500,
+        'MINI_DESCRIERE'=>4000,
         'ETIMOLOGIE'=>4000,
         'ORIGINE'=>20,
         'CLASA'=>20,
         'INVAZIVA'=>20,
+        'HABITAT'=>4000,
         'STARE_DE_CONSERVARE'=>40,
         'REGIM_ALIMENTAR'=>15,
-        'DIETA'=>1300,
+        'DIETA'=>4000,
         'MOD_DE_INMULTIRE'=>30,
         'REPRODUCERE'=>4000,
         'DEZVOLTARE'=>4000,
         'VIATA'=>4000,
-        'MORTALITATE'=>4000,
         'ISTORIE'=>4000,
         'DUSMANI_NATURALI'=>1000,
         'NR_ACCESARI'=>37,
@@ -131,6 +141,11 @@ class AdminAnimalsModel extends AdminModel{
         return "OK";
     }
 
+    /**
+     * Obtine utilizatori care au la salvari un animal
+     * Primeste prin intermediul metodei POST numele animalului
+     * Returneaza un mesaj de eroare daca ceva nu e bine,sau un tablou cu informatiile despre utilizatori care salveaza acest animal
+     */
     public function get_animal_saved_by_users(){
         if(!(isset($_POST['animal_name'])&&!empty($_POST['animal_name']))){
             return 'Animal name is not set or is empty';
@@ -193,6 +208,11 @@ class AdminAnimalsModel extends AdminModel{
         return $results;
     }
 
+    /**
+     * Sterge un animal din baza de date
+     * Primeste prin intermediul POST numele animalului care va fi sters
+     * Returneaza un mesaj corespunzator
+     */
     public function delete_animal(){
         if(!(isset($_POST['animal_name'])&&!empty($_POST['animal_name']))){
             return 'Numele animalului nu este setat sau este gol';

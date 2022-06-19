@@ -6,6 +6,11 @@ class AdminUsersModel extends AdminModel{
         parent::__construct();
     }
 
+    /**
+     * Obtine informatiile din baza de date despre acel utilizator
+     * Prin POST primeste numele de utilizator
+     * Returneaza un tablou cu informatiile utilizatorului sau un mesaj de eroare corespunzator
+     */
     public function get_user_information(){
 
         if(!(isset($_POST['username'])&&!empty($_POST['username']))){                        
@@ -43,6 +48,11 @@ class AdminUsersModel extends AdminModel{
         return $results;
     }
 
+    /**
+     * Schimba informatiile unui utilizator prin schimbarea valorii unui camp al unui utilizator
+     * Primeste prin POST numele de utilizator,numele campului si valoarea campului.
+     * Returneaza 'OK' daca totul merge bine,sau un mesaj de eroare
+     */
     public function change_account_information(){
 
         if(!(isset($_POST["username"])&&!empty($_POST["username"]))){
@@ -84,6 +94,11 @@ class AdminUsersModel extends AdminModel{
         return "OK";
     }
 
+    /**
+     * Sterge un cont de utilizator din baza de date
+     * Primeste prin POST numele de utilizator
+     * Returneaza 'OK' daca totul merge bine,sau un mesaj de eroare
+     */    
     public function delete_account(){
 
         if(!(isset($_POST['username'])&&!empty($_POST['username']))){
@@ -112,6 +127,11 @@ class AdminUsersModel extends AdminModel{
         return "OK";
     }
 
+    /**
+     * Obtine animalele salvate de catre utilizator
+     * Primeste prin POST numele de utilizator
+     * Returneaza animalele salvate ca un tablou asociativ daca totul merge bine,sau un mesaj de eroare
+     */
     public function get_saved_animals(){
 
         if(!(isset($_POST["username"])&&!empty($_POST["username"]))){
