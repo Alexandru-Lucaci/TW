@@ -8,7 +8,7 @@
 
 html{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.25fr 1fr 0.25fr;
     grid-template-areas: ". content .";
 }
 
@@ -44,7 +44,9 @@ img{
 }
 @media only screen and (max-width: 1200px){
     html{
-        display:inline-block;
+        display: grid;
+        grid-template-columns:  1fr ;
+        grid-template-areas: "content";
 
     }
 }
