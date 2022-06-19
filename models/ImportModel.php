@@ -67,7 +67,12 @@ class ImportModel extends Model{
                     return "Field with name ".$fieldName." is empty,but it has to have at least one character";
                 }
 
-                $animalData[$fieldName]=strtr(htmlentities($_POST[$fieldName]),$translation);
+                $fieldValue=htmlentities(strtr($_POST[$fieldName],$translation));
+                if(strlen($fieldValue)>$field->getMaxLength()){
+                    return 'Campul cu numele '.$fieldName.' depaseste limata de caractere permisa(datorata folositii functiei htmlentities())';
+                }
+
+                $animalData[$fieldName]=$fieldValue;
             }
 
             array_push($animalsData,$animalData);
@@ -155,6 +160,7 @@ class ImportModel extends Model{
             new InputField('ETIMOLOGIE',4000,false),
             new InputField('ORIGINE',20,false),
             new InputField('CLASA',20,false),
+            new InputField('HABITAT',40,false),
             new InputField('INVAZIVA',20,false),
             new InputField('STARE_DE_CONSERVARE',40,false),
             new InputField('REGIM_ALIMENTAR',15,false),
@@ -163,9 +169,8 @@ class ImportModel extends Model{
             new InputField('REPRODUCERE',4000,false),
             new InputField('DEZVOLTARE',4000,false),
             new InputField('VIATA',4000,false),
-            new InputField('MORTALITATE',4000,false),
             new InputField('ISTORIE',4000,false),
-            new InputField('DUSMANI_NATURALI',1000,false)
+            new InputField('DUSMANI_NATURALI',4000,false)
         );
 
 

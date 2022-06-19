@@ -65,7 +65,7 @@
 
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea name="ETIMOLOGIE" maxlength="4000" required></textarea>
+                    <textarea name="ETIMOLOGIE" maxlength="4000"></textarea>
                     <label>ETIMOLOGIE</label>
                   </div>
                 </div>
@@ -73,97 +73,85 @@
 
                 <div class="col-md-6 col-sm-12">
                   <div class="styled-input">
-                    <input type="text" name="ORIGINE" maxlength="20" required="" />
+                    <input type="text" name="ORIGINE" maxlength="20" />
                     <label>ORIGINE</label> 
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="styled-input" style="float:right;">
-                    <input type="text" name="CLASA" maxlength="20" required="" />
+                    <input type="text" name="CLASA" maxlength="20" />
                     <label>CLASA</label> 
                   </div>
                 </div>
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <input type="text" name="STARE_DE_CONSERVARE" maxlength="40" required=""/>
+                    <input type="text" name="HABITAT" maxlength="40"/>
+                    <label>HABITAT</label> 
+                  </div>
+                </div>  
+                <div class="col-xs-12">
+                  <div class="styled-input wide">
+                    <input type="text" name="STARE_DE_CONSERVARE" maxlength="40"/>
                     <label>STARE_DE_CONSERVARE</label> 
                   </div>
-                </div>
-
-
-                
+                </div>             
                 <div class="col-md-6 col-sm-12">
                   <div class="styled-input">
-                    <input type="text" name="INVAZIVA" maxlength="20" required="" />
+                    <input type="text" name="INVAZIVA" maxlength="20" />
                     <label>INVAZIVA</label> 
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="styled-input" style="float:right;">
-                    <input type="text" name="REGIM_ALIMENTAR" maxlength="15" required="" />
+                    <input type="text" name="REGIM_ALIMENTAR" maxlength="15"/>
                     <label>REGIM_ALIMENTAR</label> 
                   </div>
                 </div>
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea name="DIETA" maxlength="1300" required></textarea>
+                    <textarea name="DIETA" maxlength="1300"></textarea>
                     <label>DIETA</label>
                   </div>
                 </div>
 
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <input type="text" name="MOD_DE_INMULTIRE" maxlength="30"required=""/>
+                    <input type="text" name="MOD_DE_INMULTIRE" maxlength="30"/>
                     <label>MOD_DE_INMULTIRE</label> 
                   </div>
                 </div>
 
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea name="DIETA" maxlength="1300" required></textarea>
+                    <textarea name="REPRODUCERE" maxlength="1300"></textarea>
                     <label>REPRODUCERE</label>
                   </div>
                 </div>
 
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea  name="REPRODUCERE" maxlength="4000" required></textarea>
-                    <label>DIETA</label>
-                  </div>
-                </div>
-
-                <div class="col-xs-12">
-                  <div class="styled-input wide">
-                    <textarea name="DEZVOLTARE" maxlength="4000" required></textarea>
+                    <textarea name="DEZVOLTARE" maxlength="4000"></textarea>
                     <label>DEZVOLTARE</label>
                   </div>
                 </div>
 
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea name="VIATA" maxlength="4000" required></textarea>
+                    <textarea name="VIATA" maxlength="4000"></textarea>
                     <label>VIATA</label>
                   </div>
                 </div>
 
-
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea name="MORTALITATE" maxlength="4000" required></textarea>
-                    <label>MORTALITATE</label>
-                  </div>
-                </div>
-
-                <div class="col-xs-12">
-                  <div class="styled-input wide">
-                    <textarea name="ISTORIE" maxlength="4000" required></textarea>
+                    <textarea name="ISTORIE" maxlength="4000"></textarea>
                     <label>ISTORIE</label>
                   </div>
                 </div>
 
                 <div class="col-xs-12">
                   <div class="styled-input wide">
-                    <textarea name="DUSMANI_NATURALI" maxlength="1000" required></textarea>
+                    <textarea name="DUSMANI_NATURALI" maxlength="4000"></textarea>
                     <label>DUSMANI_NATURALI</label>
                   </div>
                 </div>
@@ -198,16 +186,22 @@
         </pre>
     </h4>
 
-    <form action="index.php" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="load" value="Import/update">
-      <input type="hidden" name="function" value="insert_animal_info">
-      <input type="hidden" name="input_option" value="file">
-      
-      <input type="file" name="file" />
-      
-      <input type="submit">
-    </form>
+      <form action="index.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="load" value="Import/update">
+        <input type="hidden" name="function" value="insert_animal_info">
+        <input type="hidden" name="input_option" value="file">
+        
+        <input type="file" name="file" />
+        
+        <input type="submit">
+      </form>
     </div>
+
+    <?php 
+      if(is_string($data)&&!empty($data)){
+        echo "<h4>Mesaj:$data</h4>";
+      }
+    ?>
 
     <script src="views/javascript/navBar.js"></script>
   </body>
