@@ -46,6 +46,7 @@ GRANT READ,WRITE ON DIRECTORY MYDIR TO TW_BD_ORACLE;
 
 drop table utilizatori;
 /
+
 create table utilizatori(id number(38,0),
 nume_utilizator varchar2(20) unique not null,
 parola varchar2(20) not null,
@@ -153,7 +154,7 @@ foreign key(id_descriere) references descrieri(id),
 foreign key(id_animal) references animale(id)
 );
 /
-
+drop table statistici_clase_animale;
 create table statistici_clase_animale(
 clasa varchar2(20),
 nr_accesari integer default 0,
@@ -173,3 +174,4 @@ mesaj varchar2(3500),
 creat_la date default sysdate,
 actualizat_la date default sysdate
 );
+insert into utilizatori (id, NUME_UTILIZATOR, PAROLA, ADMINISTRATOR) values(10,'alexus','alex',0);/
