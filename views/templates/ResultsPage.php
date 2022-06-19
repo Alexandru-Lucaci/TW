@@ -32,7 +32,17 @@
                 //display
                 
                 echo "<div id=\"$popularName\" class=\"card\" onclick=\"markAnimal('$popularName')\" >";
-                    echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Imagine animal\" class=\"card-img\"/>";
+                    
+                    $path="views/images/animals/".ucwords(strtolower($popularName)).".png";
+                    if(file_exists($path)){
+                        echo "<img src=\"$path\" alt=\"Imagine animal cu $popularName\" class=\"card-img\"/>";
+                    }
+                    else{
+                        echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Imagine animal\" class=\"card-img\"/>";
+                    }
+
+
+                    //echo "<img src=\"views/images/animals/empty.jpg\" alt=\"Imagine animal\" class=\"card-img\"/>";
                     echo "<h2 class=\"card-title\">$popularName</h2>";
                     //echo "<h2 class=\"card-title\">$scientificName</h2>";
                     echo "<div class=\"card-content\">";
