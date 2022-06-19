@@ -33,6 +33,15 @@ GRANT CREATE PROCEDURE TO TW_BD_ORACLE;
 /
 GRANT CREATE TYPE TO TW_BD_ORACLE;
 /
+
+--for utl_file
+GRANT EXECUTE ON UTL_FILE TO TW_BD_ORACLE;
+
+GRANT CREATE ANY DIRECTORY TO TW_BD_ORACLE;
+
+CREATE OR REPLACE DIRECTORY MYDIR as 'D:\TW_BD_ORACLE';
+
+GRANT READ,WRITE ON DIRECTORY MYDIR TO TW_BD_ORACLE;
 -------------------------
 
 drop table utilizatori;
@@ -50,6 +59,7 @@ primary key (id)
 /
 --administrator ar avea valoarea 0 daca nu e administrator si diferit de 0 daca este
 
+select istorie from animale where id=1;
 
 drop table animale;
 /
@@ -57,10 +67,11 @@ create table animale(
 id number(38,0),
 denumire_populara varchar2(50) not null unique,
 denumire_stintifica varchar2(100) not null,
-mini_descriere varchar2(500) not null,
+mini_descriere varchar2(1500) not null,
 etimologie varchar2(4000),
 origine varchar2(20),
 clasa varchar2(20),
+habitat varchar2(40),
 invaziva varchar2(20),
 stare_de_conservare varchar2(40),
 regim_alimentar varchar2(15),
@@ -69,9 +80,8 @@ mod_de_inmultire varchar2(30),
 reproducere varchar2(4000),
 dezvoltare varchar2(4000),
 viata varchar2(4000),
-mortalitate varchar2(4000),
 istorie varchar2(4000),
-dusmani_naturali varchar2(1000),
+dusmani_naturali varchar2(4000),
 nr_accesari integer default 0,
 nr_salvari integer default 0,
 nr_descarcari integer default 0,

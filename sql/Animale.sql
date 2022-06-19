@@ -154,6 +154,8 @@ begin
         return p_linie.origine;
     elsif(p_nume_camp='clasa')then
         return p_linie.clasa;
+    elsif(p_nume_camp='habitat')then
+        return p_linie.habitat;
     elsif(p_nume_camp='stare_de_conservare')then
         return p_linie.stare_de_conservare;
     elsif(p_nume_camp='regim_alimentar')then
@@ -231,13 +233,14 @@ as
     
 begin
     --initializare tablou punctaje
-    punctaje('denumire_populara'):=100;
+    punctaje('denumire_populara'):=120;
     punctaje('denumire_stintifica'):=70;
     punctaje('origine'):=100;
     punctaje('clasa'):=100;
-    --punctaje('stare_de_conservare'):=80;
-    --punctaje('regim_alimentar'):=90;
-    --punctaje('mod_de_inmultire'):=80;
+    punctaje('habitat'):=95;
+    punctaje('stare_de_conservare'):=80;
+    punctaje('regim_alimentar'):=90;
+    punctaje('mod_de_inmultire'):=80;
     
     --selectare informatii despre animal
     begin
@@ -260,13 +263,17 @@ begin
             
             --obtine valoare campului cu numele respectiv
             v_valoare_camp:=obtine_valoare_camp(v_info,v_nume_camp);
-            --obtine punctaj camp
-            v_punctaj_camp:=punctaje(v_nume_camp);
-
-            --adaugare punctaj al cuvantului fata de valoarea campului
-            v_punctaj:=v_punctaj+punctaj_cuvant_camp(v_cuvant,v_valoare_camp,v_punctaj_camp);
             
-            --next
+            if(v_valoare_camp is not null) then
+                --obtine punctaj camp
+                v_punctaj_camp:=punctaje(v_nume_camp);
+    
+                --adaugare punctaj al cuvantului fata de valoarea campului
+                v_punctaj:=v_punctaj+punctaj_cuvant_camp(v_cuvant,v_valoare_camp,v_punctaj_camp);
+                
+                --next
+            end if;
+            
             v_nume_camp:=punctaje.next(v_nume_camp);
         end loop;              
         
@@ -297,6 +304,7 @@ p_mini_descriere varchar2,
 p_etimologie varchar2 default null,
 p_origine varchar2 default null,
 p_clasa varchar2 default null,
+p_habitat varchar2 default null,
 p_invaziva varchar2 default null,
 p_stare_de_conservare varchar2 default null,
 p_regim_alimentar varchar2 default null,
@@ -305,7 +313,6 @@ p_mod_de_inmultire varchar2 default null,
 p_reproducere varchar2 default null,
 p_dezvoltare varchar2 default null,
 p_viata varchar2 default null,
-p_mortalitate varchar2 default null,
 p_istorie varchar2 default null,
 p_dusmani_naturali varchar2 default null,
 p_raspuns in out varchar2
@@ -316,7 +323,7 @@ begin
     if(exista_animal(p_denumire_populara)=0)then
         select nvl(max(id),0)+1 into v_id from animale;
         
-        insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,etimologie,origine,clasa,invaziva,stare_de_conservare,regim_alimentar,dieta,mod_de_inmultire,reproducere,dezvoltare,viata,mortalitate,istorie,dusmani_naturali) values (
+        insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,etimologie,origine,clasa,habitat,invaziva,stare_de_conservare,regim_alimentar,dieta,mod_de_inmultire,reproducere,dezvoltare,viata,istorie,dusmani_naturali) values (
         v_id,
         p_denumire_populara,
         p_denumire_stintifica,
@@ -324,6 +331,7 @@ begin
         p_etimologie,
         p_origine,
         p_clasa,
+        p_habitat,
         p_invaziva,
         p_stare_de_conservare,
         p_regim_alimentar,
@@ -332,7 +340,6 @@ begin
         p_reproducere,
         p_dezvoltare,
         p_viata,
-        p_mortalitate,
         p_istorie,
         p_dusmani_naturali);
         
@@ -372,6 +379,14 @@ insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,orig
 insert into animale(id,denumire_populara,denumire_stintifica,mini_descriere,origine,clasa) values(17,'polichet','tigris','a','asia','polichete');
 
 --test
+
+select id,denumire_populara from animale;
+
+select id,regim_alimentar from animale;
+
+update animale set regim_alimentar='Ierbivor' where id in(4);
+
+delete from animale;
 
 select denumire_populara,origine,clasa,punctaj_animal('tigriasdas leu',denumire_populara) as scor
 from animale

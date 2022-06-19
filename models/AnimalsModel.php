@@ -141,7 +141,7 @@ class AnimalsModel extends Model{
                     if($position!=0){
                         $whereClause.=' or ';
                     }
-                    $whereClause.= $column.'=\''.strtolower($value).'\'';
+                    $whereClause.= 'lower('.$column.')=\''.strtolower($value).'\'';
 
                     $position++;
                 }
@@ -178,7 +178,7 @@ class AnimalsModel extends Model{
 
         //some constants
         $orderBy="ordonare";
-        $columns=array("origine","clasa","invaziva","stare_de_conservare","regim_alimentar","mod_de_inmultire");
+        $columns=array("origine","clasa","habitat","invaziva","stare_de_conservare","regim_alimentar","mod_de_inmultire");
 
         //get the where and order by clause conditions
         $whereClause='';

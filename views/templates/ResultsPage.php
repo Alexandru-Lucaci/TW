@@ -27,7 +27,7 @@
                 //get animal info to display
                 $popularName=htmlentities($results[$position]['DENUMIRE_POPULARA']);
                 $scientificName=htmlentities($results[$position]['DENUMIRE_STINTIFICA']);
-                $smallDescription=htmlentities($results[$position]['MINI_DESCRIERE']);
+                $smallDescription=$results[$position]['MINI_DESCRIERE'];
 
                 //display
                 
