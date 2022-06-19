@@ -14,36 +14,36 @@ De precizat ca:
 -ar trebui la momentul crearii tabelelor,adaugarea de triggere necesare,imagini si populare sa fie salvate comenzile
 intr-un fisier .sql pentru al avea in caz de ceva salvat :)
 -pentru moment,acesta va fi modul de stocare a datelor din care se va extrage corespunzator datele in format XML/JSON
--din pacate,pare cam dificil importarea unui fisier XML/JSON si pastrarea in baza de date relationala ,putand avea si
-cautari pe acele date...o sa fie facut,dar e mai bine sa facem asta mai tarziu
 
 -------------------
 Descriere baza de date:
 -----------------
 
-Users
+Utilizatori
 -id
--username
--password
+-nume_utilizator
+-parola
 -email
--telephone
--created_at
--updated_at
+-telefon
+-administrator ->0 daca nu este administrator,altfel e administrator
+-creat_la
+-actualizat_la
 
 ------------------
 
-User_Animal
--user_id
--animal_id
--created_at
--updated_at
+Folosita pentru a salva pentru un utilizator informatii
+Tabela salvari:
+-id_utilizator
+-id_animal
+-creat_la
+-actualizat_la
 
 ------------------
 
-Animals(Ce mult e aici....coloanele vor fi scrise in engleza ,cum si codul php e in engleza)
+Animale(Ce mult e aici....coloanele vor fi scrise in engleza ,cum si codul php e in engleza)
 
 Pentru un animal vom salva informatiile:
-
+-id
 -denumire populara varchar2(50)
 -denumire stintifica varchar2(100)
 
@@ -51,8 +51,9 @@ Pentru un animal vom salva informatiile:
 
 -origine varchar2(20)
 -clasa de animale varchar2(20)
+-habitat
 
--specie invaziva?
+-invaziva?
 -stare de conservare
 
 -regim alimentar (vegetarian, carnivor, omnivor)
@@ -61,56 +62,20 @@ Pentru un animal vom salva informatiile:
 -mod de inmultire(asexual,bisexual,etc)
 -reproducere(info despre modul de reproducere al acestora)
 
--dezvolate
+-dezvoltare
 
 -viata
-
--mortalitate
 
 -istorie cu oameni
 
 -dusmani naturali(pentru inceput,simplu stocat intrun varchar2(10) cu denimirea pupulara a acelor dusmani,separati printr-o virgula )
--imagini de interes(formand un tabel de asociere Animale_Imagini)
 
--created_at
--updated_at
+-creat_la
+-actualizat_la
 
-De considerat pentru adaugare:
--daca are blana(ca sa stim daca sa putem face haine din el...trist)
--specii inrudite ???
--caracteristici poate mai speciale de precizat
 
-*trebuie adaugate mai multe informatii pentru un animal
 
 -----------------------
-
-Tabela Animals_Images
--animal_id
--image_id
--created_at
--updated_at
-
------------------------
-Tabela Images
--id
--image
--created_at
--updated_at
-
-
-Tabel Descrieri
--description_id
--animal_id
--created_at
--updated_at
-
-Moduri in care putem folosii PLSQL:
-
--functii si proceduri pentru implementarea cautarii dupa camp si dupa selectia unor criterii
--functii pentru logare si inregistrare
--exportare fisiere XML/JSON
--importarea fisierelor
--salvarea pentru un user a acelor informatii despre animale
 
 
 
