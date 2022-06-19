@@ -24,6 +24,11 @@ body{
 
    
 }
+/* figure img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} */
 a{
     color:#20b2aa;
 }
