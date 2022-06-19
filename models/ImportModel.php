@@ -54,6 +54,8 @@ class ImportModel extends Model{
 
         if($inputOption=="direct"){
 
+            $translation=array('ă'=>'a','î'=>'i','â'=>'a','ș'=>'s','ț'=>'t','Ă'=>'A','Î'=>'I','Â'=>'A','Ș'=>'S','Ț'=>'T');
+
             $animalData=array();
             foreach($fields as $field){
                 $fieldName=$field->getFieldName();
@@ -65,7 +67,7 @@ class ImportModel extends Model{
                     return "Field with name ".$fieldName." is empty,but it has to have at least one character";
                 }
 
-                $animalData[$fieldName]=htmlentities($_POST[$fieldName]);
+                $animalData[$fieldName]=strtr(htmlentities($_POST[$fieldName]),$translation);
             }
 
             array_push($animalsData,$animalData);

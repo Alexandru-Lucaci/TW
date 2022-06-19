@@ -8,9 +8,6 @@
     box-sizing: border-box;
     white-space: nowrap;
 }
-div{
-    /* white-space: nowrap; */
-}
 .gridBody{
 
     display: grid;
