@@ -5,9 +5,10 @@
         {
             parent::__construct('views/templates/Home.phtml');
         }
+        function show(){
+            return $this->output();
+        }
     }
 
-    function show(){
-        return $this->output();
-    }
+ 
 ?>
