@@ -23,6 +23,7 @@
         public function __set($key,$value){
             $this->data[$key] = $value; 
         }
+        
 
     }
 ?>
