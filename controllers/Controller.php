@@ -6,8 +6,11 @@
         // controllerul ar trebui să cunoască atât view-ul cât și modelul
         public $model;
         public $view;
-        public $thisClassName = get_class($this);
-
+        public $thisClassName ;
+        public function __construct()
+        {
+            $thisClassName = get_class($this);
+        }
     }
 
 ?>
