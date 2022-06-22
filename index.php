@@ -12,6 +12,7 @@
   
     echo 'here';
     require_once HOME . DS . 'config.php';
+    include HOME .DS . 'utils' . DS . 'db.php';
     echo 'here';
     require_once HOME . DS . 'utils'. DS  . 'autoload.php';
     echo 'hereeeeeee';

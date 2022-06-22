@@ -1,5 +1,6 @@
 <?php
 
+    // include '../utils/db.php';
     abstract class Model{
 
         public $connection;
@@ -8,8 +9,6 @@
 
         public function __construct(){
             $this->connection = Database::getConn();
-
-
         }
         public function setQuerry($querry){
             $this->querry = $querry;

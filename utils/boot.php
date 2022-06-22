@@ -23,8 +23,10 @@
             // paramtetru 1 =>  functia  in sine care trebuie apelata
             $querry = $parametrii[2];
         }
-        $cntrl .= 'Controller'; // append Controller to the page i wanted 
     }
+
+    $cntrl .= 'Controller'; // append Controller to the page i wanted 
+    
         // echo $cntrl;
 
     $actualControllerClass = new $cntrl();

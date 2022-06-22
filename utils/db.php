@@ -1,5 +1,5 @@
 <?php
-    require '../config.php';
+    // require '../config.php';
     class Database {
         private static $connection;
         public static $ok;
