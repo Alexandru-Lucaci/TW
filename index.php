@@ -11,5 +11,5 @@
 
 
     require_once HOME . DS . 'config.php';
-    require_once HOME . DS . 'autoload.php';
+    require_once HOME . DS . 'utils'. DS  .'autoload.php';
 ?>

@@ -23,7 +23,7 @@
             }
 
             // same thing as before
-            $newClass = str_replace('Controller','View', $this->thisClassName);
+            $newClass = str_replace("Controller","View", $this->thisClassName);
             
             if(class_exists($newClass))
             {
