@@ -9,8 +9,10 @@
         public $thisClassName ;
         public function __construct()
         {
-            $thisClassName = get_class($this);
+            $this->thisClassName = get_class($this); 
         }
+
+
     }
 
 ?>
@@ -31,6 +33,14 @@
     <title>test</title>
 </head>
 <body>
-    <?php str_replace('Alex', 'Alexandru', 'Alex lucaci');?>
+    <?php 
+    
+    echo str_replace('Alex', 'Alexandru', 'Alex lucaci');
+    echo 'hellooo';
+    $ver = new verificare();
+    echo ' here ';
+    echo $ver->thisClassName;
+    echo ' here ';
+    ?>
 </body>
 </html>
