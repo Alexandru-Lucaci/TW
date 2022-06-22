@@ -40,9 +40,15 @@
 
 ?>
 <?php
-    class verificare extends Controller{
+    class verificareController extends Controller{
         public function getClass(){
             echo $this->thisClassName;
+            echo '<br';
+            echo $this->model;
+            echo '<br';
+            echo $this->view;
+            echo '<br';
+
             return $this->thisClassName;
         }
     }
@@ -60,10 +66,13 @@
     
     echo str_replace('Alex', 'Alexandru', 'Alex lucaci');
     echo 'hellooo';
-    $ver = new verificare();
+    $ver = new verificareController();
     echo ' here ';
     echo $ver->thisClassName;
     echo ' here ';
+    echo '<br> '. $ver->getClass();
+    echo '<br> '. $ver->model;
+    echo '<br> '. $ver->view;
     ?>
 </body>
 </html>
