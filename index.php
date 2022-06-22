@@ -9,7 +9,13 @@
     // echo DS;
     // echo $_SERVER['PHP_SELF']; -- dirname face sa fie slash-urile cum trebuie
 
-
+  
+    echo 'here';
     require_once HOME . DS . 'config.php';
-    require_once HOME . DS . 'utils'. DS  .'autoload.php';
+    echo 'here';
+    require_once HOME . DS . 'utils'. DS  . 'autoload.php';
+    echo 'hereeeeeee';
+    // echo '<br>'. HOME . DS . 'utils'. DS  . 'boot.php';
+    require_once HOME . DS . 'utils'. DS  . 'boot.php';
+    echo 'here';
 ?>

@@ -15,7 +15,9 @@
             
             if(class_exists($newClass))
             {
-                $this->model = $newClass;
+
+                // i want it to be a class ( to have acces to the functions and stuff !)
+                $this->model = new $newClass;
             }
             else
             {
@@ -27,7 +29,8 @@
             
             if(class_exists($newClass))
             {
-                $this->view = $newClass;
+                // i want it to be a class
+                $this->view = new $newClass;
             }
             else
             {

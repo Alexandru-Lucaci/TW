@@ -1,9 +1,13 @@
 <?php 
-    class HomeMode extends Model{
-        public function __constract()
+    class HomeModel extends Model{
+        public function __construct()
         {
-            parent::__constract();
+            echo "should show";
+            parent::__construct();
+        
         }
+       
+
     }
 
 ?>

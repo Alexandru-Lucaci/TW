@@ -3,10 +3,10 @@
     abstract class Model{
 
         public $connection;
-        private $querry;
+        public $querry;
 
 
-        public function __constract(){
+        public function __construct(){
             $this->connection = Database::getConn();
 
 
@@ -15,7 +15,9 @@
             $this->querry = $querry;
         }
 
-
+        public function getQuerry(){
+            return $this->querry;
+        }
 
 
 
