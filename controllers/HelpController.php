@@ -1,6 +1,6 @@
 <?php
 
-    class HomeController extends Controller{
+    class HelpController extends Controller{
 
         public function show(){
             // echo "should show";

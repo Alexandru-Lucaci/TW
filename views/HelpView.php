@@ -1,6 +1,6 @@
 <?php
 
-    class HomeView extends View{
+    class HelpView extends View{
         public function __construct()
         {
             // echo "should show";

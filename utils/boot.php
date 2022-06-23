@@ -7,7 +7,7 @@
     if(isset($_GET['load'])){
         $parametrii = array();
 
-        $val = $GET['load'];
+        $val = $_GET['load'];
         $parametrii = explode("/",$val);
         // parametrii 0 => numele controllerului care trebuie folosit 
         $cntrl = $parametrii[0];
@@ -22,6 +22,29 @@
             //are valoare
             // paramtetru 1 =>  functia  in sine care trebuie apelata
             $querry = $parametrii[2];
+        }
+    }
+    else
+    {
+        if(isset($_POST['load'])){
+            $parametrii = array();
+    
+            $val = $_POST['load'];
+            $parametrii = explode("/",$val);
+            // parametrii 0 => numele controllerului care trebuie folosit 
+            $cntrl = $parametrii[0];
+            if(!empty($parametrii[1]) && isset($parametrii[1]) )
+            {
+                //are valoare
+                // paramtetru 1 =>  functia  in sine care trebuie apelata
+                $cmd = $parametrii[1];
+            }
+            if(!empty($parametrii[2]) && isset($parametrii[2]) )
+            {
+                //are valoare
+                // paramtetru 1 =>  functia  in sine care trebuie apelata
+                $querry = $parametrii[2];
+            }
         }
     }
 

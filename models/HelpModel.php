@@ -1,5 +1,5 @@
 <?php 
-    class HomeModel extends Model{
+    class HelpModel extends Model{
         public function __construct()
         {
             // echo "should show";
