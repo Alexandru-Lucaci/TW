@@ -75,7 +75,7 @@
            $msgClass='';
            if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password'])&& !empty($_POST['password']))
            {
-               $ussname =htmlentities( $_POST['usernamte']);
+               $ussname =htmlentities( $_POST['username']);
                
                $usspswd = htmlentities($_POST['password']);
                $response = null;
