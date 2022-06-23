@@ -11,13 +11,13 @@
                 //it's ok
                 $user = htmlentities(($_SESSION['name']));
                 echo $_SESSION['name'];
-                $comandaSql = 'Select * from utilizator where name= trim(?)';
+                $comandaSql = 'Select * from utilizatori where nume_utilizator= (?)';
 
                 $statement = Database::getConn()->prepare($comandaSql);
                 $statement->bindParam(1,$user,PDO::PARAM_STR,100);
                 $statement->execute();
                 // associative array
-                $output= $statement->fetchAll();
+                $output=$statement->fetchAll();
                 
                 // if(!empty($output)){
                     var_dump($output);
