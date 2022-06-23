@@ -3,8 +3,8 @@
     session_start();
     define('HOME', dirname(__FILE__));
     define('DS', DIRECTORY_SEPARATOR);
-    $_SESSION['login']=1;
-    // $_SESSION['name'] ='';
+    $_SESSION['login']=0;
+    $_SESSION['name'] ='init';
 
 
     // echo HOME;

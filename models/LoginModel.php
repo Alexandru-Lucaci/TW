@@ -34,18 +34,20 @@
                 {
                     $tel = htmlentities($_POST['telephone']);
                 }
+                $copieName = $usname;
                 $comandaSQL = "call inregistrare(?,?,?,?,?)";
                 $statement=Database::getConn()->prepare($comandaSQL);
                 $statement->bindParam(1,$usname,PDO::PARAM_STR,100);
                 $statement->bindParam(2,$psswd,PDO::PARAM_STR,100);
                 $statement->bindParam(3,$email,PDO::PARAM_STR,100);
                 $statement->bindParam(4,$tel,PDO::PARAM_STR,100);
-                $statement->bindParam(5,$usname,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
+                $statement->bindParam(5,$rez,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
                 $statement->execute();
+               
                 if($rez == 'OK'){
                     // ORACLE returneaza prin rez = OK daca totul a decurs cum trebuie 
                     $_SESSION['login']=1;
-                    $_SESSION['name'] = $usname;
+                    $_SESSION['name'] = $copieName;
                     echo $rez;
                     return $rez;
                 }
