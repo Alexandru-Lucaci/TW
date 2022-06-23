@@ -19,9 +19,17 @@
             }else{
                 echo 'something is not good';
             }
-            $presentation = new HomeView();
-            $prez= $presentation->show();
-            echo $prez;
+            if($continut == 'failed')
+            {
+                $presentation = $this->view->show();
+                echo $presentation;
+
+            }else{
+                $presentation = new HomeView();
+                $prez= $presentation->show();
+                echo $prez;
+            }
+
             
         }
     }

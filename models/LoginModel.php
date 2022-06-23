@@ -88,11 +88,13 @@
                $statement->bindParam(3,$response,PDO::PARAM_STR,100);
                $statement->execute();
 
-               if(is_null($response)){
+               if($response != 'OK'){
+
                     $msg ='Nu se potrivesc datele ';
                     $msgClass = 'failed';
 
                     echo $msgClass. ' '. $msg;
+                    return $msgClass;
 
                }else{
                     $_SESSION['login'] = 1;
