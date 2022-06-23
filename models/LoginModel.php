@@ -1,4 +1,5 @@
 <?php 
+    // session_start();
     class LoginModel extends Model{
         public function __construct()
         {
@@ -9,6 +10,10 @@
        /// voi avea nevoie de functii pentru login si register
 
 
+       public function logout(){
+            $_SESSION['login'] = 0;
+            $_SESSION['name'] = null;
+       }
        public function creareCont(){
          if(filter_has_var(INPUT_POST,'submit'))
          {
@@ -31,16 +36,17 @@
                 }
                 $comandaSQL = "call inregistrare(?,?,?,?,?)";
                 $statement=Database::getConn()->prepare($comandaSQL);
-                $statement->bindParam(1,$usname.PDO::PARAM_STR,100);
-                $statement->bindParam(2,$psswd.PDO::PARAM_STR,100);
-                $statement->bindParam(3,$email.PDO::PARAM_STR,100);
-                $statement->bindParam(4,$tel.PDO::PARAM_STR,100);
-                $statement->bindParam(5,$usname.PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
+                $statement->bindParam(1,$usname,PDO::PARAM_STR,100);
+                $statement->bindParam(2,$psswd,PDO::PARAM_STR,100);
+                $statement->bindParam(3,$email,PDO::PARAM_STR,100);
+                $statement->bindParam(4,$tel,PDO::PARAM_STR,100);
+                $statement->bindParam(5,$usname,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
                 $statement->execute();
                 if($rez == 'OK'){
                     // ORACLE returneaza prin rez = OK daca totul a decurs cum trebuie 
-                    $_SESSION['loggedIn']=1;
+                    $_SESSION['login']=1;
                     $_SESSION['name'] = $usname;
+                    echo $rez;
                     return $rez;
                 }
                 else
