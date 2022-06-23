@@ -67,6 +67,48 @@
             }
          }
        }
+
+       public function login(){
+        if(filter_has_var(INPUT_POST,'submit'))
+        {
+           $msg = '';
+           $msgClass='';
+           if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['password'])&& !empty($_POST['password']))
+           {
+               $ussname =htmlentities( $_POST['usernamte']);
+               
+               $usspswd = htmlentities($_POST['password']);
+               $response = null;
+               $comandaSQL = "call autentificare(?,?,?)";
+               // usename, password and response
+
+               $statement=Database::getConn()->prepare($comandaSQL);
+               $statement->bindParam(1,$ussname,PDO::PARAM_STR,100);
+               $statement->bindParam(2,$usspswd,PDO::PARAM_STR,100);
+               $statement->bindParam(3,$response,PDO::PARAM_STR,100);
+               $statement->execute();
+
+               if(is_null($response)){
+                    $msg ='Nu se potrivesc datele ';
+                    $msgClass = 'failed';
+
+                    echo $msgClass. ' '. $msg;
+
+               }else{
+                    $_SESSION['login'] = 1;
+                    $_SESSION['name'] = $ussname;
+               }
+               
+
+           }
+           else
+           {
+               // failed, numele sau parola nu au fost puse
+               $msg ='Câmpurile username si password sunt obligatorii';
+               $msgClass = 'failed';
+           }
+        }
+       }
     }
 
 ?>
