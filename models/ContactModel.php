@@ -1,5 +1,6 @@
 <?php 
-    // include '../utils/mail.php';
+    // require '../utils/mail.php';
+    require HOME . DS . 'utils' . DS . 'mail.php';
     class ContactModel extends Model{
         
         public function __construct()
@@ -41,7 +42,7 @@
                         <h4>Message</h4><p>'. $message .'</p>
                         <h4>IpAddress</h4><p>'. $ipAddr.'</p>
                         ';
-                    
+                        
                         if(sendMail($subject,$body)){
                             // s-a trimis
                             $msg = 'Mesajul a fost trimis';
