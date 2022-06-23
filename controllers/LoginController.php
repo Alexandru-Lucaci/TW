@@ -19,7 +19,7 @@
             }else{
                 echo 'something is not good';
             }
-            if($continut == 'failed')
+            if($continut == 'failed' || $continut == "Numele de utilizator nu este disponibil(luat)")
             {
                 $presentation = $this->view->show();
                 echo $presentation;

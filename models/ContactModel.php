@@ -44,7 +44,7 @@
                         date_default_timezone_set('Europe/Bucharest');
                         $data = date('d/m/Y h:i:s a');
                         $subject = 'ContactRequestForm '. $name . ' ' . $data;
-                        $body= '<h2> Contact Request </h2>
+                        $body= '<h2> Contact Request Form </h2>
                         <h4>Name</h4><p>'. $name .'</p>
                         <h4>email</h4><p>'. $email .'</p>
                         <h4>email</h4><p>'. $number .'</p>

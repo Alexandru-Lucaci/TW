@@ -54,7 +54,9 @@
                 else
                 {
                     // something is not ok
-                    echo $rez;
+                    ?>
+                    <script>alert("<?php echo $rez ?>")</script> ;
+                    <?php
                     return $rez;
                 }
                 
