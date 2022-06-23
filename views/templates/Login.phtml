@@ -40,9 +40,9 @@
       <div class="main">  	
         <input class="loginPageInput" type="checkbox" id="chk" aria-hidden="true">
         <div class="signup">
-          <form action="index.php" method="post">
-            <input class="loginPageInput" type="hidden" name="load" value="Login/update" />
-            <input class="loginPageInput" type="hidden" name="function" value="register" />
+          <form action="index.php" method="POST">
+            <input class="loginPageInput" type="hidden" name="load" value="Login/doRegOrLog" />
+            <input class="loginPageInput" type="hidden" name="function" value="creareCont" />
 
             <label for="chk" aria-hidden="true">Inregistrare</label>
 
@@ -56,7 +56,7 @@
             
             <input class="loginPageInput" type="tel" name="telephone" placeholder="Numar de telefon" />
             
-            <button>Inregistrare</button>
+            <button name="submit" value="submit">Inregistrare</button>
           </form>
         </div>
 

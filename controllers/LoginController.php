@@ -8,6 +8,9 @@
             
             echo $presentation;
         }
+        public function doRegOrLog(){
+            
+        }
     }
 
 ?>
