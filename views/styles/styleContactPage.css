@@ -14,7 +14,12 @@
     display:grid;
 
 }
-
+.succes{
+    color: green;
+}
+.failed{
+    color: red;
+}
 .footer-distributed{
     grid-area: jos;
 }
@@ -28,7 +33,12 @@ body {
     background-color: #212329;
     /* padding-top: 85px; */
 }
-
+h1 .succes{
+    color : green;
+}
+h1 .failed{
+    color: red;
+}
 h1 {
     font-family: 'Poppins', sans-serif, 'arial';
     font-weight: 600;

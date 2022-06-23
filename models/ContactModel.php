@@ -13,7 +13,7 @@
             /// get the datas
         //    echo 'heeer i am';
             if(isset($_POST['submit'])){
-                echo 'heeer i am';
+                // echo 'heeer i am';
                 $msg =''; // mesaj de cofirmare
                 $msgClass = '';// clasa in care va fi pus mesajul
                 $email = $_POST['email'];
@@ -27,7 +27,16 @@
                         
                         $msg = 'Not a good email';
                         $msgClass = 'failed';
-                        echo $msgClass . ' '. $msg;
+                        ?>
+                        <div class="row">
+                            <h1>
+                                <div class = '<?php echo $msgClass ?>'>
+                                    <?php 
+                                    echo ucwords($msgClass) . ' '. $msg; ?> 
+                                </div>
+                            </h1>
+                        </div>
+                        <?php
 
                     }else{
                         //email is good
@@ -46,18 +55,34 @@
                         if(sendMail($subject,$body)){
                             // s-a trimis
                             $msg = 'Mesajul a fost trimis';
-                
-
+        
                             $msgClass = 'succes';
-                            echo $msgClass . ' '. $msg;
+                            ?>
+                            <div class="row">
+                            <h1>
+                                    <div class = "<?php echo $msgClass ?>">
+                                        <?php echo $msg; ?> 
+                                    </div>
+                            </h1>
+                            </div>
+                            <?php
 
                         }
                         else{
                             
                             $msg ='Something wrong, sorry';
                             $msgClass='failed';
-                            echo $msgClass . ' '. $msg;
+                            
 
+                            ?>
+                            <div class="row">
+                                <h1>
+                                    <div class = "<?php echo $msgClass ?>">
+                                        <?php echo  $msg; ?> 
+                                    </div>
+                                </h1>
+                            </div>
+                            <?php
                         }
                     }
                 }
@@ -66,7 +91,15 @@
                     // failed => un camp nu este completat :( 
                         $msg = 'Not enough data';
                         $msgClass ='failed';
-                        echo $msgClass . ' '. $msg;
+                        ?>
+                        <div class="row">
+                            <h1>
+                                <div class = '<?php echo $msgClass ?>'>
+                                    <?php echo $msgClass . ' '. $msg; ?> 
+                                </div>
+                            </h1>
+                        </div>
+                        <?php
 
                 }
 
