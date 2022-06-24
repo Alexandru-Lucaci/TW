@@ -50,32 +50,64 @@
                         
                         $fieldname = $_POST['field_name'];
                         
-                        $ussname = $_SESSION['name'];
-                        $result = null;
-                        $comandaSql = 'call schimbare_camp_utilizator(?,?,?,?)' ;
-                        $statement = Database::getConn()->prepare($comandaSql);
-                        $statement->bindParam(1,$ussname,PDO::PARAM_STR,100);
-                        $statement->bindParam(2,$fieldname,PDO::PARAM_STR,100);
-                        $statement->bindParam(3,$changeValue,PDO::PARAM_STR,100);
-                        $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
-                        // echo $statement;
-                        $statement->execute();
-                        if($result != 'OK'){
-                            echo $result;
-                            return $result;
+                        if($fieldname=='email')
+                        {
+                            if(filter_var($changeValue,FILTER_VALIDATE_EMAIL))
+                            {
+                                $ussname = $_SESSION['name'];
+                                $result = null;
+                                $comandaSql = 'call schimbare_camp_utilizator(?,?,?,?)' ;
+                                $statement = Database::getConn()->prepare($comandaSql);
+                                $statement->bindParam(1,$ussname,PDO::PARAM_STR,100);
+                                $statement->bindParam(2,$fieldname,PDO::PARAM_STR,100);
+                                $statement->bindParam(3,$changeValue,PDO::PARAM_STR,100);
+                                $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
+                                // echo $statement;
+                                $statement->execute();
+                                if($result != 'OK'){
+                                    echo $result;
+                                    return $result;
+    
+                                }
 
+                                return $this->getInformation();
+                            }
+                            else 
+                            {
+                                $result = 'Not a good email';
+                                echo $result;
+                                return $result;
+                            }
                         }
-                        return $this->getInformation();
-                        // if($)
+                        else {
+                            $ussname = $_SESSION['name'];
+                            $result = null;
+                            $comandaSql = 'call schimbare_camp_utilizator(?,?,?,?)' ;
+                            $statement = Database::getConn()->prepare($comandaSql);
+                            $statement->bindParam(1,$ussname,PDO::PARAM_STR,100);
+                            $statement->bindParam(2,$fieldname,PDO::PARAM_STR,100);
+                            $statement->bindParam(3,$changeValue,PDO::PARAM_STR,100);
+                            $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
+                            // echo $statement;
+                            $statement->execute();
+                            if($result != 'OK'){
+                                echo $result;
+                                return $result;
+
+                            }
+                            if($fieldname == 'nume_utilizator'){
+                                $_SESSION['name'] = $changeValue;
+                                $_SESSION['login']= 1;
+                            }
+                            return $this->getInformation();
+                            // if($)
+                        }
                     }
                     else
                     {
                         return $this->getInformation();
                     }
-                    if($fieldname == 'nume_utilizator'){
-                        $_SESSION['name'] = $changeValue;
-                        $_SESSION['login']= 1;
-                    }
+
                 }
                 else{
                     //Cam niciodata nu voi ajunge aici
