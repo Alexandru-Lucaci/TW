@@ -60,7 +60,12 @@
                         $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
                         // echo $statement;
                         $statement->execute();
-                        echo $result;
+                        if($result != 'OK'){
+                            echo $result;
+                            return $result;
+
+                        }
+                        return $this->getInformation();
                         // if($)
                     }
                     else
