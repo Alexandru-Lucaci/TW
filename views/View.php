@@ -1,7 +1,7 @@
 <?php
     abstract class View{
         public $template;
-        public $data = array();
+        protected $data = array();
 
         
         public function getTemplate()
@@ -32,6 +32,7 @@
             }
             else
             {
+                $data = $this->data;
                 // exista 
                 ob_start();
                 include ($this->template);

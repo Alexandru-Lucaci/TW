@@ -18,9 +18,10 @@
     
     <div>
         <?php 
+          // echo var_dump($data);
             if(isset($data['user_info'])&&!empty($data['user_info'])&&is_array($data['user_info'])){
 
-
+              // echo ' heeereee';
 
                 $username=$data['user_info']['NUME_UTILIZATOR'];
                 $password=$data['user_info']['PAROLA'];
@@ -88,7 +89,7 @@
                 // echo "<p>Schimba numele de utilizator(daca este disponibil) cu numele:</p>";
                 echo "<form action=\"index.php\" method=\"post\">";
                     echo "<input type=\"hidden\" name=\"load\" value=\"Settings/update\" />";
-                    echo "<input type=\"hidden\" name=\"function\" value=\"change_account_information\" />";
+                    echo "<input type=\"hidden\" name=\"function\" value=\"changeInfo\" />";
                     echo "<input type=\"hidden\" name=\"field_name\" value=\"nume_utilizator\" />";
 
                     echo "<div class=\"projects\">";

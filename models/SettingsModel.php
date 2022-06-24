@@ -1,4 +1,5 @@
 <?php 
+    // session_start();
     class SettingsModel extends Model{
         public function __construct()
         {
@@ -9,8 +10,9 @@
         public function getInformation(){
             if(isset($_SESSION['name'])&& !empty($_SESSION['name'])){
                 //it's ok
+                // echo 'ok';
                 $user = htmlentities(($_SESSION['name']));
-                echo $_SESSION['name'];
+                // echo $_SESSION['name'];
                 $comandaSql = 'Select * from utilizatori where nume_utilizator= (?)';
 
                 $statement = Database::getConn()->prepare($comandaSql);
@@ -20,7 +22,7 @@
                 $output=$statement->fetchAll();
                 
                 // if(!empty($output)){
-                    var_dump($output);
+                return array('user_info' => $output[0]);
                 // }
                 // else
                 // {
@@ -33,6 +35,18 @@
                 return 'failed Something is wrong, i shouldn\'t be here';
 
             }
+        }
+        public function changeInfo(){
+            if(isset($_SESSION['name'])&& !empty($_SESSION['name']))
+                echo '<br> i got heeere <br>yess';
+                $changeValue = null;
+                if(isset($_POST['field_value']))
+                {
+                    echo '<br> valoarea este setata';
+                }
+                else{
+                    echo '<br> valaorea nu este setata';
+                }
         }
     
     }
