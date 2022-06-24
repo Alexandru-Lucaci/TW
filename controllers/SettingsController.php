@@ -51,19 +51,29 @@
             }
 
             // echo 'heeeere';
-            $content = $class->getInformation();
-            // echo '<br> '. $content;
-            // echo '<br> '. $result;
-            
-            if(!is_array($content)){
-                $content = $result;
+            if($_SESSION['login']!=0)
+            {              
+                $content = $class->getInformation();
+                // echo '<br> '. $content;
+                // echo '<br> '. $result;
+                
+                if(!is_array($content)){
+                    $content = $result;
+                }
+                else
+                {
+                    $content['function_response'] = $result;
+                }
+                $presentation = $this->view->show($content);
+                echo $presentation;
             }
             else
             {
-                $content['function_response'] = $result;
+                $home = new HomeView();
+                $presentation = $home->show();
+                echo $presentation;
             }
-            $presentation = $this->view->show($content);
-            echo $presentation;
+
         }
         
     }

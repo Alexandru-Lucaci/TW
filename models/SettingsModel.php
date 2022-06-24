@@ -82,6 +82,38 @@
                     return $this->getInformation();
                 }
         }
+
+        public function delete(){
+            if(isset($_SESSION['name'])&& !empty($_SESSION['name'])){
+                    $usname = $_SESSION['name'];
+                    $result=null;
+                    $comandaSql = 'call sterge_utilizator(?,?)';
+                    $statement= Database::getConn()->prepare($comandaSql);
+                    $statement->bindParam(1,$usname,PDO::PARAM_STR,100);
+                    $statement->bindParam(2,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
+                    $statement->execute(); 
+                    echo 'here i am';
+                    echo $result;
+                    if($result == 'OK'){
+                        $_SESSION['name']=null;
+                        $_SESSION['login'] =0;
+                        return $result;
+                    }
+                    else
+                        {
+                            echo $result;
+                            return $result;
+                        }
+            }
+            else
+            {
+                // i shouldn't be here, cam imposibil sa ajung aici
+
+                return 'Nu sunt conectat';
+
+                
+            }
+        }
     
     }
 ?>
