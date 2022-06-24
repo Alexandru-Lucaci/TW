@@ -38,14 +38,43 @@
         }
         public function changeInfo(){
             if(isset($_SESSION['name'])&& !empty($_SESSION['name']))
-                echo '<br> i got heeere <br>yess';
+                // echo '<br> i got heeere <br>yess';
                 $changeValue = null;
+                $fieldname = null;
                 if(isset($_POST['field_value']))
                 {
-                    echo '<br> valoarea este setata';
+                    // echo '<br> valoarea este setata';
+                    if(!empty($_POST['field_value']))
+                    {
+                        $changeValue = $_POST['field_value'];
+                        
+                        $fieldname = $_POST['field_name'];
+                        
+                        $ussname = $_SESSION['name'];
+                        $result = null;
+                        $comandaSql = 'call schimbare_camp_utilizator(?,?,?,?)' ;
+                        $statement = Database::getConn()->prepare($comandaSql);
+                        $statement->bindParam(1,$ussname,PDO::PARAM_STR,100);
+                        $statement->bindParam(2,$fieldname,PDO::PARAM_STR,100);
+                        $statement->bindParam(3,$changeValue,PDO::PARAM_STR,100);
+                        $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
+                        // echo $statement;
+                        $statement->execute();
+                        echo $result;
+                        // if($)
+                    }
+                    else
+                    {
+                        return $this->getInformation();
+                    }
+                    if($fieldname == 'nume_utilizator'){
+                        $_SESSION['name'] = $changeValue;
+                        $_SESSION['login']= 1;
+                    }
                 }
                 else{
-                    echo '<br> valaorea nu este setata';
+                    //Cam niciodata nu voi ajunge aici
+                    return $this->getInformation();
                 }
         }
     

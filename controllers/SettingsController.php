@@ -14,7 +14,7 @@
             // echo "<br>";
             // var_dump($rezultat);
             $presentation = $this->view->show($rezultat);
-            // $_SESSION['login']=1;
+            $_SESSION['login']=1;
             echo $presentation;
         }
 
@@ -50,10 +50,10 @@
                 $result=('n-am ce metoda sa aplic');
             }
 
-            echo 'heeeere';
+            // echo 'heeeere';
             $content = $class->getInformation();
-            echo '<br> '. $content;
-            echo '<br> '. $result;
+            // echo '<br> '. $content;
+            // echo '<br> '. $result;
             
             if(!is_array($content)){
                 $content = $result;

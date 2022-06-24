@@ -4,19 +4,19 @@
             <li><a href="index.php?load=Settings/show">Setari cont</a></li>
             <li><a href="index.php?load=Savings/show">Salvari</a></li>
             <?php
-                if(isset($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1&&isset($_SESSION['username'])&&!empty($_SESSION['username'])){
+                // if(isset($_SESSION['login'])&&$_SESSION['login']==1&&isset($_SESSION['name'])&&!empty($_SESSION['name'])){
 
-                    $className="AdminModel";
-                    $object=new $className;
-                    $response=$object->is_administrator();
+                //     $className="AdminModel";
+                //     $object=new $className;
+                //     $response=$object->is_administrator();
 
-                    if(!is_string($response)&&$response){
-                        echo "<li><a href=\"index.php?load=AdminUsers/show\">Administrare utilizatori</a></li>";
-                        echo "<li><a href=\"index.php?load=AdminAnimals/show\">Administrare animale</a></li>";
-                        echo "<li><a href=\"index.php?load=AdminForms/show\">Administrare formulare de contact</a></li>";
-                        echo "<li><a href=\"index.php?load=Import/show\">Importeaza informatii animale</a></li>";
-                    }
-                }
+                //     if(!is_string($response)&&$response){
+                //         echo "<li><a href=\"index.php?load=AdminUsers/show\">Administrare utilizatori</a></li>";
+                //         echo "<li><a href=\"index.php?load=AdminAnimals/show\">Administrare animale</a></li>";
+                //         echo "<li><a href=\"index.php?load=AdminForms/show\">Administrare formulare de contact</a></li>";
+                //         echo "<li><a href=\"index.php?load=Import/show\">Importeaza informatii animale</a></li>";
+                //     }
+                // }
             ?>
         </ul>
     </nav>

@@ -37,6 +37,7 @@
                 <a href="index.php?load=Contact/show" class="nav-links nav-links-btn">Contact</a>
             </li>
             <?php 
+            // session_start();
                 if(isset($_SESSION['login'])&&$_SESSION['login']==1){
                     $username=$_SESSION['name'];
 
