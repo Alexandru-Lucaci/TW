@@ -62,7 +62,10 @@
             parent::__construct();
         
         }
-        public function animal_saved(){
+        public function animal_saved($name, $animal){
+            if(empty($name) || empty($animal)){
+                return 'Problema, ambele campuri trebuie sa fie instantiate';
+            }
             
         }
         public function save_animals(){
@@ -125,7 +128,8 @@
         $statement = Database::getConn()->prepare($comandaSQL);
         $statement ->execute();
         $result = $statement->fetchAll();
-        $this->set_search_results($result);
+        $_SESSION['search_results'] = $result;
+        $_SESSION['page_number']=1;;
         }
 
 
