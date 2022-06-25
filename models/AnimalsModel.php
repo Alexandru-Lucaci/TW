@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use LDAP\Result;
+
     class AnimalsModel extends Model{
         private static function set_from_criterias($criterias){
             foreach ($criterias as $criteria )  {
@@ -228,13 +231,24 @@
                         AnimalsModel::createXMLFile($result);
                         return $result;
                     }
+                    else
+                    {
+                        if($type == 'json')
+                        {
+                            AnimalsModel::createJSONFile(($result));
+                            return $result;
+                        }
+                    }
                 }
 
 
             }
         }
         public static function createXMLFile($empData) {
-             
+             // sites 
+            //  https://www.phpzag.com/convert-associative-array-into-xml-in-php/
+            //https://www.javatpoint.com/php-download-file
+
             $xmlDocument = new DOMDocument();    
             $root = $xmlDocument->appendChild($xmlDocument->createElement("animal_details"));   
     
@@ -251,7 +265,17 @@
             header("Content-Disposition: attachment; filename= \"$fileName\""); 
             readfile($path);       
         }
-
+        public static function createJSONFile($data){
+            $arr = $data[0];
+            unset($arr['ID']);
+            $fileName = str_replace(' ', '_','animal').'_'.time().'.json';
+            $path =HOME . DS . 'documentation' . DS . 'saves'. DS . $fileName;
+            $handle = fopen($path,'w');
+            fwrite($handle, json_encode($arr));
+            header('Content-type: text/json');
+            header("Content-Disposition: attachment; filename= \"$fileName\""); 
+            readfile($path);
+        }
     
     }
 ?>
