@@ -94,8 +94,8 @@
 
             $comandaSQL = ' select count(*) from salvari where id_animal = (?) and id_utilizator = (?)';
             $statement = Database::getConn()->prepare($comandaSQL);
-            $statement->bindParam(1, $personId, PDO::PARAM_STR,100);
-            $statement->bindParam(2, $animalId, PDO::PARAM_STR,100);
+            $statement->bindParam(1, $animalId, PDO::PARAM_STR,100);
+            $statement->bindParam(2, $personId, PDO::PARAM_STR,100);
             $statement->execute();
             $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
             // var_dump($rezultat);

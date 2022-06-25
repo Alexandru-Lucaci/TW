@@ -95,7 +95,7 @@
                         $username=$_SESSION['name'];
 
                         $response=AnimalsModel::animal_saved($username,$popularName);
-
+                        // echo $response;
                         if(!is_string($response)){
 
                             if($response){
