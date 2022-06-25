@@ -3,7 +3,7 @@
     echo "<div class=\"rightplace\">";
     //construct the page
     //constants
-    $nrAnimalsPerPage=6;
+    // $nrAnimalsPerPage=50;
     if(!isset($_SESSION['search_results'])||empty($_SESSION['search_results'])){
         echo "<p>Nimic de aratat</p>";
     }
@@ -19,15 +19,13 @@
             echo "<p>Niciun rezultat :(</p>";
         }
         else{
-            //get the start and beggining of the page
-            $startPos=($pageNumber-1)*$nrAnimalsPerPage;
-            $endPos=$nrAnimalsPerPage*$pageNumber-1;
-            
-            for($position=$startPos;$position<=$endPos&&$position<$nrAnimals;$position++){
+
+            foreach($results as $result)
+            {
                 //get animal info to display
-                $popularName=htmlentities($results[$position]['DENUMIRE_POPULARA']);
-                $scientificName=htmlentities($results[$position]['DENUMIRE_STINTIFICA']);
-                $smallDescription=$results[$position]['MINI_DESCRIERE'];
+                $popularName=htmlentities($result['DENUMIRE_POPULARA']);
+                $scientificName=htmlentities($result['DENUMIRE_STINTIFICA']);
+                $smallDescription=$result['MINI_DESCRIERE'];
 
                 //display
                 
@@ -140,29 +138,7 @@
                 echo "</div>";
             }
 
-            echo "<div>";
 
-            //display previous page form
-            echo "<form action=\"index.php\" method=\"post\">";
-                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\">";
-                echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
-                echo "<input type=\"hidden\" name=\"change_value\" value=\"-1\">";
-                echo "<input type=\"submit\" value=\"Pagina Anterioara\" class =\"filtbutt\">";
-            echo "</form>";
-
-            //display current page
-            echo "<h2 style = \"text-align: center\" >$pageNumber</h2>";
-
-            //display next page form
-            echo "<form action=\"index.php\" method=\"post\">";
-                echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\">";
-                echo "<input type=\"hidden\" name=\"function\" value=\"change_results_page\">";
-                echo "<input type=\"hidden\" name=\"change_value\" value=\"1\" >";
-                echo "<input type=\"hidden\" name=\"results_per_page\" value=\"$nrAnimalsPerPage\">";
-                echo "<input type=\"submit\" value=\"Pagina Urmatoare\" class=\"filtbutt\">";
-            echo "</form>";
-
-            echo "</div>";
         }
     }
 
