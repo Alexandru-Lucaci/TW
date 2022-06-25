@@ -17,7 +17,7 @@
                 $continut = $class->$functie();
         }else{
             $rezultat ='something is not good';
-            echo $rezultat;
+            // echo $rezultat;
             return $rezultat;
         }
         var_dump($continut);

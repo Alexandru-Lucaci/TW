@@ -103,7 +103,7 @@
                                 echo "<div>";
                                     echo "<form action=\"index.php\" method=\"post\" >";
                                         echo "<input type=\"hidden\" name=\"load\" value=\"Animals/update\" />";
-                                        echo "<input type=\"hidden\" name=\"function\" value=\"delete_animal_from_savings\" />";
+                                        echo "<input type=\"hidden\" name=\"function\" value=\"deleteAnimal\" />";
                                         echo "<input type=\"hidden\" name=\"animal_name\" value=\"$popularName\" />";
 
                                         echo "<div class=\"card-content\">";

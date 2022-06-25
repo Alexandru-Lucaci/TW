@@ -113,6 +113,8 @@
 
             
         }
+
+        
         public function save_animals(){
             if(isset($_SESSION['login']) && $_SESSION['login'] ==1)
             {
@@ -155,32 +157,74 @@
             $orderBy="ordonare";
             $columns = array("origine", "clasa", "habitat", "invaziva", "stare_de_conservare", "regim_alimentar", "mod_de_inmultire");
         
-        // filterul meu poate face search pe doua ramuri where(unde) si (ordonare dupa)
-        $whereClause='';
-        $orderByClause ='';
-        $this::compute_clauses($whereClause,$columns,$orderByClause, $orderBy);
+            // filterul meu poate face search pe doua ramuri where(unde) si (ordonare dupa)
+            $whereClause='';
+            $orderByClause ='';
+            $this::compute_clauses($whereClause,$columns,$orderByClause, $orderBy);
         
 
-        // setez sesion
-        array_push($columns,$orderBy);
-        $this::set_from_criterias($columns);
-        //Comanda sql
+            // setez sesion
+            array_push($columns,$orderBy);
+            $this::set_from_criterias($columns);
+            //Comanda sql
 
-        $comandaSQL ="select denumire_populara, denumire_stintifica,mini_descriere from animale ";
-        if(strlen($whereClause)){
-            $whereClause = ' where ' . $whereClause;
-            $comandaSQL .= $whereClause;
+            $comandaSQL ="select denumire_populara, denumire_stintifica,mini_descriere from animale ";
+            if(strlen($whereClause)){
+                $whereClause = ' where ' . $whereClause;
+                $comandaSQL .= $whereClause;
+            }
+            if(strlen($orderByClause)>0){
+                $orderByClause=' order by ' . $orderByClause;
+                $comandaSQL .= $orderByClause;
+
+            }      
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement ->execute();
+            $result = $statement->fetchAll();
+            $_SESSION['search_results'] = $result;
+            $_SESSION['page_number']=1;;
         }
-        if(strlen($orderByClause)>0){
-            $orderByClause=' order by ' . $orderByClause;
-            $comandaSQL .= $orderByClause;
 
-        }      
-        $statement = Database::getConn()->prepare($comandaSQL);
-        $statement ->execute();
-        $result = $statement->fetchAll();
-        $_SESSION['search_results'] = $result;
-        $_SESSION['page_number']=1;;
+        public function deleteAnimal(){
+            if(isset($_SESSION['login']) && $_SESSION['login'] ==1){
+                    $ussname = $_SESSION['name'];
+                    $animalName = $_POST['animal_name'];
+                    //copy from above
+
+                    $comandaSQL = "select id from utilizatori where nume_utilizator = trim( ? )";
+                    $statement = Database::getConn()->prepare($comandaSQL);
+                    $statement->bindParam(1, $ussname, PDO::PARAM_STR,100);
+                    $statement->execute();
+                    $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
+                    if(empty($rezultat))
+                    {
+                        return 'Ar trebui sa  exista un cont cu numele '. $name;
+                    }
+                    $personId = $rezultat[0]['ID'];
+                    // echo $rezultat[0]['ID'];
+                    $comandaSQL = "select id from animale where lower( denumire_populara ) = lower( ? )";
+                    $statement = Database::getConn()->prepare($comandaSQL);
+                    $statement->bindParam(1, $animalName, PDO::PARAM_STR,100);
+                    $statement->execute();
+                    $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
+                    if(empty($rezultat))
+                    {
+                        return 'Ar trebui sa  exista un animal cu numele '. $animal;
+                    }
+                    $animalId = $rezultat[0]['ID'];
+        
+                    $comandaSQL = "delete from salvari where id_utilizator = (?) and id_animal =(?)";
+                    $statement = Database::getConn()->prepare($comandaSQL);
+                    $statement->bindParam(1,$personId,PDO::PARAM_STR,100);
+                    $statement->bindParam(2,$animalId,PDO::PARAM_STR,100);
+                    $statement->execute();
+                    
+
+            }
+            else{
+                //nu sunt logat -- cam imposibil
+                return 'you\'re not logged in';
+            }
         }
 
 
