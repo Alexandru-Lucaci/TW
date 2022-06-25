@@ -66,6 +66,22 @@
             if(empty($name) || empty($animal)){
                 return 'Problema, ambele campuri trebuie sa fie instantiate';
             }
+           
+            $comandaSQL = "select id from utilizatori where nume_utilizator = trim( ? )";
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement->bindParam(1, $name, PDO::PARAM_STR,100);
+            $statement->execute();
+            $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
+            if(empty($rezultat))
+            {
+                return 'Ar trebui sa  exista un cont cu numele '. $name;
+            }
+
+            echo $rezultat[0]['ID'];
+
+            
+
+
             
         }
         public function save_animals(){
@@ -136,3 +152,20 @@
     
     }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php 
+    $test  = new AnimalsModel();
+    $test->animal_saved('alextest1',null);
+    ?>
+</body>
+</html>
