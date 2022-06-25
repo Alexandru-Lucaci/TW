@@ -221,12 +221,12 @@
                 $statement->bindParam(1,$animalId, PDO::PARAM_STR,100);
                 $statement->execute();
                 $result = $statement->fetchAll();
-                return $result;
+                // return $result;
                 if(isset($_POST['file_format']) && !empty($_POST['file_format'])){
                     $type = $_POST['file_format'];
                     if($type == 'xml'){
                         AnimalsModel::createXMLFile($result);
-                        return 'OK';
+                        return $result;
                     }
                 }
 
@@ -238,15 +238,18 @@
             $xmlDocument = new DOMDocument();    
             $root = $xmlDocument->appendChild($xmlDocument->createElement("animal_details"));   
     
-            foreach($empData as $key => $value)
-            {        
+            foreach($empData[0] as $key => $value)
+            {
+                if($key !='ID')       
                 $root->appendChild($xmlDocument->createElement($key, $value));
             }
             $fileName = str_replace(' ', '_','animal').'_'.time().'.xml';
-            $xmlDocument->formatOutput = true;  
-            $xmlDocument->save("XML_FILE/" . $fileName);
+            $xmlDocument->formatOutput = true;
+            $path =HOME . DS . 'documentation' . DS . 'saves'. DS . $fileName;
+            $xmlDocument->save($path);
             header('Content-type: text/xml');
-            header('Content-Disposition: attachment; filename="animal.xml');        
+            header("Content-Disposition: attachment; filename= \"$fileName\""); 
+            readfile($path);       
         }
 
     
