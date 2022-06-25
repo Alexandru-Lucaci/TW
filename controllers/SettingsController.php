@@ -20,7 +20,7 @@
 
         public function update(){
             $class = new $this->model;
-            echo 'heere';
+            // echo 'heere';
             // $function = 'getInformation';
             // $informationThatINeed = $class->$function();
 
@@ -36,7 +36,7 @@
                 $function = $_POST['function'];
                 if(method_exists($class,$function)){
                     //exista 
-                    echo 'exista';
+                    // echo 'exista';
                     $result = $class->$function();
                 }
                 else

@@ -65,7 +65,7 @@
                                 // echo $statement;
                                 $statement->execute();
                                 if($result != 'OK'){
-                                    echo $result;
+                                    // echo $result;
                                     return $result;
     
                                 }
@@ -91,7 +91,7 @@
                             // echo $statement;
                             $statement->execute();
                             if($result != 'OK'){
-                                echo $result;
+                                // echo $result;
                                 return $result;
 
                             }
@@ -124,8 +124,8 @@
                     $statement->bindParam(1,$usname,PDO::PARAM_STR,100);
                     $statement->bindParam(2,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
                     $statement->execute(); 
-                    echo 'here i am';
-                    echo $result;
+                    // echo 'here i am';
+                    // echo $result;
                     if($result == 'OK'){
                         $_SESSION['name']=null;
                         $_SESSION['login'] =0;

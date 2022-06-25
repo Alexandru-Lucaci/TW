@@ -12,7 +12,7 @@
         $results=$_SESSION['saved_animals'];
         $pageNumber=$_SESSION['savings_page_number'];
         $nrAnimals=count($results);
-
+        
         if($nrAnimals==0){
             echo "<p>Niciun animal salvat:(</p>";
         }
@@ -47,7 +47,7 @@
                     echo "<div>";
                         echo "<form action=\"index.php\" method=\"post\" >";
                             echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/show\" />";
-                            echo "<input type=\"hidden\" name=\"function\" value=\"get_animal_information\" />";
+                            echo "<input type=\"hidden\" name=\"function\" value=\"getAnimal\" />";
                             echo "<input type=\"hidden\" name=\"animal_name\" value=\"$popularName\" />";
 
                             echo "<input type=\"submit\" value=\"Mai multe\" />";

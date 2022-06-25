@@ -54,7 +54,7 @@ use LDAP\Result;
             }
 
         }
-        private static function getPersonId($ussname){
+        public static function getPersonId($ussname){
             $comandaSQL = "select id from utilizatori where nume_utilizator = trim( ? )";
             $statement = Database::getConn()->prepare($comandaSQL);
             $statement->bindParam(1, $ussname, PDO::PARAM_STR,100);
@@ -66,7 +66,7 @@ use LDAP\Result;
             }
             return $rezultat[0]['ID'];
         }
-        private static function getAnimalId($animalName){
+        public static function getAnimalId($animalName){
             $comandaSQL = "select id from animale where lower( denumire_populara ) = lower( ? )";
             $statement = Database::getConn()->prepare($comandaSQL);
             $statement->bindParam(1, $animalName, PDO::PARAM_STR,100);
