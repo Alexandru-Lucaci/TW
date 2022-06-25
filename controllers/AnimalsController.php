@@ -20,7 +20,7 @@
             // echo $rezultat;
             return $rezultat;
         }
-        var_dump($continut);
+        // var_dump($continut);
         $presentation = $this->view->show($continut);
         echo $presentation;
 

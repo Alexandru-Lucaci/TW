@@ -51,7 +51,31 @@
             }
 
         }
+        private static function getPersonId($ussname){
+            $comandaSQL = "select id from utilizatori where nume_utilizator = trim( ? )";
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement->bindParam(1, $ussname, PDO::PARAM_STR,100);
+            $statement->execute();
+            $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
+            if(empty($rezultat))
+            {
+                return 'Ar trebui sa  exista un cont cu numele '. $ussname;
+            }
+            return $rezultat[0]['ID'];
+        }
+        private static function getAnimalId($animalName){
+            $comandaSQL = "select id from animale where lower( denumire_populara ) = lower( ? )";
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement->bindParam(1, $animalName, PDO::PARAM_STR,100);
+            $statement->execute();
+            $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
+            if(empty($rezultat))
+            {
+                return 'Ar trebui sa  exista un animal cu numele '. $animalName;
+            }
+            return $rezultat[0]['ID'];
 
+        }
         private static function set_search_results($results){
             $_SESSION['search_results'] = $results;
             $_SESSION['page_number']=1;
@@ -66,28 +90,13 @@
             if(empty($name) || empty($animal)){
                 return 'Problema, ambele campuri trebuie sa fie instantiate';
             }
-           
-            $comandaSQL = "select id from utilizatori where nume_utilizator = trim( ? )";
-            $statement = Database::getConn()->prepare($comandaSQL);
-            $statement->bindParam(1, $name, PDO::PARAM_STR,100);
-            $statement->execute();
-            $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
-            if(empty($rezultat))
-            {
-                return 'Ar trebui sa  exista un cont cu numele '. $name;
-            }
-            $personId = $rezultat[0]['ID'];
+
+            $personId = AnimalsModel::getPersonId($name);
+            // $personId = $rezultat[0]['ID'];
             // echo $rezultat[0]['ID'];
-            $comandaSQL = "select id from animale where lower( denumire_populara ) = lower( ? )";
-            $statement = Database::getConn()->prepare($comandaSQL);
-            $statement->bindParam(1, $animal, PDO::PARAM_STR,100);
-            $statement->execute();
-            $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
-            if(empty($rezultat))
-            {
-                return 'Ar trebui sa  exista un animal cu numele '. $animal;
-            }
-            $animalId = $rezultat[0]['ID'];
+
+            $animalId = AnimalsModel::getAnimalId($animal);
+            // $animalId = $rezultat[0]['ID'];
 
 
             // verific daca exista in tabelul cu salvari 
@@ -105,7 +114,7 @@
             }
             else
             {
-                echo  $rezultat[0]['COUNT(*)'];
+                // echo  $rezultat[0]['COUNT(*)'];
                 return true;
             }
             
@@ -189,36 +198,18 @@
             if(isset($_SESSION['login']) && $_SESSION['login'] ==1){
                     $ussname = $_SESSION['name'];
                     $animalName = $_POST['animal_name'];
-                    //copy from above
+                    //copy from above getting the ids
 
-                    $comandaSQL = "select id from utilizatori where nume_utilizator = trim( ? )";
-                    $statement = Database::getConn()->prepare($comandaSQL);
-                    $statement->bindParam(1, $ussname, PDO::PARAM_STR,100);
-                    $statement->execute();
-                    $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
-                    if(empty($rezultat))
-                    {
-                        return 'Ar trebui sa  exista un cont cu numele '. $name;
-                    }
-                    $personId = $rezultat[0]['ID'];
+                    $personId = $this::getPersonId($ussname);
                     // echo $rezultat[0]['ID'];
-                    $comandaSQL = "select id from animale where lower( denumire_populara ) = lower( ? )";
-                    $statement = Database::getConn()->prepare($comandaSQL);
-                    $statement->bindParam(1, $animalName, PDO::PARAM_STR,100);
-                    $statement->execute();
-                    $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
-                    if(empty($rezultat))
-                    {
-                        return 'Ar trebui sa  exista un animal cu numele '. $animal;
-                    }
-                    $animalId = $rezultat[0]['ID'];
-        
+                    
+                    $animalId = $this::getAnimalId($animalName);
                     $comandaSQL = "delete from salvari where id_utilizator = (?) and id_animal =(?)";
                     $statement = Database::getConn()->prepare($comandaSQL);
                     $statement->bindParam(1,$personId,PDO::PARAM_STR,100);
                     $statement->bindParam(2,$animalId,PDO::PARAM_STR,100);
                     $statement->execute();
-                    
+
 
             }
             else{
