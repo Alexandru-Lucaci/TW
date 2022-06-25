@@ -76,9 +76,37 @@
             {
                 return 'Ar trebui sa  exista un cont cu numele '. $name;
             }
+            $personId = $rezultat[0]['ID'];
+            // echo $rezultat[0]['ID'];
+            $comandaSQL = "select id from animale where lower( denumire_populara ) = lower( ? )";
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement->bindParam(1, $animal, PDO::PARAM_STR,100);
+            $statement->execute();
+            $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
+            if(empty($rezultat))
+            {
+                return 'Ar trebui sa  exista un animal cu numele '. $animal;
+            }
+            $animalId = $rezultat[0]['ID'];
 
-            echo $rezultat[0]['ID'];
 
+            // verific daca exista in tabelul cu salvari 
+
+            $comandaSQL = ' select count(*) from salvari where id_animal = (?) and id_utilizator = (?)';
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement->bindParam(1, $personId, PDO::PARAM_STR,100);
+            $statement->bindParam(1, $animalId, PDO::PARAM_STR,100);
+            $statement->execute();
+            $rezultat = $statement->fetchAll(); // ar trebui sa am doar o singura valoare 
+            if($rezultat[0]['COUNT(*)']==0)
+            {
+                return false;
+            }
+            else
+            {
+                echo  $rezultat[0]['COUNT(*)'];
+                return true;
+            }
             
 
 
@@ -98,7 +126,7 @@
                     $statement=Database::getConn()->prepare($comandaSQL);
                     $statement->bindParam(1,$ussname,PDO::PARAM_STR,100);
                     $statement->bindParam(2,$anima,PDO::PARAM_STR,100);
-                    $statement->bindParam(3,',',PDO::PARAM_STR,2);
+                    $statement->bindParam(3,' , ',PDO::PARAM_STR,3);
                     $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
                     
                     $statement->execute();
@@ -154,18 +182,3 @@
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php 
-    $test  = new AnimalsModel();
-    $test->animal_saved('alextest1',null);
-    ?>
-</body>
-</html>

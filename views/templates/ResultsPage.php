@@ -90,9 +90,9 @@
                         echo "</form>";
                     echo "</div>";
 
-                    if(isset($_SESSION['loggedIn'])&&!empty($_SESSION['loggedIn'])&&$_SESSION['loggedIn']==1&&isset($_SESSION['username'])&&!empty($_SESSION['username'])){
+                    if(isset($_SESSION['login'])&&!empty($_SESSION['login'])&&$_SESSION['login']==1&&isset($_SESSION['name'])&&!empty($_SESSION['name'])){
                         //check to see if the animal is already saved
-                        $username=$_SESSION['username'];
+                        $username=$_SESSION['name'];
 
                         $response=AnimalsModel::animal_saved($username,$popularName);
 
