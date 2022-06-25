@@ -76,10 +76,10 @@
             return $rezultat[0]['ID'];
 
         }
-        private static function set_search_results($results){
-            $_SESSION['search_results'] = $results;
-            $_SESSION['page_number']=1;
-        }
+        // private static function set_search_results($results){
+        //     $_SESSION['search_results'] = $results;
+        //     $_SESSION['page_number']=1;
+        // }
         public function __construct()
         {
             // echo "should show";
@@ -118,12 +118,8 @@
                 return true;
             }
             
-
-
             
         }
-
-        
         public function save_animals(){
             if(isset($_SESSION['login']) && $_SESSION['login'] ==1)
             {

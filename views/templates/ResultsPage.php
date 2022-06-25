@@ -79,7 +79,7 @@
                     echo "<div>";
                         echo "<form action=\"index.php\" method=\"post\" >";
                             echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/show\" />";
-                            echo "<input type=\"hidden\" name=\"function\" value=\"get_animal_information\" />";
+                            echo "<input type=\"hidden\" name=\"function\" value=\"getAnimal\" />";
                             echo "<input type=\"hidden\" name=\"animal_name\" value=\"$popularName\" />";
 
                             echo "<div class=\"card-content\">";
