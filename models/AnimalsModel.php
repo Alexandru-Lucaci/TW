@@ -62,7 +62,7 @@
             parent::__construct();
         
         }
-        public function animal_saved($name, $animal){
+        public static function animal_saved($name, $animal){
             if(empty($name) || empty($animal)){
                 return 'Problema, ambele campuri trebuie sa fie instantiate';
             }
@@ -121,21 +121,26 @@
                 if(isset($_POST['animal_names']) && !empty($_POST['animal_names'])){
                     $anima = $_POST['animal_names'];
                     $result =null;
-                    $comandaSQL = "call salvare_animal(?,?,?,?)";
+                    $sep =',';
+                    $comandaSQL = "call salvare_animale(?,?,?,?)";
 
 
                     $statement=Database::getConn()->prepare($comandaSQL);
                     $statement->bindParam(1,$ussname,PDO::PARAM_STR,100);
                     $statement->bindParam(2,$anima,PDO::PARAM_STR,100);
-                    $statement->bindParam(3,' , ',PDO::PARAM_STR,3);
+                    $statement->bindParam(3,$sep,PDO::PARAM_STR,3);
                     $statement->bindParam(4,$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,100);
                     
                     $statement->execute();
+                    // echo $result;
+                    $result .= $ussname;
+                    $result .=$anima;
                     return $result;
+
                     
 
                 }else{
-                    return 'nimic';
+                    return $ussname.' nimic '. $_POST['animal_name'];
                 }
 
             }
@@ -144,6 +149,7 @@
                 // nu sunt logat
                 return 'Nu ar trebui sa pot apasa pe butonul asta';
             }
+            return 'final';
         }
         public function multicriterial_search(){
             $orderBy="ordonare";
