@@ -213,7 +213,41 @@
                 return 'you\'re not logged in';
             }
         }
+        public function download(){
+            if(isset($_POST['animals_names']) && !empty($_POST['animals_names'])){
+                $animalId = AnimalsModel::getAnimalId($_POST['animals_names']);
+                $comandaSQL = "select * from animale where id = (?)";
+                $statement = Database::getConn()->prepare($comandaSQL);
+                $statement->bindParam(1,$animalId, PDO::PARAM_STR,100);
+                $statement->execute();
+                $result = $statement->fetchAll();
+                return $result;
+                if(isset($_POST['file_format']) && !empty($_POST['file_format'])){
+                    $type = $_POST['file_format'];
+                    if($type == 'xml'){
+                        AnimalsModel::createXMLFile($result);
+                        return 'OK';
+                    }
+                }
 
+
+            }
+        }
+        public static function createXMLFile($empData) {
+             
+            $xmlDocument = new DOMDocument();    
+            $root = $xmlDocument->appendChild($xmlDocument->createElement("animal_details"));   
+    
+            foreach($empData as $key => $value)
+            {        
+                $root->appendChild($xmlDocument->createElement($key, $value));
+            }
+            $fileName = str_replace(' ', '_','animal').'_'.time().'.xml';
+            $xmlDocument->formatOutput = true;  
+            $xmlDocument->save("XML_FILE/" . $fileName);
+            header('Content-type: text/xml');
+            header('Content-Disposition: attachment; filename="animal.xml');        
+        }
 
     
     }

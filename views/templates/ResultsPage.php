@@ -50,9 +50,8 @@
                     //buttons to download animal info as xml
                     echo "<div>";
                         echo "<form action=\"index.php\" method=\"post\">";
-                            echo "<input type=\"hidden\" name=\"load\" value=\"MoreInfo/download\" />";
-                            echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";
-                    
+                            echo "<input type=\"hidden\" name=\"load\" value=\"Animals/download\" />";
+                            echo "<input type=\"hidden\" name=\"file_format\" value=\"xml\" />";   
                             echo "<input type=\"hidden\" name=\"animals_names\" value=\"$popularName\" />";
                             echo "<div class=\"card-content\">";
                                 echo "<input type=\"submit\" value=\"Descarca ca XML\" class=\"filtbutt\"/>";

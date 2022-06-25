@@ -18,7 +18,7 @@
 
                 $output = $statement->fetchAll();
                 // sigur am un animal
-                var_dump($output);
+                // var_dump($output);
 
                 return $output;
             }else{

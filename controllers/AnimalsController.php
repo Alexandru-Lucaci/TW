@@ -25,6 +25,13 @@
         echo $presentation;
 
         }
+        public function download(){
+           $result = $this->model->download();
+        //    var_dump($result);
+            foreach ($result[0] as $key => $value) {
+                echo "cheie -$key-  = value -$value- <br>";
+            }
+        }
     }
 
 ?>

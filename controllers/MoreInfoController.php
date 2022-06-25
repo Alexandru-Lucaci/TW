@@ -18,7 +18,7 @@
                 }
 
             }
-            $presentation = $this->view->show();
+            $presentation = $this->view->show($continut);
 
             echo $presentation;
         }
