@@ -44,12 +44,36 @@
         }
         public function change_animal_field_value(){
             // toate cele 3 capuri trebuie sa fie setate
-            if(!(isset($_POST['animal_name']) && isset($_POST['field_name'])&&!empty($_POST['animal_name']) && !empty($_POST['field_name']))){
+            if(!(isset($_POST['animal_name']) && isset($_POST['field_name'])&&!empty($_POST['animal_name']) && !empty($_POST['field_name']) && isset($_POST['field_value'])&& !empty($_POST['field_value']))){
+                // echo 'Campuri  necompletate';
                 return 'Ambele campuri trebuie sa fie completate';
-                echo ' campuri necompletate';
+                
             }
 
+            $animal = $_POST['animal_name'];
+            $animal = strtoupper( str_replace(' ','_',$animal));
+            $fieldName = $_POST['field_name'];
+            $fieldName = strtoupper( str_replace(' ','_',$fieldName));
+            $valoareNoua = $_POST['field_value'];
 
+            $campuri=array("ID","DENUMIRE_POPULARA","DENUMIRE_STINTIFICA","MINI_DESCRIERE","ETIMOLOGIE","ORIGINE","CLASA","HABITAT","INVAZIVA","STARE_DE_CONSERVARE","REGIM_ALIMENTAR","DIETA","MOD_DE_INMULTIRE","REPRODUCERE","DEZVOLTARE","VIATA","ISTORIE","DUSMANI_NATURALI","NR_ACCESARI","NR_SALVARI","NR_DESCARCARI","CREAT_LA","ACTUALIZAT_LA");
+            if(!in_array($fieldName,$campuri)){
+                // echo ' Nu exista acest camp';
+                return 'Nu exista acest camp';
+            }
+            $comandaSQL = "update animale set $fieldName = '$valoareNoua'  where upper(DENUMIRE_POPULARA) = '$animal'";
+            echo $comandaSQL;
+            $statement = Database::getConn() -> prepare($comandaSQL);
+            $statement -> execute();
+            $rezultat  = $statement -> fetchAll();
+            var_dump($rezultat);
+            if(count($rezultat)!=0)
+            {
+                $valoare = (string) $rezultat[0][$fieldName];
+                // var_dump($valoare);
+                return array('field_value' => $valoare, 'type'=>'animal_info');
+            }
+            return null;
         }
     }
 ?>
