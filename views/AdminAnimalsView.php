@@ -6,7 +6,9 @@
             // echo "should show";
             parent::__construct('views/templates/AdminAnimals.phtml');
         }
-        function show(){
+        function show($dates = null){
+            $this->data = $dates;
+
             return $this->output();
         }
     }

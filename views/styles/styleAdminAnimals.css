@@ -22,6 +22,16 @@ body{
 .wrapper .left{
     margin-top: 550px;
   }
+  .wrapper{
+    position: absolute;
+    top: 10%;
+    /* left: 50%; */
+    transform: translate(-50%,-50%);
+    margin-top: 250px;
+    /* width: 650px; */
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+  }
 @media only screen and (max-width: 1200px){
 
     .links{
@@ -59,7 +69,7 @@ body{
     }
     .wrapper{
         position: absolute;
-        top: 50%;
+        top: 20%;
         /* left: 50%; */
         transform: translate(-50%,-50%);
         margin-top: 250px;
