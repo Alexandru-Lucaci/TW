@@ -62,11 +62,11 @@
                 return 'Nu exista acest camp';
             }
             $comandaSQL = "update animale set $fieldName = '$valoareNoua'  where upper(DENUMIRE_POPULARA) = '$animal'";
-            echo $comandaSQL;
+            // echo $comandaSQL;
             $statement = Database::getConn() -> prepare($comandaSQL);
             $statement -> execute();
             $rezultat  = $statement -> fetchAll();
-            var_dump($rezultat);
+            // var_dump($rezultat);
             if(count($rezultat)!=0)
             {
                 $valoare = (string) $rezultat[0][$fieldName];
