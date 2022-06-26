@@ -68,8 +68,13 @@
             if(!(isset($_POST['username'])&& !empty($_POST['username']))){
                 return 'Numele utilizatorului nu este setat';
             }
+            $comandaSQL = "delete from utilizatori where nume_utilizator = (?)";
 
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement -> bindParam(1, $_POST['username'], PDO::PARAM_STR, 100);
+            $statement ->execute();
             
+
         }
     
     }
