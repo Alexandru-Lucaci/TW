@@ -17,7 +17,7 @@
 
                 if(method_exists($className,$functie)){
                     $rezult = $className->$functie();
-                    if($rezult == 'Campuri  necompletate')
+                    if($rezult == 'Campuri necompletate')
                         echo $rezult;
                 }
                 else

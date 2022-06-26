@@ -45,8 +45,8 @@
         public function change_animal_field_value(){
             // toate cele 3 capuri trebuie sa fie setate
             if(!(isset($_POST['animal_name']) && isset($_POST['field_name'])&&!empty($_POST['animal_name']) && !empty($_POST['field_name']) && isset($_POST['field_value'])&& !empty($_POST['field_value']))){
-                // echo 'Campuri  necompletate';
-                return 'Ambele campuri trebuie sa fie completate';
+                // echo 'Campuri necompletate';
+                return 'Campuri necompletate';
                 
             }
 
@@ -75,5 +75,21 @@
             }
             return null;
         }
+
+        public function deleteAnimal(){
+            // numele animalului trebuie sa fie setat
+            if(!(isset($_POST['animal_name']) && !empty($_POST['animal_name']))){
+                return 'Campuri necompletate';
+            }
+            $animal = $_POST['animal_name'];
+            $comandaSQL = "delete from animale where upper(DENUMIRE_POPULARA) = upper('$animal')";
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement -> execute();
+
+            
+        }
+
+        
+
     }
 ?>
