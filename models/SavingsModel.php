@@ -33,7 +33,7 @@
             ];
             // echo $nrPag;
             $value = $_POST['change_value']; // 1 sau -1
-            echo $value;
+            // echo $value;
             $animale = count($_SESSION['saved_animals']);
             if($value == 1){
                 $animalePagina = $_POST[
@@ -45,13 +45,13 @@
                     return 'este ultima pagina';
                 }
                 $nrPag++;
-                echo ' heeere x3';
+                // echo ' heeere x3';
             }
             if($value == -1){
                 if($nrPag == 1) return 'este prima pagina';
                 $nrPag--;
             }
-            echo 'heeere';
+            // echo 'heeere';
             $_SESSION['savings_page_number'] = $nrPag;
             return 'OK';
         }
