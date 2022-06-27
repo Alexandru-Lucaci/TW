@@ -26,7 +26,8 @@
                 $popularName=htmlentities($result['DENUMIRE_POPULARA']);
                 $scientificName=htmlentities($result['DENUMIRE_STINTIFICA']);
                 $smallDescription=$result['MINI_DESCRIERE'];
-
+                if(!is_null($smallDescription) && !is_null($scientificName) &&!is_null($smallDescription))
+{
                 //display
                 
                 echo "<div id=\"$popularName\" class=\"card\" onclick=\"markAnimal('$popularName')\" >";
@@ -134,7 +135,7 @@
                         }
                     }
 
-                echo "</div>";
+                echo "</div>";}
             }
 
 

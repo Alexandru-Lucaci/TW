@@ -204,6 +204,16 @@
                     }
                     else{
                         if($tip == 'XML'){
+                            // $handle = fopen($_FILES['file']['tmp_name'],'r');
+                          
+                            // $data = fread($handle,filesize($_FILES['file']['tmp_name']));
+
+                            
+
+                            // $fileNou = file($_FILES['file']['tmp_name'],FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                            // var_dump($fileNou);
+                            // echo "<br><br> de aici".$fileNou['0'];
+                            // echo "<br><br> $data<br><br>";
                             $valori= simplexml_load_file($_FILES['file']['tmp_name']);
                             $comandaSQL = "select MAX(ID)+1  from animale";
                             $statement = Database::getConn()->prepare($comandaSQL);
