@@ -214,6 +214,8 @@
                             // var_dump($fileNou);
                             // echo "<br><br> de aici".$fileNou['0'];
                             // echo "<br><br> $data<br><br>";
+
+                            /// here i have an probllem
                             $valori= simplexml_load_file($_FILES['file']['tmp_name']);
                             $comandaSQL = "select MAX(ID)+1  from animale";
                             $statement = Database::getConn()->prepare($comandaSQL);
