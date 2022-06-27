@@ -144,8 +144,24 @@
                     echo 'prin fisier';
                     // inserez prin fisier 
                     // echo file_get_contents($_FILES['file']);
-                    var_dump($_FILES['file']);
+                    // var_dump($_FILES['file']);
                     // echo $_FILES['file'];
+                    echo "Filename: " . $_FILES['file']['name']."<br>";
+                    echo "Type : " . $_FILES['file']['type'] ."<br>";
+                    $tip = $_FILES['file']['type'];
+                    $tip =  strtoupper(substr($tip,-3)) ;
+                    echo $tip . '<br>';
+                    echo "Size : " . $_FILES['file']['size'] ."<br>";
+                    echo "Temp name: " . $_FILES['file']['tmp_name'] ."<br>";
+                    echo "Error : " . $_FILES['file']['error'] . "<br>";
+                    if ($tip =='SON'){
+                        echo file_get_contents( $_FILES['file']['tmp_name']);
+                    }
+                    else{
+                        if($tip == 'XML'){
+                            echo simplexml_load_file($_FILES['file']['tmp_name']);
+                        }
+                    }
                 }
 
             }
