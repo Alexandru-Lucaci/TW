@@ -47,7 +47,7 @@
                         $body= '<h2> Contact Request Form </h2>
                         <h4>Name</h4><p>'. $name .'</p>
                         <h4>email</h4><p>'. $email .'</p>
-                        <h4>email</h4><p>'. $number .'</p>
+                        <h4>Numar telefon</h4><p>'. $number .'</p>
                         <h4>Message</h4><p>'. $message .'</p>
                         <h4>IpAddress</h4><p>'. $ipAddr.'</p>
                         ';
