@@ -11,6 +11,9 @@ use LDAP\Result;
                 }
             }
         }
+
+
+
         private static function compute_clauses(&$whereClause,&$whereColumns,&$orderByClause,&$orderByColumn){
             $nrTerms        = 0;
             $whereClause    = '';
@@ -276,6 +279,33 @@ use LDAP\Result;
             header('Content-type: text/json');
             header("Content-Disposition: attachment; filename= \"$fileName\""); 
             readfile($path);
+        }
+        public function search(){
+            // textul as vrea sa fie notat 
+
+            if(!(isset($_POST['text']) && !empty($_POST['text']))){
+                return 'Campul trebuie sa fie completat pentru a functiona cum trebuie';
+            
+            }
+            $input = $_POST['text'];
+
+            $comandaSQL = "
+            select denumire_populara,denumire_stintifica,mini_descriere,punctaj_animal(?,denumire_populara) as scor
+            from animale
+            where punctaj_animal(?,denumire_populara)>0
+            order by scor desc";
+            $statement = Database::getConn()->prepare($comandaSQL);
+            $statement -> bindParam(1, $input, PDO::PARAM_STR, 100);
+            $statement -> bindParam(2, $input, PDO::PARAM_STR, 100 );
+
+            $statement -> execute();
+
+            $rezultat = $statement -> fetchAll();
+            if(is_null($rezultat)){
+                return 'nimic de aratat';
+            }
+            $_SESSION['search_results'] = $rezultat;
+            $_SESSION['page_number']    = 1;
         }
     
     }
