@@ -51,16 +51,17 @@
     $cntrl .= 'Controller'; // append Controller to the page i wanted 
     
         // echo $cntrl;
+    if($cntrl != 'twController')
+    { 
+        $actualControllerClass = new $cntrl();
+        if(method_exists($actualControllerClass, $cmd)){
+            // echo 'heere';
+            $actualControllerClass->$cmd($querry);
 
-    $actualControllerClass = new $cntrl();
-    if(method_exists($actualControllerClass, $cmd)){
-        // echo 'heere';
-        $actualControllerClass->$cmd($querry);
-
-    }
-    else{
-        return new Exception(" Problem with laoding the page (boot.php)");
-    }
+        }
+        else{
+            return new Exception(" Problem with laoding the page (boot.php)");
+    }}
     
 
 ?>

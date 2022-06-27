@@ -1,3 +1,28 @@
+<script>
+    function sugestii(str){
+        console.log(str);
+        if(str.length==0)
+        {
+            document.getElementById('output').innerHTML='';
+        }
+        else{
+            // document.getElementById('output').innerHTML=str;
+            // AJAX
+
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange= function(){
+                if(this.readyState==4 && this.status==200){
+                    document.getElementById('output').innerHTML = this.responseText;
+                    // console.log("yesss");
+                }
+            }
+            xmlhttp.open("GET", "/tw/models/ajax/suggest.php?q="+str,true);
+            xmlhttp.send();
+        }
+    }
+</script>
+
+
 <div class="nav-container">
     <nav class="navbar">
         <div class="search">
@@ -8,6 +33,8 @@
                     type="text"
                     name="text"
                     placeholder="Type to search"
+                    onkeyup="sugestii(this.value)"
+                    
                     />
                     <input type="hidden" name="load" value="Animals/update" />
                     <input type="hidden" name="function" value="search" />
@@ -19,6 +46,7 @@
                     width="25"
                     height="25"
                     />
+                    <p><span id="output" style="font-weight:bold">a</span></p>
                 </form>
             </div>
         </div>

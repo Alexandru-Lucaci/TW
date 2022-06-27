@@ -1,5 +1,5 @@
 <?php
-    include "../../utils/db.php";
+    // include "../../utils/db.php";
 
     
     function exist_username($username){
