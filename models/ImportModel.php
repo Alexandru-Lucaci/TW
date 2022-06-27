@@ -141,25 +141,93 @@
                 }
                 else
                 {
-                    echo 'prin fisier';
+                    // echo 'prin fisier';
                     // inserez prin fisier 
                     // echo file_get_contents($_FILES['file']);
                     // var_dump($_FILES['file']);
                     // echo $_FILES['file'];
-                    echo "Filename: " . $_FILES['file']['name']."<br>";
-                    echo "Type : " . $_FILES['file']['type'] ."<br>";
+                    // echo "Filename: " . $_FILES['file']['name']."<br>";
+                    // echo "Type : " . $_FILES['file']['type'] ."<br>";
                     $tip = $_FILES['file']['type'];
                     $tip =  strtoupper(substr($tip,-3)) ;
-                    echo $tip . '<br>';
-                    echo "Size : " . $_FILES['file']['size'] ."<br>";
-                    echo "Temp name: " . $_FILES['file']['tmp_name'] ."<br>";
-                    echo "Error : " . $_FILES['file']['error'] . "<br>";
+                    // echo $tip . '<br>';
+                    // echo "Size : " . $_FILES['file']['size'] ."<br>";
+                    // echo "Temp name: " . $_FILES['file']['tmp_name'] ."<br>";
+                    // echo "Error : " . $_FILES['file']['error'] . "<br>";
                     if ($tip =='SON'){
-                        echo file_get_contents( $_FILES['file']['tmp_name']);
+                        $comandaSQL = "select MAX(ID)+1  from animale";
+                        $statement = Database::getConn()->prepare($comandaSQL);
+                        $statement -> execute();
+                        $result = $statement->fetchAll();
+                        $valori = array();
+                        // var_dump($result);
+                       
+                        // echo file_get_contents( $_FILES['file']['tmp_name']);
+                        $valori = json_decode(file_get_contents( $_FILES['file']['tmp_name']));
+                        // var_dump($valori);
+                        // $valori['ID'] = (string) $result[0]["MAX(ID)+1"];
+                        $denumiri ='( ID , ';
+                        $valoriNoi =" ( " . $result[0]["MAX(ID)+1"] . ' , ';
+                        $i=0;
+                        
+                        foreach ($valori as $key => $value) {
+                            // if($i== (count($valori)-1))
+                            // {
+                            //     $denumiri .= $key .' ) ';
+                            //     $valoriNoi .= '\''. $value . '\' ) ';
+                            // }
+                            // else{
+                                $denumiri .= $key .' , ';
+                                $valoriNoi .= '\'' . $value . '\' , ';
+                            }
+                            // $i++;
+    
+                        // }
+
+                        $denumiri[strlen($denumiri)-2] =')';
+                        // echo '<br><br><br>';
+                        // var_dump($denumiri);
+                        // echo '<br><br><br>';
+                        $valoriNoi[strlen($valoriNoi)-2] =')';
+                        // var_dump(($valoriNoi));
+    
+    
+                        
+    
+    
+                        $comandaSQL = "INSERT INTO animale $denumiri VALUES $valoriNoi";
+                        // echo $comandaSQL;
+                        $statement = Database::getConn()->prepare($comandaSQL);
+    
+                        $statement -> execute();
+                        return 'ok';
                     }
                     else{
                         if($tip == 'XML'){
-                            echo simplexml_load_file($_FILES['file']['tmp_name']);
+                            $valori= simplexml_load_file($_FILES['file']['tmp_name']);
+                            $comandaSQL = "select MAX(ID)+1  from animale";
+                            $statement = Database::getConn()->prepare($comandaSQL);
+                            $statement -> execute();
+                            $result = $statement->fetchAll();
+                            // var_dump( $file);
+                            $denumiri ='( ID , ';
+                            $valoriNoi =" ( " . $result[0]["MAX(ID)+1"] . ' , ';
+                            $i=0;
+                            
+                            foreach ($valori as $key => $value) {
+                                    $denumiri .= $key .' , ';
+                                    $valoriNoi .= '\'' . $value . '\' , ';
+                                }
+
+                                $denumiri[strlen($denumiri)-2] =')';
+                                $valoriNoi[strlen($valoriNoi)-2] =')';
+                                $comandaSQL = "INSERT INTO animale $denumiri VALUES $valoriNoi";
+                                $statement = Database::getConn()->prepare($comandaSQL);
+            
+                                $statement -> execute();
+                                return 'ok';
+                        }else{
+                            return 'Something is not good';
                         }
                     }
                 }
