@@ -261,6 +261,7 @@ use LDAP\Result;
             $xmlDocument->formatOutput = true;
             $path =HOME . DS . 'documentation' . DS . 'saves'. DS . $fileName;
             $xmlDocument->save($path);
+            // $pathIMage = HOME . DS . 'views' . DS . ;
             header('Content-type: text/xml');
             header("Content-Disposition: attachment; filename= \"$fileName\""); 
             readfile($path);       

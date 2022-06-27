@@ -29,6 +29,10 @@
                 $functie = $_POST['function'];
                 $class = new $this->model;
                 $continut = $class->$functie();
+
+                if($continut == 'ok'){
+                    echo 'Am introdus animalul in baza de date';
+                }
         }else{
             $rezultat ='something is not good';
             // echo $rezultat;
