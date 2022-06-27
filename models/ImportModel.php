@@ -133,7 +133,7 @@
 
 
                     $comandaSQL = "INSERT INTO animale $denumiri VALUES $valoriNoi";
-                    echo $comandaSQL;
+                    // echo $comandaSQL;
                     $statement = Database::getConn()->prepare($comandaSQL);
 
                     $statement -> execute();
@@ -143,6 +143,9 @@
                 {
                     echo 'prin fisier';
                     // inserez prin fisier 
+                    // echo file_get_contents($_FILES['file']);
+                    var_dump($_FILES['file']);
+                    // echo $_FILES['file'];
                 }
 
             }
