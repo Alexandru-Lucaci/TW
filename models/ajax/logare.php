@@ -2,7 +2,8 @@
     include "../../config.php";
     include "../../utils/db.php";
 
-    $comandaSQL = "SELECT DENUMIRE_POPULARA FROM animale ";
+
+    $comandaSQL = "SELECT NUME_UTILIZATOR from utilizatori";
     $statement = Database::getConn()->prepare($comandaSQL);
 
 
@@ -11,38 +12,35 @@
     // var_dump($rezultat);
     $valori= array();
     foreach($rezultat as $value){
-     
-        $valori[] = $value["DENUMIRE_POPULARA"];
+    
+        $valori[] = $value["NUME_UTILIZATOR"];
         
     }
     // var_dump($valori);
     // echo $rezultat[0]["DENUMIRE_POPULARA"];
     $q = $_REQUEST['q'];
+    
     // echo $q;
     $sugestie = "";
     if($q != "")
     {
 
-        $q      = strtolower($q);
+        // $q      = strtolower($q);
         $len    = strlen($q);
-        $sugestie = "Sugestie: ";
+        // $sugestie = "Sugestie: ";
 
         foreach($valori as $valoare){
-            if(stristr($q,substr($valoare,0,$len))){
-                if($sugestie =="Sugestie: "){
-                    $sugestie .= $valoare;
-                }
-                else
-                {
-                    $sugestie .= ", $valoare";
-                }
+
+            if($q == $valoare){
+                
+                $sugestie = 'numele exista deja';
+                break;
+            }
+            else{
+                $sugestie ='numele este disponibil';
             }
         }
     }
-    if($sugestie =="Sugestie: "){
-        echo "Nicio sugestie";
-    }else{
-        echo $sugestie;
-    }
+    echo $sugestie;
 
 ?>

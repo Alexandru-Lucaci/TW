@@ -28,8 +28,51 @@
     <link rel="stylesheet" href="views/styles/styleNavBar.css" />
     <link rel="stylesheet" type="text/css" href="views/styles/stylefooter2.css" />
 
-    <script src="views/javaScript/LoginPageChecker.js"></script>
+    <!-- <script src="views/javaScript/LoginPageChecker.js"></script> -->
+    <script>
+    function suggestion(str){
+        console.log(str);
+        if(str.length==0)
+        {
+            document.getElementById('outputs').innerHTML='';
+        }
+        else{
+            // document.getElementById('output').innerHTML=str;
+            // AJAX
 
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange= function(){
+                if(this.readyState==4 && this.status==200){
+                    document.getElementById('outputs').innerHTML = this.responseText;
+                    // console.log("yesss");
+                }
+            }
+            xmlhttp.open("GET", "/tw/models/ajax/logare.php?q="+str,true);
+            xmlhttp.send();
+        }
+    }
+    function isAuser(str){
+        console.log(str);
+        if(str.length==0)
+        {
+            document.getElementById('outputss').innerHTML='';
+        }
+        else{
+            // document.getElementById('output').innerHTML=str;
+            // AJAX
+
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange= function(){
+                if(this.readyState==4 && this.status==200){
+                    document.getElementById('outputss').innerHTML = this.responseText;
+                    // console.log("yesss");
+                }
+            }
+            xmlhttp.open("GET", "/tw/models/ajax/autentificare.php?q="+str,true);
+            xmlhttp.send();
+        }
+    }
+  </script>
   </head>
 
   <body>
@@ -47,9 +90,9 @@
             <label for="chk" aria-hidden="true">Inregistrare</label>
 
             <input class="loginPageInput" type="text" name="username" placeholder="Nume" required="" 
-            onblur="javascript:check_username_exists(this.value,'creareCont','register_label')" />
-            <label class="hidden" id="register_label">Numele de utilizator nu este disponibil</label>
-
+            onkeyup="suggestion(this.value)" />
+            <!-- <label class="hidden" id="register_label">Numele de utilizator nu este disponibil</label> -->
+            <p><span class = "loginPageInput" id="outputs"></span></p>
             <input class="loginPageInput" type="password" name="password" placeholder="Parola" required="" />
             
             <input class="loginPageInput" type="email" name="email" placeholder="Email" />
@@ -68,9 +111,9 @@
             <label for="chk" aria-hidden="true">Autentificare</label>
 
             <input class="loginPageInput" type="text" name="username" placeholder="Nume" required=""
-            onblur="javascript:check_username_exists(this.value,'login','login_label')" />
-            <label class="hidden" id="login_label">Nu exista numele de utilizator</label>
-            
+            onkeyup="isAuser(this.value)" />
+            <!-- <label class="hidden" id="login_label">Nu exista numele de utilizator</label> -->
+            <p><span class = "loginPageInput" id="outputss"></span></p>
             <input class="loginPageInput" type="password" name="password" placeholder="Parola" required="">
             
             <button name="submit" value="submit" >Autentificare</button>
